@@ -1,4 +1,4 @@
 Workspace
 =========
 
-programming practices
+Programming Practices
