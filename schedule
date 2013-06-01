@@ -1,7 +1,7 @@
-0. 学习 Emacs 帮助文档
-1. org-mode 富文本编辑
-2. dict-mode 字典查询
-3. ispell        拼写检查
-4. diff           文件对比
-5. w3m         文本浏览器
-6. git + github
+0. Emacs Manual        帮助文档
+1. org-mode            富文本编辑
+2. dict-mode           字典查询
+3. ispell              拼写检查
+4. diff                文件对比
+5. w3m                 文本浏览器
+6. git github          分布式版本控制
