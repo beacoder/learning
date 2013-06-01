@@ -1,0 +1,40 @@
+git basic knowledges
+
+1.create git repo name, email info
+git config --global user.name "chm"
+git config --global user.email "chenhuming@gmail.com"
+
+2.create a local git repo
+git init
+
+3.clone a local git repo from remote git repo
+git clone https://github.com/beacoder/notes.git ./
+
+4.add file into local repo
+git add .
+git commit -m "your commit message"
+or
+git add . & git commit -m "your commit message"
+
+5.remove file from local repo
+rm XXX file
+git add -A . & git commit -m "remove some file"
+
+6.show diff log
+git status
+git diff
+git log
+
+7.change the last commited message
+git commit --amend -m "More changes - now correct"
+
+8.revert to older revision
+git log -> get the old version commit id
+git checkout filename -> revert to files in the index or stage
+git checkout commit_id -> revert to files commited
+
+9.pull update from remote repo
+git pull https://github.com/beacoder/notes.git
+
+10.push update into remote repo
+git push https://github.com/beacoder/notes.git
