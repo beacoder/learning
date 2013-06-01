@@ -1,4 +1,1 @@
-Workspace
-=========
-
-Programming Practices
+learning notes
