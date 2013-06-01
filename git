@@ -33,8 +33,8 @@ git log -> get the old version commit id
 git checkout filename -> revert to files in the index or stage
 git checkout commit_id -> revert to files commited
 
-9.pull update from remote repo
+9.pull update from remote repo into local repo
 git pull https://github.com/beacoder/notes.git
 
-10.push update into remote repo
+10.push local repo update into remote repo 
 git push https://github.com/beacoder/notes.git
