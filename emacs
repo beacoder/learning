@@ -20,3 +20,7 @@ key-bindings: "C-<SPC> C-<SPC>" "C-u C-<SPC>"
 5.undo and redo
 undo: "C-_"
 redo: "C-g" "C-_"
+
+6.deal with ispell error "no word lists can be found for the language "zh_cn"."
+export LANG=en_US.UTF-8
+
