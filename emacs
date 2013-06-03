@@ -17,10 +17,14 @@ key-bindings: "C-x r <SPC> R" "C-x r s R" "C-x r n R" "C-x r i R" "C-x r j R"
 descrpition: used to save the cursor position
 key-bindings: "C-<SPC> C-<SPC>" "C-u C-<SPC>"
 
-5.undo and redo
+5.keyboard macro-ring
+descrpition: all defined keyboard macros are recorded in the keyboard macro ring
+key-bindings: "C-x C-k C-k" "C-x C-k C-n" "C-x C-k C-p"
+
+6.undo and redo
 undo: "C-_"
 redo: "C-g" "C-_"
 
-6.deal with ispell error "no word lists can be found for the language "zh_cn"."
+7.deal with ispell error "no word lists can be found for the language "zh_cn"."
 export LANG=en_US.UTF-8
 
