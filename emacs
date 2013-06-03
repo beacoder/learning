@@ -19,7 +19,7 @@ key-bindings: "C-<SPC> C-<SPC>" "C-u C-<SPC>"
 
 5.keyboard macro-ring
 descrpition: all defined keyboard macros are recorded in the keyboard macro ring
-key-bindings: "C-x C-k C-k" "C-x C-k C-n" "C-x C-k C-p"
+key-bindings: "<F3>" "<F4>" "C-x C-k C-k" "C-x C-k C-n" "C-x C-k C-p"
 
 6.undo and redo
 undo: "C-_"
