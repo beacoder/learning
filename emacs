@@ -28,6 +28,7 @@ key-bindings:
 "C-x q"
 "C-x C-k n" "C-x C-k b"
 "C-x C-k C-e" "C-x C-k e name <RET>" "C-x C-k l"
+"C-x C-k <SPC>"
 
 6.undo and redo
 undo: "C-_"
