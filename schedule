@@ -6,3 +6,4 @@
 5. w3m                 文本浏览器
 6. git github          分布式版本控制
 7. gnus                收发Gmail邮件
+8. magit               git in emacs
