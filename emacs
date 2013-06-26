@@ -29,11 +29,6 @@ descrpition: all defined keyboard macros are recorded in the keyboard macro ring
 key-bindings:
 "<F3>" "<F4>" "C-x (" "C-x )" "C-x e"
 "C-x C-k C-k" "C-x C-k C-n" "C-x C-k C-p"
-"C-x C-k C-i" "C-x C-k C-c" "C-x C-k C-a" "C-x C-k C-f"
-"C-x q"
-"C-x C-k n" "C-x C-k b"
-"C-x C-k C-e" "C-x C-k e name <RET>" "C-x C-k l"
-"C-x C-k <SPC>"
 
 6.undo and redo
 undo: "C-_"
