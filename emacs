@@ -27,7 +27,7 @@ key-bindings: "C-<SPC> C-<SPC>" "C-u C-<SPC>"
 5.keyboard macro-ring
 descrpition: all defined keyboard macros are recorded in the keyboard macro ring
 key-bindings:
-"<F3>" "<F4>"
+"<F3>" "<F4>" "C-x (" "C-x )" "C-x e"
 "C-x C-k C-k" "C-x C-k C-n" "C-x C-k C-p"
 "C-x C-k C-i" "C-x C-k C-c" "C-x C-k C-a" "C-x C-k C-f"
 "C-x q"
