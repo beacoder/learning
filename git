@@ -1,4 +1,4 @@
-git basic knowledges
+learning git
 
 1.create git repo name, email info
 git config --global user.name "chm"
