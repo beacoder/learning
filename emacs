@@ -39,7 +39,7 @@ export LANG=en_US.UTF-8
 
 8.Magit mode is a excellent interface to the git version control system
 commands and key-bindings:
-"magit-status"  See git status
+"magit-status"  see git status
 "s"             add the file under cursor to stage
 "S"             add all tracked files to stage
 "u"             unstaged the file under cursor
@@ -47,6 +47,6 @@ commands and key-bindings:
 "c"             write a commit message
 "C-c C-c"       commit
 "PP"            git-push
-"magit-log"     See commit logs
-"magit-pull"    Pull updates from git repo
-"magit-push"    Push updates to git repo
+"magit-log"     see commit logs
+"magit-pull"    pull updates from git repo
+"magit-push"    push updates to git repo
