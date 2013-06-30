@@ -38,7 +38,7 @@ redo: "C-g" "C-_"
 8.deal with ispell error "no word lists can be found for the language "zh_cn"."
 export LANG=en_US.UTF-8
 
-9.magit 
+9.magit-mode 
 descrpition: magit-mode is an excellent interface to the git version control system
 commands and key-bindings:
 "magit-status"  see git status
