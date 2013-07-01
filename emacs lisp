@@ -9,3 +9,8 @@ exp:  (car '(rose violet daisy buttercup))  =>  rose
 
 cdr:  return the second and subsequent elements
 exp:  (cdr '(rose violet daisy buttercup))  =>  (violet daisy buttercup)  
+
+2.interactive
+interactive makes the function available for interactive use.
+without this, the function cannot be called by execute-extended-command "M-x".
+
