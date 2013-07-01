@@ -1,6 +1,6 @@
 lisp practice
 
-;; show the contents of active region
+;; show contents of the active region
 (defun show_region_contents (beg end)
   "show active region contents"
   (interactive "r")
