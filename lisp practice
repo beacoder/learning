@@ -11,4 +11,18 @@ lisp practice
     )
   )
 
-  
+;; query user's name and age  
+(defun query-user (x y)
+  "query user's info"
+  (interactive "sEnter friend's name: \nnEnter friend's age: ")
+  (message "Name is: %s, Age is: %d" x y)
+)
+
+;; get user input as a list
+(defun ff (arg)
+  "Prompt user to enter a string, with input history support."
+  (interactive (list (read-string "Your name is:")) )
+  (message "String is 「%s」." arg)
+ )
+
+ 
