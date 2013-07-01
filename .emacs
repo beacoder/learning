@@ -1,15 +1,17 @@
-
-;; 在minibuffer里启用自动补全函数和变量
+;; enable icomplete-mode
 (icomplete-mode t)
 
-;; 默认启用 Ido-mode 模式
+;; enable ido-mode
 (ido-mode t)
 
-;; 默认启用 Narrow 模式
+;; enable narrow
 (put 'narrow-to-region 'disabled nil)
 
-;; 自动成对插入括号
+;; enable electric-pair-mode
 (electric-pair-mode t)
 
-;; 保存桌面
+;; save desktop
 (desktop-save-mode t)
+
+;; enable ibuffer
+(defalias 'list-buffers 'ibuffer)
