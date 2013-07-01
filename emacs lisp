@@ -11,7 +11,13 @@ cdr:  return the second and subsequent elements
 exp:  (cdr '(rose violet daisy buttercup))  =>  (violet daisy buttercup)  
 
 2.interactive
-the purpose of (interactive …) is to makes your function callable as interactive command which can be called by execute-extended-command "M-x".
+description: the purpose of (interactive …) is to makes your function callable as interactive command which can be called by execute-extended-command "M-x".
 it also provide a method for taking user input and feed to your function's arguments.
+
+3.evaluate expression
+description: means to execute the expression.
+exp: eval-buffer eval-region eval-minibuffer.
+
+
 
 
