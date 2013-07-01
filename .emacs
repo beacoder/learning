@@ -18,3 +18,6 @@
 
 ;; highlight the active region
 (transient-mark-mode t)
+
+;; hide toolbar
+(tool-bar-mode -1)
