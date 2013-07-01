@@ -1,0 +1,14 @@
+lisp practice
+
+;; show the contents of active region
+(defun show_region_contents (beg end)
+  "show active region contents"
+  (interactive "r")
+  (if (region-active-p)
+      (progn
+        (message (buffer-substring beg end))
+      )
+    )
+  )
+
+  
