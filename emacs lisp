@@ -1,2 +1,11 @@
 learning emacs lisp
 
+1.car cdr cons
+cons: the cons function constructs lists
+exp:  (cons 'rose '(violet daisy buttercup)) => (rose violet daisy buttercup)
+
+car:  return the first item in the list
+exp:  (car '(rose violet daisy buttercup))  =>  rose
+
+cdr:  return the second and subsequent elements
+exp:  (cdr '(rose violet daisy buttercup))  =>  (violet daisy buttercup)  
