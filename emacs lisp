@@ -18,6 +18,7 @@ it also provide a method for taking user input and feed to your function's argum
 description: means to execute the expression.
 exp: eval-buffer eval-region eval-minibuffer.
 
-
-
+4.quote
+description: return the argument, without evaluating it.
+exp: `(quote x)' => `x'
 
