@@ -15,3 +15,6 @@
 
 ;; enable ibuffer
 (defalias 'list-buffers 'ibuffer)
+
+;; highlight the active region
+(transient-mark-mode t)
