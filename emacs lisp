@@ -62,7 +62,9 @@ hash table: a very fast kind of lookup table.
 thing-at-point: return the thing at point. thing should be a symbol specifying a type of syntactic entity,
 including `symbol', `list', `sexp', `defun',`filename', `url', `email', `word', `sentence', `whitespace',
 `line', `number', and `page'.
+exp:  (thing-at-point 'word)
 
 bounds-of-thing-at-point: determine the start and end buffer locations for the THING at point.
+exp:  (bounds-of-thing-at-point 'word)
 
 10.
