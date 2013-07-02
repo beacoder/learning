@@ -51,3 +51,7 @@ nbutlast: remove last n elements from the list and returns the new value of the 
 setcar: replaces the first element in the list and returns the replacing element.
 setcdr: replaces the rest of elements in the list and returns the replacing element.
 
+8.alist & hash table
+alist:  association list, or alist for short, records a mapping from keys to values.
+hash table: a very fast kind of lookup table.
+
