@@ -64,7 +64,7 @@ including `symbol', `list', `sexp', `defun',`filename', `url', `email', `word', 
 `line', `number', and `page'.
 exp:  (thing-at-point 'word)
 
-bounds-of-thing-at-point: determine the start and end buffer locations for the THING at point.
+bounds-of-thing-at-point: return the start and end buffer locations for the thing at point.
 exp:  (bounds-of-thing-at-point 'word)
 
 10.
