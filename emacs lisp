@@ -1,14 +1,23 @@
 learning emacs lisp
 
-1.car cdr cons
+1.car cdr cons nth nthcdr butlast
 cons: the cons function constructs lists
-exp:  (cons 'rose '(violet daisy buttercup)) => (rose violet daisy buttercup)
+exp:  (cons 'rose '(violet daisy buttercup)) ⇒ (rose violet daisy buttercup)
 
 car:  return the first item in the list
-exp:  (car '(rose violet daisy buttercup))  =>  rose
+exp:  (car '(rose violet daisy buttercup))  ⇒  rose
 
-cdr:  return the second and subsequent elements
-exp:  (cdr '(rose violet daisy buttercup))  =>  (violet daisy buttercup)  
+cdr:  return the second to last elements
+exp:  (cdr '(rose violet daisy buttercup))  ⇒  (violet daisy buttercup)  
+
+nth:  return the nth item in the list
+exp:  (nth 1 '(rose violet daisy buttercup))  ⇒ violet
+
+nthcdr: return the nth to last elements
+exp:  (nthcdr 1 '(rose violet daisy buttercup)) ⇒ (violet daisy buttercup)
+
+butlast:  without the last n elements
+exp:  (butlast '(rose violet daisy buttercup) 2) ⇒  (rose violet)
 
 2.interactive
 description: the purpose of (interactive …) is to makes your function callable as interactive command which can be called by execute-extended-command "M-x".
@@ -16,9 +25,24 @@ it also provide a method for taking user input and feed to your function's argum
 
 3.evaluate expression
 description: means to execute the expression.
-exp: eval-buffer eval-region eval-minibuffer.
+exp:  eval-buffer eval-region eval-minibuffer.
 
 4.quote
 description: return the argument, without evaluating it.
-exp: `(quote x)' => `x'
+exp:  `(quote x)' ⇒ `x'
+
+5.elt aset
+elt:  return element of SEQUENCE at index N.
+exp:  (elt (vector 3 4 5) 0)  ⇒ 3.
+
+aset: store element into ARRAY at index.
+exp:  (setq v [3 4 5])  (aset v 0 "b")  ⇒ v = ["b" 4 5]
+
+6.mapcar mapc
+mapcar: apply FUNCTION to each element of SEQUENCE, and make a list of the results.
+exp:  (mapcar '1+ [3 4 5] ) ⇒ (4 5 6)
+
+mapc: apply FUNCTION to each element of SEQUENCE, and return the unchanged SEQUENCE.
+exp:  (mapc '1+ [3 4 5] ) ⇒ [3 4 5]
+
 
