@@ -7,7 +7,7 @@ lisp practice
   (if (region-active-p)
       (progn
         (message (buffer-substring beg end))
-      )
+        )
     )
   )
 
@@ -16,13 +16,24 @@ lisp practice
   "query user's info"
   (interactive "sEnter friend's name: \nnEnter friend's age: ")
   (message "Name is: %s, Age is: %d" x y)
-)
+  )
 
 ;; get user input as a list
 (defun ff (arg)
   "Prompt user to enter a string, with input history support."
   (interactive (list (read-string "Your name is:")) )
   (message "String is 「%s」." arg)
- )
+  )
 
- 
+;; read all lines in a file and print the last line 
+(defun read-lines (file)
+  "Return a list of lines in FILE."
+  (interactive "sPlease Enter The File Name:")
+  (with-temp-buffer
+    (insert-file-contents file)
+    (mapc (lambda (args) (message "last line is %s" args) )
+    (split-string
+	   (buffer-string) "\n" t)
+	  )
+    ) )
+    
