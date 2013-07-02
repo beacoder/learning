@@ -19,7 +19,7 @@ lisp practice
   )
 
 ;; get user input as a list
-(defun ff (arg)
+(defun read-list (arg)
   "Prompt user to enter a string, with input history support."
   (interactive (list (read-string "Your name is:")) )
   (message "String is 「%s」." arg)
