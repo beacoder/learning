@@ -1,8 +1,8 @@
 learning emacs lisp
 
-1.car cdr cons nth nthcdr butlast
+1.car cdr cons nth nthcdr butlast cond
 cons: the cons function constructs lists
-exp:  (cons 'rose '(violet daisy buttercup)) ⇒ (rose violet daisy buttercup)
+exp:  (cons 'rose '(violet daisy buttercup))  ⇒ (rose violet daisy buttercup)
 
 car:  return the first item in the list
 exp:  (car '(rose violet daisy buttercup))  ⇒  rose
@@ -17,11 +17,14 @@ nthcdr: return the nth to last elements
 exp:  (nthcdr 1 '(rose violet daisy buttercup)) ⇒ (violet daisy buttercup)
 
 butlast:  without the last n elements
-exp:  (butlast '(rose violet daisy buttercup) 2) ⇒  (rose violet)
+exp:  (butlast '(rose violet daisy buttercup) 2)  ⇒  (rose violet)
+
+cond: try each clause until one succeeds.
+exp:  (cond ((eq 'a 'b) 'first) ((atom 'a) 'second))  ⇒ second
 
 2.interactive
 description: the purpose of (interactive …) is to makes your function callable as interactive command which can be called by execute-extended-command "M-x".
-it also provide a method for taking user input and feed to your function's arguments.
+it also provides a method for taking user input and feed to your function's arguments.
 
 3.evaluate expression
 description: means to execute the expression.
