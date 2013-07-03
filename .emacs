@@ -22,5 +22,8 @@
 ;; hide toolbar
 (tool-bar-mode -1)
 
+;; hide scroll bar
+(scroll-bar-mode -1)
+
 ;; bind the dired-jump to "C-x C-j"
 (global-set-key "\C-x\C-j" 'dired-jump)
