@@ -51,3 +51,13 @@ lisp practice
     ((lambda (x) (concat (substring x 0 3) ":" (substring x 3 5)))
      (format-time-string "%z")))))
 
+;; use defadvice to override function switch-to-buffer 
+(defadvice switch-to-buffer (before existing-buffer 
+				    activate compile) 
+  "When interactive, switch to existing buffers only, 
+unless given a prefix argument." 
+  (interactive 
+   (list (read-buffer "Switch to buffer: "  
+		      (other-buffer) 
+		      (null current-prefix-arg)))))
+		      
