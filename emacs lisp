@@ -28,7 +28,7 @@ which can be called by execute-extended-command "M-x".
 it also provides a method for taking user input and feed to your function's arguments.
 
 3.evaluate expression
-description: means to execute the expression.
+description: means executing the expression.
 exp:  eval-buffer eval-region eval-minibuffer.
 
 4.quote
