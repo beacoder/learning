@@ -27,13 +27,16 @@ description: the purpose of (interactive …) is to makes your function callable
 which can be called by execute-extended-command "M-x".
 it also provides a method for taking user input and feed to your function's arguments.
 
-3.evaluate expression
-description: means executing the expression and returning the evaluated result.
-exp:  eval-buffer eval-region eval-minibuffer.
-
-4.quote
+3.quote
 description: return the argument, without evaluating it.
 exp:  `(quote x)' ⇒ `x'
+
+4.evaluate expression
+description: means executing the expression and returning the evaluated result.
+exp:  eval-buffer eval-region eval-minibuffer.
+rules:  
+4.1 self-evaluating:  any form that is not a list or symbol will evaluate to themselves.
+4.2 symbol: symbol is treated as a variable and will evaluate to the variable's value.
 
 5.elt aset
 elt:  return element of SEQUENCE at index N.
