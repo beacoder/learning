@@ -37,8 +37,8 @@ exp:  eval-buffer eval-region eval-minibuffer.
 rules:  
 4.1 self-evaluating:  any form that is not a list or symbol will evaluate to themselves.
 4.2 symbol: symbol is treated as a variable and will evaluate to the variable's value.
-4.3 function-indirection function macro:  if the first element of the list is
-     a symbol ⇒  uses it's function cell contents.
+4.3 list: if the first element of the list is
+     a symbol ⇒  uses the symbol's function cell contents, then call the function.
      a function object ⇒  evaluate the remaining elements of the list as actual argument,                       
                            then call the function with this list of arguments.
      a macro object  ⇒  expand the macro to some kind of other form.
