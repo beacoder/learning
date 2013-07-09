@@ -77,4 +77,7 @@ exp:  (thing-at-point 'word)
 bounds-of-thing-at-point: return the start and end buffer locations for the thing at point.
 exp:  (bounds-of-thing-at-point 'word)
 
-10.
+10.eq equal
+eq:  tests whether its arguments are the same object.
+equal:  tests whether two objects have the same structure and contents.
+
