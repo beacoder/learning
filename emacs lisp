@@ -64,7 +64,14 @@ setcar: replaces the first element in the list and returns the replacing element
 setcdr: replaces the rest of elements in the list and returns the replacing element.
 
 8.alist & hash table
-alist:  association list, or alist for short, records a mapping from keys to values.
+alist:  when a list has the form ((key1 . value1) (key2 . value2) (key3 . value3)), 
+        it is called an association list, or alist for short, 
+        it is used to records a mapping from keys to values.
+exp:  
+((red . "ff000") (green . "00ff00") (blue . "000ff"))
+((red "ff0000") (green "00ff00O") (blue "000ff")) 
+(assoc 'green '((red . "ff000") (green . "00ff00") (blue . "000ff"))) ⇒ (green . "00ff00")
+
 hash table: a very fast kind of lookup table.
 
 9.thing-at-point & bounds-of-thing-at-point
