@@ -28,8 +28,8 @@ key-bindings: "C-<SPC> C-<SPC>" "C-u C-<SPC>"
 6.keyboard macro-ring
 descrpition: all defined keyboard macros are recorded in the keyboard macro ring
 key-bindings:
-"<F3>" "<F4>" "C-x (" "C-x )" "C-x e"
-"C-x C-k C-k" "C-x C-k C-n" "C-x C-k C-p"
+"C-x (" "C-x )" "C-x e"
+"C-x C-k n" "C-x C-k b"
 
 7.undo and redo
 undo: "C-_"
