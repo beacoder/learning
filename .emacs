@@ -1,3 +1,5 @@
+;; learning emacs configuration
+
 ;; enable icomplete-mode
 (icomplete-mode t)
 
