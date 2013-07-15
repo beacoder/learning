@@ -29,7 +29,7 @@ key-bindings: "C-<SPC> C-<SPC>" "C-u C-<SPC>"
 descrpition: all defined keyboard macros are recorded in the keyboard macro ring
 key-bindings:
 "C-x (" "C-x )" "C-x e"
-"C-x C-k n" "C-x C-k b"
+"C-x C-k n" "C-x C-k b" "C-u insert-kbd-macro"
 
 7.undo and redo
 undo: "C-_"
