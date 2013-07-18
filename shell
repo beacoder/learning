@@ -1,1 +1,17 @@
 learning shell script
+
+1.在变量名称前加上$符号来访问变量的内容，变量不需要事先声明.
+
+2.变量在引号中的行为取决于引号的类型.
+exp:
+myvar="Hello World"
+
+echo "$myvar" ⇒ Hello World
+echo '$myvar' ⇒ $myvar
+echo \$myvar ⇒ $myvar
+
+3.获取脚本程序的输入参数.
+$1 $2 $3 ⇒ 分别获取第1、2、3个输入参数
+$@ ⇒ 列出所有输入参数，参数之间用特定符号分割，分隔符不受IFS环境变量影响
+@* ⇒ 列出所有输入参数，参数之间用IFS环境变量指定的分隔符分割
+
