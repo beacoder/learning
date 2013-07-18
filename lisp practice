@@ -1,4 +1,4 @@
-lisp practice
+;; lisp practice
 
 ;; show contents of the active region
 (defun show_region_contents (beg end)
