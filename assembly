@@ -67,3 +67,10 @@ mov es:[bx], dl ⇒ 将dl的数据传入段地址为es,偏移地址为bx所指�
 
 18.dup 用于和 db、dw、dd 等数据定义伪指令配合,用于定义多个数据.
 
+19.offset 用于取得标号的偏移地址.
+exp:
+start:  mov ax, offset start  ⇒ start 标记的是代码段中的第一条指令,偏移地址为0
+    s:  mov ax, offset s      ⇒ s 标记的是代码段中第二条指令,第一条指令的长度为3字节,所以s的偏移地址为3
+    
+20.jmp 无条件跳转指令(高级语言中的goto),既可以只修改IP,也可以同时修改CS和IP.
+
