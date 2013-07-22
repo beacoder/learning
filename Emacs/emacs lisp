@@ -19,8 +19,6 @@ exp:  (nthcdr 1 '(rose violet daisy buttercup)) ⇒ (violet daisy buttercup)
 butlast:  without the last n elements
 exp:  (butlast '(rose violet daisy buttercup) 2)  ⇒  (rose violet)
 
-cond: try each clause until one succeeds.
-exp:  (cond ((eq 'a 'b) 'first) ((atom 'a) 'second))  ⇒ second
 
 2.interactive
 description: the purpose of (interactive …) is to makes your function callable as interactive command,
@@ -91,25 +89,29 @@ equal:  tests whether two objects have the same structure and contents.
 11.control structures
 11.1 (if COND THEN ELSE...) ⇒ If COND yields non-nil, do THEN, else do ELSE...
 
-11.2 (when COND BODY...) ⇒ If COND yields non-nil, do BODY, else return nil.
+11.2 (cond CLAUSES...) ⇒ try each clause until one succeeds.
+exp:  
+(cond ((eq 'a 'b) 'first) ((atom 'a) 'second)) ⇒ second
 
-11.3 (unless COND BODY...) ⇒ If COND yields nil, do BODY, else return nil.
+11.3 (when COND BODY...) ⇒ If COND yields non-nil, do BODY, else return nil.
 
-11.4 (while TEST BODY...) ⇒ If TEST yields non-nil, eval BODY... and repeat.
+11.4 (unless COND BODY...) ⇒ If COND yields nil, do BODY, else return nil.
 
-11.5 (dolist (VAR LIST [RESULT]) BODY...)
+11.5 (while TEST BODY...) ⇒ If TEST yields non-nil, eval BODY... and repeat.
+
+11.6 (dolist (VAR LIST [RESULT]) BODY...)
      Loop over a list.
      Evaluate BODY with VAR bound to each car from LIST, in turn.
 exp:
 (dolist (x '(1 2 3)) (insert (number-to-string x))) ⇒ "123"
      
-11.6 (dotimes (VAR COUNT [RESULT]) BODY...)
+11.7 (dotimes (VAR COUNT [RESULT]) BODY...)
      Loop a certain number of times.
      Evaluate BODY with VAR bound to successive integers running from 0, inclusive, to COUNT, exclusive. 
 exp:
 (dotimes (x 3 "return value") (insert (number-to-string x))) ⇒ 012"return value"
 
-11.7 catch and throw
+11.8 catch and throw
      (catch TAG BODY...) ⇒ catch establishes a return point for the throw function.
      (throw TAG VALUE) ⇒ The purpose of throw is to return from a return point previously established with catch.
 exp:
