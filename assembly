@@ -74,3 +74,32 @@ start:  mov ax, offset start  ⇒ start 标记的是代码段中的第一条指�
     
 20.jmp 无条件跳转指令(高级语言中的goto),既可以只修改IP,也可以同时修改CS和IP.
 
+21.ret、retf 指令
+   ret用栈中数据修改IP的内容,从而实现近跳转
+   ⇒ pop IP
+
+   retf用栈中数据修改CS和IP的内容,从而实现远跳转 
+   ⇒ pop IP 
+     pop CS
+    
+22.call 指令执行时,将当前IP或CS和IP压入栈中,执行跳转.
+exp:
+call 标号.
+⇒ push IP
+  jmp near ptr 标号
+  
+call far ptr 标号.
+⇒ push CS
+  push IP
+  jmp far ptr 标号
+  
+  ...
+  
+23.call与ret配合使用,即可实现调用子程序的机制(高级语言中的函数调用).
+
+24.cdecl、stdcall、fastcall 函数调用约定的区别.
+cdecl ⇒ (1) 参数从右向左压入栈 (2) 调用者负责清理栈
+stdcall ⇒ (1) 参数从右向左压入栈 (2) 函数自身负责清理栈
+fastcall ⇒ (1) 第一和第二个DWORD(或尺寸更小的)参数使用ecx和edx存储,其他参数从右向左压入栈 (3) 函数自身负责清理栈
+
+25.
