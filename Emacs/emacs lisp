@@ -88,3 +88,27 @@ exp:  (bounds-of-thing-at-point 'word)
 eq:  tests whether its arguments are the same object.
 equal:  tests whether two objects have the same structure and contents.
 
+11.control structures
+11.1 (if COND THEN ELSE...) ⇒ If COND yields non-nil, do THEN, else do ELSE...
+
+11.2 (when COND BODY...) ⇒ If COND yields non-nil, do BODY, else return nil.
+
+11.3 (unless COND BODY...) ⇒ If COND yields nil, do BODY, else return nil.
+
+11.4 (while TEST BODY...) ⇒ If TEST yields non-nil, eval BODY... and repeat.
+
+11.5 (dolist (VAR LIST [RESULT]) BODY...)
+     Loop over a list.
+     Evaluate BODY with VAR bound to each car from LIST, in turn.
+     
+11.6 (dotimes (VAR COUNT [RESULT]) BODY...)
+     Loop a certain number of times.
+     Evaluate BODY with VAR bound to successive integers running from 0, inclusive, to COUNT, exclusive. 
+
+11.7 (catch TAG BODY...)
+     catch establishes a return point for the throw function.
+     
+11.8 (catch TAG BODY...)
+     The purpose of throw is to return from a return point previously established with catch.
+     
+12.
