@@ -112,7 +112,12 @@ exp:
 11.7 (catch TAG BODY...)
      catch establishes a return point for the throw function.
      
-11.8 (throw TAG VALUE)
+     (throw TAG VALUE)
      The purpose of throw is to return from a return point previously established with catch.
+     
+exp:
+(catch 'hack
+  (throw 'hack 'yes))
+
      
 12.
