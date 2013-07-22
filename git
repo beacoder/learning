@@ -33,8 +33,24 @@ git log -> get the old version commit id
 git checkout filename -> revert to files in the index or stage
 git checkout commit_id -> revert to files commited
 
-9.pull update from remote repo into local repo
+9.pull update from remote repo into local repo  ->  fetch and merge remote changes
 git pull https://github.com/beacoder/notes.git
 
 10.push local repo update into remote repo 
 git push https://github.com/beacoder/notes.git
+
+11.branching
+11.1 create a new branch named "feature_x" and switch to it
+git checkout -b feature_x
+
+11.2 switch back to master
+git checkout master
+
+11.3 delete the branch again
+git branch -d feature_x
+
+11.4 a branch is not available to others unless you push the branch to your remote repository
+git push origin <branch>
+
+12.merge another branch into your active branch
+git merge <branch>
