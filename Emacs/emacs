@@ -52,3 +52,8 @@ commands and key-bindings:
 "magit-log"     see commit logs
 "magit-pull"    pull updates from git repo
 "magit-push"    push updates to git repo
+
+10.retrieve the list of available packages from the package archive server.
+command:  "list-packages"
+
+11.
