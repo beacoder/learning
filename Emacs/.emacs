@@ -28,10 +28,10 @@
 (scroll-bar-mode -1)
 
 ;; bind the dired-jump to "C-x C-j"
-(global-set-key "\C-x\C-j" 'dired-jump)
+(global-set-key (kbd "C-x C-j") 'dired-jump)
 
 ;; use company-mode in all buffers
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; bind company-complete command to the key [f12]
-(global-set-key [f12] 'company-complete)
+(global-set-key (kbd "<f12>") 'company-complete)
