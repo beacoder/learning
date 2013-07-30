@@ -27,6 +27,9 @@
 ;; hide scroll bar
 (scroll-bar-mode -1)
 
+;; enable the delete-selection-mode
+(delete-selection-mode t)
+
 ;; bind the dired-jump to "C-x C-j"
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 
