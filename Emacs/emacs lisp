@@ -1,7 +1,7 @@
 learning emacs lisp
 
 1.car cdr cons nth nthcdr butlast
-cons: the cons function constructs lists
+cons: create a new cons, give it CAR and CDR as components, and return it
 exp:  (cons 'rose '(violet daisy buttercup))  ⇒ (rose violet daisy buttercup)
 
 car:  return the first item in the list
@@ -40,12 +40,9 @@ rules:
                                 then call the function with this list of arguments.
           a macro object  ⇒  expand the macro to some kind of other form.
 
-5.elt aset
-elt:  return element of SEQUENCE at index N.
-exp:  (elt (vector 3 4 5) 0)  ⇒ 3.
-
-aset: store element into ARRAY at index.
-exp:  (setq v [3 4 5])  (aset v 0 "b")  ⇒ v = ["b" 4 5]
+5.atom
+description: return t if OBJECT is not a cons cell.
+exp:  (atom 'a) ⇒ t 
 
 6.mapcar mapc
 mapcar: apply FUNCTION to each element of SEQUENCE, and make a list of the results.
