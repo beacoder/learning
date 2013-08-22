@@ -38,3 +38,6 @@
 
 ;; bind company-complete command to the key [f12]
 (global-set-key (kbd "<f12>") 'company-complete)
+
+;; disable emacs system beep
+(setq visible-bell t)
