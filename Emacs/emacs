@@ -56,4 +56,22 @@ commands and key-bindings:
 10.retrieve the list of available packages from the package archive server.
 command:  "list-packages"
 
-11.
+11.Dired
+descrpition: Directory Editor, an excellent tool for file management.
+key-bindings: 
+【Enter】	  Open the file
+【q】	      Close the dir
+【C】	      Copy file
+【R】	      Rename file
+【D】	      Delete file
+【+】	      create a new dir
+【Z】	      compress/decompress the file by gzip
+【m】	      mark a file
+【u】	      unmark
+【U】	      unmark all marked
+【% m】	    mark by pattern (regex)
+【g】	      refresh dir listing
+【^】	      go to parent dir
+"C-x C-j"   dired-jump used to go to current file's directory
+
+12.
