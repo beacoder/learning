@@ -61,6 +61,9 @@ descrpition: Directory Editor, an excellent tool for file management.
 key-bindings: 
 【Enter】	  Open the file
 【q】	      Close the dir
+【Q】	      Query replace in marked files
+【A】	      Search marked files
+ "M-,"	    Jump to the next occurrence
 【C】	      Copy file
 【R】	      Rename file
 【D】	      Delete file
@@ -72,6 +75,6 @@ key-bindings:
 【% m】	    mark by pattern (regex)
 【g】	      refresh dir listing
 【^】	      go to parent dir
-"C-x C-j"   dired-jump used to go to current file's directory
+ "C-x C-j"  dired-jump used to go to current file's directory
 
 12.
