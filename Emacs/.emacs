@@ -53,3 +53,6 @@
 
 ;; show buffer-name in title
 (setq frame-title-format "emacs@%b")
+
+;; enable emacs to open image file
+(auto-image-file-mode)
