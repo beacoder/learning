@@ -41,3 +41,9 @@
 
 ;; disable emacs system beep
 (setq visible-bell t)
+
+;; enlarge kill-ring-max value
+(setq kill-ring-max 200)
+
+;; enable global high light
+(global-font-lock-mode t)
