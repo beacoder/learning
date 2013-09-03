@@ -47,3 +47,6 @@
 
 ;; enable global high light
 (global-font-lock-mode t)
+
+;; set text-mode as default major mode
+(setq default-major-mode 'text-mode)
