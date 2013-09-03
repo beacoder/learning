@@ -50,3 +50,6 @@
 
 ;; set text-mode as default major mode
 (setq default-major-mode 'text-mode)
+
+;; show buffer-name in title
+(setq frame-title-format "emacs@%b")
