@@ -1,2 +1,38 @@
 ;; learning emacs modes
 
+1.Dired
+descrpition: Directory Editor, an excellent tool for file management.
+key-bindings: 
+【Enter】	  Open the file
+【q】	      Close the dir
+【Q】	      Query replace in marked files
+【A】	      Search marked files
+ "M-,"	    Jump to the next occurrence
+【C】	      Copy file
+【R】	      Rename file
+【D】	      Delete file
+【+】	      create a new dir
+【Z】	      compress/decompress the file by gzip
+【m】	      mark a file
+【u】	      unmark
+【U】	      unmark all marked
+【% m】	    mark by pattern (regex)
+【g】	      refresh dir listing
+【^】	      go to parent dir
+ "C-x C-j"  dired-jump used to go to current file's directory
+ 
+2.magit-mode 
+descrpition: magit-mode is an excellent interface to the git version control system
+commands and key-bindings:
+"magit-status"  see git status
+"s"             add the file under cursor to stage
+"S"             add all tracked files to stage
+"u"             unstaged the file under cursor
+"U"             unstaged all staged files
+"c"             write a commit message
+"C-c C-c"       commit
+"PP"            git-push
+"magit-log"     see commit logs
+"magit-pull"    pull updates from git repo
+"magit-push"    push updates to git repo
+
