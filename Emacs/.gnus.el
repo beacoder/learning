@@ -25,16 +25,16 @@
 ;; receive mails from a pop server
 (setq mail-sources
       '((pop :server "pop.ee-post.com"          ;; pop3 mail server
-	     :user "bright_chen@huatek.com"           ;; user name
+	     :user "bright_chen@huatek.com"     ;; user name
 	     :port "pop3"
-	     :password "5ihuatek")))                  ;; password
+	     :password "5ihuatek")))            ;; password
 
 ;; send mails with a smtp server
 (setq smtpmail-auth-credentials
      '(("smtp.ee-post.com"                      ;; smtp used to send mails
-	      25                                      ;; port
+	      25                                ;; port
       	"bright_chen@huatek.com"                ;; user name
-	      "5ihuatek"                              ;; password
+	      "5ihuatek"                        ;; password
 	    )))
 
 ;; controls the default hostname of the server to use 
