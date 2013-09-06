@@ -35,17 +35,12 @@
 	    )))
 
 ;; controls the default hostname of the server to use 
-;; (setq smtpmail-default-smtp-server "smtp.ee-post.com") 
-(setq smtpmail-default-smtp-server "smtp.gmail.com")
-
-;; controls the hostname of the server to use 
-(setq smtpmail-smtp-server "smtp.gmail.com")
+(setq smtpmail-default-smtp-server "smtp.ee-post.com"
+      smtpmail-smtp-server "smtp.ee-post.com")
 
 ;; function used to send mail
 (setq send-mail-function 'smtpmail-send-it
-      message-send-mail-function 'smtpmail-send-it
-      ;; mail-from-style nil
-      ;; user-full-name "Bright.Chen"
+      ;; message-send-mail-function 'smtpmail-send-it
       )
 
 ;; show debug info where sending mails failed 
