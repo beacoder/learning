@@ -19,7 +19,7 @@
 (setq user-full-name "Bright.Chen"
       user-mail-address "Bright.Chen@ptn.advantest.com")
       
-;; never delete no received mails
+;; never delete no received mails in gnus
 (setq mail-source-delete-incoming nil)
 
 ;; if we don't want to delete mails on our pop server,
