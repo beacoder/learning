@@ -1,8 +1,5 @@
 ;; my gnus configuration
 
-;; load smtpmail library
-(require 'smtpmail)
-
 ;; enable fetch news function
 ;; (setq gnus-select-method '(nntp "news.gmane.org"))
 
@@ -49,3 +46,6 @@
 ;; show debug info where sending mails failed 
 (setq smtpmail-debug-info t
       smtpmail-debug-verb t)
+
+;; load smtpmail library
+(require 'smtpmail)
