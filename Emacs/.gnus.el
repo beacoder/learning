@@ -18,6 +18,12 @@
 ;; name and email address on your emails 
 (setq user-full-name "Bright.Chen"
       user-mail-address "Bright.Chen@ptn.advantest.com")
+      
+;; never delete no received mails
+(setq mail-source-delete-incoming nil)
+
+;; if we don't want to delete mails on our pop server,
+;; we need to install 'epop3.el'
 
 ;; receive mails from a pop server
 (setq mail-sources
