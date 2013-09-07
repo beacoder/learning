@@ -3,10 +3,10 @@
 ;; load smtpmail library
 (require 'smtpmail)
 
-;; specify how and where we could fetch our news 
+;; enable fetch news function
 ;; (setq gnus-select-method '(nntp "news.gmane.org"))
 
-;; specify email reader
+;; enable fetch email function
 ;; (setq gnus-secondary-select-methods '((nnml "")))
 
 ;; we use gnus only to send and receive mails, 
