@@ -34,7 +34,7 @@
 	      "5ihuatek"                        ;; password
 	    )))
 
-;; controls the default hostname of the server to use 
+;; specify the smtp server used to send mails 
 (setq smtpmail-default-smtp-server "smtp.ee-post.com"
       smtpmail-smtp-server "smtp.ee-post.com")
 
