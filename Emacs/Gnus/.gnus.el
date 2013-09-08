@@ -1,4 +1,4 @@
-;; my gnus configuration
+;; My Gnus Configuration
 
 ;; enable fetch news function
 ;; (setq gnus-select-method '(nntp "news.gmane.org"))
@@ -17,8 +17,8 @@
                                              (nnimap-address "imap.gmail.com")
                                              (nnimap-server-port 993)
                                              (nnimap-stream ssl)
-				                             (nnir-search-engine imap)
-				                             (nnimap-authinfo-file "~/.authinfo")))
+				             (nnir-search-engine imap)
+				             (nnimap-authinfo-file "~/.authinfo")))
 
 ;; set "nnml" method and pop server configuration 
 ;; so that we could retrieve mails from pop server
@@ -29,7 +29,7 @@
 (setq mail-sources
       '((pop :server "pop.ee-post.com"          ;; pop3 mail server
 	     :user "bright_chen@huatek.com"     ;; user name
-	     :port "pop3"
+	     :port "pop3"                       ;; port
 	     :password "5ihuatek")))            ;; password
 
 ;; some other e-mail address
@@ -61,7 +61,7 @@
 
 ;; function used to send mail
 (setq send-mail-function 'smtpmail-send-it
-      ;; message-send-mail-function 'smtpmail-send-it
+;;      message-send-mail-function 'smtpmail-send-it
       )
 
 ;; show debug info where sending mails failed 
