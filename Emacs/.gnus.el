@@ -6,9 +6,17 @@
 ;; enable fetch email function
 ;; (setq gnus-secondary-select-methods '((nnml "")))
 
-;; we use gnus only to send and receive mails, 
-;; so we don't use "gnus-secondary-select-methods"
+;; set "nnml" method and pop server configuration 
+;; so that we could retrieve mails from pop server
+
 (setq gnus-select-method '(nnml ""))
+
+;; receive mails from a pop server
+(setq mail-sources
+      '((pop :server "pop.ee-post.com"          ;; pop3 mail server
+	     :user "bright_chen@huatek.com"     ;; user name
+	     :port "pop3"
+	     :password "5ihuatek")))            ;; password
 
 ;; some other e-mail address
 ;; chenhuming@gmail.com
@@ -24,13 +32,6 @@
 
 ;; if we don't want to delete mails on our pop server,
 ;; we need to install 'epop3.el'
-
-;; receive mails from a pop server
-(setq mail-sources
-      '((pop :server "pop.ee-post.com"          ;; pop3 mail server
-	     :user "bright_chen@huatek.com"     ;; user name
-	     :port "pop3"
-	     :password "5ihuatek")))            ;; password
 
 ;; send mails with a smtp server
 (setq smtpmail-auth-credentials
