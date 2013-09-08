@@ -23,7 +23,7 @@
 ;; Bright_Chen@huatek.com
 ;; Bright.Chen@ptn.advantest.com
 
-;; name and email address on your emails 
+;; set your name and email address 
 (setq user-full-name "Bright.Chen"
       user-mail-address "Bright.Chen@ptn.advantest.com")
       
