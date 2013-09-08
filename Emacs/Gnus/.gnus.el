@@ -17,13 +17,13 @@
                                              (nnimap-address "imap.gmail.com")
                                              (nnimap-server-port 993)
                                              (nnimap-stream ssl)
-				             (nnir-search-engine imap)
-				             (nnimap-authinfo-file "~/.authinfo")))
+				                             (nnir-search-engine imap)
+				                             (nnimap-authinfo-file "~/.authinfo")))
 
 ;; set "nnml" method and pop server configuration 
 ;; so that we could retrieve mails from pop server
 
-(setq gnus-select-method '(nnml ""))
+(setq gnus-select-method '(nnml "pop-mail"))
 
 ;; receive mails from a pop server
 (setq mail-sources
