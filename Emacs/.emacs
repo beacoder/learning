@@ -18,7 +18,10 @@
 ;; save desktop
 (desktop-save-mode t)
 
-;; enable ibuffer
+;; y or n is enough
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; always use ibuffer
 (defalias 'list-buffers 'ibuffer)
 
 ;; highlight the active region
