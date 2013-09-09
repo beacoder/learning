@@ -19,7 +19,7 @@
 
 ;; set "nnml" method and pop server configuration 
 ;; so that we could retrieve mails from pop server
-;; (setq gnus-select-method '(nnml "pop-mail"))
+(setq gnus-select-method '(nnml "pop-mail"))
 
 ;; receive mails from a pop server
 ;; (setq mail-sources
