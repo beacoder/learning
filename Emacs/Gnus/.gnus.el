@@ -25,11 +25,11 @@
 (setq pop3-leave-mail-on-server t)
 
 ;; receive mails from a POP server
-;; (setq mail-sources
-;;      '((pop :server "pop.ee-post.com"          ;; pop3 mail server
-;;	     :user "bright_chen@huatek.com"     ;; user name
-;; 	     :port "pop3"                       ;; port
-;; 	     :password "5ihuatek")))            ;; password
+(setq mail-sources
+      '((pop :server "pop.ee-post.com"          ;; pop3 mail server
+	     :user "bright_chen@huatek.com"     ;; user name
+ 	     :port "pop3"                       ;; port
+ 	     :password "5ihuatek")))            ;; password
 
 ;; some other e-mail address
 ;; chenhuming@gmail.com
