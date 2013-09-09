@@ -1,5 +1,8 @@
 ;; learning emacs configuration
 
+;; add "~/" to load-path
+(add-to-list 'load-path (expand-file-name "~/"))
+
 ;; enable icomplete-mode
 (icomplete-mode t)
 
