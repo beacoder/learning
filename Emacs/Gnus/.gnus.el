@@ -46,17 +46,25 @@
 ;; if we don't want to delete mails on our pop server,
 ;; we need to install 'epop3.el'
 
-;; send mails with a smtp server
+;; send mails using huatek's smtp server
 (setq smtpmail-auth-credentials
      '(("smtp.ee-post.com"                      ;; smtp used to send mails
 	      25                                ;; port
       	"bright_chen@huatek.com"                ;; user name
 	      "5ihuatek"                        ;; password
-	    )))
-
-;; specify the smtp server used to send mails 
-(setq smtpmail-default-smtp-server "smtp.ee-post.com"
+	    ))
+      smtpmail-default-smtp-server "smtp.ee-post.com"
       smtpmail-smtp-server "smtp.ee-post.com")
+      
+;; send mails using gmail's smtp server
+(setq ;; message-send-mail-function 'smtpmail-send-it
+      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "chenhuming@gmail.com" nil))
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 587
+      ;; smtpmail-local-domain "yourcompany.com"
+      )
 
 ;; function used to send mail
 (setq send-mail-function 'smtpmail-send-it
