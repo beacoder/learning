@@ -1,21 +1,15 @@
 ;; My Gnus Configuration
 
+;; some other e-mail address
+;; chenhuming@gmail.com
+;; Bright_Chen@huatek.com
+
+;; set your name and email address 
+(setq user-full-name "Bright.Chen"
+      user-mail-address "Bright.Chen@ptn.advantest.com")
+
 ;; enable fetch news function
 ;; (setq gnus-select-method '(nntp "news.gmane.org"))
-
-;; add this to be able to list all labels in gmail
-(setq gnus-ignored-newsgroups "")
-
-;; to be able to search within your gmail/imap mail
-;; (require 'nnir)
-
-;; add this to configure gmail imap 
-(add-to-list 'gnus-secondary-select-methods '(nnimap "gmail"
-                                             (nnimap-address "imap.gmail.com")
-                                             (nnimap-server-port 993)
-                                             (nnimap-stream ssl)
-				             ;; (nnir-search-engine imap)
-				             (nnimap-authinfo-file "~/.authinfo")))
 
 ;; set "nnml" method and POP server configuration 
 ;; so that we could retrieve mails from pop server
@@ -31,14 +25,19 @@
  	     :port "pop3"                       ;; port
  	     :password "5ihuatek")))            ;; password
 
-;; some other e-mail address
-;; chenhuming@gmail.com
-;; Bright_Chen@huatek.com
-;; Bright.Chen@ptn.advantest.com
+;; add this to be able to list all labels in gmail
+(setq gnus-ignored-newsgroups "")
 
-;; set your name and email address 
-(setq user-full-name "Bright.Chen"
-      user-mail-address "Bright.Chen@ptn.advantest.com")
+;; to be able to search within your gmail/imap mail
+;; (require 'nnir)
+
+;; add this to configure gmail imap 
+(add-to-list 'gnus-secondary-select-methods '(nnimap "gmail"
+                                             (nnimap-address "imap.gmail.com")
+                                             (nnimap-server-port 993)
+                                             (nnimap-stream ssl)
+				             ;; (nnir-search-engine imap)
+				             (nnimap-authinfo-file "~/.authinfo")))
 
 ;; send mails using huatek's smtp server
 ;; (setq smtpmail-auth-credentials
@@ -74,4 +73,3 @@
 
 ;; key-binding for mml-attach-external command
 (global-set-key (kbd "C-c C-a") 'mml-attach-external)
-
