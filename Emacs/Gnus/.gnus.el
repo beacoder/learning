@@ -17,11 +17,14 @@
 				             ;; (nnir-search-engine imap)
 				             (nnimap-authinfo-file "~/.authinfo")))
 
-;; set "nnml" method and pop server configuration 
+;; set "nnml" method and POP server configuration 
 ;; so that we could retrieve mails from pop server
 (setq gnus-select-method '(nnml "pop-mail"))
 
-;; receive mails from a pop server
+;; do not delete emails on server when using POP3
+(setq pop3-leave-mail-on-server t)
+
+;; receive mails from a POP server
 ;; (setq mail-sources
 ;;      '((pop :server "pop.ee-post.com"          ;; pop3 mail server
 ;;	     :user "bright_chen@huatek.com"     ;; user name
@@ -36,12 +39,6 @@
 ;; set your name and email address 
 (setq user-full-name "Bright.Chen"
       user-mail-address "Bright.Chen@ptn.advantest.com")
-      
-;; never delete no received mails in gnus
-(setq mail-source-delete-incoming nil)
-
-;; if we don't want to delete mails on our pop server,
-;; we need to install 'epop3.el'
 
 ;; send mails using huatek's smtp server
 ;; (setq smtpmail-auth-credentials
