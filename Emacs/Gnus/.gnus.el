@@ -7,14 +7,14 @@
 (setq gnus-ignored-newsgroups "")
 
 ;; to be able to search within your gmail/imap mail
-(require 'nnir)
+;; (require 'nnir)
 
 ;; add this to configure gmail imap 
 (add-to-list 'gnus-secondary-select-methods '(nnimap "gmail"
                                              (nnimap-address "imap.gmail.com")
                                              (nnimap-server-port 993)
                                              (nnimap-stream ssl)
-				             (nnir-search-engine imap)
+				             ;; (nnir-search-engine imap)
 				             (nnimap-authinfo-file "~/.authinfo")))
 
 ;; set "nnml" method and pop server configuration 
