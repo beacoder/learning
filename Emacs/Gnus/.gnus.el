@@ -8,11 +8,11 @@
 (setq user-full-name "Bright.Chen"
       user-mail-address "Bright.Chen@ptn.advantest.com")
 
-;; enable fetch news function
+;; fetch news from newsgroup
 ;; (setq gnus-select-method '(nntp "news.gmane.org"))
 
 ;; set "nnml" method and POP server configuration 
-;; so that we could retrieve mails from pop server
+;; so that we could retrieve emails from POP server
 (setq gnus-select-method '(nnml "pop-mail"))
 
 ;; do not delete emails on server when using POP3
