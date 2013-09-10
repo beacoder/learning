@@ -3,6 +3,7 @@
 1.Dired
 descrpition: Directory Editor, an excellent tool for file management.
 key-bindings: 
+
 【Enter】	  Open the file
 【q】	      Close the dir
 【Q】	      Query replace in marked files
@@ -23,18 +24,19 @@ key-bindings:
  
 2.Magit-mode 
 descrpition: magit-mode is an excellent interface to the git version control system
-commands and key-bindings:
-"magit-status"  see git status
-"s"             add the file under cursor to stage
-"S"             add all tracked files to stage
-"u"             unstaged the file under cursor
-"U"             unstaged all staged files
-"c"             write a commit message
-"C-c C-c"       commit
-"PP"            git-push
-"magit-log"     see commit logs
-"magit-pull"    pull updates from git repo
-"magit-push"    push updates to git repo
+commands and key-bindings: 
+
+ "magit-status"  see git status
+ "s"             add the file under cursor to stage
+ "S"             add all tracked files to stage
+ "u"             unstaged the file under cursor
+ "U"             unstaged all staged files
+ "c"             write a commit message
+ "C-c C-c"       commit
+ "PP"            git-push
+ "magit-log"     see commit logs
+ "magit-pull"    pull updates from git repo
+ "magit-push"    push updates to git repo
 
 3.Gnus
 descrpition: Gnus Network User Services, is a news and mail reader running under GNU Emacs
@@ -78,3 +80,19 @@ key-bindings:
  "M-q"          indent the paragraph
  "o"            download the attachment from the mail or post
  
+4.Compilation
+descrpition: used in program compiling process to help to locate the error code
+key-bindings: 
+
+*Source Code Window*
+ "M-g p"        jump to the previous error-producing position in the source file
+ "M-g n"        jump to the next error-producing position in the source file
+ 
+*compilation*
+ "M-p"          move point to the previous error message occurring in "current source file"
+ "M-n"          move point to the next error message occurring in "current source file"
+ 
+ "M-{"          move point to the previous error message occurring in "a different file"
+ "M-}"          move point to the next error message occurring in "a different file"
+ 
+5.
