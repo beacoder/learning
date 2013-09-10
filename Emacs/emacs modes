@@ -85,14 +85,14 @@ descrpition: used in program compiling process to help to locate the error code
 key-bindings: 
 
 *Source Code Window*
- "M-g p"        jump to the previous error-producing position in the source file
- "M-g n"        jump to the next error-producing position in the source file
+ "M-g p"        locate previous error-producing position in the source file
+ "M-g n"        locate next error-producing position in the source file
  
 *compilation*
- "M-p"          move point to the previous error message occurring in "current source file"
- "M-n"          move point to the next error message occurring in "current source file"
+ "M-p"          locate previous error message "occurring in current source file"
+ "M-n"          locate next error message "occurring in current source file"
  
- "M-{"          move point to the previous error message occurring in "a different file"
- "M-}"          move point to the next error message occurring in "a different file"
+ "M-{"          locate previous error message "occurring in a different file"
+ "M-}"          locate next error message "occurring in a different file"
  
 5.
