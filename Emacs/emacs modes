@@ -61,8 +61,8 @@ key-bindings:
  "p"            view previous unread article
 【SPACE】       jump to the next page
 【DEL】         go back to the previous page
- "F/f"          follow up with/without original article
- "R/r"          reply with/without original mail
+ "F/f"          follow up with/without quoted article
+ "R/r"          reply with/without quoted mail
  “S W/w”        reply to all with/without quoted text
  "m"            compose a new mail
  "a"            compose a new post
