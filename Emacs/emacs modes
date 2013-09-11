@@ -76,7 +76,7 @@ key-bindings:
  "C-c C-c"      send the current mail or post
  "C-c C-d"      save the current mail or post as a draft
  "C-c C-k"      delete the current mail or post
- "C-c C-m f"    add an attachment to the mail
+ "C-c C-a"      add an attachment to the mail
  "M-q"          indent the paragraph
  "o"            download the attachment from the mail or post
  
