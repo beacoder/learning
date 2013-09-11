@@ -29,7 +29,7 @@
 (defalias '~ 'make-backup)
 
 ;;----------------------------------------------------------------------------
-;; define key-bindings
+;; global key-bindings definition
 ;;----------------------------------------------------------------------------
 
 ;; bind the dired-jump to "C-x C-j"
