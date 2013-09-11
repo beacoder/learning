@@ -70,6 +70,3 @@
 
 ;; load smtpmail library
 (require 'smtpmail)
-
-;; key-binding for mml-attach-external command
-(local-set-key (kbd "C-c C-a") 'mml-attach-external)
