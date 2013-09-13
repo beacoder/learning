@@ -16,9 +16,6 @@
 ;; bind the dired-jump to "C-x C-j"
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 
-;; bind company-complete command to the key [f12]
-;; (global-set-key (kbd "<f12>") 'company-complete)
-
 ;;----------------------------------------------------------------------------
 ;; mode setting
 ;;----------------------------------------------------------------------------
@@ -59,9 +56,6 @@
 ;;----------------------------------------------------------------------------
 ;; some other settings
 ;;----------------------------------------------------------------------------
-
-;; use company-mode in all buffers
-(add-hook 'after-init-hook 'global-company-mode)
 
 ;; disable emacs system beep
 (setq visible-bell t)
