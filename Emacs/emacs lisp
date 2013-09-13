@@ -1,8 +1,6 @@
 learning emacs lisp
 
-1.car cdr cons nth nthcdr butlast
-cons: create a new cons, give it CAR and CDR as components, and return it
-exp:  (cons 'rose '(violet daisy buttercup))  ⇒ (rose violet daisy buttercup)
+1.car cdr setcar setcdr cons nthcdr
 
 car:  return the first item in the list
 exp:  (car '(rose violet daisy buttercup))  ⇒  rose
@@ -10,14 +8,14 @@ exp:  (car '(rose violet daisy buttercup))  ⇒  rose
 cdr:  return the second to last elements
 exp:  (cdr '(rose violet daisy buttercup))  ⇒  (violet daisy buttercup)  
 
-nth:  return the nth item in the list
-exp:  (nth 1 '(rose violet daisy buttercup))  ⇒ violet
+setcar: replace the first element in the list and return the replacing element
+setcdr: replace the rest of elements in the list and return the replacing element
+
+cons: create a new cons, give it CAR and CDR as components, and return it
+exp:  (cons 'rose '(violet daisy buttercup))  ⇒ (rose violet daisy buttercup)
 
 nthcdr: return the nth to last elements
 exp:  (nthcdr 1 '(rose violet daisy buttercup)) ⇒ (violet daisy buttercup)
-
-butlast:  without the last n elements
-exp:  (butlast '(rose violet daisy buttercup) 2)  ⇒  (rose violet)
 
 2.interactive
 description: the purpose of (interactive …) is to makes your function callable as interactive command,
@@ -51,11 +49,13 @@ exp:  (mapcar '1+ [3 4 5] ) ⇒ (4 5 6)
 mapc: apply FUNCTION to each element of SEQUENCE, and return the unchanged SEQUENCE.
 exp:  (mapc '1+ [3 4 5] ) ⇒ [3 4 5]
 
-7.pop nbutlast setcar setcdr
-pop:  remove first element from the list and returns the removed element.
-nbutlast: remove last n elements from the list and returns the new value of the list.
-setcar: replaces the first element in the list and returns the replacing element.
-setcdr: replaces the rest of elements in the list and returns the replacing element.
+7.push pop nbutlast nth butlast
+
+push: add new element to the list and return the resultant list.
+pop:  remove first element from the list and return the removed element.
+nbutlast: remove last n elements from the list and return the resultant list.
+nth:  return the nth item in the list.
+butlast:  return list without the last n elements.
 
 8.alist & hash table
 alist:  when a list has the form ((key1 . value1) (key2 . value2) (key3 . value3)), 
