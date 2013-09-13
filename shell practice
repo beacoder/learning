@@ -1,0 +1,12 @@
+
+# create tag file for emacs using ctags
+ctags -e -R .
+
+# create tag file for specific extentions
+ctags -e -R *.cpp *.hpp *.h
+
+# create tag file using etags
+find . -regex ".*\.[cChH]\(pp\)?" -print | etags -
+
+# alternative using etags
+find . -regex ".*\.c\|.*\.cpp\|.*\.h" -print | etags -
