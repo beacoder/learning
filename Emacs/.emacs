@@ -1,7 +1,10 @@
+;; -*- coding: utf-8 -*-
+
 ;; learning emacs configuration
 
-;; add "~/" to load-path
-(add-to-list 'load-path (expand-file-name "~/"))
+;; init load-path and start-time
+(setq emacs-load-start-time (current-time))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
 ;; enable narrow
 (put 'narrow-to-region 'disabled nil)
@@ -104,3 +107,9 @@
     (lambda ()
         (define-key coffee-mode-map (kbd "C-c c" 'coffee-compile-file))))
         
+
+;;----------------------------------------------------------------------------
+;; Load configs for specific features and modes
+;;----------------------------------------------------------------------------
+
+(require 'init-hippie-expand)
