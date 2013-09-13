@@ -10,28 +10,6 @@
 (put 'narrow-to-region 'disabled nil)
 
 ;;----------------------------------------------------------------------------
-;; use alias to shorten commands
-;;----------------------------------------------------------------------------
-
-;; y or n is enough
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-;; always use ibuffer
-(defalias 'list-buffers 'ibuffer)
-
-;; sh stands for shell
-(defalias 'sh 'shell)
-
-;; eb stands for eval-buffer
-(defalias 'eb 'eval-buffer)
-
-;; elm stands for emacs-lisp-mode
-(defalias 'elm 'emacs-lisp-mode)
-
-;; ~ stands for make-backup
-(defalias '~ 'make-backup)
-
-;;----------------------------------------------------------------------------
 ;; global key-bindings definition
 ;;----------------------------------------------------------------------------
 
@@ -39,7 +17,7 @@
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 
 ;; bind company-complete command to the key [f12]
-(global-set-key (kbd "<f12>") 'company-complete)
+;; (global-set-key (kbd "<f12>") 'company-complete)
 
 ;;----------------------------------------------------------------------------
 ;; mode setting
@@ -49,13 +27,13 @@
 (icomplete-mode t)
 
 ;; enable ido-mode
-(ido-mode t)
+;;(ido-mode t)
 
 ;; enable electric-pair-mode
-(electric-pair-mode t)
+;;(electric-pair-mode t)
 
 ;; save desktop
-(desktop-save-mode t)
+;;(desktop-save-mode t)
 
 ;; highlight the active region
 (transient-mark-mode t)
@@ -99,13 +77,13 @@
 ;;----------------------------------------------------------------------------
 
 ;; the key definition only happen once        
-(eval-after-load "coffee-mode"
-    '(define-key coffee-mode-map (kbd "C-c c" 'coffee-compile-file)))
+;;(eval-after-load "coffee-mode"
+;;    '(define-key coffee-mode-map (kbd "C-c c" 'coffee-compile-file)))
     
 ;; the key definition happens every time coffee-mode is enabled
-(add-hook 'coffee-mode-hook
-    (lambda ()
-        (define-key coffee-mode-map (kbd "C-c c" 'coffee-compile-file))))
+;;(add-hook 'coffee-mode-hook
+;;    (lambda ()
+;;        (define-key coffee-mode-map (kbd "C-c c" 'coffee-compile-file))))
         
 
 ;;----------------------------------------------------------------------------
