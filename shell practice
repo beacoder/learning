@@ -6,7 +6,6 @@ ctags -e -R .
 ctags -e -R *.cpp *.hpp *.h
 
 # create tag file using etags
-find . -regex ".*\.[cChH]\(pp\)?" -print | etags -
+find . -type f -iname "*.[ch]" | etags -
 
-# alternative using etags
-find . -regex ".*\.c\|.*\.cpp\|.*\.h" -print | etags -
+
