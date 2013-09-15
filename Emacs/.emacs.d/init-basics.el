@@ -1,4 +1,3 @@
-
 ;; enable narrow
 (put 'narrow-to-region 'disabled nil)
 
@@ -59,4 +58,9 @@
 ;; show buffer-name in title
 (setq frame-title-format "emacs@%b")
 
+;; set tags file lists
+(setq tags-table-list
+      '("/usr/include/c++")
+      ) 
+      
 (provide 'init-basics)
