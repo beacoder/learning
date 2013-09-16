@@ -4,12 +4,12 @@
 
 ;; let hippie-expand support ctags
 ;; shamelessly copied from http://emacswiki.org/emacs/HippieExpand
-(defun tags-complete-tag (string predicate what)
-  (save-excursion
-    ;; If we need to ask for the tag table, allow that.
-    (if (eq what t)
-        (all-completions string (tags-completion-table) predicate)
-      (try-completion string (tags-completion-table) predicate))))
+;;(defun tags-complete-tag (string predicate what)
+;;  (save-excursion
+;;    ;; If we need to ask for the tag table, allow that.
+;;    (if (eq what t)
+;;        (all-completions string (tags-completion-table) predicate)
+;;      (try-completion string (tags-completion-table) predicate))))
 
 ;; This is a simple function to return the point at the beginning of the symbol to be completed
 (defun he-tag-beg ()
