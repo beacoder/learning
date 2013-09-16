@@ -21,6 +21,7 @@
 
 ;; The actual expansion function
 (defun try-expand-tag (old)
+  "use tag files to expand"
   ;; old is true if we have already attempted an expansion
   (unless old
     ;; he-init-string is used to capture the string we are trying to complete
