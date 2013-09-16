@@ -55,6 +55,8 @@
         try-expand-dabbrev
         try-expand-dabbrev-all-buffers
         try-expand-dabbrev-from-kill
-        try-expand-tag))
+        try-expand-tag
+        try-complete-lisp-symbol-partially
+        try-complete-lisp-symbol))
 
 (provide 'init-hippie-expand)
