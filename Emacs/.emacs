@@ -20,6 +20,34 @@
 ;;        (define-key coffee-mode-map (kbd "C-c c" 'coffee-compile-file))))
 
 ;;----------------------------------------------------------------------------
+;; compilation setting
+;;----------------------------------------------------------------------------
+
+;; do not promp
+(setq compilation-read-command nil)
+
+;; set compile command
+(setq compile-command "g++ -g HelloWorld.cpp TestMethod.cpp -o HelloWorld.exe")
+
+;;----------------------------------------------------------------------------
+;; using tags
+;;----------------------------------------------------------------------------
+
+(defun create-tags (dir-name)
+  "Create tags file"
+  (interactive "DDirectory: ")
+  (shell-command
+   (format "ctags -f %s/TAGS -e -R %s" dir-name (directory-file-name dir-name)))
+   (message "create-tags succeed !")
+  )
+(defalias 'ct 'create-tags)
+
+;; set tags file lists
+(setq tags-table-list
+      '("/usr/include/c++")
+      ) 
+
+;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
