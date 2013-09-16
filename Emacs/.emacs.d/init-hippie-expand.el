@@ -1,3 +1,5 @@
+(require 'etags)
+
 (global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; let hippie-expand support ctags
