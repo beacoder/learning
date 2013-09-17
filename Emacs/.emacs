@@ -55,5 +55,4 @@
 (require 'init-hippie-expand)
 (require 'init-gnus)
 (require 'init-cc-mode)
-(require 'init-ctags)
 (require 'init-alias)
