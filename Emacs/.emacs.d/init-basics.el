@@ -1,6 +1,3 @@
-;; enable narrow
-(put 'narrow-to-region 'disabled nil)
-
 ;;----------------------------------------------------------------------------
 ;; global key-bindings definition
 ;;----------------------------------------------------------------------------
@@ -48,6 +45,9 @@
 ;;----------------------------------------------------------------------------
 ;; some other settings
 ;;----------------------------------------------------------------------------
+
+;; enable narrow
+(put 'narrow-to-region 'disabled nil)
 
 ;; disable emacs system beep
 (setq visible-bell t)
