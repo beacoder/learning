@@ -44,7 +44,9 @@
 
 ;; set tags file lists
 (setq tags-table-list
-      '("/usr/include/c++")
+      '("/usr/include/c++"
+        "~/my_include"
+        )
       ) 
 
 ;;----------------------------------------------------------------------------
