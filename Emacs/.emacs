@@ -51,6 +51,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
+(require 'init-dired)
 (require 'init-basics)
 (require 'init-hippie-expand)
 (require 'init-gnus)
