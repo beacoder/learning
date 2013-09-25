@@ -59,3 +59,6 @@
 (require 'init-gnus)
 (require 'init-cc-mode)
 (require 'init-alias)
+
+(require 'session)
+(add-hook 'after-init-hook 'session-initialize)
