@@ -103,9 +103,9 @@ key-bindings:
 "C-c C-e"       expand macro in another buffer
 "C-c C-c"       comment the whole region
 "C-u C-c C-c"   uncomment
-"C-c C-p"       jump to the begin of the macro definition
+"C-c C-p"       jump to the beginning of the macro definition
 "C-c C-n"       jump to the end of the macro definition
 
 commands:
-"c-beginning-of-defun"     jump to the begin of the function
+"c-beginning-of-defun"     jump to the beginning of the function
 "c-end-of-defun"           jump to the end of the function
