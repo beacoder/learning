@@ -95,4 +95,17 @@ key-bindings:
  "M-{"          locate previous error message "occurring in a different file"
  "M-}"          locate next error message "occurring in a different file"
  
-5.
+5.C/CC-mode
+descrpition: mode used in c/c++ programming.
+key-bindings: 
+
+"M-;"           add comment at the end of the line
+"C-c C-e"       expand macro in another buffer
+"C-c C-c"       comment the whole region
+"C-u C-c C-c"   uncomment
+"C-c C-p"       jump to the begin of the macro definition
+"C-c C-n"       jump to the end of the macro definition
+
+commands:
+"c-beginning-of-defun"     jump to the begin of the function
+"c-end-of-defun"           jump to the end of the function
