@@ -42,6 +42,12 @@
 ;; enable emacs to open image file
 (auto-image-file-mode)
 
+;; enable line-number-mode
+(setq line-number-mode t)
+
+;; enable column-number-mode
+(setq column-number-mode t)
+
 ;;----------------------------------------------------------------------------
 ;; some other settings
 ;;----------------------------------------------------------------------------
