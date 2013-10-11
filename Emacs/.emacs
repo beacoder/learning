@@ -33,11 +33,12 @@
 ;; using tags
 ;;----------------------------------------------------------------------------
 
-(defun create-tags (dir-name)
+;; create tags in specific directory for specific directory
+(defun create-tags (dir-name1 dir-name2)
   "Create tags file"
-  (interactive "DDirectory: ")
+  (interactive "DDirectory in which tag file will be created: \nDDirectory to be taged: ")
   (shell-command
-   (format "ctags -f %s/TAGS -e -R %s" dir-name (directory-file-name dir-name)))
+   (format "ctags -f %s/TAGS -e -R %s" dir-name1 (directory-file-name dir-name2)))
    (message "create-tags succeed !")
   )
 (defalias 'ct 'create-tags)
