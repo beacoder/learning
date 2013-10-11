@@ -1,8 +1,11 @@
+;; -*- coding: utf-8 -*-
+
+;; let hippie-expand support ctags
+
 (require 'etags)
 
 (global-set-key (kbd "M-/") 'hippie-expand)
 
-;; let hippie-expand support ctags
 ;; shamelessly copied from http://emacswiki.org/emacs/HippieExpand
 ;;(defun tags-complete-tag (string predicate what)
 ;;  (save-excursion
