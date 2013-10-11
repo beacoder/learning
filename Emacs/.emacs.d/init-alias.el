@@ -34,4 +34,6 @@
 
 (defalias 'lml 'list-matching-lines)
 
+(defalias 'ts 'tags-search)
+
 (provide 'init-alias)
