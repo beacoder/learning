@@ -37,7 +37,9 @@
 (defun create-tags (dir-name1 tag-file-name dir-name2)
   "Create tags file"
   (interactive 
-   "DDirectory in which tag-file will be created: \nsName of the tag-file (TAGS): \nDDirectory to be taged: ")
+   "DDirectory in which tag-file will be created: \
+    \nsName of the tag-file (TAGS): \
+    \nDDirectory to be taged: ")
   (if (string= "" tag-file-name) (setq tag-file-name "TAGS))
   (shell-command
    (format "ctags -f %s/%s -e -R %s" dir-name1 tag-file-name (directory-file-name dir-name2)))
