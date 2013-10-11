@@ -32,4 +32,6 @@
 (defalias 'ca 'c-beginning-of-defun)
 (defalias 'ce 'c-end-of-defun)
 
+(defalias 'lml 'list-matching-lines)
+
 (provide 'init-alias)
