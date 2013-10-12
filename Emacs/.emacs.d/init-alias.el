@@ -32,7 +32,7 @@
 (defalias 'ca 'c-beginning-of-defun)
 (defalias 'ce 'c-end-of-defun)
 
-(defalias 'lml 'list-matching-lines)
+(defalias 'll 'list-matching-lines)
 
 (defalias 'ts 'tags-search)
 
