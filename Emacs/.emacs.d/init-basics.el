@@ -61,7 +61,9 @@
 ;; enlarge kill-ring-max value
 (setq kill-ring-max 200)
 
-;; show buffer-name in title
-(setq frame-title-format "emacs@%b")
-      
+;; show file's full path in title
+(setq frame-title-format
+      (list (format "%s %%S: %%j " (system-name))
+        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+
 (provide 'init-basics)
