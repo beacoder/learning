@@ -24,10 +24,10 @@
 ;;----------------------------------------------------------------------------
 
 ;; do not promp
-(setq compilation-read-command nil)
+;; (setq compilation-read-command nil)
 
 ;; set compile command
-(setq compile-command "g++ -g HelloWorld.cpp TestMethod.cpp -o HelloWorld.exe")
+(setq compile-command "make clobber")
 
 ;;----------------------------------------------------------------------------
 ;; using tags
