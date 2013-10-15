@@ -9,11 +9,17 @@ ctags -e -R *.cpp *.hpp *.h
 # create tag file using etags
 find . -type f -iname "*.[ch]" | etags -
 
+# list running processes
+ps -ef
+
+# list commands running in background
+jobs
+
 # bring process back to background
-Ctrl + z  => pause the process
-bg        => bring to background
+Ctrl + z     => pause the process
+bg [jobspec] => bring to background
 
 # bring process forward to foreground
-Ctrl + z  => pause the process
-fg        => bring to foregound
+Ctrl + z      => pause the process
+fg [jobspec]  => bring to foregound
 
