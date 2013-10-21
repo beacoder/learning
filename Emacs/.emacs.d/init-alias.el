@@ -21,13 +21,11 @@
 (defalias 'elm 'emacs-lisp-mode)
 
 ;; ~ stands for make-backup
-(defalias '~ 'make-backup)
+;; (defalias '~ 'make-backup)
 
 (defalias 'ka 'kill-some-buffers)
 
 (defalias 'fo 'ff-find-other-file)
-
-(defalias 'gl 'goto-line)
 
 (defalias 'ca 'c-beginning-of-defun)
 (defalias 'ce 'c-end-of-defun)
