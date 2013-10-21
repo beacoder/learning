@@ -5,6 +5,9 @@
 ;; bind pop-tag-mark
 (global-set-key (kbd "M-?") 'pop-tag-mark)
 
+;; bind goto-line command
+(global-set-key (kbd "M-g M-g") 'goto-line)
+
 ;;----------------------------------------------------------------------------
 ;; mode setting
 ;;----------------------------------------------------------------------------
