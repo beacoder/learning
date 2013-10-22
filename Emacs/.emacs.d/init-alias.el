@@ -17,6 +17,9 @@
 ;; eb stands for eval-buffer
 (defalias 'eb 'eval-buffer)
 
+;; ed stands for ediff
+(defalias 'ed 'ediff)
+
 ;; elm stands for emacs-lisp-mode
 (defalias 'elm 'emacs-lisp-mode)
 
