@@ -33,6 +33,7 @@
 (defalias 'ca 'c-beginning-of-defun)
 (defalias 'ce 'c-end-of-defun)
 (defalias 'cpl 'compile)
+(defalias 'rsw 'restore-workspace)
 
 (defalias 'll 'list-matching-lines)
 
