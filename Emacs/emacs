@@ -25,8 +25,8 @@ key-bindings:
 descrpition: used to save the cursor position
 key-bindings: "C-<SPC> C-<SPC>" "C-u C-<SPC>"
 
-6.keyboard macro-ring
-descrpition: all defined keyboard macros are recorded in the keyboard macro ring
+6.keyboard macro
+descrpition: record a sequence of editing commands so that you can repeat it conveniently later
 key-bindings:
 "C-x (" "C-x )" "C-x e"
 
