@@ -8,6 +8,10 @@
 ;; bind goto-line command
 (global-set-key (kbd "M-g M-g") 'goto-line)
 
+;; dictionary key-bindings
+(global-set-key (kbd "\C-cs") 'dictionary-search)
+(global-set-key (kbd "\C-cm") 'dictionary-match-words)
+
 ;;----------------------------------------------------------------------------
 ;; mode setting
 ;;----------------------------------------------------------------------------
