@@ -59,6 +59,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
+(require 'dictionary-init)
 (require 'init-macros)
 (require 'init-dired)
 (require 'init-basics)
