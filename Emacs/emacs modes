@@ -105,6 +105,12 @@ key-bindings:
 "C-u C-c C-c"   uncomment
 "C-c C-p"       jump to the beginning of the macro definition
 "C-c C-n"       jump to the end of the macro definition
+"C-M-n"         Move forward over a parenthetical group 
+"C-M-p"         Move backward over a parenthetical group 
+"C-M-f"         Move forward over a balanced expression
+"C-M-b"         Move backward over a balanced expression
+"C-M-k"         Kill balanced expression forward
+"C-M-SPC"       Put the mark at the end of the sexp
 
 commands:
 "c-beginning-of-defun"     jump to the beginning of the function
