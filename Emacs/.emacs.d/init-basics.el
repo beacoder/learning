@@ -20,13 +20,13 @@
 (icomplete-mode t)
 
 ;; enable ido-mode
-;;(ido-mode t)
+(if (fboundp 'ido-mode) (ido-mode t))
 
 ;; enable electric-pair-mode
-;;(electric-pair-mode t)
+(if (fboundp 'electric-pair-mode) (electric-pair-mode t))
 
 ;; save desktop
-;;(desktop-save-mode t)
+(if (fboundp 'desktop-save-mode) (desktop-save-mode t))
 
 ;; highlight the active region
 (transient-mark-mode t)
