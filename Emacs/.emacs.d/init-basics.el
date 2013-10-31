@@ -31,11 +31,14 @@
 ;; highlight the active region
 (transient-mark-mode t)
 
+;; hide menu bar
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
 ;; hide toolbar
-(tool-bar-mode -1)
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
 ;; hide scroll bar
-(scroll-bar-mode -1)
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; enable the delete-selection-mode
 (delete-selection-mode t)
