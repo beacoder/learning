@@ -53,10 +53,10 @@
 (auto-image-file-mode)
 
 ;; enable line-number-mode
-(setq line-number-mode t)
+(line-number-mode t)
 
 ;; enable column-number-mode
-(setq column-number-mode t)
+(column-number-mode t)
 
 ;; Incremental picking of buffers
 (if (fboundp 'iswitchb-mode) (iswitchb-mode t))
