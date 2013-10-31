@@ -58,6 +58,9 @@
 ;; enable column-number-mode
 (setq column-number-mode t)
 
+;; Incremental picking of buffers
+(if (fboundp 'iswitchb-mode) (iswitchb-mode t))
+
 ;;----------------------------------------------------------------------------
 ;; some other settings
 ;;----------------------------------------------------------------------------
