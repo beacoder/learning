@@ -60,6 +60,7 @@
 ;;----------------------------------------------------------------------------
 
 (require 'dictionary-init)
+(require 'init-register)
 (require 'init-macros)
 (require 'init-dired)
 (require 'init-basics)
