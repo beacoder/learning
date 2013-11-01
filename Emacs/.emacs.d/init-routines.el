@@ -1,9 +1,14 @@
 ;; run routine tasks when emacs is idle
 
+;; define a global variable as the counter
+(defvar counter 0
+  "used to count how many times some function have been executed.")
+
 ;; define routine-task
 (defun routine-task ()
   "show how to use the routine."
-  (message "running routine tasks !"))
+  (setq counter (1+ counter))
+  (message "running routine tasks for %d times !" counter))
 
 ;; define how often the auto-save happens
 (setq auto-save-default t
