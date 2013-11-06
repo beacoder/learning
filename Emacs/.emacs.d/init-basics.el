@@ -78,5 +78,10 @@
 (setq frame-title-format
       (list (format "%s %%S: %%j " (system-name))
         '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+        
+;; set font information
+(set-face-attribute 'default nil 
+                    :height 90
+                    :background "snow")
 
 (provide 'init-basics)
