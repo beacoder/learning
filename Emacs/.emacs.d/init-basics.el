@@ -79,7 +79,7 @@
       (list (format "%s %%S: %%j " (system-name))
         '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
         
-;; "DejaVu Sans Mono" is a nice open source font family 
+;; "DejaVu Sans Mono" is a nice open source font family
 (set-face-attribute 'default nil :font "DejaVu Sans Mono")
 
 (provide 'init-basics)
