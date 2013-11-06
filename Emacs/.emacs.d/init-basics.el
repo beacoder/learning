@@ -82,6 +82,6 @@
 ;; set font information
 (set-face-attribute 'default nil 
                     :height 90
-                    :background "snow")
+                    :background "white")
 
 (provide 'init-basics)
