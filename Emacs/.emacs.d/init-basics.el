@@ -12,6 +12,12 @@
 (global-set-key (kbd "\C-cs") 'dictionary-search)
 (global-set-key (kbd "\C-cm") 'dictionary-match-words)
 
+;; enable recentf-mode
+(require 'recentf)
+(recentf-mode t)
+(setq recentf-max-menu-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
 ;;----------------------------------------------------------------------------
 ;; mode setting
 ;;----------------------------------------------------------------------------
@@ -79,7 +85,7 @@
       (list (format "%s %%S: %%j " (system-name))
         '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
         
-;; "DejaVu Sans Mono" is a nice open source font family
+;; "DejaVu Sans Mono" is a nice open source font, good for programming
 (set-face-attribute 'default nil 
                     :font "DejaVu Sans Mono-10:weight=normal"
                     :height 100)
