@@ -28,10 +28,6 @@
 
 (defalias 'ka 'kill-some-buffers)
 
-(defalias 'fo 'ff-find-other-file)
-
-(defalias 'ca 'c-beginning-of-defun)
-(defalias 'ce 'c-end-of-defun)
 (defalias 'cpl 'compile)
 (defalias 'rw 'restore-workspace)
 
