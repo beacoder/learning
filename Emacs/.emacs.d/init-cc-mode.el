@@ -8,6 +8,16 @@
 ;; navigation between header and cpp/cc files
 (add-hook 'c-mode-common-hook
   (lambda()
-    (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
+    (local-set-key (kbd "C-c o") 'ff-find-other-file)))
+    
+;; jump to the start of the function    
+(add-hook 'c-mode-common-hook
+  (lambda()
+    (local-set-key (kbd "C-M-a") 'c-beginning-of-defun)))
+
+;; jump to the end of the function    
+(add-hook 'c-mode-common-hook
+  (lambda()
+    (local-set-key (kbd "C-M-e") 'c-end-of-defun)))
 
 (provide 'init-cc-mode)
