@@ -108,4 +108,6 @@
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 (add-hook 'c++-mode-hook 'my-c-mode-hook)
 
+(which-func-mode t)
+
 (provide 'init-cc-mode)
