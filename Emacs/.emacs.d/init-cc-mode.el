@@ -2,7 +2,7 @@
 
 ;; show function name in mode-line
 (add-hook 'c-mode-common-hook
-  (lambda ()
+  (lambda()
     (which-function-mode t)))
 
 ;; navigation between header and cpp/cc files
