@@ -1,3 +1,5 @@
+;; c/c++ programming mode setting
+
 (defun c-wx-lineup-topmost-intro-cont (langelem)
   (save-excursion
     (beginning-of-line)
