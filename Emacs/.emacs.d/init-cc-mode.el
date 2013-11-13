@@ -19,5 +19,10 @@
 (add-hook 'c-mode-common-hook
   (lambda()
     (local-set-key (kbd "C-M-e") 'c-end-of-defun)))
+    
+;; use <f5> to compile
+(add-hook 'c-mode-common-hook
+  (lambda()
+    (local-set-key (kbd "<f5>") 'compile)))
 
 (provide 'init-cc-mode)
