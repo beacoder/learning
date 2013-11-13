@@ -89,5 +89,8 @@
 (set-face-attribute 'default nil 
                     :font "DejaVu Sans Mono-10:weight=normal"
                     :height 100)
+                    
+;; swap the foreground and background colors of FACE
+(invert-face 'default)
 
 (provide 'init-basics)
