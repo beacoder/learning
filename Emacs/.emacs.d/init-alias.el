@@ -29,7 +29,6 @@
 (defalias 'ka 'kill-some-buffers)
 
 (defalias 'rw 'restore-workspace)
-(defalias 'cpl 'compile)
 (defalias 'll 'list-matching-lines)
 (defalias 'ts 'tags-search)
 
