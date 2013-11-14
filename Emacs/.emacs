@@ -55,6 +55,7 @@
 (require 'init-hippie-expand)
 (require 'init-gnus)
 (require 'init-cc-mode)
+(require 'tempo-c-cpp)
 (require 'init-alias)
 
 (require 'session)
