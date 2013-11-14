@@ -24,6 +24,9 @@
                         ))
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
+;; @see http://stackoverflow.com/questions/2068697/emacs-is-slow-opening-recent-files
+(setq recentf-keep '(file-remote-p file-readable-p))
+
 ;;----------------------------------------------------------------------------
 ;; mode setting
 ;;----------------------------------------------------------------------------
