@@ -62,8 +62,9 @@
 ;;    	main			int main() { ... }
 ;;    	malloc			type * var = (type *) malloc(...)
 ;; --- C++ statements
-;;    class			class xxx { ... };
-;;    getset			accessor/mutator
+;;      class			class xxx { ... };
+;;      getset			accessor/mutator
+;;      forit                   for (type::iterator it = container.begin(); it != container.end(); ++it) { }
 
 (require 'tempo)
 (setq tempo-interactive t)
@@ -289,7 +290,6 @@
 		       "forit"
 		       "Insert a C++ for loop iterating over an STL container"
 		       'c++-tempo-tags)
-
 
 (provide 'tempo-c-cpp)
 ;;; tempo-c-cpp.el ends here
