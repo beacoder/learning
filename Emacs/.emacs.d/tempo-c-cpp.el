@@ -282,5 +282,14 @@
 		       "Insert get set methods"
 		       'c++-tempo-tags)
 
+(tempo-define-template "c++-for-it"
+		       '(> "for (" (p "Type: " type) (if (y-or-n-p "const_iterator?") "::const_iterator " "::iterator ") (p "Iterator: " it) " = "
+			   (p "Container: " container) ".begin();" n>
+			   (s it) " != " (s container) ".end(); ++" (s it) ") {" > n> r n "}" >)
+		       "forit"
+		       "Insert a C++ for loop iterating over an STL container."
+		       'c++-tempo-tags)
+
+
 (provide 'tempo-c-cpp)
 ;;; tempo-c-cpp.el ends here
