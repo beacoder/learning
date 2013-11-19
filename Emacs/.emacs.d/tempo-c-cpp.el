@@ -287,7 +287,7 @@
 			   (p "Container: " container) ".begin();" n>
 			   (s it) " != " (s container) ".end(); ++" (s it) ") {" > n> r n "}" >)
 		       "forit"
-		       "Insert a C++ for loop iterating over an STL container."
+		       "Insert a C++ for loop iterating over an STL container"
 		       'c++-tempo-tags)
 
 
