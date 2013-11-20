@@ -228,9 +228,9 @@
 		       'c-tempo-tags)
 		       
 (tempo-define-template "c-function"
-		       '(> (p "Type: " type) " " (p "Name: " name) "(" p ")" >  n>
+		       '(> (p "Type: " type) " " (p "Name: " name) "(" ~ ")" >  n>
 			   "{" > n>
-			   p n
+			   ~ n
 			   "}" > n>
 			   )
 		       "function"
@@ -280,15 +280,15 @@
 		       'c++-tempo-tags)
 
 (tempo-define-template "c++-class-noncopyable"
-		       '(> "class " (P "class " var) n>
+		       '(> "class " (p "class " var) n>
 			   "{" > n> 
 			   "public:" > n> 
-			   > (s var) "(" p  ");" n> 
+			   > (s var) "(" ~ ");" n> 
 			   > "virtual ~" (s var) "();" n> 
-			   "private:" > p n>
+			   "private:" > ~ n>
 			   > (s var) "(const " (s var) " &);" n>
 			   > "void operator=(const " (s var) " &);"  n>
-			   "};" > n> p
+			   "};" > n> ~
 			   )
 		       "ncpclass"
 		       "New C++ class with private copy and assign"
@@ -317,14 +317,14 @@
 		       'c++-tempo-tags)
 
 (tempo-define-template "c++-cout"
-                       '(> "cout << \"" p "\" << endl;"
+                       '(> "cout << \"" ~ "\" << endl;"
                            )
                        "cout"
                        "cout with endl"
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-doxygen-class"
-                       '("/** @brief "  p n> n>
+                       '("/** @brief " ~ n> n>
                          "@author " (getenv "USERNAME") n>
                          "*/" n>
                            )
@@ -333,7 +333,7 @@
                        'c++-tempo-tags)
                        
 (tempo-define-template "c++-using"
-                       '(> "using namespace std" p ";"
+                       '(> "using namespace std" ~ ";"
                            )
                        "using"
                        "using namespace"
@@ -341,11 +341,11 @@
                        
 (tempo-define-template "c++-functor-class"
 		       '(>
-			 "struct " (P "Type: " type) n>
+			 "struct " (p "Type: " type) n>
 			 "{" n>
-			 "void operator()(" p ")" n>
+			 "void operator()(" ~ ")" n>
 			 "{" > n>
-			 p n>
+			 ~ n>
 			 "}" > n>
 			 "};" > n>
 			 )
@@ -356,7 +356,7 @@
 (tempo-define-template "c++-try"
 		       '(> "try" n>
 			   "{" > n> r n
-			   "} " p >
+			   "} " ~ >
 			   )
 		       "try"
 		       "Insert C++ try statement"
@@ -365,7 +365,7 @@
 (tempo-define-template "c++-catch"
 		       '(> "catch (std::exception& ex)" n>
 			   "{" > n> r n
-			   p
+			   ~
 			   "}" >
 			   n>
 			   ) 
@@ -375,17 +375,17 @@
 
 (tempo-define-template "c++-for_each"
 		       '(> "for_each(" 
-			   (P "Container: " cont) ".begin(), "
-			   (s cont) ".end(), &" p
-			   (P "Method: " method) ");" >
+			   (p "Container: " cont) ".begin(), "
+			   (s cont) ".end(), &" ~
+			   (p "Method: " method) ");" >
 			   )
 		       "for_each"
 		       "C++ STL for_each with method call no args)"
 		       'c++-tempo-tags)
 
 (tempo-define-template "c++-copy-iter"
-                       '(> "copy(" (P "iterator: " iter) ".begin(), "
-                           (s iter) ".end(), " p ");"
+                       '(> "copy(" (p "iterator: " iter) ".begin(), "
+                           (s iter) ".end(), " ~ ");"
                            )
                        "icopy"
                        "C++ STL copy"
