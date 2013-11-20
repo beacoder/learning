@@ -123,8 +123,8 @@
 		       'c-tempo-tags)
 
 (tempo-define-template "c-ifdef"
-		       '("#ifdef " (p "ifdef-condition: " clause) > n> p n
-			 "#else /* !(" (s clause) ") */" n> p n
+		       '("#ifdef " (p "ifdef-condition: " clause) > n> ~ n
+			 "#else /* !(" (s clause) ") */" n> ~ n
 			 "#endif // " (s clause) n>
 			 )
 		       "ifdef"
@@ -133,7 +133,7 @@
 
 (tempo-define-template "c-ifndef"
 		       '("#ifndef " (p "ifndef-clause: " clause) > n 
-			 "#define " (s clause) n> p n
+			 "#define " (s clause) n> ~ n
 			 "#endif // " (s clause) n>
 			 )
 		       "ifndef"
