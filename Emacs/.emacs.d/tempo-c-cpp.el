@@ -198,26 +198,6 @@
 		       "Insert a C for loop: for(x = 0; x < ..; x++)"
 		       'c-tempo-tags)
 
-(tempo-define-template "c-malloc"
-		       '(>(p "type: " type) " * " (p "variable name: " var) " = (" (s type) " *) malloc(sizeof(" (s type) "));" n>
-			  "if (" (s var) " == NULL) {" n>
-			  > r n
-			 "}" > n>
-			 )
-		       "malloc"
-		       "Insert a C malloc statement to define and allocate a pointer"
-		       'c-tempo-tags)
-
-(tempo-define-template "c-main"
-		       '(> "int main(int argc, char *argv[]) {" >  n> 
-			 > r n
-			 "return 0;" > n
-			 "}" > n>
-			 )
-		       "main"
-		       "Insert a C main statement"
-		       'c-tempo-tags)
-
 (tempo-define-template "c-switch"
 		       '(> "switch(" (p "variable to check: " clause) ") {" >  n>  
 			 "case " > (p "first value: ") ": " ~ > n>
@@ -235,6 +215,36 @@
 			)
 		       "case"
 		       "Insert a C case statement"
+		       'c-tempo-tags)
+		       
+(tempo-define-template "c-main"
+		       '(> "int main(int argc, char *argv[]) {" >  n> 
+			 > r n
+			 "return 0;" > n
+			 "}" > n>
+			 )
+		       "main"
+		       "Insert a C main statement"
+		       'c-tempo-tags)
+		       
+(tempo-define-template "c-function"
+		       '(> (p "Type: " type) " " (p "Name: " name) "(" p ")" >  n>
+			   "{" > n>
+			   p n
+			   "}" > n>
+			   )
+		       "function"
+		       "Insert a function"
+		       'c-tempo-tags)
+		       
+(tempo-define-template "c-malloc"
+		       '(>(p "type: " type) " * " (p "variable name: " var) " = (" (s type) " *) malloc(sizeof(" (s type) "));" n>
+			  "if (" (s var) " == NULL) {" n>
+			  > r n
+			 "}" > n>
+			 )
+		       "malloc"
+		       "Insert a C malloc statement to define and allocate a pointer"
 		       'c-tempo-tags)
 
 ;;;C++-Mode Templates
@@ -269,6 +279,21 @@
 		       "Insert a class skeleton"
 		       'c++-tempo-tags)
 
+(tempo-define-template "c++-class-noncopyable"
+		       '(> "class " (P "class " var) n>
+			   "{" > n> 
+			   "public:" > n> 
+			   > (s var) "(" p  ");" n> 
+			   > "virtual ~" (s var) "();" n> 
+			   "private:" > p n>
+			   > (s var) "(const " (s var) " &);" n>
+			   > "void operator=(const " (s var) " &);"  n>
+			   "};" > n> p
+			   )
+		       "ncpclass"
+		       "New C++ class with private copy and assign"
+		       'c++-tempo-tags)
+
 (tempo-define-template "c++-getset"
 		       '((p "type: "     type 'noinsert)
 			 (p "variable: " var  'noinsert)
@@ -284,12 +309,87 @@
 		       'c++-tempo-tags)
 
 (tempo-define-template "c++-for-it"
-		       '(> "for (" (p "Type: " type) (if (y-or-n-p "const_iterator?") "::const_iterator " "::iterator ") (p "Iterator: " it) " = "
+		       '(> "for (" (p "Type: " type) (if (y-or-n-p "const_iterator? ") "::const_iterator " "::iterator ") (p "Iterator: " it) " = "
 			   (p "Container: " container) ".begin();" n>
 			   (s it) " != " (s container) ".end(); ++" (s it) ") {" > n> r n "}" >)
-		       "forit"
+		       "ifor"
 		       "Insert a C++ for loop iterating over an STL container"
 		       'c++-tempo-tags)
 
+(tempo-define-template "c++-cout"
+                       '(> "cout << \"" p "\" << endl;"
+                           )
+                       "cout"
+                       "cout with endl"
+                       'c++-tempo-tags)
+
+(tempo-define-template "c++-doxygen-class"
+                       '("/** @brief "  p n> n>
+                         "@author " (getenv "USERNAME") n>
+                         "*/" n>
+                           )
+                       "dclass"
+                       "New doxygen C++ class header"
+                       'c++-tempo-tags)
+                       
+(tempo-define-template "c++-using"
+                       '(> "using namespace std" p ";"
+                           )
+                       "using"
+                       "using namespace"
+                       'c++-tempo-tags)
+                       
+(tempo-define-template "c++-functor-class"
+		       '(>
+			 "struct " (P "Type: " type) n>
+			 "{" n>
+			 "void operator()(" p ")" n>
+			 "{" > n>
+			 p n>
+			 "}" > n>
+			 "};" > n>
+			 )
+		       "functor"
+		       "functor class"
+		       'c++-tempo-tags)
+
+(tempo-define-template "c++-try"
+		       '(> "try" n>
+			   "{" > n> r n
+			   "} " p >
+			   )
+		       "try"
+		       "Insert C++ try statement"
+		       'c++-tempo-tags)
+
+(tempo-define-template "c++-catch"
+		       '(> "catch (std::exception& ex)" n>
+			   "{" > n> r n
+			   p
+			   "}" >
+			   n>
+			   ) 
+		       "catch"
+		       "Insert C++ catch statement"
+		       'c++-tempo-tags)
+
+(tempo-define-template "c++-for_each"
+		       '(> "for_each(" 
+			   (P "Container: " cont) ".begin(), "
+			   (s cont) ".end(), &" p
+			   (P "Method: " method) ");" >
+			   )
+		       "for_each"
+		       "C++ STL for_each with method call no args)"
+		       'c++-tempo-tags)
+
+(tempo-define-template "c++-copy-iter"
+                       '(> "copy(" (P "iterator: " iter) ".begin(), "
+                           (s iter) ".end(), " p ");"
+                           )
+                       "icopy"
+                       "C++ STL copy"
+                       'c++-tempo-tags)
+                       
 (provide 'tempo-c-cpp)
 ;;; tempo-c-cpp.el ends here
