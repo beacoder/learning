@@ -354,24 +354,25 @@
 		       'c++-tempo-tags)
 
 (tempo-define-template "c++-try"
-		       '(> "try" n>
-			   "{" > n> r n
-			   "} " ~ >
-			   )
-		       "try"
-		       "Insert C++ try statement"
-		       'c++-tempo-tags)
+                       '(> "try" n>
+                           "{" > n > r 
+			   ~ > n
+                           "}" >
+                           )
+                       "try"
+                       "Insert C++ try statement"
+                       'c++-tempo-tags)
 
 (tempo-define-template "c++-catch"
-		       '(> "catch (std::exception& ex)" n>
-			   "{" > n> r n
-			   ~
-			   "}" >
-			   n>
-			   ) 
-		       "catch"
-		       "Insert C++ catch statement"
-		       'c++-tempo-tags)
+                       '(> "catch (std::exception& ex)" n>
+                           "{" > n > r
+			   ~ > n
+                           "}" >
+                           n>
+                           ) 
+                       "catch"
+                       "Insert C++ catch statement"
+                       'c++-tempo-tags)
 
 (tempo-define-template "c++-for_each"
 		       '(> "for_each(" 
