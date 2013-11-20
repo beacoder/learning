@@ -228,9 +228,9 @@
 		       'c-tempo-tags)
 		       
 (tempo-define-template "c-function"
-		       '(> (p "Type: " type) " " (p "Name: " name) "(" ~ ")" >  n>
+		       '(> (p "return type: " type) " " (p "name: " name) "(" ~ ")" >  n>
 			   "{" > n>
-			   ~ n
+			   n
 			   "}" > n>
 			   )
 		       "function"
@@ -309,8 +309,8 @@
 		       'c++-tempo-tags)
 
 (tempo-define-template "c++-for-it"
-		       '(> "for (" (p "Type: " type) (if (y-or-n-p "const_iterator? ") "::const_iterator " "::iterator ") (p "Iterator: " it) " = "
-			   (p "Container: " container) ".begin();" n>
+		       '(> "for (" (p "type: " type) (if (y-or-n-p "const_iterator? ") "::const_iterator " "::iterator ") (p "iterator: " it) " = "
+			   (p "container: " container) ".begin();" n>
 			   (s it) " != " (s container) ".end(); ++" (s it) ") {" > n> r n "}" >)
 		       "ifor"
 		       "Insert a C++ for loop iterating over an STL container"
@@ -338,20 +338,20 @@
                        "using"
                        "using namespace"
                        'c++-tempo-tags)
-                       
+
 (tempo-define-template "c++-functor-class"
-		       '(>
-			 "struct " (p "Type: " type) n>
-			 "{" n>
-			 "void operator()(" ~ ")" n>
-			 "{" > n>
-			 ~ n>
-			 "}" > n>
-			 "};" > n>
-			 )
-		       "functor"
-		       "functor class"
-		       'c++-tempo-tags)
+                       '(>
+                         "struct " (p "classname: " type) n>
+                         "{" n>
+                         (p "return type: " return) " operator (" ~ ")" n>
+                         "{" > n>
+			 n>
+                         "}" > n>
+                         "};" > n>
+                         )
+                       "functor"
+                       "functor class"
+                       'c++-tempo-tags)
 
 (tempo-define-template "c++-try"
                        '(> "try" n>
@@ -376,11 +376,11 @@
 
 (tempo-define-template "c++-for_each"
 		       '(> "for_each(" 
-			   (p "Container: " cont) ".begin(), "
+			   (p "container: " cont) ".begin(), "
 			   (s cont) ".end(), &" ~
-			   (p "Method: " method) ");" >
+			   (p "method: " method) ");" >
 			   )
-		       "for_each"
+		       "ieach"
 		       "C++ STL for_each with method call no args)"
 		       'c++-tempo-tags)
 
