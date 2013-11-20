@@ -89,22 +89,22 @@
 (add-hook 'c++-mode-hook '(lambda () (my-tempo-c-cpp-bindings)))
 
 ;; the following macros allow to set point using the ~ character in tempo templates
- 
+
 (defvar tempo-initial-pos nil
-   "Initial position in template after expansion")
- (defadvice tempo-insert( around tempo-insert-pos act )
-   "Define initial position."
-   (if (eq element '~)
-         (setq tempo-initial-pos (point-marker))
-     ad-do-it))
- (defadvice tempo-insert-template( around tempo-insert-template-pos act )
-   "Set initial position when defined. ChristophConrad"
-   (setq tempo-initial-pos nil)
-   ad-do-it
-   (if tempo-initial-pos
-       (progn
-         (put template 'no-self-insert t)
-         (goto-char tempo-initial-pos))
+  "Initial position in template after expansion")
+(defadvice tempo-insert( around tempo-insert-pos act )
+  "Define initial position."
+  (if (eq element '~)
+      (setq tempo-initial-pos (point-marker))
+    ad-do-it))
+(defadvice tempo-insert-template( around tempo-insert-template-pos act )
+  "Set initial position when defined. ChristophConrad"
+  (setq tempo-initial-pos nil)
+  ad-do-it
+  (if tempo-initial-pos
+      (progn
+	(put template 'no-self-insert t)
+	(goto-char tempo-initial-pos))
     (put template 'no-self-insert nil)))
 
 ;;; Preprocessor Templates (appended to c-tempo-tags)
