@@ -64,7 +64,7 @@
 ;; --- C++ statements
 ;;      class			class xxx { ... };
 ;;      getset			accessor/mutator
-;;      forit                   for (type::iterator it = container.begin(); it != container.end(); ++it) { }
+;;      ifor                    for (type::iterator it = container.begin(); it != container.end(); ++it) { }
 
 (require 'tempo)
 (setq tempo-interactive t)
