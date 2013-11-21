@@ -2,6 +2,8 @@
 
 ;; using emacs-w3m to surf the web
 
+(require 'w3m-load)
+
 (setq w3m-coding-system 'utf-8
       w3m-file-coding-system 'utf-8
       w3m-file-name-coding-system 'utf-8
