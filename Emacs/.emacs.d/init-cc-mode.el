@@ -74,7 +74,7 @@
  class name. This might still be somewhat buggy."
   (interactive "sclass name: ")
   (let* ((header-file-name (concat (downcase name) ".hpp"))
-		 (header-include-string (upcase (concat name "_HH_INCLUDED")))
+		 (header-include-string (upcase (concat name "_H_INCLUDED")))
 		 (def-file-name    (concat (downcase name) ".cpp")))
 
 	;; write header file
