@@ -1,6 +1,7 @@
 ;; -*- coding: utf-8 -*-
 
-;; using emacs-w3m to surf the web
+;; install w3m and emacs-w3m first
+;; then use emacs to view web pages
 
 (require 'w3m-load)
 
