@@ -293,6 +293,37 @@
 		       "ncpclass"
 		       "New C++ class with private copy and assign"
 		       'c++-tempo-tags)
+		       
+(tempo-define-template "c++-class-singleton"
+		       '(> "class " (p "class " var) n>
+			   "{" > n> 
+			   "public:" > n> 
+			   > "static " (s var) "& instance();" n>
+			   > n>
+			   "private:" > ~ n>
+			   > (s var) "();" n> 
+			   > "~" (s var) "();" n> 
+			   "};" > n>
+			   > n>
+			   > "inline " (s var) "::" (s var) "()" n>
+			   "{" > n>
+			   > n>
+			   "};" > n>
+			   > n>
+			   > "inline " (s var) "::~" (s var) "()" n>
+			   "{" > n>
+			   > n>
+			   "};" > n>
+			   > n>
+			   > "/*static*/ " (s var) "& " (s var) "::instance();" n> 
+			   "{" > n>
+			   > "static " (s var) " unique;" n>
+			   > "return (unique);" n>
+			   "};" > n> ~
+			   )
+		       "singleton"
+		       "New singleton C++ class"
+		       'c++-tempo-tags)
 
 (tempo-define-template "c++-getset"
 		       '((p "type: "     type 'noinsert)
