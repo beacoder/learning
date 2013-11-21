@@ -59,9 +59,6 @@
 
 ;; jump to the end of the function    
 (add-hook 'c-mode-common-hook (lambda() (local-set-key (kbd "C-M-e") 'c-end-of-defun)))
-    
-;; use <f5> to compile
-(add-hook 'c-mode-common-hook (lambda() (local-set-key (kbd "<f5>") 'compile)))
 
 ;;----------------------------------------------------------------------------
 ;; generate the template c++ header and source files
