@@ -115,3 +115,30 @@ key-bindings:
 commands:
 "c-beginning-of-defun"     jump to the beginning of the function
 "c-end-of-defun"           jump to the end of the function
+
+6.Emacs-w3m
+descrpition: interface for w3m on emacs to surf the web
+key-bindings: 
+
+"q"             quit w3m
+"C-x-k"         close current tab
+"U"             open URL
+"V"             open file
+"G"             open URL on current tab
+"S"             search with google
+
+"B"             back
+"N"             forward
+"H"             home page
+"R"             refresh
+
+">"             scroll screen to left
+"<"             scroll screen to right
+
+"a"             add bookmark
+"v"             view bookmark
+"E"             edit bookmark
+
+"C-c C-k"       stop loading current page
+"M"             open current page with external web browser
+"ESC M"         open URL with external web browser
