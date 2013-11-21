@@ -73,9 +73,9 @@
  creates the  most important function templates in a named after the
  class name. This might still be somewhat buggy."
   (interactive "sclass name: ")
-  (let* ((header-file-name (concat (downcase name) ".hh"))
+  (let* ((header-file-name (concat (downcase name) ".hpp"))
 		 (header-include-string (upcase (concat name "_HH_INCLUDED")))
-		 (def-file-name    (concat (downcase name) ".cc")))
+		 (def-file-name    (concat (downcase name) ".cpp")))
 
 	;; write header file
 	(set-buffer (get-buffer-create header-file-name))
