@@ -27,6 +27,9 @@
 ;; @see http://stackoverflow.com/questions/2068697/emacs-is-slow-opening-recent-files
 (setq recentf-keep '(file-remote-p file-readable-p))
 
+;; use <f5> to compile
+(global-set-key (kbd "<f5>") 'compile)
+
 ;;----------------------------------------------------------------------------
 ;; mode setting
 ;;----------------------------------------------------------------------------
