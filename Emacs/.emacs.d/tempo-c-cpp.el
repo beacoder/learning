@@ -48,27 +48,27 @@
 ;; Feel free to adapt the templates to your own programming style.
 ;;
 ;; List of abbreviations: 
-;;          <abbrev>                <correspondant sequence> 
+;;            <abbrev>                <correspondant sequence> 
 ;; ---- Preprocessor statements --- 
-;;            include                  #include   
-;;           define                  #define
+;;            include                 #include   
+;;            define                  #define
 ;;            ifdef                   #ifdef
 ;;            ifndef                  #ifndef 
 ;; --- C statements
-;;            if                            if (...) { }
-;;            else                          else { ... }
-;;            ifelse                         if (...) { } else { }
-;;            while                        while (...) { }
-;;            for                        for (...) { }
-;;            fori                        for (i=0; i < limit; i++) { }
-;;            switch                        switch() {...}
-;;            case                        case: ... break;
-;;            main                        int main() { ... }
-;;            malloc                        type * var = (type *) malloc(...)
+;;            if                      if (...) { }
+;;            else                    else { ... }
+;;            ifelse                  if (...) { } else { }
+;;            while                   while (...) { }
+;;            for                     for (...) { }
+;;            fori                    for (i=0; i < limit; i++) { }
+;;            switch                  switch() {...}
+;;            case                    case: ... break;
+;;            main                    int main() { ... }
+;;            malloc                  type * var = (type *) malloc(...)
 ;; --- C++ statements
-;;      class                        class xxx { ... };
-;;      getset                        accessor/mutator
-;;      ifor                    for (type::iterator it = container.begin(); it != container.end(); ++it) { }
+;;            class                   class xxx { ... };
+;;            getset                  accessor/mutator
+;;            ifor                    for (type::iterator it = container.begin(); it != container.end(); ++it) { }
 
 (require 'tempo)
 (setq tempo-interactive t)
