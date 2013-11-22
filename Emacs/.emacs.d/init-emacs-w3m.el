@@ -17,14 +17,18 @@
       w3m-home-page "http://www.google.com"
       w3m-use-toolbar t
       ;; w3m-use-tab     nil
-      w3m-key-binding 'info)
+      w3m-key-binding 'info
+      w3m-command-arguments       '("-F" "-cookie")
+      w3m-mailto-url-function     'compose-mail
+      browse-url-browser-function 'w3m
+      mm-text-html-renderer       'w3m)
 
 ;; show images in the browser
 ;; (setq w3m-default-display-inline-images t)
 
 (setq w3m-search-default-engine "g")
 (eval-after-load "w3m-search" '(progn
-                                 ;; C-u S g RET <search term> RET
+                                 ;; S g RET <search term> RET
                                  (add-to-list 'w3m-search-engine-alist '("g" "http://www.google.com/search?hl=en&q=%s" utf-8))
                                  (add-to-list 'w3m-search-engine-alist '("wz" "http://zh.wikipedia.org/wiki/Special:Search?search=%s" utf-8))
                                  (add-to-list 'w3m-search-engine-alist '("q" "http://www.google.com/search?hl=en&q=%s+site:stackoverflow.com" utf-8))
@@ -34,11 +38,6 @@
                                  (add-to-list 'w3m-search-engine-alist '("d" "http://dictionary.reference.com/search?q=%s" utf-8))
                                  (add-to-list 'w3m-search-engine-alist '("j" "http://www.google.com/search?ie=UTF-8&oe=UTF-8&sourceid=navclient&btnI=1&q=%s+site:developer.mozilla.org" utf-8))
                                  ))
-
-(setq w3m-command-arguments       '("-F" "-cookie")
-      w3m-mailto-url-function     'compose-mail
-      browse-url-browser-function 'w3m
-      mm-text-html-renderer       'w3m)
 
 ;; bind this function to A, which is the normal w3m bookmark binding:
 (eval-after-load "w3m" '(progn
@@ -71,6 +70,7 @@
                                 keyword
                                 "\"&browser=Default&mp=1&ml=1&me=1&md=1&filterChecked=true" ))
     ))
+(global-set-key (kbd "C-c e") 'w3mext-hacker-search)
 
 (defun w3mext-open-link-or-image-or-url ()
   "Opens the current link or image or current page's uri or any url-like text under cursor in firefox."
@@ -88,7 +88,5 @@
   (let ((keyword (thing-at-point 'symbol)))
     (w3m-search "j" keyword)
     ))
-
-(add-hook 'prog-mode-hook '( lambda () (local-set-key (kbd "C-c ; h") 'w3mext-hacker-search)))
 
 (provide 'init-emacs-w3m)
