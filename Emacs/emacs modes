@@ -20,7 +20,7 @@ key-bindings:
 【% m】	    mark by pattern (regex)
 【g】	      refresh dir listing
 【^】	      go to parent dir
- "C-x C-j"  dired-jump used to go to current file's directory
+【C-x C-j】 dired-jump used to go to current file's directory
  
 2.Magit-mode 
 descrpition: magit-mode is an excellent interface to the git version control system
@@ -121,6 +121,7 @@ descrpition: interface for w3m on emacs to surf the web
 key-bindings: 
 
 "R"             refresh current page
+"q"             quit w3m
 
 "p"             move back to the previous page in the history
 "n"             move forward to the next page in the history
@@ -132,7 +133,6 @@ key-bindings:
 "M"             display the current page using external web browser
 
 "D"	            download the file or the page under point
-
 "e"	            edit the local file displayed as the current page
 "E"	            edit the local file which is pointed to by URL under point
 
@@ -151,5 +151,3 @@ key-bindings:
 
 "C-c C-c"	      submit the form at point
 "C-c C-k"       stop loading current page
-
-"q"             quit w3m
