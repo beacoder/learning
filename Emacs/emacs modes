@@ -126,24 +126,26 @@ key-bindings:
 "C c"	          redisplay the current page, specifying a charset
 "C C"           redisplay the current page and reset the user-specified charset and	content type
 
-"["             move the point to the previous form
-"]"             move the point to the next form
-"}"             move the point to the next image
-"{"             move the point to the previous image
+"g"             visit the web page
+"G"             visit the web page in a new session
+"H"             goto home page
+"M"             display the current page using external web browser
 
-"M-i"	          Save the image under point to a file.
-"I"	            Toggle the visibility of all images.
-"M-["	          Zoom in an image on the point.
-"M-]"	          Zoom out an image on the point.
+"s"             search with the default engine
+"S"             search with specific engine
 
 "p"             move back to the previous page in the history
 "n"             move forward to the next page in the history
 "u"	            attempt to move to the parent directory of the page
 
-"g"             visit the web page
-"G"             visit the web page in a new session
-"H"             goto home page
-"M"             display the current page using external web browser
+"["             move the point to the previous form
+"]"             move the point to the next form
+"}"             move the point to the next image
+"{"             move the point to the previous image
+"M-i"	          save the image under point to a file.
+"I"	            toggle the visibility of all images.
+"M-["	          zoom in an image on the point.
+"M-]"	          zoom out an image on the point.
 
 "T"             display a directory tree
 "D"	            download the file or the page under point
@@ -154,9 +156,6 @@ key-bindings:
 "<DEL>"         scroll down
 ">"             scroll to left
 "<"             scroll to right
-
-"s"             search with the default engine
-"S"             search with specific engine
 
 "v"             display bookmark
 "a"             add url of current page to bookmark
