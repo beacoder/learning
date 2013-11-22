@@ -120,8 +120,21 @@ commands:
 descrpition: mode for browsing web.
 key-bindings: 
 
+"q"             quit
 "R"             refresh current page
-"q"             quit w3m
+"!"	            redisplay the page, specifying a content type
+"C c"	          redisplay the current page, specifying a charset
+"C C"           redisplay the current page and reset the user-specified charset and	content type
+
+"["             move the point to the previous form
+"]"             move the point to the next form
+"}"             move the point to the next image
+"{"             move the point to the previous image
+
+"M-i"	          Save the image under point to a file.
+"I"	            Toggle the visibility of all images.
+"M-["	          Zoom in an image on the point.
+"M-]"	          Zoom out an image on the point.
 
 "p"             move back to the previous page in the history
 "n"             move forward to the next page in the history
