@@ -125,16 +125,16 @@ key-bindings:
 
 "p"             move back to the previous page in the history
 "n"             move forward to the next page in the history
-"u"	            attempt to move to the parent directory of the page
+"u"	        attempt to move to the parent directory of the page
 
 "g"             visit the web page
 "G"             visit the web page in a new session
 "H"             goto home page
 "M"             display the current page using external web browser
 
-"D"	            download the file or the page under point
-"e"	            edit the local file displayed as the current page
-"E"	            edit the local file which is pointed to by URL under point
+"D"	        download the file or the page under point
+"e"	        edit the local file displayed as the current page
+"E"	        edit the local file which is pointed to by URL under point
 
 "<SPC>"         scroll up
 "<DEL>"         scroll down
@@ -149,5 +149,5 @@ key-bindings:
 "M-a"           add url under point to bookmark
 "C-k"           kill the current entry of this bookmark
 
-"C-c C-c"	      submit the form at point
+"C-c C-c"	submit the form at point
 "C-c C-k"       stop loading current page
