@@ -132,6 +132,7 @@ key-bindings:
 "H"             goto home page
 "M"             display the current page using external web browser
 
+"T"             display a directory tree
 "D"	            download the file or the page under point
 "e"	            edit the local file displayed as the current page
 "E"	            edit the local file which is pointed to by URL under point
@@ -141,8 +142,8 @@ key-bindings:
 ">"             scroll to left
 "<"             scroll to right
 
-"s"             search with google
-"T"             display a directory tree
+"s"             search with the default engine
+"S"             search with specific engine
 
 "v"             display bookmark
 "a"             add url of current page to bookmark
