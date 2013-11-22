@@ -75,6 +75,7 @@
 (defun w3mext-open-link-or-image-or-url ()
   "Opens the current link or image or current page's uri or any url-like text under cursor in firefox."
   (interactive)
+  (require 'w3m)
   (let (url)
     (if (or (string= major-mode "w3m-mode") (string= major-mode "gnus-article-mode"))
         (setq url (or (w3m-anchor) (w3m-image) w3m-current-url)))
@@ -85,6 +86,7 @@
 (defun w3mext-search-js-api-mdn ()
   "search current symbol under cursor in Mozilla Developer Network (MDN)"
   (interactive)
+  (require 'w3m)
   (let ((keyword (thing-at-point 'symbol)))
     (w3m-search "j" keyword)
     ))
