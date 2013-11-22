@@ -1,3 +1,7 @@
+;; This buffer is for notes you don't want to save, and for Lisp evaluation.
+;; If you want to create a file, visit that file with C-x C-f,
+;; then enter the text in that file's own buffer.
+
 ;;; tempo-c-cpp.el --- abbrevs for c/c++ programming
 ;;
 ;; Copyright (C) 2008  Sebastien Varrette
@@ -44,26 +48,26 @@
 ;; Feel free to adapt the templates to your own programming style.
 ;;
 ;; List of abbreviations: 
-;;  	<abbrev>		<correspondant sequence> 
+;;          <abbrev>                <correspondant sequence> 
 ;; ---- Preprocessor statements --- 
-;;    	include          	#include   
-;;   	define          	#define
-;;    	ifdef           	#ifdef
-;;    	ifndef          	#ifndef 
+;;            include                  #include   
+;;           define                  #define
+;;            ifdef                   #ifdef
+;;            ifndef                  #ifndef 
 ;; --- C statements
-;;    	if            		if (...) { }
-;;    	else  			else { ... }
-;;    	ifelse 			if (...) { } else { }
-;;    	while			while (...) { }
-;;    	for			for (...) { }
-;;    	fori			for (i=0; i < limit; i++) { }
-;;    	switch			switch() {...}
-;;    	case			case: ... break;
-;;    	main			int main() { ... }
-;;    	malloc			type * var = (type *) malloc(...)
+;;            if                            if (...) { }
+;;            else                          else { ... }
+;;            ifelse                         if (...) { } else { }
+;;            while                        while (...) { }
+;;            for                        for (...) { }
+;;            fori                        for (i=0; i < limit; i++) { }
+;;            switch                        switch() {...}
+;;            case                        case: ... break;
+;;            main                        int main() { ... }
+;;            malloc                        type * var = (type *) malloc(...)
 ;; --- C++ statements
-;;      class			class xxx { ... };
-;;      getset			accessor/mutator
+;;      class                        class xxx { ... };
+;;      getset                        accessor/mutator
 ;;      ifor                    for (type::iterator it = container.begin(); it != container.end(); ++it) { }
 
 (require 'tempo)
@@ -103,321 +107,302 @@
   ad-do-it
   (if tempo-initial-pos
       (progn
-	(put template 'no-self-insert t)
-	(goto-char tempo-initial-pos))
+        (put template 'no-self-insert t)
+        (goto-char tempo-initial-pos))
     (put template 'no-self-insert nil)))
 
 ;;; Preprocessor Templates (appended to c-tempo-tags)
 (tempo-define-template "c-include"
-		       '("#include <" r ".h>" > n
-			 )
-		       "include"
-		       "Insert a #include <> statement"
-		       'c-tempo-tags)
+                       '("#include <" r ".h>" > n
+                         )
+                       "include"
+                       "Insert a #include <> statement"
+                       'c-tempo-tags)
 
 (tempo-define-template "c-define"
-		       '("#define " r " " > n
-			 )
-		       "define"
-		       "Insert a #define statement"
-		       'c-tempo-tags)
+                       '("#define " r " " > n
+                         )
+                       "define"
+                       "Insert a #define statement"
+                       'c-tempo-tags)
 
 (tempo-define-template "c-ifdef"
-		       '("#ifdef " (p "ifdef-condition: " clause) > n> ~ n
-			 "#else /* !(" (s clause) ") */" n> ~ n
-			 "#endif // " (s clause) n>
-			 )
-		       "ifdef"
-		       "Insert a #ifdef #else #endif statement"
-		       'c-tempo-tags)
+                       '("#ifdef " (p "ifdef-condition: " clause) > n> ~ n
+                         "#else /* !(" (s clause) ") */" n> ~ n
+                         "#endif // " (s clause) n>
+                         )
+                       "ifdef"
+                       "Insert a #ifdef #else #endif statement"
+                       'c-tempo-tags)
 
 (tempo-define-template "c-ifndef"
-		       '("#ifndef " (p "ifndef-clause: " clause) > n 
-			 "#define " (s clause) n> ~ n
-			 "#endif // " (s clause) n>
-			 )
-		       "ifndef"
-		       "Insert a #ifndef #define #endif statement"
-		       'c-tempo-tags)
+                       '("#ifndef " (p "ifndef-clause: " clause) > n 
+                         "#define " (s clause) n> ~ n
+                         "#endif // " (s clause) n>
+                         )
+                       "ifndef"
+                       "Insert a #ifndef #define #endif statement"
+                       'c-tempo-tags)
 
 ;;; C-Mode Templates
 (tempo-define-template "c-if"
-		       '(> "if (" ~ " ) { "  n>
-			 > n
-			 "}" > n> 
-			 )
-		       "if"
-		       "Insert a C if statement"
-		       'c-tempo-tags)
+                       '(> "if (" ~ ")" > n
+			   > "{" > n> n> "}" > n> 
+			   )
+                       "if"
+                       "Insert a C if statement"
+                       'c-tempo-tags)
 
 (tempo-define-template "c-else"
-		       '(> "else {" n>
-			 > ~ n 
-			 "}" > n>
-			 )
-		       "else"
-		       "Insert a C else statement"
-		       'c-tempo-tags)
+                       '(> "else"> n
+			   > "{" n> ~ n "}" > n>
+                         )
+                       "else"
+                       "Insert a C else statement"
+                       'c-tempo-tags)
 
 (tempo-define-template "c-if-else"
-                       '(> "if (" ~ " ) { "  n>
-                         > n
-                         "} else {" > n>
-			 > n
-			 "}" > n>     
-			 )
-		       "ifelse"
-		       "Insert a C if else statement"
-		       'c-tempo-tags)
+                       '(> "if (" ~ ")" > n
+			   > "{" > n > n > "}" > n
+			   > "else" > n
+			   > "{" > n > n > "}" > n>
+			   )
+                       "ifelse"
+                       "Insert a C if else statement"
+                       'c-tempo-tags)
 
 (tempo-define-template "c-while"
-                       '(> "while (" ~ " ) { "  n>
-                         > n
-                         "}" > n>      
+                       '(> "while (" ~ ")" > n
+			   > "{" > n > n > "}" > n>      
                          )
-		       "while"
-		       "Insert a C while statement"
-		       'c-tempo-tags)
+                       "while"
+                       "Insert a C while statement"
+                       'c-tempo-tags)
 
 (tempo-define-template "c-for"
-                       '(> "for (" ~ " ) { "  n>
-                         > n
-                         "}" > n>      
-                         )
-		       "for"
-		       "Insert a C for statement"
-		       'c-tempo-tags)
+                       '(> "for (" ~ ")" > n
+			   > "{" > n> > n > "}" > n>
+			   )
+                       "for"
+                       "Insert a C for statement"
+                       'c-tempo-tags)
 
 (tempo-define-template "c-for-i"
-		       '(> "for (" (p "variable: " var) " = 0; " (s var)
-			 " < "(p "upper bound: " ub)"; " (s var) "++) {" >  n> 
-			 > r n 
-			 "}" > n>
-			 )
-		       "fori"
-		       "Insert a C for loop: for(x = 0; x < ..; x++)"
-		       'c-tempo-tags)
+                       '(> "for (" (p "variable: " var) " = 0; " (s var)
+			   " < "(p "upper bound: " ub)"; " (s var) "++)" > n
+			   > "{" >  n> > r n "}" > n>
+			   )
+                       "fori"
+                       "Insert a C for loop: for(x = 0; x < ..; x++)"
+                       'c-tempo-tags)
 
 (tempo-define-template "c-switch"
-		       '(> "switch(" (p "variable to check: " clause) ") {" >  n>  
-			 "case " > (p "first value: ") ": " ~ > n>
-			 " break;" > n>
-			 >"default:" > n>
-			 "}" > n>
-			 )
-		       "switch"
-		       "Insert a C switch statement"
-		       'c-tempo-tags)
+                       '(> "switch(" (p "variable to check: " clause) ")" > n
+			   > "{" >  n
+			   > "case " > (p "first value: ") ": " ~ > n
+			   > " break;" > n > n
+			   > "default:" > n
+			   > " break;" > n
+			   > "}" > n>
+			   )
+                       "switch"
+                       "Insert a C switch statement"
+                       'c-tempo-tags)
 
 (tempo-define-template "c-case"
-		       '("case " (p "value: ") ":" ~ > n>
-			   "break;" > n>
-			)
-		       "case"
-		       "Insert a C case statement"
-		       'c-tempo-tags)
-		       
-(tempo-define-template "c-main"
-		       '(> "int main(int argc, char *argv[]) {" >  n> 
-			 > r n
-			 "return 0;" > n
-			 "}" > n>
-			 )
-		       "main"
-		       "Insert a C main statement"
-		       'c-tempo-tags)
-		       
-(tempo-define-template "c-function"
-		       '(> (p "return type: " type) " " (p "name: " name) "(" ~ ")" >  n>
-			   "{" > n>
-			   n
-			   "}" > n>
+                       '(> "case " (p "value: ") ": " ~ > n
+			   > "break;" > n>
 			   )
-		       "function"
-		       "Insert a function"
-		       'c-tempo-tags)
-		       
+                       "case"
+                       "Insert a C case statement"
+                       'c-tempo-tags)
+                       
+(tempo-define-template "c-main"
+                       '(> "int main(int argc, char *argv[])" > n
+			   > "{" > n > ~ n > n > "return 0;" > n "}" > n>
+			   )
+                       "main"
+                       "Insert a C main statement"
+                       'c-tempo-tags)
+                       
+(tempo-define-template "c-function"
+                       '(> (p "return type: " type) " " (p "name: " name) "(" ~ ")" >  n>
+                           "{" > n > n > "}" > n>
+                           )
+                       "function"
+                       "Insert a function"
+                       'c-tempo-tags)
+                       
 (tempo-define-template "c-malloc"
-		       '(>(p "type: " type) " * " (p "variable name: " var) " = (" (s type) " *) malloc(sizeof(" (s type) "));" n>
-			  "if (" (s var) " == NULL) {" n>
-			  > r n
-			 "}" > n>
-			 )
-		       "malloc"
-		       "Insert a C malloc statement to define and allocate a pointer"
-		       'c-tempo-tags)
+                       '(>(p "type: " type) " * " (p "variable name: " var) " = (" (s type) " *) malloc(sizeof(" (s type) "));" n>
+                          "if (NULL != " (s var) ")" n>
+			  "{" n> ~ n> "}" > n>
+			  )
+                       "malloc"
+                       "Insert a C malloc statement to define and allocate a pointer"
+                       'c-tempo-tags)
 
 ;;;C++-Mode Templates
 ;;(setq max-lisp-eval-depth 500) 
 
 (tempo-define-template "c++-class"
-		        '("/**" > n> 
-			  "*" (s class) "."> n>
-			  "*/" > n>
-			  "class " (p "classname: " class) " {" > n> 
-			  "friend std::ostream& operator<<(std::ostream& os, const " (s class) " & f);" > n> 
-			  > n>
-			  (p "variable member type: " type 'noinsert)
+                        '("/**" > n> 
+                          "*" (s class) "."> n>
+                          "*/" > n>
+                          "class " (p "classname: " class) " {" > n> 
+                          "friend std::ostream& operator<<(std::ostream& os, const " (s class) " & f);" > n> 
+                          > n>
+                          (p "variable member type: " type 'noinsert)
                           (p "variable member name: " var  'noinsert)
-			  (tempo-save-named 'm_var (concat "_" (tempo-lookup-named 'var)))
-			  (s type) " " (s m_var) ";" > n>
-			  > ~ n>	
-			  "public:" > n>
-			  (s class) "(); \t//the default constructor" n>
-			  (s class) "(const " (s class) " &c);" n>
-			  "~" (s class) "() {}" > n>
-			  > n>
-			  "/* Accessors */" > n>
-			  (s type) " get" (s fnBase) "() const { return "(s m_var) "; }" > n>
-			  > n>
-			  "/* Mutators */" > n>
-			  "void set" (s fnBase) "(" (s type) " " (s var) ") { " (s m_var) " = " (s var) "; }" > n>
-			  > n>
-			 "};\t// end of class " (s class) > n>
-			 )
-		       "class"
-		       "Insert a class skeleton"
-		       'c++-tempo-tags)
+                          (tempo-save-named 'm_var (concat "_" (tempo-lookup-named 'var)))
+                          (s type) " " (s m_var) ";" > n>
+                          > ~ n>        
+                          "public:" > n>
+                          (s class) "(); \t//the default constructor" n>
+                          (s class) "(const " (s class) " &c);" n>
+                          "~" (s class) "() {}" > n>
+                          > n>
+                          "/* Accessors */" > n>
+                          (s type) " get" (s fnBase) "() const { return "(s m_var) "; }" > n>
+                          > n>
+                          "/* Mutators */" > n>
+                          "void set" (s fnBase) "(" (s type) " " (s var) ") { " (s m_var) " = " (s var) "; }" > n>
+                          > n>
+                         "};\t// end of class " (s class) > n>
+                         )
+                       "class"
+                       "Insert a class skeleton"
+                       'c++-tempo-tags)
 
 (tempo-define-template "c++-class-noncopyable"
-		       '(> "class " (p "class " var) n>
-			   "{" > n> 
-			   "public:" > n> 
-			   > (s var) "(" ~ ");" n> 
-			   > "virtual ~" (s var) "();" n> 
-			   "private:" > ~ n>
-			   > (s var) "(const " (s var) " &);" n>
-			   > "void operator=(const " (s var) " &);"  n>
-			   "};" > n> ~
-			   )
-		       "ncpclass"
-		       "New C++ class with private copy and assign"
-		       'c++-tempo-tags)
-		       
+                       '(> "class " (p "class " var) n
+			   > "{" > n
+			   > "public:" > n 
+                           > (s var) "();" n 
+                           > "virtual ~" (s var) "();" n> n
+			   > "private:" > n>
+                           > (s var) "(const " (s var) " &) {}" n
+                           > "void operator=(const " (s var) " &) {}" n
+			   > "};" > n> n>
+			   > "inline " (s var) "::" (s var) "()" n
+			   > "{" > n> n> "};" > n > n
+                           > "inline " (s var) "::~" (s var) "()" n
+			   > "{" > n > n> "};" > n> ~
+                           )
+                       "ncpclass"
+                       "New C++ class with private copy and assign"
+                       'c++-tempo-tags)
+                       
 (tempo-define-template "c++-class-singleton"
-		       '(> "class " (p "class " var) n>
-			   "{" > n> 
-			   "public:" > n> 
-			   > "static " (s var) "& instance();" n>
-			   > n>
-			   "private:" > ~ n>
-			   > (s var) "();" n> 
-			   > "~" (s var) "();" n> 
-			   "};" > n>
-			   > n>
-			   > "inline " (s var) "::" (s var) "()" n>
-			   "{" > n>
-			   > n>
-			   "};" > n>
-			   > n>
-			   > "inline " (s var) "::~" (s var) "()" n>
-			   "{" > n>
-			   > n>
-			   "};" > n>
-			   > n>
-			   > "/*static*/ " (s var) "& " (s var) "::instance();" n> 
-			   "{" > n>
-			   > "static " (s var) " unique;" n>
-			   > "return (unique);" n>
-			   "};" > n> ~
-			   )
-		       "singleton"
-		       "New singleton C++ class"
-		       'c++-tempo-tags)
+                       '(> "class " (p "class " var) n
+			   > "{" > n
+			   > "public:" > n 
+                           > "static " (s var) "& instance();" > n
+                           > n > "private:" > n
+                           > (s var) "();" n 
+                           > "~" (s var) "();" n 
+                           > "};" > n
+                           > n > "inline " (s var) "::" (s var) "()" n
+			   > "{" > n > n > "};" > n > n
+                           > "inline " (s var) "::~" (s var) "()" n
+			   > "{" > n > n > "};" > n > n>
+                           > "/*static*/ " (s var) "& " (s var) "::instance();" n
+			   > "{" > n>
+                           > "static " (s var) " unique;" n
+                           > "return (unique);" n
+			   > "};" > n > ~
+                           )
+                       "singleton"
+                       "New singleton C++ class"
+                       'c++-tempo-tags)
 
 (tempo-define-template "c++-getset"
-		       '((p "type: "     type 'noinsert)
-			 (p "variable: " var  'noinsert)
-			 (tempo-save-named 'virtual (if (y-or-n-p  "virtual?") "virtual " ""))
-			 (tempo-save-named 'm_var (concat "_" (tempo-lookup-named 'var)))
-			 (tempo-save-named 'fnBase (upcase-initials (tempo-lookup-named 'var)))
-			 (s type) " " (s m_var) ";" > n>
-			 (s virtual) (s type) " get" (s fnBase) "() const { return "(s m_var) "; }" > n>
-			 (s virtual) "void set" (s fnBase) "(" (s type) " " (s var) ") { " (s m_var) " = " (s var) "; }" > n>
-			 )
-		       "getset"
-		       "Insert get set methods"
-		       'c++-tempo-tags)
+                       '((p "type: "     type 'noinsert)
+                         (p "variable: " var  'noinsert)
+                         (tempo-save-named 'virtual (if (y-or-n-p  "virtual?") "virtual " ""))
+                         (tempo-save-named 'm_var (concat "_" (tempo-lookup-named 'var)))
+                         (tempo-save-named 'fnBase (upcase-initials (tempo-lookup-named 'var)))
+                         (s type) " " (s m_var) ";" > n>
+                         (s virtual) (s type) " get" (s fnBase) "() const { return "(s m_var) "; }" > n>
+                         (s virtual) "void set" (s fnBase) "(" (s type) " " (s var) ") { " (s m_var) " = " (s var) "; }" > n>
+                         )
+                       "getset"
+                       "Insert get set methods"
+                       'c++-tempo-tags)
 
 (tempo-define-template "c++-for-it"
-		       '(> "for (" (p "type: " type) (if (y-or-n-p "const_iterator? ") "::const_iterator " "::iterator ") (p "iterator: " it) " = "
-			   (p "container: " container) ".begin();" n>
-			   (s it) " != " (s container) ".end(); ++" (s it) ") {" > n> r n "}" >)
-		       "ifor"
-		       "Insert a C++ for loop iterating over an STL container"
-		       'c++-tempo-tags)
+                       '(> "for (" (p "type: " type) (if (y-or-n-p "const_iterator? ") "::const_iterator " "::iterator ") 
+			   (p "iterator: " it) " = "
+                           (p "container: " container) ".begin();" n
+			   > (s it) " != " (s container) ".end(); ++" (s it) ")" n
+			   > "{" > n> r n "}" > n >
+			   )
+                       "ifor"
+                       "Insert a C++ for loop iterating over an STL container"
+                       'c++-tempo-tags)
 
 (tempo-define-template "c++-cout"
-                       '(> "cout << \"" ~ "\" << endl;"
+                       '(> "cout << \"" ~ "\" << endl;" > n >
                            )
                        "cout"
                        "cout with endl"
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-doxygen-class"
-                       '("/** @brief " ~ n> n>
-                         "@author " (getenv "USERNAME") n>
-                         "*/" n>
+                       '(> "/** @brief " ~ n > n
+			   > "@author " (getenv "USERNAME") n
+			   > "*/" > n>
                            )
                        "dclass"
                        "New doxygen C++ class header"
                        'c++-tempo-tags)
                        
 (tempo-define-template "c++-using"
-                       '(> "using namespace std" ~ ";"
+                       '(> "using namespace " (p "name: " name) ";" > n >
                            )
                        "using"
                        "using namespace"
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-functor-class"
-                       '(>
-                         "struct " (p "classname: " type) n>
-                         "{" n>
-                         (p "return type: " return) " operator (" ~ ")" n>
-                         "{" > n>
-			 n>
-                         "}" > n>
-                         "};" > n>
-                         )
+                       '(> "struct " (p "classname: " type) n
+			   > "{" n 
+			   > (p "return type: " return) " operator (" ~ ")" n
+			   > "{" > n > n > "}" > n > "};" > n >
+			   )
                        "functor"
                        "functor class"
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-try"
                        '(> "try" n>
-                           "{" > n > r 
-			   ~ > n
-                           "}" >
+                           "{" > n > ~ > n > "}" > n >
                            )
                        "try"
                        "Insert C++ try statement"
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-catch"
-                       '(> "catch (std::exception& ex)" n>
-                           "{" > n > r
-			   ~ > n
-                           "}" >
-                           n>
+                       '(> "catch (std::exception& e)" n
+			   > "{" > n > ~ > n > "}" > n >
                            ) 
                        "catch"
                        "Insert C++ catch statement"
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-for_each"
-		       '(> "for_each(" 
-			   (p "container: " cont) ".begin(), "
-			   (s cont) ".end(), &" ~
-			   (p "method: " method) ");" >
-			   )
-		       "ieach"
-		       "C++ STL for_each with method call no args)"
-		       'c++-tempo-tags)
+                       '(> "for_each(" 
+                           (p "container: " cont) ".begin(), "
+                           (s cont) ".end(), &" ~
+                           (p "method: " method) ");" >
+                           )
+                       "ieach"
+                       "C++ STL for_each with method call no args)"
+                       'c++-tempo-tags)
 
 (tempo-define-template "c++-copy-iter"
                        '(> "copy(" (p "iterator: " iter) ".begin(), "
-                           (s iter) ".end(), " ~ ");"
+                           (s iter) ".end(), " ~ ");" >
                            )
                        "icopy"
                        "C++ STL copy"
