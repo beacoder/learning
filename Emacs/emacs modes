@@ -23,7 +23,7 @@ key-bindings:
 【C-x C-j】 dired-jump used to go to current file's directory
  
 2.Magit-mode 
-descrpition: magit-mode is an excellent interface to the git version control system
+descrpition: magit-mode is an excellent interface to the git version control system.
 commands and key-bindings: 
 
  "magit-status"  see git status
@@ -39,7 +39,7 @@ commands and key-bindings:
  "magit-push"    push updates to git repo
 
 3.Gnus
-descrpition: Gnus Network User Services, is a news and mail reader running under GNU Emacs
+descrpition: Gnus Network User Services, is a news and mail reader running under GNU Emacs.
 key-bindings:
 
 *Group* Buffer
@@ -81,7 +81,7 @@ key-bindings:
  "o"            download the attachment from the mail or post
  
 4.Compilation
-descrpition: used in program compiling process to help to locate the error code
+descrpition: used in program compiling process to help to locate the error code.
 key-bindings: 
 
 *Source Code Window*
@@ -96,7 +96,7 @@ key-bindings:
  "M-}"          locate next error message "occurring in a different file"
  
 5.C/CC-mode
-descrpition: mode used in c/c++ programming.
+descrpition: mode for c/c++ programming.
 key-bindings: 
 
 "M-;"           add comment at the end of the line
@@ -117,7 +117,7 @@ commands:
 "c-end-of-defun"           jump to the end of the function
 
 6.Emacs-w3m
-descrpition: interface for w3m on emacs to surf the web
+descrpition: mode for browsing web.
 key-bindings: 
 
 "R"             refresh current page
