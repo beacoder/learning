@@ -8,7 +8,7 @@ key-bindings:
 【q】	      Close the dir
 【Q】	      Query replace in marked files
 【A】	      Search marked files
- "M-,"	     Jump to the next occurrence
+【M-,】	    Jump to the next occurrence
 【C】	      Copy file
 【R】	      Rename file
 【D】	      Delete file
