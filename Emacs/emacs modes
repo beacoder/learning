@@ -110,7 +110,7 @@ key-bindings:
 "C-M-f"         Move forward over a balanced expression
 "C-M-b"         Move backward over a balanced expression
 "C-M-k"         Kill balanced expression forward
-"C-M-SPC"       Put the mark at the end of the sexp
+"C-M-<SPC>"     Put the mark at the end of the sexp
 
 commands:
 "c-beginning-of-defun"     jump to the beginning of the function
@@ -120,25 +120,36 @@ commands:
 descrpition: interface for w3m on emacs to surf the web
 key-bindings: 
 
-"q"             quit w3m
-"C-x-k"         close current tab
-"U"             open URL
-"V"             open file
-"G"             open URL on current tab
-"S"             search with google
+"R"             refresh current page
 
-"B"             back
-"N"             forward
-"H"             home page
-"R"             refresh
+"p"             move back to the previous page in the history
+"n"             move forward to the next page in the history
+"u"	            attempt to move to the parent directory of the page
 
-">"             scroll screen to left
-"<"             scroll screen to right
+"g"             visit the web page
+"G"             visit the web page in a new session
+"H"             goto home page
+"M"             display the current page using external web browser
 
-"a"             add bookmark
-"v"             view bookmark
-"E"             edit bookmark
+"D"	            download the file or the page under point
 
+"e"	            edit the local file displayed as the current page
+"E"	            edit the local file which is pointed to by URL under point
+
+"<SPC>"         scroll up
+"<DEL>"         scroll down
+">"             scroll to left
+"<"             scroll to right
+
+"s"             search with google
+"T"             display a directory tree
+
+"v"             display bookmark
+"a"             add url of current page to bookmark
+"M-a"           add url under point to bookmark
+"C-k"           kill the current entry of this bookmark
+
+"C-c C-c"	      submit the form at point
 "C-c C-k"       stop loading current page
-"M"             open current page with external web browser
-"ESC M"         open URL with external web browser
+
+"q"             quit w3m
