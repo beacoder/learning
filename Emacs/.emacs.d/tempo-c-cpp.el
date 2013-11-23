@@ -282,7 +282,7 @@
                            > "virtual ~" (s var) "();" n> n
 			   > "private:" > n>
                            > (s var) "(const " (s var) " &);" n
-                           > "void operator=(const " (s var) " &);" n
+                           > (s var) "& operator=(const " (s var) " &);" n
 			   > "};" > n> n>
 			   > "inline " (s var) "::" (s var) "()" n
 			   > "{" > n> n> "};" > n > n
