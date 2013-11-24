@@ -22,4 +22,4 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
   (trim-string (getline))
   )
 
-(provide 'init-common-functions)
+(provide 'init-com-functions)
