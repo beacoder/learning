@@ -17,7 +17,10 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 (defun getline-nth (line-number)
   "Return specific line's contents as a string."
   (save-excursion
-    (goto-line line-number)
+    ;; when in elisp program use the following two statements 
+    ;; instead of goto-line
+    (goto-char (point-min))
+    (forward-line (1- line-number))
     (getline)))
   
 (defun getline-trim ()
