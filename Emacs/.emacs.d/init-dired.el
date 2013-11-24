@@ -24,4 +24,4 @@
 ;;   ; was dired-up-directory
 ;;  ))
  
- (provide 'init-dired)
+(provide 'init-dired)
