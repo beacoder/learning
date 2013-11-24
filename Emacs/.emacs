@@ -46,6 +46,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
+(require 'init-com-functions)
 (require 'dictionary-init)
 (require 'init-routines)
 (require 'init-register)
