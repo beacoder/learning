@@ -17,8 +17,8 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
     )
   )
 
-(defun getline-trimmed ()
-  "Get line contents as a trimmed string."
+(defun getline-trim ()
+  "Get line contents as a string and trim it."
   (trim-string (getline))
   )
 
