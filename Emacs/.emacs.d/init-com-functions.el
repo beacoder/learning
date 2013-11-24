@@ -12,7 +12,8 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
   (let (beg end line-string)
     (setq beg (line-beginning-position))
     (setq end (line-end-position))
-    (setq line-string (buffer-substring-no-properties beg end))))
+    (setq line-string (buffer-substring-no-properties beg end))
+    (trim-string line-string)))
     
 (defun getline-nth (line-number)
   "Return specific line's contents as a string."
@@ -22,10 +23,6 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
     (goto-char (point-min))
     (forward-line (1- line-number))
     (getline)))
-  
-(defun getline-trim ()
-  "Return line contents as a string and trim it."
-  (trim-string (getline)))
 
 ;; Inspired by apply-macro-to-region-lines
 (defun apply-function-to-region-lines (fn)
