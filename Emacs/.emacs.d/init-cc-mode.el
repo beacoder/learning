@@ -64,7 +64,7 @@
 ;; generate the template c++ header and source files
 ;;----------------------------------------------------------------------------
 
-(defun create-cc-class (name)
+(defun c++-create-class (name)
   "Insert a C++ class definition.
  It creates a matching header file, inserts the class definition and
  creates the  most important function templates in a named after the
