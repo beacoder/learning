@@ -245,35 +245,6 @@
 ;;;C++-Mode Templates
 ;;(setq max-lisp-eval-depth 500) 
 
-(tempo-define-template "c++-class"
-                        '("/**" > n> 
-                          "*" (s class) "."> n>
-                          "*/" > n>
-                          "class " (p "classname: " class) " {" > n> 
-                          "friend std::ostream& operator<<(std::ostream& os, const " (s class) " & f);" > n> 
-                          > n>
-                          (p "variable member type: " type 'noinsert)
-                          (p "variable member name: " var  'noinsert)
-                          (tempo-save-named 'm_var (concat "_" (tempo-lookup-named 'var)))
-                          (s type) " " (s m_var) ";" > n>
-                          > ~ n>        
-                          "public:" > n>
-                          (s class) "(); \t//the default constructor" n>
-                          (s class) "(const " (s class) " &c);" n>
-                          "~" (s class) "() {}" > n>
-                          > n>
-                          "/* Accessors */" > n>
-                          (s type) " get" (s fnBase) "() const { return "(s m_var) "; }" > n>
-                          > n>
-                          "/* Mutators */" > n>
-                          "void set" (s fnBase) "(" (s type) " " (s var) ") { " (s m_var) " = " (s var) "; }" > n>
-                          > n>
-                         "};\t// end of class " (s class) > n>
-                         )
-                       "class"
-                       "Insert a class skeleton"
-                       'c++-tempo-tags)
-
 (tempo-define-template "c++-class-noncopyable"
                        '(> "class " (p "class " var) n
 			   > "{" > n
