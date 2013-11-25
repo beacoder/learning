@@ -1,5 +1,17 @@
 ;; define some common functions
 
+(unless (fboundp 'line-number-at-pos)
+  (defun line-number-at-pos (&optional pos)
+    "Return (narrowed) buffer line number at position POS.
+ If POS is nil, use current buffer location."
+    (let ((opoint (or pos (point))) start)
+      (save-excursion
+	(goto-char (point-min))
+	(setq start (point))
+	(goto-char opoint)
+	(forward-line 0)
+	(1+ (count-lines start (point)))))))
+
 ;; trim string
 (defun trim-string (string)
   "Remove white spaces in beginning and ending of STRING.
