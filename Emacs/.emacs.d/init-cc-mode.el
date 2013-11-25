@@ -64,6 +64,21 @@
 ;; generate the template c++ header and source files
 ;;----------------------------------------------------------------------------
 
+;; modify this generation and place it in the tempo.el
+;; following is the header comment format
+
+/* -*-C++-*-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; File:         PinErrorMap.h
+; Description:  
+; Created:      Tue Jan 15 10:51:11 2008
+;
+; (c) Copyright 2008, Advantest, all rights reserved.
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+*/
+
 (defun ska-skel-cc-class (name)
   "Insert a C++ class definition.
  It creates a matching header file, inserts the class definition and
