@@ -64,98 +64,92 @@
 ;; generate the template c++ header and source files
 ;;----------------------------------------------------------------------------
 
-;; modify this generation and place it in the tempo.el
-;; following is the header comment format
-
-/* -*-C++-*-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;
-; File:         PinErrorMap.h
-; Description:  
-; Created:      Tue Jan 15 10:51:11 2008
-;
-; (c) Copyright 2008, Advantest, all rights reserved.
-;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-*/
-
-(defun ska-skel-cc-class (name)
+(defun create-cc-class (name)
   "Insert a C++ class definition.
  It creates a matching header file, inserts the class definition and
  creates the  most important function templates in a named after the
  class name. This might still be somewhat buggy."
   (interactive "sclass name: ")
-  (let* ((header-file-name (concat (downcase name) ".hpp"))
-		 (header-include-string (upcase (concat name "_H_INCLUDED")))
-		 (def-file-name    (concat (downcase name) ".cpp")))
+  (let* ((header-file-name (concat name ".hpp"))
+                 (header-include-string (upcase (concat name "_H_INCLUDED")))
+                 (def-file-name    (concat name ".cpp")))
 
-	;; write header file
-	(set-buffer (get-buffer-create header-file-name))
-	(set-visited-file-name header-file-name)
-	(c++-mode)
-	(turn-on-font-lock)
-	(insert (concat
-			 "// -*- C++ -*-\n"
-			 "// File: " header-file-name "\n//\n"
-			 "// Time-stamp: <>\n"
-			 "// $Id: $\n//\n"
-			 "// Copyright (C) "(substring (current-time-string) -4)
-			 " by " "Brightc" "\n//\n"
-			 "// Author: " (user-full-name) "\n//\n"
-			 "// Description: \n// "
-			 ;; get this point...
-			 "\n\n" 
-			 "# ifndef " header-include-string "\n"
-			 "# define " header-include-string "\n\n"
-			 "# include <iostream>\n\n"
-			 "class " name ";\n\n"
-			 "class " name " {\n"
-			 "public:\n"
-			 name "();" "\n"
-			 name "(const " name "& src);\n"
-			 "~" name "();" "\n"
-			 name "& operator=(const " name "& rv);\n"
-			 "\nprivate:\n"
-			 "void init();\n"
-			 "void reset();\n"
-			 "void init_and_copy(const " name "& src);\n\n"
-			 "protected: \n\n"
-			 "};"
-			 "\n\n# endif"))
-	(beginning-of-buffer)
-	(while (and (not (eobp)) (forward-line))
-	  (indent-according-to-mode))
-	
-	;; create CC file
-	(set-buffer (get-buffer-create def-file-name))
-	(set-visited-file-name def-file-name)
-	(switch-to-buffer (current-buffer))
-	(c++-mode)
-	(turn-on-font-lock)
-	(insert (concat
-			 "// -*- C++ -*-\n"
-			 "// File: " def-file-name "\n//\n"
-			 "// Time-stamp: <>\n"
-			 "// $Id: $\n//\n"
-			 "// Copyright (C) "(substring (current-time-string) -4)
-			 " by " "Brightc" "\n//\n"
-			 "// Author: " (user-full-name) "\n//\n"
-			 "// Description: \n// "
-			 "\n# include \"" header-file-name "\"\n\n"
-			 name "::\n" name "() {\ninit();\n}\n\n"
-			 name "::\n" name "(const " name "& src) {\ninit_and_copy(src);\n}\n\n"
-			 name "::\n~" name "() {\nreset();\n}\n\n"
-			 "void\n" name "::\ninit() {\n\n}\n\n"
-			 "void\n" name "::\nreset() {\n\n}\n\n"
-			 "void\n" name "::\ninit_and_copy(const " name "& src) {\n\n}\n\n"
-			 name "&\n" name "::\noperator=(const " name "& src) {\n\n}\n\n"
-			 ))
-	(beginning-of-buffer)
-	(while (and (not (eobp)) (forward-line))
-	  (indent-according-to-mode))
-	(beginning-of-buffer)
-	(search-forward "Description:")
-	)
+        ;; write header file
+        (set-buffer (get-buffer-create header-file-name))
+        (set-visited-file-name header-file-name)
+        (c++-mode)
+        (turn-on-font-lock)
+        (insert (concat
+                         "/* -*-C++-*-\n"
+			 ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n"
+			 ";\n"
+                         "; File:         " header-file-name "\n"
+                         "; Description:   \n"
+                         "; Created:      " (substring (current-time-string) -4) "\n"
+			 "; Author: " (user-full-name) "\n"
+			 ";\n"
+			 "; (c) Copyright 2008, Advantest, all rights reserved.\n"
+			 ";\n"
+                         ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n"
+			 "*/\n\n"
+
+                         "#ifndef " header-include-string "\n"
+                         "#define " header-include-string "\n\n"
+                         "#include <iostream>\n\n"
+                         "class " name "_I;\n\n"
+                         "class " name "\n"
+			 "{\n"
+                         "public:\n"
+                         name "();\n"
+                         "virtual ~" name "();\n"
+                         name "(const " name "& src);\n"
+                         name "& operator=(const " name "& rv);\n\n"
+                         "protected:\n"
+                         "void init();\n"
+                         "void reset();\n\n"
+                         "private: \n"
+			 name "_I * mImp;\n"
+                         "};\n\n"
+                         "# endif\n"))
+        (beginning-of-buffer)
+        (while (and (not (eobp)) (forward-line))
+          (indent-according-to-mode))
+        
+        ;; create CC file
+        (set-buffer (get-buffer-create def-file-name))
+        (set-visited-file-name def-file-name)
+        (switch-to-buffer (current-buffer))
+        (c++-mode)
+        (turn-on-font-lock)
+        (insert (concat
+		         "/* -*-C++-*-\n"
+			 ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n"
+			 ";\n"
+                         "; File:         " def-file-name "\n"
+                         "; Description:   \n"
+                         "; Created:      " (substring (current-time-string) -4) "\n"
+			 "; Author: " (user-full-name) "\n"
+			 ";\n"
+			 "; (c) Copyright 2008, Advantest, all rights reserved.\n"
+			 ";\n"
+                         ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n"
+			 "*/\n\n"
+		         
+                         "#include \"" header-file-name "\"\n"
+			 "#include \"" name "_I.hpp\"\n\n"
+                         name "::" name "()\n{\nmImp = new " name "_I();\n}\n\n"
+                         name "::~" name "()\n{\nif (NULL != mImp)\n{\ndelete mImp;\nmImp = NULL;\n}\n}\n\n"
+                         name "::" name "(const " name "& src)\n{\n\n}\n\n"
+                         "void " name "::init()\n{\n\n}\n\n"
+                         "void " name "::reset()\n{\n\n}\n\n"
+                         name "& " name "::operator=(const " name "& src)\n{\nreturn (*this);\n}\n"
+                         ))
+        (beginning-of-buffer)
+        (while (and (not (eobp)) (forward-line))
+          (indent-according-to-mode))
+        (beginning-of-buffer)
+        (search-forward "Description:")
+        )
 )
 
 (provide 'init-cc-mode)
