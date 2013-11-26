@@ -34,4 +34,7 @@
 (defalias 'll 'list-matching-lines)
 (defalias 'ts 'tags-search)
 
+(defalias 'afa 'apply-function-to-region-lines-with-args)
+(defalias 'af 'apply-function-to-region-lines-without-args)
+
 (provide 'init-alias)
