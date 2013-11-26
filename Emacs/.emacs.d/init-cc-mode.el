@@ -47,6 +47,17 @@
 ;; show function name in mode-line
 (add-hook 'c-mode-common-hook (lambda() (which-function-mode t)))
 
+;; use <tab> to indent region if anything is selected
+(defun tab-indents-region () (local-set-key [(tab)] 'fledermaus-maybe-tab))
+(add-hook 'c-mode-common-hook 'tab-indents-region)
+
+;; fledermaus came up with this
+(defun fledermaus-maybe-tab ()
+  (interactive)
+  (if (and transient-mark-mode mark-active)
+      (indent-region (region-beginning) (region-end) nil)
+    (c-indent-command)))
+
 ;;----------------------------------------------------------------------------
 ;; c++ mode specific key-bindings
 ;;----------------------------------------------------------------------------
