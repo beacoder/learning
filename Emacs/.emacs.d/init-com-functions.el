@@ -37,7 +37,7 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
     (getline)))
 
 ;; Inspired by apply-macro-to-region-lines
-(defun apply-function-to-region-lines (fn)
+(defun apply-function-to-region-lines-with-args (fn)
   "Apply function to region lines."
   (interactive "aFunction to apply to lines in region: ")
   (setq eof (line-number-at-pos (region-end))
@@ -49,12 +49,38 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
       (setq line-string (getline-nth cur)
   	    ;; filelist (cons line-string filelist)
 	    old (buffer-name))
-      (if (y-or-n-p "Pass argument to function ?")
-      	  (funcall fn line-string)
-      	  (funcall fn))
+      (funcall fn line-string)
       (switch-to-buffer old)
       (setq cur (1+ cur)))
     ;; (mapcar fn filelist)
     ))
+
+;; Inspired by apply-macro-to-region-lines
+(defun apply-function-to-region-lines-without-args (fn)
+  (interactive "aFunction to apply to lines in region: ")
+  (save-excursion
+    (goto-char (region-end))
+    (let ((end-marker (copy-marker (point-marker)))
+          next-line-marker)
+      (goto-char (region-beginning))
+      (if (not (bolp))
+          (forward-line 1))
+      (setq next-line-marker (point-marker))
+      (while (< next-line-marker end-marker)
+        (let ((start nil)
+              (end nil))
+          (goto-char next-line-marker)
+          (save-excursion
+            (setq start (point))
+            (forward-line 1)
+            (set-marker next-line-marker (point))
+            (setq end (point)))
+          (save-excursion
+            (let ((mark-active nil))
+              (narrow-to-region start end)
+              (funcall fn)
+              (widen)))))
+      (set-marker end-marker nil)
+      (set-marker next-line-marker nil))))
 
 (provide 'init-com-functions)
