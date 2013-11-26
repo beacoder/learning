@@ -92,7 +92,6 @@
 			 ";\n"
                          ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n"
 			 "*/\n\n"
-
                          "#ifndef " header-include-string "\n"
                          "#define " header-include-string "\n\n"
                          "#include <iostream>\n\n"
@@ -134,7 +133,6 @@
 			 ";\n"
                          ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n"
 			 "*/\n\n"
-		         
                          "#include \"" header-file-name "\"\n"
 			 "#include \"" name "_I.hpp\"\n\n"
                          name "::" name "()\n{\nmImp = new " name "_I();\n}\n\n"
