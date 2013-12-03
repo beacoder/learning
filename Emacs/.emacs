@@ -52,6 +52,7 @@
 (require 'init-register)
 (require 'init-macros)
 (require 'init-dired)
+(require 'dired+)
 (require 'init-basics)
 (require 'init-hippie-expand)
 (require 'init-gnus)
