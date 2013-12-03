@@ -54,6 +54,7 @@
 (require 'init-dired)
 (require 'dired+)
 (require 'ido)
+(require 'ibuffer)
 (require 'init-basics)
 (require 'init-hippie-expand)
 (require 'init-gnus)
