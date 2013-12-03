@@ -38,7 +38,6 @@
       ;; save a little screen estate
       (shrink-window-if-larger-than-buffer))
     (toggle-read-only)))
-
 (ad-activate 'ibuffer-update-title-and-summary)
 
 ;; Use human readable Size column instead of original one
@@ -60,4 +59,4 @@
 	      " "
 	      filename-and-process)))
 
-(provide 'init-buffer)
+(provide 'init-ibuffer)
