@@ -38,6 +38,16 @@
   (setq tab-width 8
         ;; this will make sure spaces are used instead of tabs
         indent-tabs-mode nil)
+  ;; show function name in mode-line
+  (which-function-mode t)
+  
+  ;; navigation between header and cpp/cc files
+  (local-set-key (kbd "C-c o") 'ff-find-other-file)    
+  ;; jump to the start of the function    
+  (local-set-key (kbd "C-M-a") 'c-beginning-of-defun)
+  ;; jump to the end of the function    
+  (local-set-key (kbd "C-M-e") 'c-end-of-defun)
+
   ;; we like auto-newline and hungry-delete
   (c-toggle-auto-hungry-state 1)
   ;; key bindings for all supported languages.  We can put these in
@@ -45,9 +55,6 @@
   ;; java-mode-map, idl-mode-map, and pike-mode-map inherit from it.
   (define-key c-mode-base-map "\C-m" 'c-context-line-break))
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
-
-;; show function name in mode-line
-(add-hook 'c-mode-common-hook (lambda() (which-function-mode t)))
 
 ;; use <tab> to indent region if anything is selected
 (defun tab-indents-region () (local-set-key [(tab)] 'fledermaus-maybe-tab))
@@ -59,19 +66,6 @@
   (if (and transient-mark-mode mark-active)
       (indent-region (region-beginning) (region-end) nil)
     (c-indent-command)))
-
-;;----------------------------------------------------------------------------
-;; c++ mode specific key-bindings
-;;----------------------------------------------------------------------------
-
-;; navigation between header and cpp/cc files
-(add-hook 'c-mode-common-hook (lambda() (local-set-key (kbd "C-c o") 'ff-find-other-file)))
-    
-;; jump to the start of the function    
-(add-hook 'c-mode-common-hook (lambda() (local-set-key (kbd "C-M-a") 'c-beginning-of-defun)))
-
-;; jump to the end of the function    
-(add-hook 'c-mode-common-hook (lambda() (local-set-key (kbd "C-M-e") 'c-end-of-defun)))
 
 ;;----------------------------------------------------------------------------
 ;; generate the template c++ header and source files
