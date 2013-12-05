@@ -30,6 +30,11 @@
 ;; bind compile command 
 (global-set-key (kbd "C-c p") 'compile)
 
+;; move point from window to window using shift and arrow keys
+;; instead of 'C-x o'
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
+
 ;;----------------------------------------------------------------------------
 ;; mode setting
 ;;----------------------------------------------------------------------------
