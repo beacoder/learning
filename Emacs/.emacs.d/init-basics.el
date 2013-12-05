@@ -76,8 +76,16 @@
 ;; enable column-number-mode
 (column-number-mode t)
 
-;; Incremental picking of buffers
+;; incremental picking of buffers
 (if (fboundp 'iswitchb-mode) (iswitchb-mode t))
+
+;; enable flyspell in text-mode
+(dolist (hook '(text-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
+(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode -1))))
+;; improve performance
+(setq flyspell-issue-message-flag nil)
 
 ;;----------------------------------------------------------------------------
 ;; some other settings
