@@ -42,6 +42,8 @@
   (which-function-mode t)
   ;; enable flyspell for comments in source code
   (flyspell-prog-mode)
+  ;; improve performance
+  (setq flyspell-issue-message-flag nil)
   
   ;; navigation between header and cpp/cc files
   (local-set-key (kbd "C-c o") 'ff-find-other-file)    
