@@ -60,7 +60,7 @@
 ;;            ifelse                  if (...) { } else { }
 ;;            while                   while (...) { }
 ;;            for                     for (...) { }
-;;            fori                    for (i=0; i < limit; i++) { }
+;;            fori                    for (i=0; i < limit; ++i) { }
 ;;            switch                  switch() {...}
 ;;            case                    case: ... break;
 ;;            main                    int main() { ... }
@@ -189,11 +189,11 @@
 
 (tempo-define-template "c-for-i"
                        '(> "for (" (p "variable: " var) " = 0; " (s var)
-			   " < "(p "upper bound: " ub)"; " (s var) "++)" > n
+			   " < "(p "upper bound: " ub)"; ++" (s var) ")" > n
 			   > "{" >  n> > r n "}" > n>
 			   )
                        "fori"
-                       "Insert a C for loop: for(x = 0; x < ..; x++)"
+                       "Insert a C for loop: for(x = 0; x < ..; ++x)"
                        'c-tempo-tags)
 
 (tempo-define-template "c-switch"
