@@ -48,6 +48,15 @@
 ;; enable electric-pair-mode
 (if (fboundp 'electric-pair-mode) (electric-pair-mode t))
 
+;; matching pairs of parentheses
+(if (fboundp 'electric-pair-mode) (electric-pair-mode t))
+
+;; highlight matching pairs of parentheses
+(if (fboundp 'electric-pair-mode) 
+    (progn
+      (show-paren-mode 1)
+      (setq show-paren-delay 0)))
+
 ;; save desktop
 (if (fboundp 'desktop-save-mode) (desktop-save-mode t))
 
