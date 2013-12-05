@@ -111,7 +111,11 @@
                         :font "DejaVu Sans Mono-10:weight=normal"
                         :height 100))
                         
-;; swap the foreground and background colors of FACE
+;; swap the foreground and background colors of face
 (invert-face 'default)
+
+;; save place in files between sessions
+(require 'saveplace)
+(setq-default save-place t)
 
 (provide 'init-basics)
