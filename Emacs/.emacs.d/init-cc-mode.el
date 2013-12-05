@@ -40,6 +40,8 @@
         indent-tabs-mode nil)
   ;; show function name in mode-line
   (which-function-mode t)
+  ;; enable flyspell for comments in source code
+  (flyspell-prog-mode)
   
   ;; navigation between header and cpp/cc files
   (local-set-key (kbd "C-c o") 'ff-find-other-file)    
