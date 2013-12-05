@@ -32,6 +32,8 @@
 (defun my-c-mode-common-hook ()
   ;; add my personal style and set it for the current buffer
   (c-add-style "PERSONAL" my-c-style t)
+  ;; set basic indentation width to 2
+  (setq c-basic-offset 2)
   ;; other customizations
   (setq tab-width 8
         ;; this will make sure spaces are used instead of tabs
