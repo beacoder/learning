@@ -48,9 +48,6 @@
 ;; enable electric-pair-mode
 (if (fboundp 'electric-pair-mode) (electric-pair-mode t))
 
-;; matching pairs of parentheses
-(if (fboundp 'electric-pair-mode) (electric-pair-mode t))
-
 ;; highlight matching pairs of parentheses
 (if (fboundp 'electric-pair-mode) 
     (progn
