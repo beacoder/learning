@@ -120,10 +120,16 @@
         '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
         
 ;; "DejaVu Sans Mono" is a nice open source font, good for programming
+;;(if (display-graphic-p)
+;;    (set-face-attribute 'default nil 
+;;                        :font "DejaVu Sans Mono-10:weight=normal"
+;;                        :height 100))
+                        
+;; "DejaVu Sans Mono" is a nice open source font family
 (if (display-graphic-p)
-    (set-face-attribute 'default nil 
-                        :font "DejaVu Sans Mono-10:weight=normal"
-                        :height 100))
+    (set-face-attribute 'default nil
+ 		    :font "-misc-dejavu lgc sans mono-medium-r-normal--0-0-0-0-m-0-iso8859-1"
+ 		    :height 100))                        
                         
 ;; swap the foreground and background colors of face
 (invert-face 'default)
