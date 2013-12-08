@@ -36,8 +36,7 @@
 
 ;; set tags file lists
 (setq tags-table-list
-      '(
-        "~/my_tag_files"
+      '("~/my_tag_files"
         "~/my_include")) 
 
 ;;----------------------------------------------------------------------------
