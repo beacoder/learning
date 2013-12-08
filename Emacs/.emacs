@@ -38,9 +38,7 @@
 (setq tags-table-list
       '(
         "~/my_tag_files"
-        "~/my_include"
-        )
-      ) 
+        "~/my_include")) 
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
