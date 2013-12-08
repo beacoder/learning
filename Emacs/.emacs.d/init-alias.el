@@ -33,6 +33,7 @@
 (defalias 'rw 'restore-workspace)
 (defalias 'll 'list-matching-lines)
 (defalias 'ts 'tags-search)
+(defalias 'tf 'ido-find-file-in-tag-files)
 
 (defalias 'afa 'apply-function-to-region-lines-with-args)
 (defalias 'af 'apply-function-to-region-lines-without-args)
