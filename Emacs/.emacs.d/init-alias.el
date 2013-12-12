@@ -19,6 +19,7 @@
 
 ;; ed stands for ediff
 (defalias 'ed 'ediff)
+(defalias 'edb 'ediff-buffers)
 
 ;; elm stands for emacs-lisp-mode
 (defalias 'elm 'emacs-lisp-mode)
