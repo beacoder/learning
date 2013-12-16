@@ -79,7 +79,7 @@ start:  mov ax, offset start  ⇒ start 标记的是代码段中的第一条指�
 exp:
 jcxz 标号 ⇒ 如果 cx=0, 则跳转到标号处执行,否则程序继续往下执行.
 
-22.call 指令执行时,将当前IP或CS和IP压入栈中,执行跳转.
+22.call 指令执行时,将当前IP或"CS和IP"压入栈中,执行跳转.
 exp:
 call 标号.
 ⇒ push IP
