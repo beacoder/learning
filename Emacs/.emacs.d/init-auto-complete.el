@@ -28,7 +28,7 @@
 
 ;; add function into ac-trigger-commands to trigger complete
 (setq ac-trigger-commands
-   (cons 'backward-delete-char-untabify ac-trigger-commands))
+  (cons 'backward-delete-char-untabify ac-trigger-commands))
    
 ;; trigger complete even if your typing is wrong   
 (setq ac-fuzzy-enable t)
