@@ -59,7 +59,7 @@
 (require 'init-cc-mode)
 (require 'tempo-c-cpp)
 (require 'init-alias)
-(require 'init-emacs-w3m)
+;; (require 'init-emacs-w3m)
 
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)
