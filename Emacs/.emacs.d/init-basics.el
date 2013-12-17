@@ -45,6 +45,9 @@
 ;; enable ido-mode
 (if (fboundp 'ido-mode) (ido-mode t))
 
+;; enable ibuffer-mode
+(if (fboundp 'ibuffer-mode) (ibuffer-mode t))
+
 ;; enable electric-pair-mode
 (if (fboundp 'electric-pair-mode) (electric-pair-mode t))
 
