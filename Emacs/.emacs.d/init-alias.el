@@ -6,7 +6,8 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; always use ibuffer
-(defalias 'list-buffers 'ibuffer)
+(when (> emacs-major-version 21)
+  (defalias 'list-buffers 'ibuffer))
 
 ;; sh stands for shell
 (defalias 'sh 'shell)
