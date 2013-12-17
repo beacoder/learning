@@ -50,7 +50,7 @@
 (require 'init-macros)
 (require 'init-dired)
 (require 'dired+)
-(require 'ido)
+;; (require 'ido)
 ;; (require 'init-ido)
 ;; (require 'ibuffer)
 ;; (require 'init-ibuffer)
