@@ -38,6 +38,16 @@
 (setq tags-table-list
       '("~/my_tag_files"
         "~/my_include")) 
+        
+;;----------------------------------------------------------------------------
+;; auto-complete setting
+;;----------------------------------------------------------------------------
+
+(when (> emacs-major-version 21)
+  (progn
+    (require 'auto-complete-config)
+    (ac-config-default)
+    (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")))
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
