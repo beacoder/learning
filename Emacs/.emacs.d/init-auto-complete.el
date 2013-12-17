@@ -6,11 +6,10 @@
 ;; add following scripts in .emacs
 ;;----------------------------------------------------------------------------
 
-(when (> emacs-major-version 21)
-  (progn
-    (require 'auto-complete-config)
-    (ac-config-default)
-    (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")))
+;; basic auto-complete configuration
+(require 'auto-complete-config)
+(ac-config-default)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
     
 ;; enable pos-tip
 (require 'pos-tip)
@@ -40,6 +39,7 @@
 (setq ac-use-quick-help t)
 (setq ac-quick-help-delay 1.0)
 
+;; TAB mode
 (setq ac-dwim t)
 
 ;; auto complete using clang is CPU sensitive
