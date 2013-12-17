@@ -134,6 +134,10 @@
 ;; swap the foreground and background colors of face
 (invert-face 'default)
 
+;; set cursor color
+(add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
+(add-hook 'after-make-frame-functions '(lambda (f) (with-selected-frame f (set-cursor-color "white"))))
+
 ;; save place in files between sessions
 (require 'saveplace)
 (setq-default save-place t)
