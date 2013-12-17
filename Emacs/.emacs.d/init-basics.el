@@ -90,6 +90,10 @@
 ;; enable column-number-mode
 (column-number-mode t)
 
+;; show line-number in left margin
+(when (> emacs-major-version 21)  
+  (global-linum-mode t))
+
 ;; incremental picking of buffers
 (if (fboundp 'iswitchb-mode) (iswitchb-mode t))
 
