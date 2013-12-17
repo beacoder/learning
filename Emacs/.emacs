@@ -52,7 +52,7 @@
 (require 'dired+)
 ;; (require 'ido)
 ;; (require 'init-ido)
-(require 'init-ibuffer)
+(require 'ibuffer)
 (require 'init-basics)
 (require 'init-hippie-expand)
 (require 'init-gnus)
