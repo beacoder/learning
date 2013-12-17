@@ -57,7 +57,8 @@
 (require 'init-cc-mode)
 (require 'tempo-c-cpp)
 (require 'init-alias)
-(require 'init-auto-complete)
+(when (> emacs-major-version 21)
+  (require 'init-auto-complete))
 ;; (require 'init-emacs-w3m)
 
 (require 'session)
