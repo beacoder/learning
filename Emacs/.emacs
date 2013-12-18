@@ -7,6 +7,8 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-complete"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-dictionary"))
+(when (<= emacs-major-version 21)
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-21")))
 
 ;;----------------------------------------------------------------------------
 ;; compilation setting
@@ -52,16 +54,17 @@
 (require 'init-macros)
 (require 'init-dired)
 (require 'dired+)
-;; (require 'ido)
-(require 'init-basics)
 (require 'init-hippie-expand)
 (require 'init-gnus)
 (require 'init-cc-mode)
 (require 'tempo-c-cpp)
 (require 'init-alias)
-(when (> emacs-major-version 21)
-  (require 'init-auto-complete))
-;; (require 'init-emacs-w3m)
+(if (> emacs-major-version 21)
+    (require 'init-auto-complete)
+  (progn
+    (require 'ido)
+    (require 'init-emacs-w3m)))
+(require 'init-basics)
 
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)

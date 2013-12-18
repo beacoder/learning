@@ -6,7 +6,7 @@
 (require 'w3m-load)
 
 (setq w3m-coding-system           'utf-8
-      w3m-file-coding-system 	  'utf-8
+      w3m-file-coding-system           'utf-8
       w3m-file-name-coding-system 'utf-8
       w3m-input-coding-system     'utf-8
       w3m-output-coding-system    'utf-8
@@ -17,7 +17,7 @@
       w3m-home-page               "http://www.google.com"
       w3m-use-toolbar             t
       ;; w3m-use-tab nil
-      w3m-key-binding 		  'info
+      w3m-key-binding                   'info
       w3m-command-arguments       '("-F" "-cookie")
       w3m-mailto-url-function     'compose-mail
       browse-url-browser-function 'w3m
@@ -29,7 +29,7 @@
 ;; specify available search engines
 (setq w3m-search-default-engine "g")
 (eval-after-load "w3m-search" '(progn
-				 ;; S g RET <search term> RET
+                                 ;; S g RET <search term> RET
                                  (add-to-list 'w3m-search-engine-alist '("g" "http://www.google.com/search?hl=en&q=%s" utf-8))
                                  (add-to-list 'w3m-search-engine-alist '("s" "http://stackoverflow.com/search?hl=en&q=%s" utf-8))
                                  (add-to-list 'w3m-search-engine-alist '("c" "http://code.ohloh.net/search?s=%s&browser=Default" utf-8))
@@ -50,9 +50,9 @@
   (interactive)
   (require 'w3m)
   (let ((keyword (thing-at-point 'symbol)))
-  	(w3m-search "g" keyword)
-  	))
-(global-set-key (kbd "C-c g") 'w3m-search-google)  	
+          (w3m-search "g" keyword)
+          ))
+(global-set-key (kbd "C-c g") 'w3m-search-google)          
 
 ;; external browser
 (setq browse-url-generic-program
@@ -71,11 +71,11 @@
                                 (concat "+filetype%3A" (file-name-extension buffer-file-name)) 
                                 "")
                                 ))
-    ;; stackoverflow.com				  
+    ;; stackoverflow.com                                  
     (browse-url-generic (concat "http://stackoverflow.com/search?hl=en&q=" keyword))
     ;; koders.com
     (browse-url-generic (concat "http://code.ohloh.net/search?s=\"" keyword 
-    				"\"&browser=Default&mp=1&ml=1&me=1&md=1&filterChecked=true" ))
+                                    "\"&browser=Default&mp=1&ml=1&me=1&md=1&filterChecked=true" ))
     ))
 (global-set-key (kbd "C-c e") 'w3m-ext-hacker-search)
 

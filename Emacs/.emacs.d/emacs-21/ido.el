@@ -1233,7 +1233,6 @@ This function also adds a hook to the minibuffer."
       (define-key ctl-x-map "\C-f"   'ido-find-file)
       ;; reserved for recentf-open-files
       ;; (define-key ctl-x-map "\C-r"   'ido-find-file-read-only)
-      (define-key ctl-x-map "\C-r"   'ido-find-file-read-only)
       (define-key ctl-x-map "\C-v"   'ido-find-alternate-file)
       (define-key ctl-x-map "\C-w"   'ido-write-file)
       (define-key ctl-x-map "i"      'ido-insert-file)
