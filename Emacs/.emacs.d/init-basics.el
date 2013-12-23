@@ -122,7 +122,11 @@
 (setq frame-title-format
       (list (format "%s %%S: %%j " (system-name))
         '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
-        
+       
+;; display time
+(display-time-mode t)
+(setq display-time-day-and-date t)
+
 ;; "DejaVu Sans Mono" is a nice open source font, good for programming
 ;;(if (display-graphic-p)
 ;;    (set-face-attribute 'default nil 
