@@ -125,7 +125,9 @@
        
 ;; display time
 (display-time-mode t)
-(setq display-time-day-and-date t)
+(setq display-time-day-and-date t
+      display-time-24hr-format t
+      display-time-format nil)
 
 ;; "DejaVu Sans Mono" is a nice open source font, good for programming
 ;;(if (display-graphic-p)
