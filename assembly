@@ -89,14 +89,12 @@ call far ptr 标号.
 ⇒ push CS
   push IP
   jmp far ptr 标号
-  
-  ...
 
-23.ret、retf 指令
-   ret用栈中数据修改IP的内容,从而实现近跳转
+23.ret、retf 指令执行时,出栈数据到IP或"CS和IP",跳转到之前的执行位置.
+ret:
    ⇒ pop IP
 
-   retf用栈中数据修改CS和IP的内容,从而实现远跳转 
+retf:
    ⇒ pop IP 
      pop CS
   
@@ -142,4 +140,4 @@ shr ⇒ (1) 将一个寄存器或内存单元中的数据向右移位 (2) 将最
    
 36.在后面加有":"的地址标号,只能在代码段中使用,不能在其他段中使用.
 
-
+37.
