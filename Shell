@@ -1,4 +1,4 @@
-learning shell
+learning Shell
 
 0.设置文件为脚本文件.
 #!/bin/sh ⇒ 在文件的第一行设置执行文件的程序是 /bin/sh, 也就是 shell 程序
