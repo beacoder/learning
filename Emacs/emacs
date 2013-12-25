@@ -50,7 +50,7 @@ descrpition: "recursive edit" helps when you want to break out of the current co
              
 for example: in the middle of "query-replace"
 
-"C-w" or "C-r" -> break out of command, then do something else
-"C-M-c"        -> continue the previous command
+"C-w" or "C-r" -> break out of "query-replace", then do something else
+"C-M-c"        -> go back to "query-replace"
 
 11.
