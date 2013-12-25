@@ -43,4 +43,14 @@ export LANG=en_US.UTF-8
 9.retrieve the list of available packages from the package archive server.
 command: "list-packages"
 
-10.
+10.recursive edit
+descrpition: "recursive edit" helps when you want to break out of the current command 
+             that you’re currently doing and temporarily pursue something else,
+             with the ability to snap back to where you were before.
+             
+for example: in the middle of "query-replace"
+
+"C-w" or "C-r" -> break out of command, then do something else
+"C-M-c"        -> continue the previous command
+
+11.
