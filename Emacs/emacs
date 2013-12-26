@@ -18,17 +18,20 @@ key-bindings: "C-r" "M-r" "M-p" "M-n"
 descrpition: use a char or number to represent a register, used to save positon text numer
 note: R -> stands for your register name
 key-bindings:
-"C-x r <SPC> R" "C-x r s R" "C-x r n R" "C-x r w R" "C-x r r R"
-"C-x r i R" "C-x r j R"
+"C-x r <SPC> R" "C-x r s R" "C-x r n R" "C-x r w R" "C-x r r R"    -> save to register
+"C-x r i R" "C-x r j R"                                            -> insert or jump to register
 
 5.mark-ring
 descrpition: used to save the cursor position
-key-bindings: "C-<SPC> C-<SPC>" "C-u C-<SPC>"
+key-bindings: 
+"C-<SPC> C-<SPC>"  -> save cursor position
+"C-u C-<SPC>"      -> jump back
 
 6.keyboard macro
 descrpition: record a sequence of editing commands so that you can repeat it conveniently later
 key-bindings:
-"C-x (" "C-x )" "C-x e"
+"C-x (" "C-x )"    -> define macro
+"C-x eeee..."      -> execute macro n times
 
 command: 
 "name-last-kbd-macro" "insert-kbd-macro"
