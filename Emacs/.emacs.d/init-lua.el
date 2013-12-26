@@ -14,7 +14,7 @@
                     (lua-indent-level . 3)
                     (lua-indent-level . 4)
                     (lua-indent-level . 8)))
-            (flymake-lua-load)
+            ;;(flymake-lua-load)
             ))
 
 (provide 'init-lua)
