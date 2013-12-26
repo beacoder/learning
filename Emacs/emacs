@@ -49,7 +49,6 @@ descrpition: "recursive edit" helps when you want to break out of the current co
              with the ability to snap back to where you were before.
              
 for example: in the middle of "query-replace"
-
 "C-w" or "C-r" -> break out of "query-replace", then do something else
 "C-M-c"        -> go back to "query-replace"
 
