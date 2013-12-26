@@ -60,7 +60,9 @@
 (require 'tempo-c-cpp)
 (require 'init-alias)
 (if (> emacs-major-version 21)
-    (require 'init-auto-complete)
+    (progn
+      (require 'init-auto-complete)
+      (require 'init-lua))
   (progn
     (require 'ido)
     (require 'init-emacs-w3m)))
