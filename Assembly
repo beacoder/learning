@@ -30,8 +30,8 @@ exp:
 mov es:[bx], dl ⇒ 将dl的数据传入段地址为es,偏移地址为bx所指向的内存单元中.
 
 8.push、pop指令的执行步骤.
-  push  ⇒ (1) SP = SP-2; (2) 向SS:SP指向的字单元中传入数据
-  pop   ⇒ (1) 从SS:SP指向的字单元中读取数据 (2) SP = SP + 2;
+  push  ⇒ (1) SP = SP - n; (2) 向SS:SP指向的内存单元中传入数据
+  pop   ⇒ (1) 从SS:SP指向的内存单元中读取数据 (2) SP = SP + n;
 
 9.编程时要合理安排栈空间大小,防止入栈数据太多导致overflow,栈空时继续出栈导致underflow.
 
