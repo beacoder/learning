@@ -18,7 +18,8 @@
 ;; (setq compilation-read-command nil)
 
 ;; set compile command
-(setq compile-command "make clobber")
+;; (setq compile-command "make clobber")
+(setq compile-command "make debug")
 
 ;;----------------------------------------------------------------------------
 ;; using tags
