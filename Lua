@@ -83,4 +83,33 @@ os.move, os.rename, os.tmpname, os.setlocale
 "--"  => comments one line
 "--[[ some comment here ]]" => comments a block
 
-14.
+14.metatable
+
+description:  every value in Lua can have a metatable, this metatable is an ordinary Lua table
+              that defines the behavior of the original value under certain special operations.
+              you can change several aspects of the behavior of operations 
+              over a value by setting specific fields in its metatable.
+              
+15.lua closure
+
+closure:  even outer function goes out of scope, 
+          the inside clousre still have the access to the "upvalue".
+
+--[[ following is a function which returns a closure,
+     pretty like functor in c++ I think. ]]
+
+-- script starts here
+
+function outer()
+local str = "World !";
+return function ()
+         print("Hello_" .. str);
+       end;
+end;
+
+func = outer();
+func();         =>  Hello_World !
+
+-- script ends here
+
+16.
