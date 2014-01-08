@@ -1,12 +1,10 @@
 learning Lua
 
 1.error pcall/xpcall
-
 error:  explicitly generate an error.
 pcall:  use pcall/xpcall to run function in protected mode to catch error in it. 
 
 2.control structures
-
 while:        while ... do ... end
 repeat:       repeat ... until ...
 if:           if ... then ... elseif ... then ... [else ...] end
@@ -14,32 +12,27 @@ numeric for:  for variable = beg, end [, step] do ... end
 generic for:  for namelist in explist do ... end 
 
 3.block
-
 description:  a block is a list of statements, which are executed sequentially,
 blcok ends with an "end".
 exp:
 do ... end
 
 4.scope of variables
-
 Local:  variables preceding with "local" is Local varibales.
 Global: variables other than local is Global variables.
 
 5.string concatenation operator
-
 "..": used to concatenate string or numbers.
 exp:
 print("Hello" .. " " .. "World");
 
 6.length operator
-
 "#": used to get length of string or table.
 exp:
 t = {1,2,3}
 print(#t);  => 3
 
 7.basic function
-
 assert:       issues an error when the value of its argument is nil or false.
 error:        terminates the last protected function called and returns error message.
 require:      loads the given module.
@@ -47,25 +40,21 @@ setmetatable: sets the metatable for the given table.
 getmetatable: gets the metatable for the given table. 
 
 8.string manipulation
-
 string.find:  looks for the first match of pattern in the string.
 string.format:  format a string.
 string.sub: returns the substring of string.
 string.gsub:  global string replacement.
 
 9.table manipulation
-
 table.concat: returns a concatenated string of all string or numbers in the table.
 table.insert: insert element into the table.
 table.remove: remove element from the table.
 table.sort:   sorts table elements in a given order.
 
 10.mathematical functions
-
 math.pow, math.log, math.max, math.min ......
 
 11.input and output facilities
-
 simple mode:  operates on a default file or stream.
 io.input, io.output, io.read, io.write, io.lines, io.flush, io.close
 
@@ -76,24 +65,20 @@ file:read, file:write, file:flush, file:seek, file:close
 note: ':' in "file:read" means pass "file" to the function "read" as the first parameter.
 
 12.operating system facilities
-
 os.clock, os.date, os.execute, os.exit, os.getenv, os.setenv
 os.move, os.rename, os.tmpname, os.setlocale
 
 13.comments
-
 "--"  => comments one line
 "--[[ some comment here ]]" => comments a block
 
 14.metatable
-
 description:  every value in Lua can have a metatable, this metatable is an ordinary Lua table
               that defines the behavior of the original value under certain special operations.
               you can change several aspects of the behavior of operations 
               over a value by setting specific fields in its metatable.
               
 15.lua closure
-
 closure:  even outer function goes out of scope, 
           the inside clousre still have the access to the "upvalue".
 
@@ -115,7 +100,6 @@ func();         =>  Hello_World !
 -- script ends here
 
 16.table
-
 description: tables are the only "container" type in Lua. they are associative arrays, 
              which means they store a set of key/value pairs, where you can store a value under some key, 
              and later retrieve the value using that key.
