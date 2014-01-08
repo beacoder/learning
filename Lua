@@ -96,7 +96,7 @@ closure:  even outer function goes out of scope,
           the inside clousre still have the access to the "upvalue".
 
 --[[ following is a function which returns a closure,
-     pretty like functor in c++ I think. ]]
+     pretty like functor in C++ I think. ]]
 
 -- script starts here
 
