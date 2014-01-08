@@ -73,4 +73,7 @@ file:read, file:write, file:flush, file:seek, file:close
 
 note: ':' in "file:read" means pass "file" to the function "read" as the first parameter.
 
-12.
+12.operating system facilities
+
+os.clock, os.date, os.execute, os.exit, os.getenv, os.setenv
+os.move, os.rename, os.tmpname, os.setlocale
