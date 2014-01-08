@@ -15,7 +15,7 @@ generic for:  for namelist in explist do block end
 
 3.block
 
-a block is a list of statements, which are executed sequentially,
+description:  a block is a list of statements, which are executed sequentially,
 blcok ends with an "end".
 exp:
 do block end
@@ -25,4 +25,16 @@ do block end
 Local:  variables preceding with "local" is Local varibales.
 Global: variables other than local is Global variables.
 
-5.
+5.string concatenation operator
+
+"..": used to concatenate string or numbers.
+exp:
+print("Hello" .. " " .. "World");
+
+6.length operator
+
+"#": used to get length of string or table.
+exp:
+t = {1,2,3}
+print(#t); => 3
+
