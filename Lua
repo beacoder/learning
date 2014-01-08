@@ -36,5 +36,41 @@ print("Hello" .. " " .. "World");
 "#": used to get length of string or table.
 exp:
 t = {1,2,3}
-print(#t); => 3
+print(#t);  => 3
 
+7.basic function
+
+assert: issues an error when the value of its argument is nil or false.
+error:  terminates the last protected function called and returns error message.
+require:  loads the given module.
+
+8.string manipulation
+
+string.find:  looks for the first match of pattern in the string.
+string.format:  format a string.
+string.sub: returns the substring of string.
+string.gsub:  global string replacement.
+
+9.table manipulation
+
+table.concat: returns a concatenated string of all string or numbers in the table.
+table.insert: insert element into the table.
+table.remove: remove element from the table.
+table.sort:   sorts table elements in a given order.
+
+10.mathematical functions
+
+math.pow, math.log, math.max, math.min ......
+
+11.input and output facilities
+
+simple mode:  operates on a default file or stream.
+io.input, io.output, io.read, io.write, io.lines, io.flush, io.close
+
+advanced mode:  operates on a specific file.
+file = assert(io.open("fileName", "mode"));
+file:read, file:write, file:flush, file:seek, file:close
+
+note: ':' in "file:read" means pass "file" to the function "read" as the first parameter.
+
+12.
