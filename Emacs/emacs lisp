@@ -113,4 +113,6 @@ exp:
 exp:
 (catch 'hack (throw 'hack 'yes)) ⇒ yes
      
-12.
+12.lambda
+lambda: return a lambda expression (anonymous function),
+        like functor in C++ I think.
