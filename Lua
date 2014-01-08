@@ -14,6 +14,7 @@ generic for:  for namelist in explist do ... end
 3.block
 description:  a block is a list of statements, which are executed sequentially,
 blcok ends with an "end".
+
 exp:
 do ... end
 
@@ -23,11 +24,13 @@ Global: variables other than local is Global variables.
 
 5.string concatenation operator
 "..": used to concatenate string or numbers.
+
 exp:
 print("Hello" .. " " .. "World");
 
 6.length operator
 "#": used to get length of string or table.
+
 exp:
 t = {1,2,3}
 print(#t);  => 3
@@ -103,5 +106,6 @@ func();         =>  Hello_World !
 description: tables are the only "container" type in Lua. they are associative arrays, 
              which means they store a set of key/value pairs, where you can store a value under some key, 
              and later retrieve the value using that key.
+             
 exp:
 t = {}       -- construct an empty table and assign it to variable "t"
