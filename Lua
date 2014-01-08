@@ -40,9 +40,11 @@ print(#t);  => 3
 
 7.basic function
 
-assert: issues an error when the value of its argument is nil or false.
-error:  terminates the last protected function called and returns error message.
-require:  loads the given module.
+assert:       issues an error when the value of its argument is nil or false.
+error:        terminates the last protected function called and returns error message.
+require:      loads the given module.
+setmetatable: sets the metatable for the given table. 
+getmetatable: gets the metatable for the given table. 
 
 8.string manipulation
 
