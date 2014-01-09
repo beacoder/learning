@@ -82,12 +82,13 @@ description:  every value in Lua can have a metatable, this metatable is an ordi
               over a value by setting specific fields in its metatable.
               
 15.lua closure
-closure:  even outer function goes out of scope, 
-          the inside clousre still have the access to the "upvalue".
+description:  even outer function goes out of scope, 
+              the inside clousre still have the access to the "upvalue".
+implementation: anonymous function which uses an upvalue.
 
 --[[ following is a function which returns a closure,
-     pretty like functor in C++ I think. ]]
-
+     pretty like "anonymous functor" returned by boost::bind() in C++ I think. ]]
+     
 -- script starts here
 
 function outer()
