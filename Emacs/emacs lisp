@@ -115,4 +115,4 @@ exp:
      
 12.lambda
 lambda: return a lambda expression (anonymous function),
-        like functor in C++ I think.
+        pretty like "anonymous functor" returned by boost::bind() in C++ I think.
