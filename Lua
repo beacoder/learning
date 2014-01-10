@@ -64,6 +64,11 @@ math.pow, math.log, math.max, math.min ......
 simple mode:  operates on a default file or stream.
 io.input, io.output, io.read, io.write, io.lines, io.flush, io.close
 
+io.read("*all")     => read the whole file.
+io.read("*line")    => read the next line.
+io.read("*number")  => read a number.
+io.read("<num>")    => read a string no more than <num> characters.
+
 advanced mode:  operates on a specific file.
 file = assert(io.open("fileName", "mode"));
 file:read, file:write, file:flush, file:seek, file:close
