@@ -82,7 +82,8 @@ os.move, os.rename, os.tmpname, os.setlocale
 description:  every value in Lua can have a metatable, this metatable is an ordinary Lua table
               that defines the behavior of the original value under certain special operations.
               you can change several aspects of the behavior of operations 
-              over a value by setting specific fields in its metatable.
+              over a value by setting specific fields in its metatable,
+              pretty like "operator overloading" in C++ I think.
               
 15.lua closure
 description:  even outer function goes out of scope, 
