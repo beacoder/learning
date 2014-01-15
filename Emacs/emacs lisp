@@ -113,7 +113,7 @@ exp:
 exp:
 (catch 'hack (throw 'hack 'yes)) ⇒ yes
      
-12.lambda
+12.lambda expression
 lambda: return a lambda expression (anonymous function),
         pretty like "anonymous functor" returned by boost::bind() in C++ I think.
 exp:
