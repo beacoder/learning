@@ -119,3 +119,5 @@ description: tables are the only "container" type in Lua. they are associative a
              
 exp:
 t = {}       -- construct an empty table and assign it to variable "t"
+
+17.
