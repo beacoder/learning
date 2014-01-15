@@ -116,3 +116,9 @@ exp:
 12.lambda
 lambda: return a lambda expression (anonymous function),
         pretty like "anonymous functor" returned by boost::bind() in C++ I think.
+exp:
+(progn 
+  (fset 'sayHello (lambda () (message "Hello World !")))
+  (sayHello)) ⇒ "Hello World !"
+
+13.
