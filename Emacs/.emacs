@@ -66,7 +66,8 @@
       (require 'init-lua))
   (progn
     (require 'ido)
-    (require 'init-emacs-w3m)))
+    ;; (require 'init-emacs-w3m)
+    ))
 (require 'init-basics)
 
 (require 'session)
