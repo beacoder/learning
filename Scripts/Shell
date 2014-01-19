@@ -3,10 +3,10 @@ learning Shell
 0.设置文件为脚本文件.
 #!/bin/sh ⇒ 在文件的第一行设置执行文件的程序是 /bin/sh, 也就是 shell 程序
 
-1.在变量名称前加上$符号来访问变量的内容,变量不需要事先声明.
+1.在变量名称前加上'$'来访问变量,也可以将变量放入括号增加可读性,变量不需要事先声明.
 exp:
 myvar="Hello World"
-echo "$myvar" ⇒ Hello World
+echo "$(myvar)" ⇒ Hello World
 
 2.变量在引号中的行为取决于引号的类型.
 exp:
