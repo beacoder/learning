@@ -1,4 +1,4 @@
-# Shell Scripts
+# Shell Practice
 
 # create tag file for emacs using ctags
 ctags -e -R .
