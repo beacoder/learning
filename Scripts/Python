@@ -1,0 +1,57 @@
+learning Python
+
+1.block
+description:  Code blocks are defined by their indentation.
+              By "code block", I mean functions, if statements, for loops, while loops, and so forth.
+              Indenting starts a block and unindenting ends it.
+              
+exp:
+def fib(n):                   
+    print 'n =', n            
+    if n > 1:                 
+        return n * fib(n - 1)
+    else:                     
+        print 'end of the line'
+        return 1
+
+2.control structures
+
+if statement: 
+              if ... :
+                  ... 
+              elif ... :
+                  ...
+              else :
+                  ...
+    
+while statement:
+              while ... :
+                     ...
+              else :
+                     ...
+                     
+for statement:
+              for ... in ... :
+                   ...
+              else :
+                   ...
+                   
+break statement:  if you break out of a for or while loop, 
+                  any corresponding loop else block is not executed.
+                  
+              for ... in ... :
+                   break
+              else :
+                   ...
+
+continue statement: used to skip the rest statements in the current loop block,
+                    and continue to the next iteration of the loop.
+                    
+              for ... in ... :
+                   ...
+                   continue
+                   ...
+              else :
+                   ...
+                   
+3.                   
