@@ -2,21 +2,20 @@ learning Lua
 
 1.error pcall/xpcall
 error:  explicitly generate an error.
-pcall:  use pcall/xpcall to run function in protected mode to catch error in it. 
+pcall:  use pcall/xpcall to run function in protected mode to catch error in it.
 
-2.control structures
+2.block
+description:  a block is a list of statements, which are executed sequentially,
+              blcok ends with an "end".
+exp:
+do ... end
+
+3.control structures
 while:        while ... do ... end
 repeat:       repeat ... until ...
 if:           if ... then ... elseif ... then ... [else ...] end
 numeric for:  for variable = beg, end [, step] do ... end
 generic for:  for namelist in explist do ... end 
-
-3.block
-description:  a block is a list of statements, which are executed sequentially,
-blcok ends with an "end".
-
-exp:
-do ... end
 
 4.scope of variables
 Local:  variables preceding with "local" is Local varibales.
