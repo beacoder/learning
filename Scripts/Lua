@@ -7,6 +7,7 @@ pcall:  use pcall/xpcall to run function in protected mode to catch error in it.
 2.block
 description:  a block is a list of statements, which are executed sequentially,
               blcok ends with an "end".
+              
 exp:
 do ... end
 
