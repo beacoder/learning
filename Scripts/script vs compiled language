@@ -1,0 +1,15 @@
+1. How to run a script ?
+
+Generate byte-code  :
+script code -> pre-process -> compile -> byte-code (similar to assemble code)
+
+Run script  :
+use script interpreter to run(interprete) the byte-code.
+
+2. How to run a compiled program ?
+
+Generate Executable program :
+source code -> pre-process -> compile -> assembler -> link -> executable code (machine code)
+
+Run program :
+just run it.
