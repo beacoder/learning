@@ -104,10 +104,14 @@ Keyword-Only Parameters:  used to specify certain keyword parameters as keyword-
                           
 exp:
               # value1 is declared after '*number'
-              def func(init=5, *number, value1)
+              def func(init=5, *number, value1) :
                   print('Null')
+              func(10, 1, 2, 3, value1=50)
                   
-              # value2 is declared after *, note we don't use VarArg so we use a single star
-              def func(init=5, *, value2)
+              # value2 is declared after *, 
+              # note we don't use any VarArg, so we use a single star
+              def func(init=5, *, value2) :
+                  print('Null')
+              func(20, value2=50)
               
 5.              
