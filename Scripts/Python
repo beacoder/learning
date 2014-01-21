@@ -64,6 +64,7 @@ use 'global' to create a local reference to the global variable and operate on t
 exp:
               x = 50
               def func():
+                  # 'global x' => reference the global x
                   global x
                   print('x is', x)
                   x = 2
@@ -71,7 +72,7 @@ exp:
               func()
               print('Value of x is', x)
               
-=>
+output:
               x is 50
               Changed global x to 2
               Value of x is 2
