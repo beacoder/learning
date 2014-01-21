@@ -6,6 +6,9 @@ script code -> pre-process -> compile -> byte-code (similar to assemble code)
 Run script  :
 use script interpreter to run(interprete) the byte-code.
 
+Note: 'interpret' means finding the right "assemble / machine" code 
+      corresponding to the byte-code and run it.
+
 2. How to run a compiled program ?
 
 Generate Executable program :
