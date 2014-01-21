@@ -77,5 +77,36 @@ output:
               Changed global x to 2
               Value of x is 2
               
-4.              
+4.Parameters && Arguments
+Note: parameter => 形式参数, argument => 实际参数
+Keyword Arguments:  used to specify some of parameters in a function.
 
+exp:
+              def func(a, b=5, c=10) :
+                  print('Null')
+              
+              # 'c=24' => keyword argument
+              func(25, c=24)
+              func(25, b=100)
+
+VarArgs Parameters:  used to define any number of parameters in a function,
+                     use 'starred parameter' to represent VarArgs.
+
+exp:
+              # '*number' => varargs, '**keywords' => keyword argument
+              def func(init=5, *number, **keywords) :
+                  print('Null')
+              func(10, 1, 2, 3, value1=50, value2=100)
+              
+Keyword-Only Parameters:  used to specify certain keyword parameters as keyword-only arguments,
+                          declare them after a starred parameter.
+                          
+exp:
+              # value1 is declared after '*number'
+              def func(init=5, *number, value1)
+                  print('Null')
+                  
+              # value2 is declared after *, note we don't use VarArg so we use a single star
+              def func(init=5, *, value2)
+              
+5.              
