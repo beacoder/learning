@@ -46,21 +46,29 @@ pairs/ipairs/next: used to traverse all fields of a table.
 collectgarbage:    performs a garbage-collection.
 
 8.string manipulation
+description:  the string library provides all its functions inside the table string.
+
 string.find:  looks for the first match of pattern in the string.
 string.format:  format a string.
 string.sub: returns the substring of string.
 string.gsub:  global string replacement.
 
 9.table manipulation
+description:  this library provides all its functions inside the table 'table'.
+ 
 table.concat: returns a concatenated string of all string or numbers in the table.
 table.insert: insert element into the table.
 table.remove: remove element from the table.
 table.sort:   sorts table elements in a given order.
 
 10.mathematical functions
+description:  this library provides all its functions inside the table math.
+
 math.pow, math.log, math.max, math.min ......
 
 11.input and output facilities
+description:  this library is implemented through table io.
+
 simple mode:  operates on a default file or stream.
 io.input, io.output, io.read, io.write, io.lines, io.flush, io.close
 
@@ -76,6 +84,8 @@ file:read, file:write, file:flush, file:seek, file:close
 note: ':' in "file:read" means pass "file" to the function "read" as the first parameter.
 
 12.operating system facilities
+description:  this library is implemented through table os.
+
 os.clock, os.date, os.execute, os.exit, os.getenv, os.setenv
 os.move, os.rename, os.tmpname, os.setlocale
 
