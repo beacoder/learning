@@ -54,4 +54,27 @@ continue statement: used to skip the rest statements in the current loop block,
               else :
                    ...
                    
-3.                   
+3.scope of variables
+Local:  variables declared inside a block (function or class) is local to the block.
+Global: varialbes defined at the top level of the program (not inside any functions or classes).
+
+How to access Global Variable inside a function ?
+use 'global' to create a local reference to the global variable and operate on the reference.
+
+exp:
+              x = 50
+              def func():
+                  global x
+                  print('x is', x)
+                  x = 2
+                  print('Changed global x to', x)
+              func()
+              print('Value of x is', x)
+              
+=>
+              x is 50
+              Changed global x to 2
+              Value of x is 2
+              
+4.              
+
