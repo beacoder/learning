@@ -130,4 +130,9 @@ description: tables are the only "container" type in Lua. they are associative a
 exp:
 t = {}       -- construct an empty table and assign it to variable "t"
 
-17.
+17.bitwise operations
+description:  this library provides all its functions inside the table bit32.
+
+bit32.band, bit32.bor, bit32.bnot, bit32.xor ......
+
+18.
