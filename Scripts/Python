@@ -82,6 +82,7 @@ Note: parameter => 形式参数, argument => 实际参数
 Keyword Arguments:  used to specify some of parameters in a function.
 
 exp:
+              # 'b' and 'c' have default values
               def func(a, b=5, c=10) :
                   print('Null')
               
