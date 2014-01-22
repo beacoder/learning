@@ -145,4 +145,7 @@ exp:
 -- print out all contents in the table io.
 for k, v in pairs(io) do print(k, v) end
               
+-- print out global environment
+for k, v in pairs(_G) do print(k, v) end
+
 19.
