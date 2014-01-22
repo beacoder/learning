@@ -115,8 +115,29 @@ exp:
               func(20, value2=50)
               
 5.comments
-# some comment here         => comments one line
-''' some comment 
-    here '''                => comments a block
+
+exp:
+              # some comment here         => comments one line
+              ''' some comment 
+                  here '''                => comments a block
     
-6.    
+6.docstrings
+description:  a string on the first logical line of a function is the docstring for thar function.
+docstring convention:  first line starts with a captical letter and ends with a dot.
+                       second line is blank followed by any detailed explanation 
+                       starting from the third line.
+
+exp:
+              def func() :
+                  '''Docstring for func.  => first line
+                                          => blank
+                  Detailed docStrings.''' => detailed explanation
+                  print('Null')
+              print(func.__doc__)
+              
+output:
+              Docstring for func.
+              
+              Detailed docStrings.
+              
+7.              
