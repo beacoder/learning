@@ -98,7 +98,9 @@ description:  every value in Lua can have a metatable, this metatable is an ordi
               that defines the behavior of the original value under certain special operations.
               you can change several aspects of the behavior of operations 
               over a value by setting specific fields in its metatable,
-              pretty like "operator overloading" in C++ I think.
+              pretty like "overwrite function" in C++ I think.
+              
+common metatable field:  __index, __len, __tostring, __gc, __concat, __eq, __lt, __call, __mode ......
               
 15.lua closure
 description:  even outer function goes out of scope, 
