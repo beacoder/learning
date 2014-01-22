@@ -41,7 +41,7 @@ require:      loads the given module.
 setmetatable: sets the metatable for the given table. 
 getmetatable: gets the metatable for the given table. 
 type:         returns the type of its only argument, coded as a string.
-_G:           a global variable (not a function) that holds the global environment.
+_G:           a global table that holds the global environment(functions and tables).
 pairs/ipairs/next: used to traverse all fields of a table.
 collectgarbage:    performs a garbage-collection.
 
