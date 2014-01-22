@@ -4,6 +4,8 @@ learning Shell
 #!/bin/sh ⇒ 在文件的第一行设置执行文件的程序是 /bin/sh, 也就是 shell 程序
 
 1.在变量名称前加上'$'来访问变量,也可以将变量放入括号增加可读性,变量不需要事先声明.
+$Variable 或 $(Variable)
+
 exp:
 myvar="Hello World"
 echo "$(myvar)" ⇒ Hello World
@@ -18,12 +20,12 @@ echo \$myvar ⇒ $myvar
 
 3.获取脚本程序的输入参数.
 $1 $2 $3 ⇒ 分别获取第1、2、3个输入参数
-$@ ⇒ 列出所有输入参数,参数之间用特定符号分割,分隔符不受IFS环境变量影响
-@* ⇒ 列出所有输入参数,参数之间用IFS环境变量指定的分隔符分割
+$@ ⇒ 获取所有输入参数, 参数之间用特定符号分割,分隔符不受IFS环境变量影响
+@* ⇒ 获取所有输入参数, 参数之间用IFS环境变量指定的分隔符分割
 
 4.使用 test、[ 进行条件判断.
 exp:
-test file.c's existence.
+To check whether file.c exist or not.
 
 if test -f file.c;  then ...
 if [ -f file.c ]; then ...
