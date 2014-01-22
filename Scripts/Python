@@ -122,7 +122,7 @@ exp:
                   here '''                => comments a block
     
 6.docstrings
-description:  a string on the first logical line of a function is the docstring for thar function.
+description:           a string on the first logical line of a function is the docstring for thar function.
 docstring convention:  first line starts with a captical letter and ends with a dot.
                        second line is blank followed by any detailed explanation 
                        starting from the third line.
