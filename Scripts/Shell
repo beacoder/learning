@@ -116,6 +116,7 @@ func_name ()
 local ⇒ 定义函数的局部变量
 
 6.语句列表.
+6.0 alias ⇒ 定义命令的别名
 6.1 break ⇒ 跳出 for、while、until 循环
 6.2 : ⇒ 冒号(:)是一个空语句
 6.3 continue ⇒ 跳到 for、while、until 的下一次循环继续执行
