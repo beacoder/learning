@@ -145,4 +145,10 @@ for k, v in pairs(io) do print(k, v) end
 -- print out global environment
 for k, v in pairs(_G) do print(k, v) end
 
-18.
+18.load module
+require: used to load module.
+exp:     
+local m = require(mod)
+m.fun()
+
+19.
