@@ -131,6 +131,7 @@ exp:
 t = {}
 
 -- non-empty table
+t = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
 t = { k1=1, k2=2, k3=3 }
 t = { func = function () print ("Hello World") end }
 
