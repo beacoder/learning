@@ -107,13 +107,13 @@ esac
 && ⇒ 与
 || ⇒ 或
 
-5.函数
-function_name () {
+5.定义函数
+func_name ()
+{
   ...
 }
 
 local ⇒ 定义函数的局部变量
-return ⇒ 函数返回值
 
 6.语句列表.
 6.1 break ⇒ 跳出 for、while、until 循环
