@@ -127,8 +127,12 @@ description: tables are the only "container" type in Lua. they are associative a
              and later retrieve the value using that key.
              
 exp:
--- construct an empty table and assign it to variable "t"
+-- empty table
 t = {}
+
+-- non-empty table
+t = { k1=1, k2=2, k3=3 }
+t = { func = function () print ("Hello World") end }
 
 17.multiple results
 description:  some functions may return multiple results. 
