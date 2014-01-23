@@ -7,9 +7,7 @@ pcall:  use pcall/xpcall to run function in protected mode to catch error in it.
 2.block
 description:  a block is a list of statements, which are executed sequentially,
               blcok ends with an "end".
-              
-exp:
-do ... end
+exp:          do ... end
 
 3.control structures
 while:        while ... do ... end
@@ -22,20 +20,14 @@ generic for:  for namelist in explist do ... end
 Local:  variables preceding with "local" is Local varibales.
 Global: variables other than local is Global variables.
 
-5.string concatenation operator
+5.basic operators
 "..": used to concatenate string or numbers.
+exp:  print("Hello" .. " " .. "World");
 
-exp:
-print("Hello" .. " " .. "World");
-
-6.length operator
 "#": used to get length of string or table.
+exp: t = {1,2,3} print(#t);  => 3
 
-exp:
-t = {1,2,3}
-print(#t);  => 3
-
-7.basic function
+6.basic function
 assert:       issues an error when the value of its argument is nil or false.
 require:      loads the given module.
 setmetatable: sets the metatable for the given table. 
@@ -45,7 +37,7 @@ _G:           a global table that holds the global environment(functions and tab
 pairs/ipairs/next: used to traverse all fields of a table.
 collectgarbage:    performs a garbage-collection.
 
-8.string manipulation
+7.string manipulation
 description:  the string library provides all its functions inside the table string.
 
 string.find:  looks for the first match of pattern in the string.
@@ -53,7 +45,7 @@ string.format:  format a string.
 string.sub: returns the substring of string.
 string.gsub:  global string replacement.
 
-9.table manipulation
+8.table manipulation
 description:  this library provides all its functions inside the table 'table'.
  
 table.concat: returns a concatenated string of all string or numbers in the table.
@@ -61,12 +53,12 @@ table.insert: insert element into the table.
 table.remove: remove element from the table.
 table.sort:   sorts table elements in a given order.
 
-10.mathematical functions
+9.mathematical functions
 description:  this library provides all its functions inside the table math.
 
 math.pow, math.log, math.max, math.min ......
 
-11.input and output facilities
+10.input and output facilities
 description:  this library is implemented through table io.
 
 simple mode:  operates on a default file or stream.
@@ -83,11 +75,16 @@ file:read, file:write, file:flush, file:seek, file:close
 
 note: ':' in "file:read" means pass "file" to the function "read" as the first parameter.
 
-12.operating system facilities
+11.operating system facilities
 description:  this library is implemented through table os.
 
 os.clock, os.date, os.execute, os.exit, os.getenv, os.setenv
 os.move, os.rename, os.tmpname, os.setlocale
+
+12.bitwise operations
+description:  this library provides all its functions inside the table bit32.
+
+bit32.band, bit32.bor, bit32.bnot, bit32.xor ......
 
 13.comments
 "--"  => comments one line
@@ -133,12 +130,7 @@ exp:
 -- construct an empty table and assign it to variable "t"
 t = {}
 
-17.bitwise operations
-description:  this library provides all its functions inside the table bit32.
-
-bit32.band, bit32.bor, bit32.bnot, bit32.xor ......
-
-18.multiple results
+17.multiple results
 description:  some functions may return multiple results. 
 
 exp:
@@ -148,4 +140,4 @@ for k, v in pairs(io) do print(k, v) end
 -- print out global environment
 for k, v in pairs(_G) do print(k, v) end
 
-19.
+18.
