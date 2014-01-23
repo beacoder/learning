@@ -126,7 +126,7 @@ local ⇒ 定义函数的局部变量
 6.6 eval ⇒ 执行表达式并返回值
 6.7 exec ⇒ 在当前 shell 执行外部程序
 6.8 exit n ⇒ 结束脚本程序执行并返回 n 作为返回码
-6.9 export ⇒ 将 export 的参数设置为子 shell 的环境变量
+6.9 export ⇒ 设置子程序的环境变量
 6.10 expr ⇒ 表达式求值
 6.11 printf ⇒ 输出与显示文本信息
 6.12 return ⇒ 函数返回值
@@ -150,4 +150,7 @@ Command <<InputComesFromHere
 ...
 InputComesFromHere
 
-9.
+9.读取环境变量
+${Env_Variable} ⇒ 读取环境变量 Env_Variable 的值
+
+10.
