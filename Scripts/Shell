@@ -26,40 +26,80 @@ $@ ⇒ 获取所有输入参数, 参数之间用特定符号分割,分隔符不�
 1> 或 > 或 >> ⇒ 重定向标准输出
 2> 或 2>>     ⇒ 重定向错误输出
 
-4.使用 test、[ 进行条件判断.
+4.使用 test 或 [] 进行条件判断.
 exp:
 To check whether file.c exist or not.
 
-if test -f file.c;  then ...
-if [ -f file.c ]; then ...
+if test -f file.c;  then ... fi
+if [ -f file.c ]; then ... fi
+
+Comparisons:
+-eq	equal to
+-ne	not equal to
+-lt	less than
+-le	less than or equal to
+-gt	greater than
+-ge	greater than or equal to
+
+File Operations:
+-s	file exists and is not empty
+-f	file exists and is not a directory
+-d	directory exists
+-x	file is executable
+-w	file is writable
+-r	file is readable
 
 4.控制结构.
-4.1 if 语法
-if ... then ... else ... fi ... ⇒ 典型if语法
-elif ... ⇒ 包含多个if语句
+4.1 if 语句
+if [ ... ]; then
+	...
+elif [ ... ]; then
+	...
+else
+	...
+fi
 
 4.2 for 循环
 for ... in ...
 do
-  ...
+	...
+done
+
+for (( 初始值; 限制值; 執行步階 ))
+do
+	...
+done
+
+exp:
+for (( i=1; i<=$(nu); i=i+1 ))
+do
+	s=$(($s+$i))
 done
 
 4.3 while 循环
-while ... do
-...
+while [ ... ]
+do
+	...
 done
 
 4.4 until 循环 ⇒ 循环将反复执行直到 until 的条件为真时才退出循环
-until ...
+until [ ... ]
 do
-...
+	...
 done
 
 4.5 case 语法
-case ... in 
-  ... ;;
-  ... ;;
-esac
+case  $var in
+  "第一個變數內容")
+	...
+	;;
+  "第二個變數內容")
+	...
+	;;
+  *)
+	...
+	;;
+esac  
 
 4.6 逻辑运算语法
 && ⇒ 与
