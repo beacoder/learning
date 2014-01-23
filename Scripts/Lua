@@ -97,7 +97,20 @@ description:  every value in Lua can have a metatable, this metatable is an ordi
               over a value by setting specific fields in its metatable,
               pretty like "overwrite function" in C++ I think.
               
-common metatable field:  __index, __len, __tostring, __gc, __concat, __eq, __lt, __call, __mode ......
+exp:
+do
+local x = { value = 5 }
+local mt = { __add = function (left, right)  -- "add" event handler
+                     return { value = left.value + right.value }
+                     end }
+setmetatable(x, mt)  -- use "mt" as the metatable for "x"
+local y = x + x
+print(y.value) => 10
+end
+              
+common metatable field:  
+__index, __newindex, __len, __tostring, __gc, __concat, 
+__eq, __lt, __call, __mode ......
               
 15.lua closure
 description:  even outer function goes out of scope, 
