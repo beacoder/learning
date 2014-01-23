@@ -164,4 +164,10 @@ exp:
 local m = require(mod)
 m.fun()
 
-19.
+19.userdata
+description:  userdata values are objects foreign to Lua, such as objects implemented in C.
+              you cannot do anything with a userdata value in Lua other than pass it around, 
+              it's only useful for giving to functions exposed by the same C library that made the userdata.
+              but using metamethods it's possible to make userdata work with operators and act similar to tables.
+              
+20.              
