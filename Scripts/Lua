@@ -90,7 +90,7 @@ description:  this library provides all its functions inside the table bit32.
 
 bit32.band, bit32.bor, bit32.bnot, bit32.xor ......
 
-13.thread operators
+13.thread operations
 description:  contains thread related operations and come inside the table coroutine.
 
 coroutine.resume, coroutine.yield, coroutine.status 
@@ -174,7 +174,7 @@ exp:
 local m = require(mod)
 m.fun()
 
-20.userdata
+20.userdata structure
 description:  userdata values are objects foreign to Lua, such as objects implemented in C.
               you cannot do anything with a userdata value in Lua other than pass it around, 
               it's only useful for giving to functions exposed by the same C library that made the userdata.
