@@ -90,11 +90,17 @@ description:  this library provides all its functions inside the table bit32.
 
 bit32.band, bit32.bor, bit32.bnot, bit32.xor ......
 
-13.comments
+13.thread operators
+description:  contains thread related operations and come inside the table coroutine.
+
+coroutine.resume, coroutine.yield, coroutine.status 
+coroutine.wrap, coroutine.create, coroutine.running
+
+14.comments
 "--"  => comments one line
 "--[[ some comment here ]]" => comments a block
 
-14.metatable
+15.metatable
 description:  every value in Lua can have a metatable, this metatable is an ordinary Lua table
               that defines the behavior of the original value under certain special operations.
               you can change several aspects of the behavior of operations 
@@ -116,7 +122,7 @@ common metatable field:
 __index, __newindex, __len, __tostring, __gc, __concat, 
 __eq, __lt, __call, __mode ......
               
-15.lua closure
+16.lua closure
 description:  even outer function goes out of scope, 
               the inside clousre still have the access to the "upvalue".
 implementation: anonymous function which uses an upvalue.
@@ -138,7 +144,7 @@ func();         =>  Hello_World !
 
 -- script ends here
 
-16.table
+17.table structure
 description: tables are the only "container" type in Lua. they are associative arrays, 
              which means they store a set of key/value pairs, where you can store a value under some key, 
              and later retrieve the value using that key.
@@ -152,7 +158,7 @@ t = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturda
 t = { k1=1, k2=2, k3=3 }
 t = { func = function () print ("Hello World") end }
 
-17.multiple results
+18.multiple results
 description:  some functions may return multiple results. 
 
 exp:
@@ -162,16 +168,16 @@ for k, v in pairs(io) do print(k, v) end
 -- print out global environment
 for k, v in pairs(_G) do print(k, v) end
 
-18.load module
+19.load module
 require: used to load module.
 exp:     
 local m = require(mod)
 m.fun()
 
-19.userdata
+20.userdata
 description:  userdata values are objects foreign to Lua, such as objects implemented in C.
               you cannot do anything with a userdata value in Lua other than pass it around, 
               it's only useful for giving to functions exposed by the same C library that made the userdata.
               but using metamethods it's possible to make userdata work with operators and act similar to tables.
               
-20.              
+21.              
