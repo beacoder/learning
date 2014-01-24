@@ -10,9 +10,9 @@ description:  a block is a list of statements, which are executed sequentially,
 exp:          do ... end
 
 3.control structures
-while:        while 'exp' do 'block' end
-repeat:       repeat 'block' until 'exp'
-if:           if 'exp' then 'block' elseif 'exp' then 'block' [else 'block'] end
+while:        while ... do ... end
+repeat:       repeat do ... end until ...
+if:           if ... then do ... end elseif ... then do ... end [else do ... end] end
 numeric for:  for variable = beg, end [, step] do ... end
 generic for:  for namelist in explist do ... end 
 
