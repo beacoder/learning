@@ -26,7 +26,7 @@ exp:  print("Hello" .. " " .. "World");
 
 "...": represent multiple expressions, 
        can only be used when directly inside a vararg function.
-exp:  function func(a, b, ...) end;      
+exp:   function func(a, b, ...) end;      
 
 "#": used to get length of string or table.
 exp: t = {1,2,3} print(#t);  => 3
