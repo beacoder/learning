@@ -160,9 +160,13 @@ t = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturda
 t = { k1=1, k2=2, k3=3 }
 t = { func = function () print ("Hello World") end }
 
-18.multiple results
-description:  some functions may return multiple results. 
+18.multiple assignments && results
+assignments:  lua allows multiple assignments.
+exp:
+-- define five tables
+t,a,b,l,e = {}, {}, {}, {}, {};
 
+results:      some functions may return multiple results. 
 exp:
 -- print out all contents in the table io.
 for k, v in pairs(io) do print(k, v) end
