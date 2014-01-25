@@ -166,7 +166,7 @@ exp:
 -- define five tables
 t,a,b,l,e = {}, {}, {}, {}, {};
 
-results:      some functions may return multiple results. 
+results:      both function calls and vararg expressions can result in multiple values.
 exp:
 -- print out all contents in the table io.
 for k, v in pairs(io) do print(k, v) end
