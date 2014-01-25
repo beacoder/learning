@@ -63,20 +63,28 @@ else
 fi
 
 4.2 for 循环
+4.2.1 for-in loop
 for ... in ...
 do
 	...
 done
 
+exp:
+for i in 1 2 3
+do
+	...
+done
+
+4.2.2 for-number loop
 for (( 初始值; 限制值; 执行步进 ))
 do
 	...
 done
 
 exp:
-for (( i=1; i<=$(number); i=i+1 ))
+for (( i = 1; i <= $(number); i = i+1 ))
 do
-	s=$(($s+$i))
+	...
 done
 
 4.3 while 循环
@@ -93,15 +101,17 @@ done
 
 4.5 case 语法
 case  $var in
-  "第一个变量值")
-	...
-	;;
-  "第二个变量值")
-	...
-	;;
-  *)
-	...
-	;;
+	"value_1")
+		...
+		;;
+		
+  	"value_2")
+		...
+		;;
+		
+  	*)
+		...
+		;;
 esac  
 
 4.6 逻辑运算语法
