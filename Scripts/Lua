@@ -124,7 +124,8 @@ __eq, __lt, __call, __mode ......
               
 16.lua closure
 description:  even outer function goes out of scope, 
-              the inside clousre still have the access to the "upvalue".
+              the inside clousre still have access to the "upvalue",
+              the "upvalue" is like the member variable of the closure.
 implementation: anonymous function which uses an upvalue.
 
 --[[ following is a function which returns a closure,
@@ -133,14 +134,17 @@ implementation: anonymous function which uses an upvalue.
 -- script starts here
 
 function outer()
-local str = "World !";
+local number = 0;
 return function ()
-         print("Hello_" .. str);
+         number = number + 1;
+         print("Number is " .. number);
        end;
 end;
 
 func = outer();
-func();         =>  Hello_World !
+func();         =>  Number is 1
+func();         =>  Number is 2
+func();         =>  Number is 3
 
 -- script ends here
 
