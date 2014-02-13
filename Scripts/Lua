@@ -125,7 +125,7 @@ __eq, __lt, __call, __mode ......
 16.lua closure
 description:  even outer function goes out of scope, 
               the inside clousre still have access to the "upvalue",
-              the "upvalue" is like the member variable of the closure.
+              cause the "upvalue" is captured as a member variable of the closure.
 implementation: anonymous function which uses at least one upvalue.
 
 --[[ following is a function which returns a closure,
