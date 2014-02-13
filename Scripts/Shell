@@ -118,17 +118,17 @@ esac
 && ⇒ 与
 || ⇒ 或
 
-5.函数
+5.函数.
 5.1 定义函数
 func_name ()
 {
+  # local 定义函数局部变量
+  local variable=0
   ...
 }
 
 5.2 获取函数返回值
 $(Func arg1 arg2) ⇒ 以 arg1、arg2 作为参数调用 Func 并获取函数返回值
-
-local ⇒ 定义函数的局部变量
 
 6.语句列表.
 6.0 alias ⇒ 定义命令的别名
