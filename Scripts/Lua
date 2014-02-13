@@ -126,10 +126,11 @@ __eq, __lt, __call, __mode ......
 description:  even outer function goes out of scope, 
               the inside clousre still have access to the "upvalue",
               the "upvalue" is like the member variable of the closure.
-implementation: anonymous function which uses an upvalue.
+implementation: anonymous function which uses at least one upvalue.
 
 --[[ following is a function which returns a closure,
-     pretty like "anonymous functor" returned by boost::bind() in C++ I think. ]]
+     pretty like "anonymous functor" returned by boost::bind() in C++ I think.
+     note: C++11 support closure by providing Lambda Functions. ]]
      
 -- script starts here
 
