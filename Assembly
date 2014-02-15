@@ -54,7 +54,7 @@ mov es:[bx], dl ⇒ 将dl的数据传入段地址为es,偏移地址为bx所指�
    exp: 
    mov ax, 1 ⇒ ax 占用一个字单元
    
-   (2) X ptr ⇒ word ptr、byte ptr
+   (2) type ptr ⇒ word ptr、byte ptr
    exp:
    mov word ptr ds:[0], 1
    
