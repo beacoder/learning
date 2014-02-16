@@ -151,7 +151,7 @@ shr ⇒ (1) 将一个寄存器或内存单元中的数据向右移位 (2) 将最
                     - when this register is used to specify an address, SS is
                       used implicitly
     ESI,EDI         - index registers, relative to DS,ES respectively
-    SS,DS,CS,ES,FS,GS - segment registers
+    SS,DS,CS,ES,FS,GS - segment registers (16-bit)
                       - (when Intel went from the 286 to the 386, they figured
                          that providing more segment registers would be more
                          useful to programmers than providing more general-
@@ -161,5 +161,8 @@ shr ⇒ (1) 将一个寄存器或内存单元中的数据向右移位 (2) 将最
     EIP            - program counter (instruction pointer), relative to CS
     ESP            - stack pointer, relative to SS
     EFLAGS         - condition codes, a.k.a. flags
+    
+    32-bit mode:
+    AX,BX,CX,DX,BP,SI,DI,IP,SP,FLAGS ⇒ the lowest 16 bits of the new 32-bit registers (EAX,EBX, ...)
     
 39.
