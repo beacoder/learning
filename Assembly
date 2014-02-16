@@ -163,14 +163,17 @@ shr ⇒ (1) 将一个寄存器或内存单元中的数据向右移位 (2) 将最
     EFLAGS         - condition codes, a.k.a. flags
     
     32-bit mode:
+    AL,BL,CL,DL
+  ⇒ the lowest 8 bits of the 16-bit registers (AX,BX, ...)
+    
+    AH,BH,CH,DH
+  ⇒ the highest 8bits of the 16-bit registers (AX,BX, ...)
+    
     AX,BX,CX,DX,BP,SI,DI,IP,SP,FLAGS
-  ⇒ the lowest 16 bits of the new 32-bit registers (EAX,EBX, ...)
+  ⇒ the lowest 16 bits of the 32-bit registers (EAX,EBX, ...)
     
     64-bit mode:
     EAX,EBX,ECX,EDX,EBP,ESI,EDI,EIP,ESP,EFLAGS
-  ⇒ the lowest 32 bits of the new 64-bit registers (RAX,RBX, ...)
-  
-    AX,BX,CX,DX,BP,SI,DI,IP,SP,FLAGS
-  ⇒ the lowest 16 bits of the new 32-bit registers (EAX,EBX, ...)
+  ⇒ the lowest 32 bits of the 64-bit registers (RAX,RBX, ...)
     
 39. 
