@@ -145,7 +145,7 @@ shr ⇒ (1) 将一个寄存器或内存单元中的数据向右移位 (2) 将最
 "int 9"   ⇒ 按键按下时向键盘缓冲区写入数据
 "int 16h" ⇒ 应用程序通过此中断从键盘缓冲区读出数据
 
-38. Important Processor Registers:
+38. Important Processor Registers(32-bit):
     EAX,EBX,ECX,EDX - "general purpose", more or less interchangeable
     EBP             - used to access data on stack
                     - when this register is used to specify an address, SS is
@@ -163,6 +163,14 @@ shr ⇒ (1) 将一个寄存器或内存单元中的数据向右移位 (2) 将最
     EFLAGS         - condition codes, a.k.a. flags
     
     32-bit mode:
-    AX,BX,CX,DX,BP,SI,DI,IP,SP,FLAGS ⇒ the lowest 16 bits of the new 32-bit registers (EAX,EBX, ...)
+    AX,BX,CX,DX,BP,SI,DI,IP,SP,FLAGS
+  ⇒ the lowest 16 bits of the new 32-bit registers (EAX,EBX, ...)
     
-39.
+    64-bit mode:
+    EAX,EBX,ECX,EDX,EBP,ESI,EDI,EIP,ESP,EFLAGS
+  ⇒ the lowest 32 bits of the new 64-bit registers (RAX,RBX, ...)
+  
+    AX,BX,CX,DX,BP,SI,DI,IP,SP,FLAGS
+  ⇒ the lowest 16 bits of the new 32-bit registers (EAX,EBX, ...)
+    
+39. 
