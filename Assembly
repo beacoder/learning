@@ -145,35 +145,39 @@ shr ⇒ (1) 将一个寄存器或内存单元中的数据向右移位 (2) 将最
 "int 9"   ⇒ 按键按下时向键盘缓冲区写入数据
 "int 16h" ⇒ 应用程序通过此中断从键盘缓冲区读出数据
 
-38. Important Processor Registers(32-bit):
-    EAX,EBX,ECX,EDX - "general purpose", more or less interchangeable
-    EBP             - used to access data on stack
-                    - when this register is used to specify an address, SS is
-                      used implicitly
-    ESI,EDI         - index registers, relative to DS,ES respectively
-    SS,DS,CS,ES,FS,GS - segment registers (16-bit)
-                      - (when Intel went from the 286 to the 386, they figured
-                         that providing more segment registers would be more
-                         useful to programmers than providing more general-
-                         purpose registers... now, they have an essentially
-                         RISC processor with only _FOUR_ GPRs!)
-                      - these are all only 16 bits in size
-    EIP            - program counter (instruction pointer), relative to CS
-    ESP            - stack pointer, relative to SS
-    EFLAGS         - condition codes, a.k.a. flags
+38.Important Processor Registers(32-bit):
+   EAX,EBX,ECX,EDX - "general purpose", more or less interchangeable
+   EBP             - used to access data on stack
+                   - when this register is used to specify an address, SS is
+                     used implicitly
+   ESI,EDI         - index registers, relative to DS,ES respectively
+   SS,DS,CS,ES,FS,GS - segment registers (16-bit)
+                     - (when Intel went from the 286 to the 386, they figured
+                        that providing more segment registers would be more
+                        useful to programmers than providing more general-
+                        purpose registers... now, they have an essentially
+                        RISC processor with only _FOUR_ GPRs!)
+                     - these are all only 16 bits in size
+   EIP            - program counter (instruction pointer), relative to CS
+   ESP            - stack pointer, relative to SS
+   EFLAGS         - condition codes, a.k.a. flags
+   
+   32-bit mode:
+   AL,BL,CL,DL
+ ⇒ the lowest 8 bits of the 16-bit registers (AX,BX, ...)
     
-    32-bit mode:
-    AL,BL,CL,DL
-  ⇒ the lowest 8 bits of the 16-bit registers (AX,BX, ...)
+   AH,BH,CH,DH
+ ⇒ the highest 8bits of the 16-bit registers (AX,BX, ...)
     
-    AH,BH,CH,DH
-  ⇒ the highest 8bits of the 16-bit registers (AX,BX, ...)
+   AX,BX,CX,DX,BP,SI,DI,IP,SP,FLAGS
+ ⇒ the lowest 16 bits of the 32-bit registers (EAX,EBX, ...)
     
-    AX,BX,CX,DX,BP,SI,DI,IP,SP,FLAGS
-  ⇒ the lowest 16 bits of the 32-bit registers (EAX,EBX, ...)
+   64-bit mode:
+   EAX,EBX,ECX,EDX,EBP,ESI,EDI,EIP,ESP,EFLAGS
+ ⇒ the lowest 32 bits of the 64-bit registers (RAX,RBX, ...)
     
-    64-bit mode:
-    EAX,EBX,ECX,EDX,EBP,ESI,EDI,EIP,ESP,EFLAGS
-  ⇒ the lowest 32 bits of the 64-bit registers (RAX,RBX, ...)
+39.Intel microprocessors 不允许将数据从内存地址A直接赋值给内存地址B,
+   必须先将数据从内存地址A拷贝到通用寄存器中,
+   再将数据从通用寄存器拷贝到内存地址B.
     
-39. 
+40.
