@@ -178,5 +178,12 @@ shr ⇒ (1) 将一个寄存器或内存单元中的数据向右移位 (2) 将最
 39.Intel microprocessors 不允许将数据从内存地址A直接赋值给内存地址B,
    必须先将数据从内存地址A拷贝到通用寄存器中,
    再将数据从通用寄存器拷贝到内存地址B.
-    
+   
+   Example of MOV combinations that ARE NOT allowed:
+   mov eax, dl             ; Destination and source are not of the same size
+   mov [myVar1], [myVar2]  ; Copying memory to memory is a no-no
+   mov 500, eax            ; Register to an immediate value cannot be done
+   mov 500, 100            ; Immediate value to immediate value cannot be done
+   mov eax, eax            ; Why bother doing this?
+   
 40.
