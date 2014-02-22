@@ -1,7 +1,7 @@
-learning Shell
+learning Bash
 
 0.设置文件为脚本文件.
-#!/bin/sh ⇒ 在文件的第一行设置执行文件的程序是 /bin/sh, 也就是 shell 程序
+#!/bin/bash ⇒ 在文件的第一行设置执行文件的程序是 /bin/bash.
 
 1.在变量名称前加上'$'来读取变量值,变量不需要事先声明.
 $Variable
