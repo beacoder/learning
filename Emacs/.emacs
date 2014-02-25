@@ -35,7 +35,7 @@
     \nDDirectory to be taged: ")
   (if (string= "" tag-file-name) (setq tag-file-name "TAGS))
   (shell-command
-   ;; use system ctags instead of emacs ctags
+   ;; use Exuberant Ctags instead of Emacs Ctags
    (format "/usr/bin/ctags -f %s/%s -e -R %s" dir-name1 tag-file-name (directory-file-name dir-name2)))
    (message "create-tags succeed !")
   )
