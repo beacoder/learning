@@ -1,5 +1,8 @@
 # Shell Practice
 
+# set PATH environment variable
+PATH=$PATH:$HOME/bin/:.
+
 # create tag file for emacs using ctags
 ctags -e -R .
 
@@ -23,4 +26,8 @@ fg [jobspec]  => bring to foregound
 # enlarge the shell history size
 export HISTSIZE=100000
 export HISTFILESIZE=100000
+
+# define alias 
+alias em="emacs&"
+alias ll="ls -l"
 
