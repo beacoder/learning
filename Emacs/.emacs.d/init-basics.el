@@ -152,4 +152,7 @@
 (require 'saveplace)
 (setq-default save-place t)
 
+;; ediff splits window horizontally
+(setq ediff-split-window-function 'split-window-horizontally)
+
 (provide 'init-basics)
