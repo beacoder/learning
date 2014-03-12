@@ -70,6 +70,7 @@
     (require 'ido)
     ;; (require 'init-emacs-w3m)
     ))
+(require 'buffer-move)
 (require 'init-basics)
 
 (require 'session)
