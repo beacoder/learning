@@ -34,6 +34,12 @@
 ;; instead of 'C-x o'
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
+  
+;; swap buffers without typing C-x b on each window
+(global-set-key (kbd "<C-S-up>")     'buf-move-up)
+(global-set-key (kbd "<C-S-down>")   'buf-move-down)
+(global-set-key (kbd "<C-S-left>")   'buf-move-left)
+(global-set-key (kbd "<C-S-right>")  'buf-move-right)
 
 ;;----------------------------------------------------------------------------
 ;; mode setting
