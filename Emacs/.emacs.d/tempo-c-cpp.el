@@ -113,7 +113,7 @@
 
 ;;; Preprocessor Templates (appended to c-tempo-tags)
 (tempo-define-template "c-include"
-                       '("#include <" r ".h>" > n
+                       '("#include \"" r ".h\"" > n
                          )
                        "include"
                        "Insert a #include <> statement"
