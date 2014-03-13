@@ -7,7 +7,7 @@
 ;; Copyright (C) 2008  Sebastien Varrette
 ;;
 ;; Author: Sebastien Varrette <Sebastien.Varrette@uni.lu>
-;; Maintainer: Sebastien Varrette <Sebastien.Varrette@uni.lu>
+;; Maintainer: Sebastien Varrette <Sebastien.Varrette@uni.lu>i
 ;; Created: 18 Jan 2008
 ;; Version: 0.1
 ;; Keywords: template, C, C++
@@ -116,7 +116,7 @@
                        '("#include \"" r ".h\"" > n
                          )
                        "include"
-                       "Insert a #include <> statement"
+                       "Insert a #include statement"
                        'c-tempo-tags)
 
 (tempo-define-template "c-define"
