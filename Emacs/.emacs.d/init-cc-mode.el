@@ -44,6 +44,8 @@
   (flyspell-prog-mode)
   ;; improve performance
   (setq flyspell-issue-message-flag nil)
+  ;; turn on flymake
+  (flymake-mode-on)
   
   ;; navigation between header and cpp/cc files
   (local-set-key (kbd "C-c o") 'ff-find-other-file)    
