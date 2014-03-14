@@ -71,6 +71,7 @@
     ;; (require 'init-emacs-w3m)
     ))
 (require 'buffer-move)
+(require 'flymake-cursor)
 (require 'init-basics)
 
 (require 'session)
