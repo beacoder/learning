@@ -178,6 +178,15 @@
                        "while"
                        "Insert a C while statement"
                        'c-tempo-tags)
+                       
+(tempo-define-template "c-do-while"
+                       '(> "do" > n
+                           > "{" > n > n > "}" > n>      
+			   "while (" ~ ");" > n
+                         )
+                       "do"
+                       "Insert a C do-while statement"
+                       'c-tempo-tags)                       
 
 (tempo-define-template "c-for"
                        '(> "for (" ~ ")" > n
