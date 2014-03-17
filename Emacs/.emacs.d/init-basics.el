@@ -161,4 +161,19 @@
 ;; ediff splits window horizontally
 (setq ediff-split-window-function 'split-window-horizontally)
 
+;; Overwrite flymake-display-warning so that no annoying dialog box is
+;; used.
+
+;; This version uses lwarn instead of message-box in the original version. 
+;; lwarn will open another window, and display the warning in there.
+(defun flymake-display-warning (warning) 
+  "Display a warning to the user, using lwarn"
+  (lwarn 'flymake :warning warning))
+
+;; Using lwarn might be kind of annoying on its own, popping up windows and
+;; what not. If you prefer to recieve the warnings in the mini-buffer, use:
+(defun flymake-display-warning (warning) 
+  "Display a warning to the user, using lwarn"
+  (message warning))
+
 (provide 'init-basics)
