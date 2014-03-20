@@ -1,50 +1,26 @@
 ;; c/c++ programming mode setting
 
-;; Here's a sample .emacs file that might help you along the way.
-;; Just copy this region and paste it into your .emacs file.  You may
-;; want to change some of the actual values.
-
-(defconst my-c-style
-  '((c-tab-always-indent        . t)
-    (c-comment-only-line-offset . 0)
-    (c-hanging-braces-alist     . ((substatement-open after)
-                                   (brace-list-open)))
-    (c-hanging-colons-alist     . ((member-init-intro before)
-                                   (inher-intro)
-                                   (case-label after)
-                                   (label after)
-                                   (access-label after)))
-    (c-cleanup-list             . (scope-operator
-                                   empty-defun-braces
-                                   defun-close-semi))
-    (c-offsets-alist            . ((arglist-close . c-lineup-arglist)
-                                   (substatement-open . 0)
-                                   (case-label        . 4)
-                                   (block-open        . 0)
-                                   (knr-argdecl-intro . -)))
-    (c-echo-syntactic-information-p . t))
-  "My C Programming Style")
-
-;; offset customizations not in my-c-style
-(setq c-offsets-alist '((member-init-intro . ++)))
-
 ;; Customizations for all modes in CC Mode.
+
+;; use google-c-style
+(require 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+
+;; some personal settings
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+(add-hook 'c-mode-common-hook 'tab-indents-region)
+
 (defun my-c-mode-common-hook ()
-  ;; add my personal style and set it for the current buffer
-  (c-add-style "PERSONAL" my-c-style t)
-  ;; set basic indentation width to 2
-  (setq c-basic-offset 2)
   ;; other customizations
-  (setq tab-width 8
-        ;; this will make sure spaces are used instead of tabs
-        indent-tabs-mode nil)
+  (setq tab-width 8)
   ;; show function name in mode-line
   (which-function-mode t)
   ;; enable flyspell for comments in source code
   (flyspell-prog-mode)
   ;; improve performance
   (setq flyspell-issue-message-flag nil)
-  ;; turn on flymake
+  ;; turn flymake mode on
   (flymake-mode-on)
   
   ;; navigation between header and cpp/cc files
@@ -55,16 +31,10 @@
   (local-set-key (kbd "C-M-e") 'c-end-of-defun)
 
   ;; we like auto-newline and hungry-delete
-  (c-toggle-auto-hungry-state 1)
-  ;; key bindings for all supported languages.  We can put these in
-  ;; c-mode-base-map because c-mode-map, c++-mode-map, objc-mode-map,
-  ;; java-mode-map, idl-mode-map, and pike-mode-map inherit from it.
-  (define-key c-mode-base-map "\C-m" 'c-context-line-break))
-(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+  (c-toggle-auto-hungry-state 1))
 
 ;; use <tab> to indent region if anything is selected
 (defun tab-indents-region () (local-set-key [(tab)] 'fledermaus-maybe-tab))
-(add-hook 'c-mode-common-hook 'tab-indents-region)
 
 ;; fledermaus came up with this
 (defun fledermaus-maybe-tab ()
@@ -96,10 +66,10 @@
                          "/* -*-C++-*-\n"
 			 ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n"
 			 ";\n"
-                         "; File:         " header-file-name "\n"
-                         "; Description:   \n"
-                         "; Created:      " (substring (current-time-string) -4) "\n"
-			 "; Author: " (user-full-name) "\n"
+                         "; @File:         " header-file-name "\n"
+                         "; @Description:   \n"
+                         "; @Created:      " (substring (current-time-string) -4) "\n"
+			 "; @Author: " (user-full-name) "\n"
 			 ";\n"
 			 "; (c) Copyright 2008, Advantest, all rights reserved.\n"
 			 ";\n"
