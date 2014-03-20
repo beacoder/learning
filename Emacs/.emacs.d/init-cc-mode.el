@@ -16,6 +16,7 @@
   (require 'flymake-google-cpplint)
   (custom-set-variables
    ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
+   ;; chmod 755 ~/.emacs.d/cpplint.py to make cpplint.py executable
    '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py"))
   (flymake-google-cpplint-load))
 
