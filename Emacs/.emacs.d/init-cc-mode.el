@@ -10,6 +10,14 @@
 ;; some personal settings
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 (add-hook 'c-mode-common-hook 'tab-indents-region)
+(add-hook 'c-mode-common-hook 'my-flymake-google-init)
+
+(defun my-flymake-google-init ()
+  (require 'flymake-google-cpplint)
+  (custom-set-variables
+   ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
+   '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py"))
+  (flymake-google-cpplint-load))
 
 (defun my-c-mode-common-hook ()
   ;; other customizations
@@ -66,10 +74,10 @@
                          "/* -*-C++-*-\n"
 			 ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n"
 			 ";\n"
-                         "; @File:         " header-file-name "\n"
-                         "; @Description:   \n"
-                         "; @Created:      " (substring (current-time-string) -4) "\n"
-			 "; @Author: " (user-full-name) "\n"
+                         "; File:         " header-file-name "\n"
+                         "; Description:   \n"
+                         "; Created:      " (substring (current-time-string) -4) "\n"
+			 "; Author: " (user-full-name) "\n"
 			 ";\n"
 			 "; (c) Copyright 2008, Advantest, all rights reserved.\n"
 			 ";\n"
