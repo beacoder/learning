@@ -17,10 +17,11 @@
 (recentf-mode t)
 (setq recentf-max-menu-items 50
       recentf-max-saved-items 1000
-      recentf-exclude '("/tmp/"
+      recentf-exclude '(
+                     ;; "/tmp/"
                         "/ssh:"
                         "/sudo:"
-                        "/home/[a-z]\+/\\."
+                     ;; "/home/[a-z]\+/\\."
                         ))
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
