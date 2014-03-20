@@ -163,7 +163,9 @@
 
 ;; Overwrite flymake-display-warning so that no annoying dialog box is
 ;; used.
-(require 'flymake)
+
+(if (display-graphic-p)
+    (require 'flymake))
 
 ;; This version uses lwarn instead of message-box in the original version. 
 ;; lwarn will open another window, and display the warning in there.
