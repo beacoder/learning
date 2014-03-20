@@ -179,4 +179,11 @@
   "Display a warning to the user, using lwarn"
   (message warning))
 
+;; load package.el
+(require 'package)
+;; add MELPA to repository list
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+;; initialize package.el
+(package-initialize)
+
 (provide 'init-basics)
