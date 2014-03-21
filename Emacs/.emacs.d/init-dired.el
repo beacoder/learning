@@ -2,6 +2,9 @@
 ;; dired setting
 ;;----------------------------------------------------------------------------
 
+;; add to load-path
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/dired"))
+
 ;; enable dired-details+
 (require 'dired-details+)
 
