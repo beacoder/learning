@@ -1,20 +1,16 @@
 ;;----------------------------------------------------------------------------
 ;; auto-complete setting
-;;
-;; download auto-complete from http://cx4a.org/software/auto-complete/
-;; install it using "emacs -batch -l etc/install.el", choose path "~/.emacs.d/"
-;; add following scripts in .emacs
 ;;----------------------------------------------------------------------------
 
-;; basic auto-complete configuration
+;; start auto-complete with emacs 
 (require 'auto-complete)
+;; do default config for auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+
 (global-auto-complete-mode t)  
     
 ;; enable pos-tip
-(require 'pos-tip)
 (setq ac-quick-help-prefer-pos-tip t)
 
 ;; show quick help of popup.el by real tooltip
@@ -53,7 +49,7 @@
   (cons 'backward-delete-char-untabify ac-trigger-commands))
    
 ;; trigger complete even if your typing is wrong   
-(setq ac-fuzzy-enable t)
+;; (setq ac-fuzzy-enable t)
 
 (provide 'init-auto-complete)
 
