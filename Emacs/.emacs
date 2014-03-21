@@ -5,9 +5,7 @@
 ;; init load-path and start-time
 (setq emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-complete"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-dictionary"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/dired"))
 (when (<= emacs-major-version 21)
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-21")))
 
