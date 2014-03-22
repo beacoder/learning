@@ -20,4 +20,8 @@
 (setq ac-auto-start nil)
 (ac-set-trigger-key "<C-return>")
 
+;; use tooltip and set delay time
+(setq ac-use-quick-help t
+      ac-quick-help-delay 0.5)
+
 (provide 'init-auto-complete)
