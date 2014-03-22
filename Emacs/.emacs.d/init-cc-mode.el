@@ -2,6 +2,10 @@
 
 ;; Customizations for all modes in CC Mode.
 
+;; add load path
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/google"))
+(require 'flymake-cursor)
+
 ;; use google-c-style
 (require 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
@@ -17,7 +21,7 @@
   (custom-set-variables
    ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
    ;; chmod 755 ~/.emacs.d/cpplint.py to make cpplint.py executable
-   '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py"))
+   '(flymake-google-cpplint-command "~/.emacs.d/google/cpplint.py"))
   (flymake-google-cpplint-load))
 
 (defun my-c-mode-common-hook ()

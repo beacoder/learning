@@ -5,7 +5,6 @@
 ;; init load-path and start-time
 (setq emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-dictionary"))
 (when (<= emacs-major-version 21)
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-21")))
 
@@ -49,7 +48,7 @@
 ;;----------------------------------------------------------------------------
 
 (require 'init-com-functions)
-(require 'dictionary-init)
+(require 'init-dictionary)
 (require 'init-routines)
 (require 'init-register)
 (require 'init-macros)
@@ -69,7 +68,6 @@
     ;; (require 'init-emacs-w3m)
     ))
 (require 'buffer-move)
-(require 'flymake-cursor)
 (require 'init-basics)
 
 (require 'session)
