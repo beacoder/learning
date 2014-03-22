@@ -41,7 +41,19 @@
 ;; set tags file lists
 (setq tags-table-list
       '("~/my_tag_files"
-        "~/my_include")) 
+        "~/my_include"))
+
+;;----------------------------------------------------------------------------
+;; package setting
+;;----------------------------------------------------------------------------
+
+(if (display-graphic-p)
+    (progn 
+      (require 'package)
+      ;; add MELPA to repository list
+      (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+      (package-initialize)
+      ))
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
