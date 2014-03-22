@@ -162,9 +162,7 @@
 ;; ediff splits window horizontally
 (setq ediff-split-window-function 'split-window-horizontally)
 
-;; Overwrite flymake-display-warning so that no annoying dialog box is
-;; used.
-
+;; Overwrite flymake-display-warning so that no annoying dialog box is used.
 (if (display-graphic-p)
     (require 'flymake))
 
@@ -179,15 +177,5 @@
 (defun flymake-display-warning (warning) 
   "Display a warning to the user, using lwarn"
   (message warning))
-
-(if (display-graphic-p)
-    (progn 
-      ;; load package.el
-      (require 'package)
-      ;; add MELPA to repository list
-      (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-      ;; initialize package.el
-      (package-initialize)
-      ))
 
 (provide 'init-basics)
