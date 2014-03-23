@@ -10,11 +10,8 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20140314.802/dict")
-;; do default config for auto-complete
+;; use default configuration
 (ac-config-default)
-
-;; enable auto-complete in all buffers
-(global-auto-complete-mode t)  
 
 ;; auto complete is CPU sensitive
 (setq ac-auto-start nil)
