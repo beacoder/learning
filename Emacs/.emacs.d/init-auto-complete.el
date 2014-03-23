@@ -17,9 +17,12 @@
 (setq ac-auto-start nil)
 (ac-set-trigger-key "<C-return>")
 
-;; use tooltip and set delay time
-;; use "C-?" to show tip in another buffer
+;; use tooltip, could use "C-?" 
+;; to show tip in another buffer
 (setq ac-use-quick-help t
-      ac-quick-help-delay 0.5)
+      ;; set delay
+      ac-quick-help-delay 0.5
+      ;; set height
+      ac-quick-help-height 30)
 
 (provide 'init-auto-complete)
