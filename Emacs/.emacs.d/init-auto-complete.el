@@ -21,6 +21,7 @@
 (ac-set-trigger-key "<C-return>")
 
 ;; use tooltip and set delay time
+;; use "C-?" to show tip in another buffer
 (setq ac-use-quick-help t
       ac-quick-help-delay 0.5)
 
