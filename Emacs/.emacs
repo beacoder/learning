@@ -47,6 +47,10 @@
 ;; package setting
 ;;----------------------------------------------------------------------------
 
+;; package-list-packages -> list packages
+;; i -> mark for installation
+;; U -> mark for upgrades
+;; x -> execute installation or upgrades
 (if (display-graphic-p)
     (progn 
       (require 'package)
@@ -64,8 +68,7 @@
       (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
       
       ;; fire up package.el
-      (package-initialize)
-      ))
+      (package-initialize)))
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
