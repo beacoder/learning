@@ -178,4 +178,7 @@
   "Display a warning to the user, using lwarn"
   (message warning))
 
+;; show elisp error backtrace
+(setq debug-on-error t)
+
 (provide 'init-basics)
