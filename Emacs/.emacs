@@ -92,7 +92,6 @@
       (require 'init-lua))
   (progn
     (require 'ido)
-    ;; (require 'init-emacs-w3m)
     ))
 (require 'buffer-move)
 (require 'init-basics)
