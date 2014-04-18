@@ -22,10 +22,11 @@ key-bindings:
 "C-x r i R" "C-x r j R"                                            -> insert or jump to register
 
 5.mark-ring
-descrpition: used to save the cursor position
+descrpition: used to save the cursor position across buffers
 key-bindings: 
-"C-<SPC> C-<SPC>"  -> save cursor position
-"C-u C-<SPC>"      -> jump back
+"C-SPC C-SPC"      -> save cursor position
+"C-u C-SPC"        -> jump back last saved cursor position
+"C-x C-SPC"        -> jump to last position of the global mark ring
 
 6.keyboard macro
 descrpition: record a sequence of editing commands so that you can repeat it conveniently later
