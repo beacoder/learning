@@ -6,7 +6,7 @@
 (global-set-key (kbd "C-c f") 'open-file-at-cursor)
 
 ;; @see http://ergoemacs.org/emacs/emacs_open_file_path_fast.html
-(defun open-file-at-cursord ()
+(defun open-file-at-cursor ()
   "Open the file path under cursor.
 If there is text selection, uses the text selection for path.
 If the path is starts with “http://”, open the URL in browser.
