@@ -3,7 +3,7 @@
 ;;----------------------------------------------------------------------------
 
 ;; bind Open File Path Under Cursor Fast
-(global-set-key (kbd "C-c f") 'open-file-at-cursor)
+(global-set-key (kbd "C-c j") 'open-file-at-cursor)
 
 ;; @see http://ergoemacs.org/emacs/emacs_open_file_path_fast.html
 (defun open-file-at-cursor ()
