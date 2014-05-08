@@ -1,0 +1,123 @@
++ // Use plain text to express coding thoughts
+
+Code Design:
+
+HsmSMCTest::doExecute {
+runFunctionalTest {
+- SMCFunctionalTest::doRun
+
++ // prevent background execution
++ HsmTestSynchronizer().acquireExecution 
+
++ SMCFunctionalTest::startTest
++ HsmTest::ADBRSetup {
++ 
+}
+
++ SMC_ARM
++ SMCFunctionalTest::waitTestDone
++ HsmTestSynchronizer().releaseExecution
+}
+
+}
+
++ DefaultTestDoneListener {
++ DefaultTestDoneListener {
+  // for Non-SMC
+  HsmTest*
+}
++ DefaultTestDoneListener {
+  // for SMC
+  HsmSite*
+}
+
++ testDone {
+
++ ? HsmTest* HsmTest*
+<
+ // Non-SMC
+ HsmTest::uploadResults
+>
+<
+ // later we'll break this down into several services
+ HsmSMCTest::uploadResults
+>
+}
+}
+
+HsmTestSynchronizer {
++ ::acquireExecution {
+  pthread_mutex_lock(&mMutex)
+}
++ ::releaseExecution {
+  pthread_mutex_unlock(&mMutex)
+}
+
+-
+  pthread_mutex_t ::mMutex
+
+}
+
+HsmTest {
++ FunctionalTestSetup {
++ ResultAreasCenter::area {
++ ResultArea::wait
+}
+
++ ResultAreasCenter::setAsPrimary
+}
+
+judgeAndLog {
++ QueryAddressBasedResult 
+}
+
+generateBitmapFile {
++ QueryAddressBasedResult 
+}
+
++ QueryAddressBasedResult {
++ ResultArea::waitAddressBasedResultAvailable
+}
+
++ uploadResults {
++ generateSiteResults
++ ? doneMultiExecution
+<
+ generateFailCountResults
+ generateRaResults
+>
+<
+ // only execute generateFailCountResults && generateRaResults
+ // after doneMultiExecution
+>
+}
+
+}
+
+ResultArea {
++ wait {
++ // wait if target Result Area is not available yet
++ // e.g occupied by other test-suite
+}
+
++ setTestDoneListener
++ unsetTestDoneListener
+
++ waitTestDone {
+
+// wait for Functional-Test completion
++ HsmTestSynchronizer().acquireExecution 
++ HsmTestSynchronizer().releaseExecution 
+
++ onTestDone
+}
+
++ onTestDone {
++ ITestDoneListner::testDone
+}
+
++ waitAddressBasedResultAvailable {
++ waitTestDone
+}
+
+}
