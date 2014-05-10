@@ -11,7 +11,6 @@ runFunctionalTest {
 
 + SMCFunctionalTest::startTest
 + HsmTest::ADBRSetup {
-+ 
 }
 
 + SMC_ARM
@@ -61,7 +60,7 @@ HsmTestSynchronizer {
 HsmTest {
 + FunctionalTestSetup {
 + ResultAreasCenter::area {
-+ ResultArea::wait
+  ResultArea::wait
 }
 
 + ResultAreasCenter::setAsPrimary
@@ -80,24 +79,24 @@ generateBitmapFile {
 }
 
 + uploadResults {
-+ generateSiteResults
-+ ? doneMultiExecution
-<
- generateFailCountResults
- generateRaResults
->
-<
- // only execute generateFailCountResults && generateRaResults
- // after doneMultiExecution
->
+  generateSiteResults
+  ? doneMultiExecution
+  <
+   generateFailCountResults
+   generateRaResults
+  >
+  <
+   // only execute generateFailCountResults && generateRaResults
+   // after doneMultiExecution
+  >
 }
 
 }
 
 ResultArea {
 + wait {
-+ // wait if target Result Area is not available yet
-+ // e.g occupied by other test-suite
+  // wait if target Result Area is not available yet
+  // e.g occupied by other test-suite
 }
 
 + setTestDoneListener
@@ -105,19 +104,19 @@ ResultArea {
 
 + waitTestDone {
 
-// wait for Functional-Test completion
-+ HsmTestSynchronizer().acquireExecution 
-+ HsmTestSynchronizer().releaseExecution 
+  // wait for Functional-Test completion
+  HsmTestSynchronizer().acquireExecution 
+  HsmTestSynchronizer().releaseExecution 
 
-+ onTestDone
+  onTestDone
 }
 
 + onTestDone {
-+ ITestDoneListner::testDone
+  ITestDoneListner::testDone
 }
 
 + waitAddressBasedResultAvailable {
-+ waitTestDone
+  waitTestDone
 }
 
 }
