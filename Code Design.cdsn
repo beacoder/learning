@@ -52,8 +52,7 @@ HsmTestSynchronizer {
   pthread_mutex_unlock(&mMutex)
 }
 
--
-  pthread_mutex_t ::mMutex
++ pthread_mutex_t ::mMutex
 
 }
 
@@ -75,7 +74,7 @@ generateBitmapFile {
 }
 
 + QueryAddressBasedResult {
-+ ResultArea::waitAddressBasedResultAvailable
+  ResultArea::waitAddressBasedResultAvailable
 }
 
 + uploadResults {
