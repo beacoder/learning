@@ -137,6 +137,28 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ;; improve performance
 (setq flyspell-issue-message-flag nil)
 
+;; highlight tabulations
+(setq-default highlight-tabs t)
+
+;; show trailing white spaces
+(setq-default show-trailing-whitespace t)
+
+;; remove useless whitespaces before saving a file
+(add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
+
+;;----------------------------------------------------------------------------
+;; setting locales
+;;----------------------------------------------------------------------------
+
+;; set locale to utf-8
+(set-language-environment 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 ;;----------------------------------------------------------------------------
 ;; some other settings
 ;;----------------------------------------------------------------------------
