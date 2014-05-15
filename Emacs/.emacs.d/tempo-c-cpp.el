@@ -61,7 +61,7 @@
 ;;            while                   while (...) { }
 ;;            for                     for (...) { }
 ;;            fori                    for (i=0; i < limit; ++i) { }
-;;            switch                  switch() {...}
+;;            switch                  switch () {...}
 ;;            case                    case: ... break;
 ;;            main                    int main() { ... }
 ;;            malloc                  type * var = (type *) malloc(...)
@@ -206,7 +206,7 @@
                        'c-tempo-tags)
 
 (tempo-define-template "c-switch"
-                       '(> "switch(" (p "variable to check: " clause) ")" > n
+                       '(> "switch (" (p "variable to check: " clause) ")" > n
 			   > "{" >  n
 			   > "case " > (p "first value: ") ": " ~ > n
 			   > " break;" > n > n
