@@ -2,45 +2,63 @@
 
 Code Design:
 
-HsmSMCTest::doExecute {
-runFunctionalTest {
-- SMCFunctionalTest::doRun
+SMCFunctionalTest {
+- doRun
++ startTest {
+// prevent background execution
+HsmTestSynchronizer().acquireExecution 
+}
++ waitTestDonw {
+// enable background execution
+HsmTestSynchronizer().releaseExecution 
+}
+}
 
-+ // prevent background execution
-+ HsmTestSynchronizer().acquireExecution 
+HsmSMCTest {
 
++ ADBRSetup {
+// In the future we could consider passing
+// MTP_SERVICE into the DefaultTestDoneListener
+
+// In SMC Mode, what should we pass into the DefaultTestDoneListener ?
+resultArea->setTestDoneListener(new DefaultTestDoneListener(HsmSites))
+}
+
+doExecute {
+  runFunctionalTest {
 + SMCFunctionalTest::startTest
-+ HsmTest::ADBRSetup {
++ // prevent background execution
++ HsmTest::ADBRSetup
++ SMC_ARM ...
++ SMCFunctionalTest::waitTestDone  
+  }
 }
-
-+ SMC_ARM
-+ SMCFunctionalTest::waitTestDone
-+ HsmTestSynchronizer().releaseExecution
-}
-
+  
 }
 
 + DefaultTestDoneListener {
-+ DefaultTestDoneListener {
+
+  DefaultTestDoneListener {
   // for Non-SMC
   HsmTest*
 }
-+ DefaultTestDoneListener {
+  DefaultTestDoneListener {
   // for SMC
   HsmSite*
 }
 
-+ testDone {
+  testDone {
 
-+ ? HsmTest* HsmTest*
-<
- // Non-SMC
- HsmTest::uploadResults
->
-<
- // later we'll break this down into several services
- HsmSMCTest::uploadResults
->
+  ? HsmTest* HsmSite*
+  <
+  // Non-SMC
+  HsmTest::uploadResults
+  >
+  <
+  // later we'll break this down into several services
+  // could extract a method in HsmSite
+  HsmSite::uploadResults
+  >
 }
 }
 
@@ -53,16 +71,55 @@ HsmTestSynchronizer {
 }
 
 + pthread_mutex_t ::mMutex
+}
+
+HsmSite {
++ uploadResults {
+  generateSiteResults
+  generateFailCountResults
+  generateRaResults
+}
+
+}
+
+ResultAreasCenter {
++ area {
+  ResultArea::ResultArea
+}
 
 }
 
 HsmTest {
-+ FunctionalTestSetup {
-+ ResultAreasCenter::area {
-  ResultArea::wait
++ std::string mResultArea
++ bool mADBRResultIsReady
+
++ startTest {
+  preExecute
+  FunctionalTest::startTest
+  adbrSetup
 }
 
-+ ResultAreasCenter::setAsPrimary
++ waitTestDone {
+  FunctionalTest::waitTestDone
+  generatePassFailResults
+  prepareRefreshData
+  postExecute
+}
+
++ FunctionalTestSetup {
+  resultArea = ResultAreasCenter::area(mResultArea)
+  resultArea->wait
+  setTestSuiteFlags  
+  mpPinCardFactory->configureResultMode()
+  setupAcquireMode()
+  prepareRaExecution()
+}
+
++ HsmTest::ADBRSetup {
+  // In the future we could consider passing
+  // MTP_SERVICE into the DefaultTestDoneListener
+  resultArea->setTestDoneListener(new DefaultTestDoneListener(this))
+  setXMode()
 }
 
 judgeAndLog {
@@ -74,19 +131,25 @@ generateBitmapFile {
 }
 
 + QueryAddressBasedResult {
-  ResultArea::waitAddressBasedResultAvailable
+  ? mADBRResultIsReady
+  <
+    NULL
+  >
+  <
+  resultArea->waitAddressBasedResultAvailable
+  >  
 }
 
 + uploadResults {
   generateSiteResults
   ? doneMultiExecution
   <
-   generateFailCountResults
-   generateRaResults
+  generateFailCountResults
+  generateRaResults
   >
   <
-   // only execute generateFailCountResults && generateRaResults
-   // after doneMultiExecution
+  // only execute generateFailCountResults && generateRaResults
+  // after doneMultiExecution
   >
 }
 
@@ -96,6 +159,8 @@ ResultArea {
 + wait {
   // wait if target Result Area is not available yet
   // e.g occupied by other test-suite
+
+  RESULT_AREA_CONFIG_SET::setAsPrimary
 }
 
 + setTestDoneListener
@@ -107,7 +172,7 @@ ResultArea {
   HsmTestSynchronizer().acquireExecution 
   HsmTestSynchronizer().releaseExecution 
 
-  onTestDone
++ onTestDone
 }
 
 + onTestDone {
