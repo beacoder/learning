@@ -89,13 +89,12 @@
 (require 'init-alias)
 (if (> emacs-major-version 21)
     (progn
-      (require 'init-auto-complete)
+      (require 'init-3rd-party)
       (require 'init-lua))
   (progn
     (require 'ido)
     ))
 (require 'buffer-move)
-(require 'multiple-cursors)
 (require 'init-basics)
 
 (require 'session)
