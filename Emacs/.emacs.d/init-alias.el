@@ -22,13 +22,15 @@
 (defalias 'ed 'ediff)
 (defalias 'edb 'ediff-buffers)
 
-;; elm stands for emacs-lisp-mode
-(defalias 'elm 'emacs-lisp-mode)
+;; original multiple cursor key-bindings doesn't work in cc-mode
+(defalias 'el 'mc/edit-lines)
+(defalias 'elp 'mc/mark-all-like-this)
 
-;; ~ stands for make-backup
-;; (defalias '~ 'make-backup)
-
+;; shortcut for kill-some-buffers
 (defalias 'ka 'kill-some-buffers)
+
+;; goto-line
+(defalias 'gl 'goto-line)
 
 (defalias 'ca 'c-beginning-of-defun)
 (defalias 'ce 'c-end-of-defun)
