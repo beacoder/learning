@@ -137,6 +137,9 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ;; improve performance
 (setq flyspell-issue-message-flag nil)
 
+;; replace tab with spaces, use "C-q [tab]" to get a real tab
+(setq-default indent-tabs-mode nil)
+
 ;; highlight tabulations
 (setq-default highlight-tabs t)
 
