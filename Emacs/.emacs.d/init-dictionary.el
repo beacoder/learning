@@ -28,4 +28,4 @@
 (put 'dictionary       'custom-loads '(dictionary))
 (put 'dictionary-group 'custom-loads '(dictionary))
 
-(provide 'dictionary-init)
+(provide 'init-dictionary)
