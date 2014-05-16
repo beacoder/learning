@@ -7,11 +7,14 @@
 
 (require 'multiple-cursors)
 
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;; add mulitiple cursor to region lines
+(global-set-key (kbd "C-c C-c") 'mc/edit-lines)
 
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; add mulitiple cursor to lines like this region
+(global-set-key (kbd "C-c C-s") 'mc/mark-all-like-this)
 
 ;;----------------------------------------------------------------------------
 ;; auto-complete setting
