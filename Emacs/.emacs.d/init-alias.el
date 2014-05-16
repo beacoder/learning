@@ -24,7 +24,7 @@
 
 ;; original multiple cursor key-bindings doesn't work in cc-mode
 (defalias 'el 'mc/edit-lines)
-(defalias 'elp 'mc/mark-all-like-this)
+(defalias 'ep 'mc/mark-all-like-this)
 
 ;; shortcut for kill-some-buffers
 (defalias 'ka 'kill-some-buffers)
