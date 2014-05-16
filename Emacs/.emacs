@@ -95,6 +95,7 @@
     (require 'ido)
     ))
 (require 'buffer-move)
+(require 'multiple-cursors)
 (require 'init-basics)
 
 (require 'session)
