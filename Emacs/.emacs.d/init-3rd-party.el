@@ -38,4 +38,48 @@
       ac-quick-help-delay 0.5
       ac-quick-help-height 30)
 
+;;----------------------------------------------------------------------------
+;; God-Mode setting
+;;----------------------------------------------------------------------------
+
+;; Mapping
+
+;; all commands are assumed to be "C-<something>" unless otherwise indicated.
+;; a -> C-a
+;; akny -> C-a C-k C-n C-y
+;; x_s -> C-x s
+;; (note the use of space to produce "C-x s")
+
+;; "g" is a special key to indicate "M-<something>".
+;; "G" is a special key to indicate "C-M-<something>".
+
+;; digital arguments.
+;; 12f -> M-12 C-f
+
+;; repetition (with "." key-binding)
+;; gf... -> M-f M-f M-f
+
+;; add to load-path
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/god-mode-20140413.420"))
+
+(require 'god-mode)
+
+;; toggle buffer-local god-mode
+(global-set-key (kbd "<escape>") 'god-local-mode)
+;; toggle global god-mode
+;; (global-set-key (kbd "<escape>") 'god-mode-all)
+
+;; change cursor style when god-mode is on
+(defun my-update-cursor ()
+  (setq cursor-type (if (and god-local-mode) 'bar 'box)))
+
+(add-hook 'god-mode-enabled-hook 'my-update-cursor)
+(add-hook 'god-mode-disabled-hook 'my-update-cursor)
+
+;; key-bindings used in god-mode
+;; (define-key god-local-mode-map (kbd ".") 'repeat)
+
+;; disable god-mode in some major modes
+(add-to-list 'god-exempt-major-modes 'dired-mode)
+
 (provide 'init-3rd-party)
