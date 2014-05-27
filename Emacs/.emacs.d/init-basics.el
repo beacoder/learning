@@ -229,6 +229,6 @@ This command is similar to `find-file-at-point' but without prompting for confir
   (message warning))
 
 ;; show elisp error backtrace
-(setq debug-on-error t)
+;; (setq debug-on-error t)
 
 (provide 'init-basics)
