@@ -30,9 +30,9 @@ $? ⇒ 获取上一条指令的执行结果, 一般 '0' 表示执行成功
 2> 或 2>>     ⇒ 重定向错误输出
 
 exp:
-copy file a from directory d1 to d2 and redirect output to file temp.log.
-
 cp d1/a d2/ 1> temp.log
+cp d1/a d2/ 2>&1
+wc -l 0< file_list
 
 4.使用 test 或 [] 进行条件判断.
 exp:
