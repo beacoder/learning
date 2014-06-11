@@ -29,6 +29,11 @@ $? ⇒ 获取上一条指令的执行结果, 一般 '0' 表示执行成功
 1> 或 > 或 >> ⇒ 重定向标准输出
 2> 或 2>>     ⇒ 重定向错误输出
 
+exp:
+copy file a from directory d1 to d2 and redirect output to file temp.log.
+
+cp d1/a d2/ 1> temp.log
+
 4.使用 test 或 [] 进行条件判断.
 exp:
 To check whether file.c exist or not.
