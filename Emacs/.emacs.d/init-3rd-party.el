@@ -60,26 +60,26 @@
 ;; gf... -> M-f M-f M-f
 
 ;; add to load-path
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/god-mode-20140413.420"))
+;; (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/god-mode-20140413.420"))
 
-(require 'god-mode)
+;; (require 'god-mode)
 
-;; toggle buffer-local god-mode
-(global-set-key (kbd "<escape>") 'god-local-mode)
-;; toggle global god-mode
-;; (global-set-key (kbd "<escape>") 'god-mode-all)
+;; ;; toggle buffer-local god-mode
+;; (global-set-key (kbd "<escape>") 'god-local-mode)
+;; ;; toggle global god-mode
+;; ;; (global-set-key (kbd "<escape>") 'god-mode-all)
 
-;; change cursor style when god-mode is on
-(defun my-update-cursor ()
-  (setq cursor-type (if (and god-local-mode) 'bar 'box)))
+;; ;; change cursor style when god-mode is on
+;; (defun my-update-cursor ()
+;;   (setq cursor-type (if (and god-local-mode) 'bar 'box)))
 
-(add-hook 'god-mode-enabled-hook 'my-update-cursor)
-(add-hook 'god-mode-disabled-hook 'my-update-cursor)
+;; (add-hook 'god-mode-enabled-hook 'my-update-cursor)
+;; (add-hook 'god-mode-disabled-hook 'my-update-cursor)
 
-;; key-bindings used in god-mode
-;; (define-key god-local-mode-map (kbd ".") 'repeat)
+;; ;; key-bindings used in god-mode
+;; ;; (define-key god-local-mode-map (kbd ".") 'repeat)
 
-;; disable god-mode in some major modes
-(add-to-list 'god-exempt-major-modes 'dired-mode)
+;; ;; disable god-mode in some major modes
+;; (add-to-list 'god-exempt-major-modes 'dired-mode)
 
 (provide 'init-3rd-party)
