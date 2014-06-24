@@ -146,9 +146,12 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ;; show trailing white spaces
 (setq-default show-trailing-whitespace t)
 
-;; remove useless whitespaces before saving a file
-(add-hook 'before-save-hook 'whitespace-cleanup)
-(add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
+;; remove useless whitespaces before saving source code files
+(add-hook 'before-save-hook
+          (lambda()
+            (when (string= (message "%s" major-mode) "c++-mode")
+              (whitespace-cleanup)
+              (delete-trailing-whitespace))))
 
 ;;----------------------------------------------------------------------------
 ;; setting locales
