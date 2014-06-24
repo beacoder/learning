@@ -83,4 +83,26 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
       (set-marker end-marker nil)
       (set-marker next-line-marker nil))))
 
+;; operate shell command on current buffer file      
+(defun call-command-on-file (command)
+  (interactive "sPlease input command name: ")
+  (require 'simple)
+  (when (and (not (string= command ""))
+             (buffer-file-name))
+    (let ((final-command (concat command " " (buffer-file-name))))
+      (shell-command final-command))))
+
+(defvar Operate-Command-On-File nil)
+(defun Switch-Op-Cmd-On-File ()
+  (interactive)
+  (if (not Operate-Command-On-File)
+      (progn
+        (global-set-key (kbd "M-!") 'shell-command)
+        (setq Operate-Command-On-File t))
+    (progn
+      (global-set-key (kbd "M-!") 'call-command-on-file)
+      (setq Operate-Command-On-File nil))))
+
+(global-set-key (kbd "<escape>") 'Switch-Op-Cmd-On-File)      
+
 (provide 'init-com-functions)
