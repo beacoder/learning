@@ -234,4 +234,8 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ;; show elisp error backtrace
 ;; (setq debug-on-error t)
 
+;; make sure shell in emacs can see alias in ~/.bashrc
+(setq shell-file-name "/bin/bash")
+(setq shell-command-switch "-ic")
+
 (provide 'init-basics)
