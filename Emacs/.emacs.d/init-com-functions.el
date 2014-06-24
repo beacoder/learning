@@ -85,7 +85,7 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 
 ;; operate shell command on current buffer file      
 (defun call-command-on-file (command)
-  (interactive "sPlease input command name: ")
+  (interactive "sPlease input command name which will be executed on this file: ")
   (require 'simple)
   (when (and (not (string= command ""))
              (buffer-file-name))
