@@ -83,8 +83,8 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
       (set-marker end-marker nil)
       (set-marker next-line-marker nil))))
 
-;; operate shell command on current buffer file      
-(defun call-command-on-file (command)
+;; operate shell command on current buffer file
+(defun execute-command-on-file (command)
   (interactive "sPlease input command name which will be executed on this file: ")
   (require 'simple)
   (when (and (not (string= command ""))
@@ -92,17 +92,18 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
     (let ((final-command (concat command " " (buffer-file-name))))
       (shell-command final-command))))
 
-(defvar Operate-Command-On-File nil)
-(defun Switch-Op-Cmd-On-File ()
+(defvar Execute-Command-On-File nil)
+(defun Switch-Command-Target ()
   (interactive)
-  (if (not Operate-Command-On-File)
+  (if (not Execute-Command-On-File)
       (progn
+        (message "Execute-Command-On-File disabled !")
         (global-set-key (kbd "M-!") 'shell-command)
-        (setq Operate-Command-On-File t))
+        (setq Execute-Command-On-File t))
     (progn
-      (global-set-key (kbd "M-!") 'call-command-on-file)
-      (setq Operate-Command-On-File nil))))
+      (message "Execute-Command-On-File enabled !")
+      (global-set-key (kbd "M-!") 'execute-command-on-file)
+      (setq Execute-Command-On-File nil))))
 
-(global-set-key (kbd "<escape>") 'Switch-Op-Cmd-On-File)      
-
+(global-set-key (kbd "<escape>") 'Switch-Command-Target)
 (provide 'init-com-functions)
