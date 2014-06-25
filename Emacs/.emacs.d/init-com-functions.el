@@ -90,6 +90,7 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
   (when (and (not (string= command ""))
              (buffer-file-name))
     (let ((final-command (concat command " " (buffer-file-name))))
+      (message "%s" final-command)
       (shell-command final-command))))
 
 (defvar Execute-Command-On-File nil)
