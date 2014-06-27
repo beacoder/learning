@@ -84,14 +84,26 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
       (set-marker next-line-marker nil))))
 
 ;; operate shell command on current buffer file
-(defun execute-command-on-file (command)
-  (interactive "sPlease input command name which will be executed on this file: ")
+(defun execute-command-on-file-core (command asynchronous)
   (require 'simple)
   (when (and (not (string= command ""))
              (buffer-file-name))
     (let ((final-command (concat command " " (buffer-file-name))))
-      (message "%s" final-command)
-      (shell-command final-command))))
+      (if (not asynchronous)
+          (progn
+            (message "%s" final-command)
+            (shell-command final-command))
+        (progn
+          (message "%s &" final-command)
+          (async-shell-command final-command))))))
+
+(defun execute-command-on-file (command)
+  (interactive "sPlease input command name which will be executed on this file: ")
+  (execute-command-on-file-core command nil))
+
+(defun async-execute-command-on-file (command)
+  (interactive "sPlease input command name which will be executed on this file: ")
+  (execute-command-on-file-core command t))
 
 (defvar Execute-Command-On-File nil)
 (defun Switch-Command-Target ()
@@ -100,10 +112,12 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
       (progn
         (message "Execute-Command-On-File disabled !")
         (global-set-key (kbd "M-!") 'shell-command)
+        (global-set-key (kbd "M-&") 'async-shell-command)
         (setq Execute-Command-On-File t))
     (progn
       (message "Execute-Command-On-File enabled !")
       (global-set-key (kbd "M-!") 'execute-command-on-file)
+      (global-set-key (kbd "M-&") 'async-execute-command-on-file)
       (setq Execute-Command-On-File nil))))
 
 (global-set-key (kbd "<escape>") 'Switch-Command-Target)
