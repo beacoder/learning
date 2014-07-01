@@ -205,6 +205,9 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ;; swap the foreground and background colors of face
 (invert-face 'default)
 
+;; set minibuffer-prompt color
+(set-face-foreground 'minibuffer-prompt "read")
+
 ;; set cursor color
 (add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
 (add-hook 'after-make-frame-functions '(lambda (f) (with-selected-frame f (set-cursor-color "white"))))
