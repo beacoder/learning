@@ -39,6 +39,9 @@
 (defalias 'ts 'tags-search)
 (defalias 'tq 'tags-query-replace)
 
+;; magit-mode
+(defalias 'ms 'magit-status)
+
 (defalias 'afa 'apply-function-to-region-lines-with-args)
 (defalias 'af 'apply-function-to-region-lines-without-args)
 
