@@ -82,4 +82,11 @@
 ;; ;; disable god-mode in some major modes
 ;; (add-to-list 'god-exempt-major-modes 'dired-mode)
 
+;;----------------------------------------------------------------------------
+;; Magit-Mode setting
+;;----------------------------------------------------------------------------
+
+;; add to load-path
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/magit-20140623.1208"))
+
 (provide 'init-3rd-party)
