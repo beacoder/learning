@@ -26,7 +26,7 @@ key-bindings:
 descrpition: magit-mode is an excellent interface to the git version control system.
 commands and key-bindings: 
 
- "magit-status"  see git status
+ "magit-status"  enter magit mode and see git status
  "s"             add the file under cursor to stage
  "S"             add all tracked files to stage
  "u"             unstaged the file under cursor
