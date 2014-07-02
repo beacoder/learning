@@ -34,6 +34,7 @@ commands and key-bindings:
  "c"             write a commit message
  "C-c C-c"       commit
  "PP"            git-push
+ "FF"            git-pull
  "magit-log"     see commit logs
  "magit-pull"    pull updates from git repo
  "magit-push"    push updates to git repo
