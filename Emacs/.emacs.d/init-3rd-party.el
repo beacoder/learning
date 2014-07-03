@@ -88,6 +88,8 @@
 
 ;; add to load-path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/magit-20140623.1208"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/git-commit-mode-20140605.520"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/git-rebase-mode-20140605.520"))
 
 (require 'magit)
 
