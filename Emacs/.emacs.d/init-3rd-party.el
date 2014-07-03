@@ -89,4 +89,6 @@
 ;; add to load-path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/magit-20140623.1208"))
 
+(require 'magit)
+
 (provide 'init-3rd-party)
