@@ -206,7 +206,8 @@ This command is similar to `find-file-at-point' but without prompting for confir
 (invert-face 'default)
 
 ;; set minibuffer-prompt color
-(set-face-foreground 'minibuffer-prompt "red")
+(if (display-graphic-p)
+    (set-face-foreground 'minibuffer-prompt "red"))
 
 ;; set cursor color
 (add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
