@@ -74,8 +74,12 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ;; enable icomplete-mode
 (icomplete-mode t)
 
+;; use helm instead
 ;; enable ido-mode
-(if (fboundp 'ido-mode) (ido-mode t))
+;; (if (fboundp 'ido-mode) (ido-mode t))
+
+;; incremental picking of buffers
+;; (if (fboundp 'iswitchb-mode) (iswitchb-mode t))
 
 ;; enable ibuffer-mode
 (if (fboundp 'ibuffer-mode) (ibuffer-mode))
@@ -125,9 +129,6 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ;; show line-number in left margin
 (when (> emacs-major-version 21)  
   (global-linum-mode t))
-
-;; incremental picking of buffers
-(if (fboundp 'iswitchb-mode) (iswitchb-mode t))
 
 ;; enable flyspell in text-mode
 (dolist (hook '(text-mode-hook))
