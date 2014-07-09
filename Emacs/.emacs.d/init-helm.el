@@ -2,6 +2,9 @@
 ;;  Helm setting
 ;;----------------------------------------------------------------------------
 
+(require 'helm)
+(require 'helm-config)
+
 ;; enable helm mode
 (helm-mode 1)
 
