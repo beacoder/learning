@@ -100,10 +100,6 @@
 ;; add to load-path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/helm-20140708.805"))
 
-;; in text terminal, following will cause errors
-(if (display-graphic-p)
-    (progn
-      (require 'helm)
-      (require 'init-helm)))
+(require 'init-helm)
 
 (provide 'init-3rd-party)
