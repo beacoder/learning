@@ -93,4 +93,14 @@
 
 (require 'magit)
 
+;;----------------------------------------------------------------------------
+;;  Helm setting
+;;----------------------------------------------------------------------------
+
+;; add to load-path
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/helm-20140708.805"))
+
+(require 'helm)
+(require 'init-helm)
+
 (provide 'init-3rd-party)
