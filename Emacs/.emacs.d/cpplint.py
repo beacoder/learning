@@ -5329,7 +5329,7 @@ def ProcessLine(filename, file_extension, clean_lines, line,
   CheckDefaultLambdaCaptures(filename, clean_lines, line, error)
   for check_fn in extra_check_functions:
     check_fn(filename, clean_lines, line, error)
-﻿  
+  
 def FlagCxx11Features(filename, clean_lines, linenum, error):
   """Flag those c++11 features that we only allow in certain places.
 
@@ -5619,3 +5619,4 @@ def main():
 
 if __name__ == '__main__':
   main()
+

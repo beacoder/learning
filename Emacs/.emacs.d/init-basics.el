@@ -53,14 +53,14 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ;; @see http://stackoverflow.com/questions/2068697/emacs-is-slow-opening-recent-files
 (setq recentf-keep '(file-remote-p file-readable-p))
 
-;; bind compile command 
+;; bind compile command
 (global-set-key (kbd "C-c p") 'compile)
 
 ;; move point from window to window using shift and arrow keys
 ;; instead of 'C-x o'
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
-  
+
 ;; swap buffers without typing C-x b on each window
 (global-set-key (kbd "<C-S-up>")     'buf-move-up)
 (global-set-key (kbd "<C-S-down>")   'buf-move-down)
@@ -88,7 +88,7 @@ This command is similar to `find-file-at-point' but without prompting for confir
 (if (fboundp 'electric-pair-mode) (electric-pair-mode t))
 
 ;; highlight matching pairs of parentheses
-(if (fboundp 'electric-pair-mode) 
+(if (fboundp 'electric-pair-mode)
     (progn
       (show-paren-mode 1)
       (setq show-paren-delay 0)))
@@ -127,7 +127,7 @@ This command is similar to `find-file-at-point' but without prompting for confir
 (column-number-mode t)
 
 ;; show line-number in left margin
-(when (> emacs-major-version 21)  
+(when (> emacs-major-version 21)
   (global-linum-mode t))
 
 ;; enable flyspell in text-mode
@@ -184,7 +184,7 @@ This command is similar to `find-file-at-point' but without prompting for confir
 (setq frame-title-format
       (list (format "%s %%S: %%j " (system-name))
         '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
-       
+
 ;; display time
 (display-time-mode t)
 (setq display-time-day-and-date t
@@ -193,16 +193,16 @@ This command is similar to `find-file-at-point' but without prompting for confir
 
 ;; "DejaVu Sans Mono" is a nice open source font, good for programming
 ;;(if (display-graphic-p)
-;;    (set-face-attribute 'default nil 
+;;    (set-face-attribute 'default nil
 ;;                        :font "DejaVu Sans Mono-10:weight=normal"
 ;;                        :height 100))
-                        
+
 ;; "DejaVu Sans Mono" is a nice open source font family
 (if (display-graphic-p)
     (set-face-attribute 'default nil
- 		    :font "-misc-dejavu lgc sans mono-medium-r-normal--0-0-0-0-m-0-iso8859-1"
- 		    :height 100))                        
-                        
+                    :font "-misc-dejavu lgc sans mono-medium-r-normal--0-0-0-0-m-0-iso8859-1"
+                    :height 100))
+
 ;; swap the foreground and background colors of face
 (invert-face 'default)
 
@@ -221,19 +221,21 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ;; ediff splits window horizontally
 (setq ediff-split-window-function 'split-window-horizontally)
 
-;; Overwrite flymake-display-warning so that no annoying dialog box is used.
+;; Overwrite flymake-display-warning so that no annoying dialog box is
+;; used.
+
 (if (display-graphic-p)
     (require 'flymake))
 
-;; This version uses lwarn instead of message-box in the original version. 
+;; This version uses lwarn instead of message-box in the original version.
 ;; lwarn will open another window, and display the warning in there.
-(defun flymake-display-warning (warning) 
+(defun flymake-display-warning (warning)
   "Display a warning to the user, using lwarn"
   (lwarn 'flymake :warning warning))
 
 ;; Using lwarn might be kind of annoying on its own, popping up windows and
 ;; what not. If you prefer to recieve the warnings in the mini-buffer, use:
-(defun flymake-display-warning (warning) 
+(defun flymake-display-warning (warning)
   "Display a warning to the user, using lwarn"
   (message warning))
 

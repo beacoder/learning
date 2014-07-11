@@ -26,11 +26,11 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
     (setq end (line-end-position))
     (setq line-string (buffer-substring-no-properties beg end))
     (trim-string line-string)))
-    
+
 (defun getline-nth (line-number)
   "Return specific line's contents as a string."
   (save-excursion
-    ;; when in elisp program use the following two statements 
+    ;; when in elisp program use the following two statements
     ;; instead of goto-line
     (goto-char (point-min))
     (forward-line (1- line-number))
@@ -47,7 +47,7 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
   (save-excursion
     (while (<= cur eof)
       (setq line-string (getline-nth cur)
-  	    ;; filelist (cons line-string filelist)
+            ;; filelist (cons line-string filelist)
 	    old (buffer-name))
       (funcall fn line-string)
       (switch-to-buffer old)
@@ -61,25 +61,25 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
   (save-excursion
     (goto-char (region-end))
     (let ((end-marker (copy-marker (point-marker)))
-          next-line-marker)
+	  next-line-marker)
       (goto-char (region-beginning))
       (if (not (bolp))
-          (forward-line 1))
+	  (forward-line 1))
       (setq next-line-marker (point-marker))
       (while (< next-line-marker end-marker)
-        (let ((start nil)
-              (end nil))
-          (goto-char next-line-marker)
-          (save-excursion
-            (setq start (point))
-            (forward-line 1)
-            (set-marker next-line-marker (point))
-            (setq end (point)))
-          (save-excursion
-            (let ((mark-active nil))
-              (narrow-to-region start end)
-              (funcall fn)
-              (widen)))))
+	(let ((start nil)
+	      (end nil))
+	  (goto-char next-line-marker)
+	  (save-excursion
+	    (setq start (point))
+	    (forward-line 1)
+	    (set-marker next-line-marker (point))
+	    (setq end (point)))
+	  (save-excursion
+	    (let ((mark-active nil))
+	      (narrow-to-region start end)
+	      (funcall fn)
+	      (widen)))))
       (set-marker end-marker nil)
       (set-marker next-line-marker nil))))
 
@@ -121,4 +121,5 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
       (setq Execute-Command-On-File nil))))
 
 (global-set-key (kbd "<escape>") 'Switch-Command-Target)
+
 (provide 'init-com-functions)
