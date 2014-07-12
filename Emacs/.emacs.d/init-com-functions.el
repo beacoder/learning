@@ -1,4 +1,6 @@
+;;----------------------------------------------------------------------------
 ;; define some common functions
+;;----------------------------------------------------------------------------
 
 (unless (fboundp 'line-number-at-pos)
   (defun line-number-at-pos (&optional pos)
