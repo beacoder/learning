@@ -1,7 +1,5 @@
 ;; c/c++ programming mode setting
 
-;; Customizations for all modes in CC Mode.
-
 ;; use google-c-style
 (require 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
