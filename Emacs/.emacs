@@ -114,7 +114,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
-(require 'init-com-functions)
+(require 'init-utils)
 (require 'init-routines)
 (require 'init-register)
 (require 'init-macros)
