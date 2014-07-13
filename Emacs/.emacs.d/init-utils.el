@@ -124,4 +124,4 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 
 (global-set-key (kbd "<escape>") 'Switch-Command-Target)
 
-(provide 'init-com-functions)
+(provide 'init-utils)
