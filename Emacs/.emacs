@@ -5,6 +5,7 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (when (<= emacs-major-version 21)
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-21")))
+(require 'init-utils)
 
 ;;----------------------------------------------------------------------------
 ;; key-bindings for specific mode in emacs
@@ -64,7 +65,7 @@
 ;;----------------------------------------------------------------------------
 
 (if (file-exists-p
-     "/usr/local/share/emacs/24.3/lisp/emacs-lisp/package.elc")
+       (concat (directory-of-library "package") "package.elc"))
     (progn
       (require 'package)
 
@@ -114,7 +115,6 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
-(require 'init-utils)
 (require 'init-routines)
 (require 'init-register)
 (require 'init-macros)
