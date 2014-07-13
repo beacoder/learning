@@ -2,6 +2,13 @@
 ;; define some common functions
 ;;----------------------------------------------------------------------------
 
+;; find the directory containing a given library
+(autoload 'find-library-name "find-func")
+(defun directory-of-library (library-name)
+  "Return the directory in which the `LIBRARY-NAME' load file is found."
+  (file-name-as-directory (file-name-directory (find-library-name library-name))))
+
+;; define line-number-at-pos
 (unless (fboundp 'line-number-at-pos)
   (defun line-number-at-pos (&optional pos)
     "Return (narrowed) buffer line number at position POS.
