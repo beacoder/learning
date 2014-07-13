@@ -93,9 +93,6 @@ This command is similar to `find-file-at-point' but without prompting for confir
       (show-paren-mode 1)
       (setq show-paren-delay 0)))
 
-;; save desktop
-(if (fboundp 'desktop-save-mode) (desktop-save-mode t))
-
 ;; highlight the active region
 (transient-mark-mode t)
 
