@@ -4,8 +4,7 @@
 
 ;; @see http://emacs-fu.blogspot.com/2011/08/customizing-mode-line.html
 ;; But I need global-mode-string,
-;; @see http://www.delorie.com/gnu/docs/elisp-manual-21/elisp_360.html
-;; use setq-default to set it for /all/ modes
+;; use setq-default to set it for all modes
 (setq-default mode-line-format
   (list
     ;; the buffer name; the file name as a tool tip
@@ -25,7 +24,6 @@
     '(:eval (propertize "%m" 'face nil
               'help-echo buffer-file-coding-system))
     " "
-
 
     ;; insert vs overwrite mode, input-method in a tooltip
     '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
