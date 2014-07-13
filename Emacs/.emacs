@@ -121,6 +121,7 @@
 (require 'init-cc-mode)
 (require 'tempo-c-cpp)
 (require 'init-alias)
+(require 'init-modeline)
 (if (> emacs-major-version 21)
     (progn
       (require 'init-3rd-party)
