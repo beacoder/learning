@@ -1,6 +1,6 @@
-;;----------------------------------------------------------------------------
 ;; c/c++ programming mode setting
-;;----------------------------------------------------------------------------
+
+;; Customizations for all modes in CC Mode.
 
 ;; use google-c-style
 (require 'google-c-style)

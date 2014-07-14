@@ -65,7 +65,9 @@
 ;;----------------------------------------------------------------------------
 
 (if (file-exists-p
-       (concat (directory-of-library "package") "package.elc"))
+     ;; (concat (directory-of-library "package") "package.elc")
+     "/usr/local/share/emacs/24.3/lisp/emacs-lisp/package.elc"
+     )
     (progn
       (require 'package)
 

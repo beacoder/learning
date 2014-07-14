@@ -1,6 +1,4 @@
-;;----------------------------------------------------------------------------
-;; define routines to run when emacs is idle
-;;----------------------------------------------------------------------------
+;; run routine tasks when emacs is idle
 
 ;; define a global variable as the counter
 (defvar counter 0
