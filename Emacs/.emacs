@@ -107,7 +107,6 @@
     (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/multiple-cursors-20140527.359"))
     (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/goto-chg-20131228.1459"))
     (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/tabulated-list-20120406.1351"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/session-20120510.1700"))
     (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/undo-tree-20140509.522")))
   )
 
