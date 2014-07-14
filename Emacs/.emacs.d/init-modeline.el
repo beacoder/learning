@@ -13,19 +13,24 @@
 
     ;; line and column
     "(" ;; '%02' to set to 2 chars at least; prevents flickering
-    "%02l" "," "%01c"
-      ;; (propertize "%02l" 'face 'font-lock-type-face) ","
-      ;; (propertize "%02c" 'face 'font-lock-type-face)
+    (propertize "%02l" 'face 'nil) ","
+    (propertize "%02c" 'face 'nil)
     ") "
+
+    ;; relative position, size of file
+    "["
+    (propertize "%p" 'face nil) ;; % above top
+    "/"
+    (propertize "%I" 'face nil) ;; size
+    "] "
 
     ;; the current major mode for the buffer.
     "["
-
     '(:eval (propertize "%m" 'face nil
-              'help-echo buffer-file-coding-system))
-    " "
+                        'help-echo buffer-file-coding-system))
+    "] "
 
-    ;; insert vs overwrite mode, input-method in a tooltip
+    "[" ;; insert vs overwrite mode, input-method in a tooltip
     '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
               'face nil
               'help-echo (concat "Buffer is in "
@@ -41,7 +46,7 @@
     '(:eval (when buffer-read-only
               (concat ","  (propertize "RO"
                              'face nil
-                             'help-echo "Buffer is read-only"))))
+                             'help-echo "Buffer is read-only"))))  
     "] "
 
     ;;global-mode-string, org-timer-set-timer in org-mode need this
