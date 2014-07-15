@@ -9,8 +9,8 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
-;; load tags-table before use helm-etags-select
 (global-set-key (kbd "C-c h e") 'helm-etags-select)
+(global-set-key (kbd "C-c h g") 'helm-do-grep)
 (global-set-key (kbd "C-c h s") 'helm-semantic-or-imenu)
 (global-set-key (kbd "C-c h m") 'helm-all-mark-rings)
 (global-set-key (kbd "C-c h f") 'helm-find)
