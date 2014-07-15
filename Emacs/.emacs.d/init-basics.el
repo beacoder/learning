@@ -2,6 +2,11 @@
 ;; global key-bindings
 ;;----------------------------------------------------------------------------
 
+;; Added after reading http://steve.yegge.googlepages.com/effective-emacs
+;; M-x may not be avalible everywhere, for example:
+;; In term-char-mode, or when there is no Meta key.
+(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+
 ;; bind Open File Path Under Cursor Fast
 (global-set-key (kbd "C-c j") 'open-file-at-cursor)
 
