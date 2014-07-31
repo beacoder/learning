@@ -128,9 +128,12 @@ description:  even outer function goes out of scope,
               cause the "upvalue" is captured as a member variable of the closure.
 implementation: anonymous function which uses at least one upvalue.
 
---[[ following is a function which returns a closure,
-     pretty like "anonymous functor" returned by boost::bind() in C++ I think.
-     note: C++11 support closure by providing Lambda Functions. ]]
+--[[ 
+     lua closure is pretty like "anonymous functor" returned by boost::bind() in C++ I think,
+     except lua closure support "upvalue" while boost::bind() doesn't.
+     however C++11 will support closure by providing Lambda Functions,
+     "upvalue" in lua clousre is like "variable capture" in C++11 Lambda Funtion.
+     ]]
      
 -- script starts here
 
