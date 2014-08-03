@@ -242,4 +242,10 @@ This command is similar to `find-file-at-point' but without prompting for confir
 (setq shell-file-name "/bin/bash")
 (setq shell-command-switch "-ic")
 
+;; fix Error: No word lists can be found for the language "zh_CN"
+;; use apsell as ispell backend
+(setq-default ispell-program-name "aspell")  
+;; use American English as ispell default dictionary  
+(ispell-change-dictionary "american" t)  
+
 (provide 'init-basics)
