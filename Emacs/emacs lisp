@@ -1,5 +1,13 @@
 learning emacs lisp
 
+0.symbol
+description: each lisp symbol has the following “cells” to store things: {name, value, function, property list}.
+name                ⇒ a string, typically the same as the symbol.
+value               ⇒ stores the symbol's value, typically when the symbol is used as variable.
+function            ⇒ stores function definition object or lisp macros.
+property list       ⇒ typically hold a list of name/value pairs, used for syntax coloring strings,
+                       for function's state, etc.
+
 1.car cdr setcar setcdr cons nthcdr
 
 car:  return the first item in the list
