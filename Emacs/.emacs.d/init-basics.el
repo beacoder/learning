@@ -86,6 +86,9 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ;; incremental picking of buffers
 ;; (if (fboundp 'iswitchb-mode) (iswitchb-mode t))
 
+;; auto-refresh all buffers when files have changed on disk.
+(global-auto-revert-mode t)
+
 ;; enable ibuffer-mode
 (if (fboundp 'ibuffer-mode) (ibuffer-mode))
 
