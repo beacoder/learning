@@ -2,6 +2,28 @@
 
 ;; Customizations for all modes in CC Mode.
 
+;; flymake-error-navigation
+(defvar my-flymake-minor-mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map "\M-p" 'flymake-goto-prev-error)
+    (define-key map "\M-n" 'flymake-goto-next-error)
+    map)
+  "Keymap for my flymake minor mode.")
+
+(define-minor-mode my-flymake-minor-mode
+  "Simple minor mode which adds some key bindings for moving to the next and previous errors.
+
+Key bindings:
+
+\\{my-flymake-minor-mode-map}"
+  nil
+  nil
+  :keymap my-flymake-minor-mode-map)
+
+;; Enable this keybinding (my-flymake-minor-mode) by default
+;; Added by Hartmut 2011-07-05
+(add-hook 'c-mode-common-hook 'my-flymake-minor-mode)
+
 ;; use google-c-style
 (require 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
