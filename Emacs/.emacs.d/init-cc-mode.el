@@ -62,10 +62,7 @@ Key bindings:
   (local-set-key (kbd "C-M-e") 'c-end-of-defun)
 
   ;; we like auto-newline and hungry-delete
-  (c-toggle-auto-hungry-state 1)
-  
-  ;; enable highline mode
-  (highline-mode 1))
+  (c-toggle-auto-hungry-state 1))
 
 ;; use <tab> to indent region if anything is selected
 (defun tab-indents-region () (local-set-key [(tab)] 'fledermaus-maybe-tab))
