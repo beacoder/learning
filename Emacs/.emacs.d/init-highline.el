@@ -15,4 +15,7 @@
     (set-buffer "*Ibuffer*")
     (highline-mode-on)))
 
+;; Turn oon local highlighting for c/c++ files    
+(add-hook 'c-mode-common-hook 'highline-mode-on)
+
 (provide 'init-highline)
