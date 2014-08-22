@@ -32,6 +32,9 @@
 ;; goto-line
 (defalias 'gl 'goto-line)
 
+;; mainly used in terminal
+(defalias 'sm 'set-mark-command)
+
 ;; cc-mode
 (defalias 'ca 'c-beginning-of-defun)
 (defalias 'ce 'c-end-of-defun)
