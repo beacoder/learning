@@ -39,7 +39,8 @@
                                              (nnimap-server-port 993)
                                              (nnimap-stream ssl)
 				             ;; (nnir-search-engine imap)
-				             (nnimap-authinfo-file "~/.emacs.d/.authinfo")))
+				             ;; (nnimap-authinfo-file "~/.emacs.d/.authinfo")
+				             ))
 
 ;; send mails using huatek's smtp server
 ;; (setq smtpmail-auth-credentials
