@@ -1,2 +1,0 @@
-machine imap.gmail.com login chenhuming@gmail.com password ******** port 993
-machine smtp.gmail.com login chenhuming@gmail.com password ******** port 587
