@@ -15,17 +15,17 @@
 
 ;; set "nnml" method and POP server configuration 
 ;; so that we could retrieve emails from POP server
-(setq gnus-select-method '(nnml "pop-mail"))
+;; (setq gnus-select-method '(nnml "pop-mail"))
 
 ;; do not delete emails on server when using POP3
 (setq pop3-leave-mail-on-server t)
 
 ;; receive mails from a POP server
-(setq mail-sources
-      '((pop :server "pop.ee-post.com"          ;; pop3 mail server
-	     :user "bright_chen@huatek.com"     ;; user name
- 	     :port "pop3"                       ;; port
- 	     :password "5ihuatek")))            ;; password
+;; (setq mail-sources
+;;       '((pop :server "pop.ee-post.com"          ;; pop3 mail server
+;; 	     :user "bright_chen@huatek.com"     ;; user name
+;;  	     :port "pop3"                       ;; port
+;;  	     :password "********")))            ;; password
 
 ;; add this to be able to list all labels in gmail
 (setq gnus-ignored-newsgroups "")
@@ -46,7 +46,7 @@
 ;;     '(("smtp.ee-post.com"                      ;; smtp used to send mails
 ;;	      25                                ;; port
 ;;    	"bright_chen@huatek.com"                ;; user name
-;;	      "5ihuatek"                        ;; password
+;;	      "********"                        ;; password
 ;;	    ))
 ;;      smtpmail-default-smtp-server "smtp.ee-post.com"
 ;;      smtpmail-smtp-server "smtp.ee-post.com")
