@@ -53,6 +53,18 @@ This command is similar to `find-file-at-point' but without prompting for confir
       (goto-char (1+ p1))
       (set-mark (1- p2)))))
 
+;; "a b" => select text with bracket
+(global-set-key (kbd "C-c a b") 'select-text-with-bracket)
+(defun select-text-with-bracket ()
+  "Select text between the nearest brackets.
+⁖  () [] {} «» ‹› “” 〖〗 【】 「」 『』 （） 〈〉 《》 〔〕 ⦗⦘ 〘〙 ⦅⦆ 〚〛 ⦃⦄ ⟨⟩."
+  (interactive)
+  (xah-select-text-in-bracket)
+  (if (region-active-p)
+      (progn
+        (goto-char (1- (region-beginning)))
+        (set-mark (1+ (region-end))))))
+
 ;; "d b" => delete text inside bracket.
 (global-set-key (kbd "C-c d b") 'delete-text-in-bracket)
 (defun delete-text-in-bracket ()
