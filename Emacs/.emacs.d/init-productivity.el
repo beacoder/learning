@@ -2,6 +2,11 @@
 ;; utilities for productivity
 ;;----------------------------------------------------------------------------
 
+;; try to make key-bindings follow the "action-where-object" pattern,
+;; and use as less keys as possible.
+;; "i b" => select text inside bracket.
+;; "d i b" => delete text inside bracket.
+
 ;; bind Open File Path Under Cursor Fast
 (global-set-key (kbd "C-c j") 'open-file-at-cursor)
 
