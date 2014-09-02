@@ -41,5 +41,6 @@
 (require 'buffer-move)
 (require 'flymake-cursor)
 (require 'init-highline)
+(require 'init-productivity)
 
 (provide 'init-3rd-party)
