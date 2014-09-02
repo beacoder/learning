@@ -2,15 +2,8 @@
 ;; utilities for productivity
 ;;----------------------------------------------------------------------------
 
-;; try to make key-bindings follow the "action-where-object" pattern,
-;; and use as less keys as possible.
-;; "i b" => select text inside bracket.
-;; "d i b" => delete text inside bracket.
-
-;; bind Open File Path Under Cursor Fast
-(global-set-key (kbd "C-c j") 'open-file-at-cursor)
-
 ;; @see http://ergoemacs.org/emacs/emacs_open_file_path_fast.html
+(global-set-key (kbd "C-c j") 'open-file-at-cursor)
 (defun open-file-at-cursor ()
   "Open the file path under cursor.
 If there is text selection, uses the text selection for path.
@@ -32,7 +25,11 @@ This command is similar to `find-file-at-point' but without prompting for confir
             (when (y-or-n-p (format "file doesn't exist: 「%s」. Create?" path) )
               (find-file path )) ) ) ) ) ))
 
+;; try to make key-bindings follow the "action-where-object" pattern,
+;; and use as less keys as possible.
+
 ;; http://ergoemacs.org/emacs/elisp_modify_syntax_table_temporarily.html
+;; "i b" => select text inside bracket.
 (global-set-key (kbd "C-c i b") 'xah-select-text-in-bracket)
 (defun xah-select-text-in-bracket ()
   "Select text between the nearest brackets.
@@ -55,5 +52,23 @@ This command is similar to `find-file-at-point' but without prompting for confir
       (setq p2 (point))
       (goto-char (1+ p1))
       (set-mark (1- p2)))))
+
+;; "d b" => delete text block.
+(global-set-key (kbd "C-c d b") 'xah-delete-text-block)
+(defun xah-delete-text-block ()
+  "delete the current text block (paragraph) and also put it to `kill-ring'."
+  (interactive)
+  (let (p1 p2)
+    (progn
+      (if (re-search-backward "\n[ \t]*\n" nil "NOERROR")
+          (progn (re-search-forward "\n[ \t]*\n")
+                 (setq p1 (point)))
+        (setq p1 (point)))
+      (if (re-search-forward "\n[ \t]*\n" nil "NOERROR")
+          (progn (re-search-backward "\n[ \t]*\n")
+                 (setq p2 (point) ))
+        (setq p2 (point))) )
+    (kill-region p1 p2)
+    (delete-blank-lines) ))
 
 (provide 'init-productivity)
