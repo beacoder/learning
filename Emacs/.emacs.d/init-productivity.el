@@ -28,6 +28,10 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ;; try to follow the "action-where-object" pattern when defining key-bindings,
 ;; and use as less keys as possible.
 
+;;----------------------------------------------------------------------------
+;; bracket operation
+;;----------------------------------------------------------------------------
+
 ;; http://ergoemacs.org/emacs/elisp_modify_syntax_table_temporarily.html
 ;; "i b" => select text inside bracket.
 (global-set-key (kbd "C-c i b") 'xah-select-text-in-bracket)
@@ -65,8 +69,20 @@ This command is similar to `find-file-at-point' but without prompting for confir
         (goto-char (1- (region-beginning)))
         (set-mark (1+ (region-end))))))
 
-;; "d b" => delete text inside bracket.
-(global-set-key (kbd "C-c d b") 'delete-text-in-bracket)
+;; "y i b" => yank text into inside bracket.
+(global-set-key (kbd "C-c y i b") 'yank-text-in-bracket)
+(defun yank-text-in-bracket ()
+  "Yank text between the nearest brackets.
+⁖  () [] {} «» ‹› “” 〖〗 【】 「」 『』 （） 〈〉 《》 〔〕 ⦗⦘ 〘〙 ⦅⦆ 〚〛 ⦃⦄ ⟨⟩."
+  (interactive)
+  (xah-select-text-in-bracket)
+  (if (region-active-p)
+      (progn
+        (delete-region (region-beginning) (region-end))
+        (yank))))
+
+;; "d i b" => delete text inside bracket.
+(global-set-key (kbd "C-c d i b") 'delete-text-in-bracket)
 (defun delete-text-in-bracket ()
   "Delete text between the nearest brackets.
 ⁖  () [] {} «» ‹› “” 〖〗 【】 「」 『』 （） 〈〉 《》 〔〕 ⦗⦘ 〘〙 ⦅⦆ 〚〛 ⦃⦄ ⟨⟩."
@@ -74,6 +90,10 @@ This command is similar to `find-file-at-point' but without prompting for confir
   (xah-select-text-in-bracket)
   (if (region-active-p)
       (kill-region (region-beginning) (region-end))))
+
+;;----------------------------------------------------------------------------
+;; paragraph operation
+;;----------------------------------------------------------------------------
 
 ;; "a p" => select a text paragraph (block).
 (global-set-key (kbd "C-c a p") 'xah-select-current-block)
@@ -101,6 +121,10 @@ This command is similar to `find-file-at-point' but without prompting for confir
   (if (region-active-p)
       (progn (kill-region (region-beginning) (region-end))
              (delete-blank-lines))))
+
+;;----------------------------------------------------------------------------
+;; extend-selection
+;;----------------------------------------------------------------------------
 
 ;; by Nikolaj Schumacher, 2008-10-20. Released under GPL.
 (global-set-key (kbd "M-8") 'extend-selection)
