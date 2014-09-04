@@ -160,5 +160,34 @@ Subsequent calls expands the selection to larger semantic unit."
         (unless (memq (char-before) '(?\) ?\"))
           (forward-sexp)))
       (mark-sexp -1))))
+      
+;;----------------------------------------------------------------------------
+;; register-usage
+;;----------------------------------------------------------------------------
+
+;; @see https://github.com/xahlee/xah_emacs_init/blob/master/xah_emacs_editing_commands.el
+(global-set-key (kbd "<f8>") 'xah-copy-to-register-1)
+(defun xah-copy-to-register-1 ()
+  "Copy current line or text selection to register 1.
+See also: `xah-paste-from-register-1', `copy-to-register'."
+  (interactive)
+  (let* (
+         (bds (get-selection-or-unit 'line ))
+         (inputStr (elt bds 0) )
+         (p1 (elt bds 1) )
+         (p2 (elt bds 2)))
+    (copy-to-register ?1 p1 p2)
+    (message "copied to register 1: 「%s」." inputStr)
+))
+
+(global-set-key (kbd "<f9>") 'xah-paste-from-register-1)
+(defun xah-paste-from-register-1 ()
+  "Paste text from register 1.
+See also: `xah-copy-to-register-1', `insert-register'."
+  (interactive)
+  (when (use-region-p)
+    (delete-region (region-beginning) (region-end) )
+    )
+  (insert-register ?1 t))
 
 (provide 'init-productivity)
