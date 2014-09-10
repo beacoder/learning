@@ -72,6 +72,12 @@
 (setq smtpmail-debug-info t
       smtpmail-debug-verb t)
 
+;; automatic linebreaking      
+(defun my-message-mode-setup ()
+  (setq fill-column 72)
+  (turn-on-auto-fill))
+(add-hook 'message-mode-hook 'my-message-mode-setup)      
+
 ;; load smtpmail library
 (require 'smtpmail)
 
