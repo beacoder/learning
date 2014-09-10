@@ -11,7 +11,8 @@
       user-mail-address "Bright.Chen@ptn.advantest.com")
 
 ;; fetch news from newsgroup
-;; (setq gnus-select-method '(nntp "news.gmane.org"))
+(setq gnus-select-method '(nntp "news.gmane.org"))
+(setq gnus-read-active-file nil)
 
 ;; set "nnml" method and POP server configuration 
 ;; so that we could retrieve emails from POP server
