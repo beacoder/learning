@@ -69,6 +69,16 @@ This command is similar to `find-file-at-point' but without prompting for confir
         (goto-char (1- (region-beginning)))
         (set-mark (1+ (region-end))))))
 
+;; "w i b" => copy text inside bracket.
+(global-set-key (kbd "C-c w i b") 'copy-text-in-bracket)
+(defun copy-text-in-bracket ()
+  "Copy text between the nearest brackets.
+⁖  () [] {} «» ‹› “” 〖〗 【】 「」 『』 （） 〈〉 《》 〔〕 ⦗⦘ 〘〙 ⦅⦆ 〚〛 ⦃⦄ ⟨⟩."
+  (interactive)
+  (xah-select-text-in-bracket)
+  (if (region-active-p)
+        (kill-ring-save (region-beginning) (region-end))))
+
 ;; "y i b" => yank text into inside bracket.
 (global-set-key (kbd "C-c y i b") 'yank-text-in-bracket)
 (defun yank-text-in-bracket ()
@@ -81,10 +91,10 @@ This command is similar to `find-file-at-point' but without prompting for confir
         (delete-region (region-beginning) (region-end))
         (yank))))
 
-;; "d i b" => delete text inside bracket.
-(global-set-key (kbd "C-c d i b") 'delete-text-in-bracket)
-(defun delete-text-in-bracket ()
-  "Delete text between the nearest brackets.
+;; "k i b" => kill text inside bracket.
+(global-set-key (kbd "C-c k i b") 'kill-text-in-bracket)
+(defun kill-text-in-bracket ()
+  "Kill text between the nearest brackets.
 ⁖  () [] {} «» ‹› “” 〖〗 【】 「」 『』 （） 〈〉 《》 〔〕 ⦗⦘ 〘〙 ⦅⦆ 〚〛 ⦃⦄ ⟨⟩."
   (interactive)
   (xah-select-text-in-bracket)
@@ -160,7 +170,7 @@ Subsequent calls expands the selection to larger semantic unit."
         (unless (memq (char-before) '(?\) ?\"))
           (forward-sexp)))
       (mark-sexp -1))))
-      
+
 ;;----------------------------------------------------------------------------
 ;; register-usage
 ;;----------------------------------------------------------------------------
