@@ -80,5 +80,3 @@
 
 ;; load smtpmail library
 (require 'smtpmail)
-
-(provide 'init-gnus)
