@@ -40,6 +40,7 @@ This command is similar to `find-file-at-point' but without prompting for confir
 ⁖  () [] {} «» ‹› “” 〖〗 【】 「」 『』 （） 〈〉 《》 〔〕 ⦗⦘ 〘〙 ⦅⦆ 〚〛 ⦃⦄ ⟨⟩."
   (interactive)
   (with-syntax-table (standard-syntax-table)
+    ;; @see http://www.emacswiki.org/emacs/EmacsSyntaxTable
     (modify-syntax-entry ?\« "(»")
     (modify-syntax-entry ?\» ")«")
     (modify-syntax-entry ?\‹ "(›")
@@ -48,6 +49,8 @@ This command is similar to `find-file-at-point' but without prompting for confir
     (modify-syntax-entry ?\” ")“")
     (modify-syntax-entry ?\‘ "(’")
     (modify-syntax-entry ?\’ ")‘")
+    (modify-syntax-entry ?\< "(>")
+    (modify-syntax-entry ?\> ")<")
     (let (pos p1 p2)
       (setq pos (point))
       (search-backward-regexp "\\s(" nil t )
