@@ -2,6 +2,12 @@
 ;; My Gnus Configuration
 ;;----------------------------------------------------------------------------
 
+;; usage
+;; "B m" => move mail to trash
+;; "B <DEL>" => delete mail completely
+;; mail-add-attachment => add attachment
+;; "X m" => download specific type of attachment.
+
 ;; some other e-mail address
 ;; chenhuming@gmail.com
 ;; Bright_Chen@huatek.com
@@ -36,8 +42,6 @@
 (require 'nnir)
 
 ;; add this to configure gmail imap
-;; "B m" => move mail to trash
-;; "B <DEL>" => delete mail completely
 (add-to-list 'gnus-secondary-select-methods '(nnimap "gmail"
                                              (nnimap-address "imap.gmail.com")
                                              (nnimap-server-port 993)
