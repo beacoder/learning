@@ -34,6 +34,7 @@
 ;; undo-tree setting
 ;;----------------------------------------------------------------------------
 
+;; "C-x u" => open the undo-tree-visualizer
 (require 'undo-tree)
 (global-undo-tree-mode)
 
