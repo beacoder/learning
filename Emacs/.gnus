@@ -32,9 +32,12 @@
 (setq gnus-ignored-newsgroups "")
 
 ;; to be able to search within your gmail/imap mail
-;; (require 'nnir)
+;; "G G" => search in *Group*
+(require 'nnir)
 
-;; add this to configure gmail imap 
+;; add this to configure gmail imap
+;; "B m" => move mail to trash
+;; "B <DEL>" => delete mail completely
 (add-to-list 'gnus-secondary-select-methods '(nnimap "gmail"
                                              (nnimap-address "imap.gmail.com")
                                              (nnimap-server-port 993)
