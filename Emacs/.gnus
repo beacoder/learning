@@ -7,6 +7,10 @@
 ;; "B <DEL>" => delete mail completely
 ;; mail-add-attachment => add attachment
 ;; "X m" => download specific type of attachment.
+;; "C-c C-s" => send mail
+;; "C-c C-k" => kill mail buffer
+;; "r" => reply mail
+;; "R" => reply mail with original mail
 
 ;; some other e-mail address
 ;; chenhuming@gmail.com
