@@ -2,6 +2,9 @@
 ;; init-async setting
 ;;----------------------------------------------------------------------------
 
+;; deal with problems when updating packages
+(require 'async-bytecomp)
+
 ;; provide dired with asynchronous abilities
 (eval-after-load "dired-aux"
   '(require 'dired-async))
