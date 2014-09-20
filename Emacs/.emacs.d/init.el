@@ -1,4 +1,6 @@
-;; learning emacs configuration
+;;----------------------------------------------------------------------------
+;; Entry file for emacs configuration 
+;;----------------------------------------------------------------------------
 
 ;; init load-path and start-time
 (setq emacs-load-start-time (current-time))
