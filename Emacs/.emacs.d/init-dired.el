@@ -17,6 +17,9 @@
 ;; copy from one dired dir to the next dired dir shown in a split window
 (setq dired-dwim-target t)
 
+;; @see http://ergoemacs.org/emacs/dired_sort.html
+(setq dired-listing-switches "-alc --si --time-style long-iso")
+
 ;; make dired use the same buffer for viewing directory, instead of spawning many
 ;; (add-hook 'dired-mode-hook
 ;;  (lambda ()
@@ -26,5 +29,5 @@
 ;;     (lambda () (interactive) (find-alternate-file "..")))
 ;;   ; was dired-up-directory
 ;;  ))
-;;
- (provide 'init-dired)
+
+(provide 'init-dired)
