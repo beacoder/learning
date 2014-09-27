@@ -186,6 +186,7 @@
 ;; set cursor color
 (add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
 (add-hook 'after-make-frame-functions '(lambda (f) (with-selected-frame f (set-cursor-color "white"))))
+(setq cursor-type 'hollow)
 
 ;; save place in files between sessions
 (require 'saveplace)
