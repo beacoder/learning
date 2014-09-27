@@ -37,7 +37,8 @@
 ;; create tags
 ;;----------------------------------------------------------------------------
 
-;; create tags in specific directory
+;; create tag files in specific directory
+;; this requires 'Exuberant Ctags' installed
 (defun create-tags (dir-name1 tag-file-name dir-name2)
   "Create tags file."
   (interactive
