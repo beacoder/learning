@@ -181,8 +181,7 @@
 (invert-face 'default)
 
 ;; set minibuffer-prompt color
-(if (display-graphic-p)
-    (set-face-foreground 'minibuffer-prompt "red"))
+(set-face-foreground 'minibuffer-prompt "red")
 
 ;; set cursor color
 (add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
