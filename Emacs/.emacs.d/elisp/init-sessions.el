@@ -3,6 +3,7 @@
 ;;----------------------------------------------------------------------------
 ;; save a list of open files in ~/.emacs.d/.emacs.desktop
 ;; save the desktop file automatically if it already exists
+;; we need to manually execute 'desktop-save' for the first time
 
 (setq desktop-path '("~/.emacs.d"))
 (setq desktop-save 'if-exists)
