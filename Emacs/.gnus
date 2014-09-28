@@ -6,6 +6,7 @@
 ;; "B m" => move mail to trash
 ;; "B <DEL>" => delete mail completely
 ;; mail-add-attachment => add attachment
+;; "o" => download attachment at point
 ;; "X m" => download specific type of attachment.
 ;; "C-c C-s" => send mail
 ;; "C-c C-k" => kill mail buffer
