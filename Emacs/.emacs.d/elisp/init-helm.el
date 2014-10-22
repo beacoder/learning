@@ -18,6 +18,9 @@
 (global-set-key (kbd "C-c h y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c h i") 'helm-register)
 
+;; avoid mistaking "C-h s" for "C-c h s"
+(global-unset-key (kbd "C-h s"))
+
 (helm-mode 1)
 
 (provide 'init-helm)
