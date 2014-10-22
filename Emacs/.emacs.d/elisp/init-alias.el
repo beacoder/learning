@@ -21,6 +21,11 @@
 ;; ed stands for ediff
 (defalias 'ed 'ediff)
 (defalias 'edb 'ediff-buffers)
+(defalias 'edd 'edirs)
+
+(defalias 'em 'ediff-merge)
+(defalias 'emb 'ediff-merge-files)
+(defalias 'emd 'edirs-merge)
 
 ;; original multiple cursor key-bindings doesn't work in cc-mode
 (defalias 'el 'mc/edit-lines)
