@@ -160,6 +160,10 @@
 ;; enlarge kill-ring-max value
 (setq kill-ring-max 200)
 
+;; enlarge max length for all history lists,
+;; including minibuffer-history, extended-command-history ...
+(setq history-length 200)
+
 ;; show file's full path in title
 (setq frame-title-format
       (list (format "%s %%S: %%j " (system-name))
@@ -225,8 +229,5 @@
 (setq-default ispell-program-name "aspell")  
 ;; use American English as ispell default dictionary  
 (ispell-change-dictionary "american" t)
-
-;; enlarge length of history lists
-(setq history-length 200)
 
 (provide 'init-basics)
