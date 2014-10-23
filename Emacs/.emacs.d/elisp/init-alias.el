@@ -24,7 +24,7 @@
 (defalias 'edd 'edirs)
 
 (defalias 'em 'ediff-merge)
-(defalias 'emb 'ediff-merge-files)
+(defalias 'emb 'ediff-merge-buffers)
 (defalias 'emd 'edirs-merge)
 
 ;; original multiple cursor key-bindings doesn't work in cc-mode
