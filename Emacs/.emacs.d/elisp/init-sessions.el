@@ -20,6 +20,10 @@
 ;; (setq session-save-file (expand-file-name "~/.emacs.d/.session"))
 (add-hook 'after-init-hook 'session-initialize)
 
+;; buffers don't need to be saved.
+(add-to-list 'desktop-modes-not-to-save 'Info-mode)
+(add-to-list 'desktop-modes-not-to-save 'info-lookup-mode)
+
 ;; save a bunch of variables to the desktop file
 ;; for lists specify the len of the maximal saved data also
 (setq desktop-globals-to-save
