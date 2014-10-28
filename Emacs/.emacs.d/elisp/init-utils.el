@@ -17,7 +17,7 @@ Example usage:
  (setq bds (get-selection-or-unit 'line))
  (setq inputstr (elt bds 0) p1 (elt bds 1) p2 (elt bds 2)  )"
   (interactive)
-
+  (unless (region-active-p) (push-mark))
   (let ((p1 (region-beginning)) (p2 (region-end)))
     (if (use-region-p)
         (vector (buffer-substring-no-properties p1 p2) p1 p2 )
