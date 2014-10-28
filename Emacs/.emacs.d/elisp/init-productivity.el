@@ -179,7 +179,6 @@ Subsequent calls expands the selection to larger semantic unit."
 ;;----------------------------------------------------------------------------
 
 ;; @see https://github.com/xahlee/xah_emacs_init/blob/master/xah_emacs_editing_commands.el
-(global-set-key (kbd "<f8>") 'xah-copy-to-register-1)
 (defun xah-copy-to-register-1 ()
   "Copy current line or text selection to register 1.
 See also: `xah-paste-from-register-1', `copy-to-register'."
@@ -193,7 +192,6 @@ See also: `xah-paste-from-register-1', `copy-to-register'."
     (message "copied to register 1: 「%s」." inputStr)
 ))
 
-(global-set-key (kbd "<f9>") 'xah-paste-from-register-1)
 (defun xah-paste-from-register-1 ()
   "Paste text from register 1.
 See also: `xah-copy-to-register-1', `insert-register'."
@@ -202,5 +200,8 @@ See also: `xah-copy-to-register-1', `insert-register'."
     (delete-region (region-beginning) (region-end) )
     )
   (insert-register ?1 t))
+
+(global-set-key (kbd "C-x r 1") 'xah-copy-to-register-1)
+(global-set-key (kbd "C-x r 0") 'xah-paste-from-register-1)
 
 (provide 'init-productivity)
