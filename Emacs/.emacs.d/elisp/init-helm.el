@@ -21,6 +21,9 @@
 ;; avoid mistaking "C-h s" for "C-c h s"
 (global-unset-key (kbd "C-h s"))
 
+;; since "C-c C-h" cann't be unset, we set it to a numb lambda function
+(global-set-key (kbd "C-c C-h") (lambda () (interactive)))
+
 (helm-mode 1)
 
 (provide 'init-helm)
