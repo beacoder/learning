@@ -201,7 +201,7 @@ See also: `xah-copy-to-register-1', `insert-register'."
     )
   (insert-register ?1 t))
 
-(global-set-key (kbd "C-x r 1") 'xah-copy-to-register-1)
-(global-set-key (kbd "C-x r 0") 'xah-paste-from-register-1)
+(global-set-key (kbd "C-c h 1") 'xah-copy-to-register-1)
+(global-set-key (kbd "C-c h 0") 'xah-paste-from-register-1)
 
 (provide 'init-productivity)
