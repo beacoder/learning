@@ -29,7 +29,7 @@ mov al, [bx+si+100]
 exp:
 mov es:[bx], dl ⇒ 将dl的数据传入段地址为es,偏移地址为bx所指向的内存单元中.
 
-8.push、pop指令的执行步骤.
+8.push、pop指令的执行步骤: (x86 架构的栈是从高位向低位扩展)
   push  ⇒ (1) SP = SP - n; (2) 向SS:SP指向的内存单元中传入数据
   pop   ⇒ (1) 从SS:SP指向的内存单元中读取数据 (2) SP = SP + n;
 
