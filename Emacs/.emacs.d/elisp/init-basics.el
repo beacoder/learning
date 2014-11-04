@@ -175,14 +175,13 @@
 ;;                        :font "DejaVu Sans Mono-10:weight=normal"
 ;;                        :height 100))
 
-;; "DejaVu Sans Mono" is a nice open source font family
-(if (display-graphic-p)
-    (set-face-attribute 'default nil
-                    :font "-misc-dejavu lgc sans mono-medium-r-normal--0-0-0-0-m-0-iso8859-1"
-                    :height 100))
-
-;; swap the foreground and background colors of face
-(invert-face 'default)
+(when (display-graphic-p)
+   ;; "DejaVu Sans Mono" is a nice open source font family
+   (set-face-attribute 'default nil
+                       :font "-misc-dejavu lgc sans mono-medium-r-normal--0-0-0-0-m-0-iso8859-1"
+                       :height 100)
+   ;; swap the foreground and background colors of face
+   (invert-face 'default))
 
 ;; set minibuffer-prompt color
 (set-face-foreground 'minibuffer-prompt "red")
@@ -202,8 +201,8 @@
 ;; Overwrite flymake-display-warning so that no annoying dialog box is
 ;; used.
 
-(if (display-graphic-p)
-    (require 'flymake))
+(when (display-graphic-p)
+   (require 'flymake))
 
 ;; This version uses lwarn instead of message-box in the original version.
 ;; lwarn will open another window, and display the warning in there.
