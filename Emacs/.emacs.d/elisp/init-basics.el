@@ -195,11 +195,9 @@
 (require 'saveplace)
 (setq-default save-place t)
 
-;; ediff splits window horizontally
-(setq ediff-split-window-function 'split-window-horizontally)
-
-;; whitespace insensitivity 
-(setq ediff-diff-options "-w")
+;; ediff splits window horizontally and sets whitespace insensitivity 
+(setq ediff-split-window-function 'split-window-horizontally
+      ediff-diff-options "-w")
 
 ;; Overwrite flymake-display-warning so that no annoying dialog box is
 ;; used.
