@@ -17,11 +17,11 @@ jobs
 
 # bring process back to background
 Ctrl + z     => pause the process
-bg [jobspec] => bring to background
+bg [%jobspec] => bring to background
 
 # bring process forward to foreground
 Ctrl + z      => pause the process
-fg [jobspec]  => bring to foregound
+fg [%jobspec]  => bring to foregound
 
 # kill jobs
 kill -signal %jobnumber
