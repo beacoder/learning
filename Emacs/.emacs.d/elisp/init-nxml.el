@@ -21,5 +21,8 @@ indentation rules."
       (while (search-forward-regexp "\>[ \\t]*\<" nil t)
         (backward-char) (insert "\n"))
       (indent-region begin end)))
+      
+ ;; prettify the xml in the active region
+ (defalias 'pt 'sanityinc/pp-xml-region)
 
 (provide 'init-nxml)
