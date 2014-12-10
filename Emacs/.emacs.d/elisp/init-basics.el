@@ -54,10 +54,6 @@
 ;; enable icomplete-mode
 (icomplete-mode t)
 
-;; use helm instead
-;; enable ido-mode
-;; (if (fboundp 'ido-mode) (ido-mode t))
-
 ;; incremental picking of buffers
 ;; (if (fboundp 'iswitchb-mode) (iswitchb-mode t))
 
