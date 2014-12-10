@@ -8,7 +8,7 @@
                             (set (make-local-variable 'ido-use-filename-at-point) nil)))
 (setq nxml-slash-auto-complete-flag t)
 
-;; See: http://sinewalker.wordpress.com/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode/
+;; @see: http://sinewalker.wordpress.com/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode/
 (defun sanityinc/pp-xml-region (begin end)
   "Pretty format XML markup in region. The function inserts
 linebreaks to separate tags that have nothing but whitespace
