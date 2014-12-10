@@ -145,9 +145,10 @@
   (progn
     (require 'ido)
     ))
+(require 'init-windows)
+(require 'init-nxml)
 (require 'init-basics)
 (require 'init-sessions)
-(require 'init-windows)
 
 (provide 'init)
 
