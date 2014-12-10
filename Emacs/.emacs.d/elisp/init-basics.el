@@ -52,6 +52,29 @@
 ;; enable ibuffer-mode
 (if (fboundp 'ibuffer-mode) (ibuffer-mode))
 
+;; Modify the default ibuffer-formats (toggle with `)
+(setq ibuffer-formats
+      '((mark modified read-only vc-status-mini " "
+              (name 18 18 :left :elide)
+              " "
+              (size-h 9 -1 :right)
+              " "
+              (mode 16 16 :left :elide)
+              " "
+              filename-and-process)
+        (mark modified read-only vc-status-mini " "
+              (name 18 18 :left :elide)
+              " "
+              (size-h 9 -1 :right)
+              " "
+              (mode 16 16 :left :elide)
+              " "
+              (vc-status 16 16 :left)
+              " "
+              filename-and-process)))
+
+(setq ibuffer-filter-group-name-face 'font-lock-doc-face)
+
 ;; enable electric-pair-mode
 (if (fboundp 'electric-pair-mode) (electric-pair-mode t))
 
