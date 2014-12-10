@@ -48,11 +48,6 @@
 (global-set-key (kbd "<C-S-right>")  'buf-move-right)
 
 ;;----------------------------------------------------------------------------
-;; Navigate window layouts with "C-c <left>" and "C-c <right>"
-;;----------------------------------------------------------------------------
-(winner-mode 1)
-
-;;----------------------------------------------------------------------------
 ;; Make "C-x o" prompt for a target window when there are more than 2
 ;;----------------------------------------------------------------------------
 (require-package 'switch-window)
@@ -76,6 +71,9 @@
 ;;----------------------------------------------------------------------------
 ;; mode setting
 ;;----------------------------------------------------------------------------
+
+;; navigate window layouts with "C-c <left>" and "C-c <right>"
+(winner-mode 1)
 
 ;; enable icomplete-mode
 (icomplete-mode t)
