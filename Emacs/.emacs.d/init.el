@@ -67,10 +67,10 @@
 ;; package setting
 ;;----------------------------------------------------------------------------
 
-(if (file-exists-p
+(when 
+  (file-exists-p
      ;; (concat (directory-of-library "package") "package.elc")
-     "/usr/local/share/emacs/24.3/lisp/emacs-lisp/package.elc"
-     )
+     "/usr/local/share/emacs/24.3/lisp/emacs-lisp/package.elc")
     (progn
       (require 'package)
 
@@ -87,33 +87,7 @@
       (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
       ;; fire up package.el
-      (package-initialize)
-      )
-  (progn
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/auto-complete-20140618.2217"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/auto-complete-20140618.2217/dict"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/buffer-move-20140522.58"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/connection-20131005.526"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/dictionary-20131005.526"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/dired+-20140710.2145"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/dired-details+-20131226.1832"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/dired-details-20130824.1158"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/flymake-cursor-20130822.1032"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/flymake-easy-20130907.131"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/flymake-google-cpplint-20140205.525"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/git-commit-mode-20140605.520"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/git-rebase-mode-20140605.520"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/google-c-style-20130412.1415"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/goto-chg-20131228.1459"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/helm-20140709.2306"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/link-20131005.526"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/magit-20140709.920"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/popup-20140207.1702"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/multiple-cursors-20140527.359"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/goto-chg-20131228.1459"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/tabulated-list-20120406.1351"))
-    (add-to-list 'load-path (expand-file-name "~/.emacs.d/elpa/undo-tree-20140509.522")))
-  )
+      (package-initialize)))
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
