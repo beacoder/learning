@@ -137,7 +137,11 @@
 (if (> emacs-major-version 21)
     (progn
       (require 'init-3rd-party)
-      (require 'init-lua))
+      (require 'init-lua)
+      
+      ;; use helm instead.
+      ;; (require 'init-ido)
+      )
   (progn
     (require 'ido)
     ))
