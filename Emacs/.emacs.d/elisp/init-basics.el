@@ -118,7 +118,7 @@
   "Toggle show-trailing-whitespace between t and nil"
   (interactive)
   (setq show-trailing-whitespace (not show-trailing-whitespace)))
-(defalias 'tts 'tf-toggle-show-trailing-whitespace)
+(defalias 'ts 'tf-toggle-show-trailing-whitespace)
 
 ;; remove useless whitespaces before saving a file
 (add-hook 'before-save-hook
