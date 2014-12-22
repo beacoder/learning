@@ -15,7 +15,7 @@
 ;; ash stands for ansi-term, could use 'less' in it
 ;; "C-x C-j" activate term-line-mode -> use emacs feature
 ;; "C-c C-k" back to character-mode -> could use 'less'
-(defalias 'ash 'ansi-term)
+(defalias 'atm 'ansi-term)
 
 ;; esh stands for eshell
 (defalias 'esh 'eshell)
