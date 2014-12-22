@@ -113,6 +113,13 @@
 ;; show trailing white spaces
 (setq-default show-trailing-whitespace t)
 
+;; toggle whether to show trailing whitespace
+(defun tf-toggle-show-trailing-whitespace ()
+  "Toggle show-trailing-whitespace between t and nil"
+  (interactive)
+  (setq show-trailing-whitespace (not show-trailing-whitespace)))
+(defalias 'tts 'defun tf-toggle-show-trailing-whitespace)
+
 ;; remove useless whitespaces before saving a file
 (add-hook 'before-save-hook
           (lambda()
