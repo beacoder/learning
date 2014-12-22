@@ -12,7 +12,7 @@
 ;; sh stands for shell
 (defalias 'sh 'shell)
 
-;; ash stands for ansi-term, could use 'less' in it
+;; atm stands for ansi-term, could use 'less' in it
 ;; "C-x C-j" activate term-line-mode -> use emacs feature
 ;; "C-c C-k" back to character-mode -> could use 'less'
 (defalias 'atm 'ansi-term)
