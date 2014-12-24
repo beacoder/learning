@@ -29,6 +29,9 @@ indentation rules."
 ;; add fold/unfold support for xml files
 ;;----------------------------------------------------------------------------
 
+@see http://www.opensource.apple.com/source/emacs/emacs-51/emacs/lisp/progmodes/hideshow.el
+@see http://www.opensource.apple.com/source/emacs/emacs-54/emacs/lisp/textmodes/sgml-mode.el
+
 (require 'hideshow)
 (require 'sgml-mode)
 (require 'nxml-mode)
