@@ -38,7 +38,7 @@
 ;;----------------------------------------------------------------------------
 
 ;; create tag files in specific directory
-;; this requires 'Exuberant Ctags' installed
+;; requires 'Exuberant Ctags' installed
 (defun create-tags (dir-name1 tag-file-name dir-name2)
   "Create tags file."
   (interactive
@@ -47,7 +47,7 @@
     \nDDirectory to be taged: ")
   (if (string= "" tag-file-name) (setq tag-file-name "TAGS"))
   (shell-command
-   ;; use system ctags instead of emacs ctags
+   ;; use Exuberant Ctags instead of emacs ctags
    (format "/usr/bin/ctags -f %s/%s -e -R %s" dir-name1 tag-file-name (directory-file-name dir-name2)))
   (message "create-tags succeed !")
   )
