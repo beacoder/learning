@@ -123,6 +123,7 @@
 (require 'init-nxml)
 (require 'init-basics)
 (require 'init-sessions)
+(require 'init-cperl-mode)
 
 (provide 'init)
 
