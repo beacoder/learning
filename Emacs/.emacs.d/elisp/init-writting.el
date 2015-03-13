@@ -48,4 +48,4 @@ Also converts full stops to commas."
       (call-interactively 'upcase-region)
     (call-interactively 'subword-upcase)))
     
-    (provide 'init-writting)
+(provide 'init-writting)
