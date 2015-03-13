@@ -4,6 +4,9 @@
 (global-set-key "\M-l" 'endless/downcase)
 (global-set-key "\M-u" 'endless/upcase)
 
+;; @see http://endlessparentheses.com/super-smart-capitalization.html
+;; require text-mode & subword-mode
+
 (defun endless/convert-punctuation (rg rp)
   "Look for regexp RG around point, and replace with RP.
 Only applies to text-mode."
