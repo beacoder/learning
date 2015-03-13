@@ -6,4 +6,8 @@
 ;; "C-x r j h" to open file "~/.bash_history"
 (set-register ?h '(file . "~/.bash_history"))
 
+(set-register ?e '(file . "~/.emacs.d/init.el"))
+
+(set-register ?b '(file . "~/.bashrc"))
+
 (provide 'init-register)
