@@ -2,10 +2,10 @@
 ;; config modeline format
 ;;----------------------------------------------------------------------------
 
+;; config time format
+(setq display-time-format "[%A %Y/%m/%d %H:%M Time-Zone:'%Z' %jth of year %Y]")
+
 ;; display time
 (display-time-mode t)
-(setq display-time-day-and-date t
-      display-time-24hr-format t
-      display-time-format nil)
 
 (provide 'init-modeline)
