@@ -7,7 +7,7 @@ Run script  :
 use script interpreter to run(interprete) the byte-code.
 
 Note: 'interpret' means finding the right "assemble / machine" code 
-      correspondin g to the byte-code and run it.
+      corresponding to the byte-code and run it.
 
 2. How to run a compiled program ?
 
