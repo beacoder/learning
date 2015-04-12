@@ -7,7 +7,7 @@ Run script  :
 use script interpreter to run(interprete) the byte-code.
 
 Note: 'interpret' means finding the right "assemble / machine" code 
-      corresponding to the byte-code and run it.
+      correspondin g to the byte-code and run it.
 
 2. How to run a compiled program ?
 
@@ -16,3 +16,10 @@ source code -> pre-process -> compile -> assembler -> link -> executable code (m
 
 Run program :
 just run it.
+
+3.Pros and Cons of script and compiled language ?
+
+Script: develope effeicicy is great, runtime efficiency is bad.
+Compiled: develope efficiency is bad, runtime efficiency is greate.
+
+4.
