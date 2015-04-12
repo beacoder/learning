@@ -67,27 +67,22 @@
 ;; package setting
 ;;----------------------------------------------------------------------------
 
-(when 
-  (file-exists-p
-     ;; (concat (directory-of-library "package") "package.elc")
-     "/usr/local/share/emacs/24.3/lisp/emacs-lisp/package.elc")
-    (progn
-      (require 'package)
+(require 'package)
 
-      ;; Standard package repositories
-      (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+;; Standard package repositories
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
-      ;; We include the org repository for completeness, but don't normally use it.
-      (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+;; We include the org repository for completeness, but don't normally use it.
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
-      (when (< emacs-major-version 24)
-        (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(when (< emacs-major-version 24)
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
-      ;; Also use Melpa for most packages
-      (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+;; Also use Melpa for most packages
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
-      ;; fire up package.el
-      (package-initialize)))
+;; fire up package.el
+(package-initialize)
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
