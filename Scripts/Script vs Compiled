@@ -19,5 +19,7 @@ just run it.
 
 3. Pros and Cons of script and compiled language ?
 
-Script:      develope efficiency is great, runtime efficiency is bad.
+Script:      develope efficiency is great, runtime efficiency is bad. 
+                used to do quick prototyping, write common utilitys.
 Compiled: develope efficiency is bad, runtime efficiency is great.
+                used to write performance critical components, such  as important algrithoms.
