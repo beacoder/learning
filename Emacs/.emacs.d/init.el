@@ -108,8 +108,8 @@
       (require 'init-3rd-party)
       (require 'init-lua)
       
-      ;; use helm instead.
-      ;; (require 'init-ido)
+      ;; could use helm instead.
+      (require 'init-ido)
       )
   (progn
     (require 'ido)
