@@ -24,3 +24,4 @@ Script:   develope efficiency is great, runtime efficiency is bad.
           usually have a big convenient 3rd-party libs: CPAN, PyPI, RubyForge.
 Compiled: develope efficiency is bad, runtime efficiency is great.
           used to write performance critical components, such as algrithoms.
+          usually used to develope large-scale complex projects.
