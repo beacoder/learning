@@ -42,7 +42,7 @@
 (defun create-tags (dir-name1 tag-file-name dir-name2)
   "Create tags file."
   (interactive
-   "DDirectory in which tag-file will be created: \
+   "DDirectory where tag-file will be saved: \
     \nsName of the tag-file (TAGS): \
     \nDDirectory to be taged: ")
   (if (string= "" tag-file-name) (setq tag-file-name "TAGS"))
