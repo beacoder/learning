@@ -1,8 +1,12 @@
+;;----------------------------------------------------------------------------
+;; enhance hippie-expand to support tag files
+;;----------------------------------------------------------------------------
+
 (require 'etags)
 
 (global-set-key (kbd "M-/") 'hippie-expand)
 
-;; let hippie-expand support ctags
+;; let hippie-expand support tag files
 ;; shamelessly copied from http://emacswiki.org/emacs/HippieExpand
 (when (> emacs-major-version 21)
   (progn
