@@ -54,11 +54,11 @@
 (defalias 'ct 'create-tags)
 
 ;; set tags file lists
+(setq tags-file-name nil)
 (setq tags-table-list
       '(
-        "/opt/hsm/src"                                      ;; MTP sources files
-        "~/my_tag_files"                                    ;; boost and stl(gcc) and linux headers
-        ;;	"/opt/93000/src/com/include"                    ;; common include files
+        "~/my_tag_files/STL_TAGS"                                    ;; stl headers
+        "~/my_tag_files/BOOST_TAGS"                                  ;; boost headers
         )
       )
 
