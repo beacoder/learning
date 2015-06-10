@@ -62,6 +62,11 @@
         )
       )
 
+;; add stl and boost dir into search dir for ff-find-other-file
+(setq cc-search-directories '("." "/usr/include" "/usr/local/include/*" "/usr/local/include/*"
+                              "/gcc/common/include/c++/3.4.5/*"
+                              "/boost/common/include/boost/*"))
+
 ;;----------------------------------------------------------------------------
 ;; package setting
 ;;----------------------------------------------------------------------------
