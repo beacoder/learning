@@ -57,9 +57,8 @@
 (setq tags-table-list
       '(
         "/opt/hsm/src"                                      ;; MTP sources files
-        "~/my_tag_files"                                    ;; boost and stl and linux headers
-        ;;	"/opt/93000/src/segments/formatter/EventFormatter"  ;; eventFormatter sources files
-        ;;	"/opt/93000/src/com/include"                        ;; common include files
+        "~/my_tag_files"                                    ;; boost and stl(gcc) and linux headers
+        ;;	"/opt/93000/src/com/include"                    ;; common include files
         )
       )
 
