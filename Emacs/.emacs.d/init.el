@@ -67,6 +67,13 @@
                               "/gcc/common/include/c++/3.4.5/*"
                               "/boost/common/include/*"))
 
+;; Don't ask before reverting the TAGS files
+(setq tags-revert-without-query t)
+;; Do case-sensitive tag searches
+(setq tags-case-fold-search nil)
+;; Don't warn when TAGS files are less than 1GB
+(setq large-file-warning-threshold (expt 1024 3))
+
 ;;----------------------------------------------------------------------------
 ;; package setting
 ;;----------------------------------------------------------------------------
