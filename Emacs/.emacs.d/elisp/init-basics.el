@@ -179,6 +179,13 @@
 ;; set minibuffer-prompt color
 (set-face-foreground 'minibuffer-prompt "red")
 
+;; set isearch color
+(set-face-foreground 'isearch "white")
+(set-face-background 'isearch "red")
+
+;; (set-face-foreground 'isearch "red")
+;; (set-face-background 'isearch "blue")
+
 ;; set cursor color
 (add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
 (add-hook 'after-make-frame-functions '(lambda (f) (with-selected-frame f (set-cursor-color "white"))))
