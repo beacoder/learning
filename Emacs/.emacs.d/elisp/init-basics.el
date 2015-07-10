@@ -20,8 +20,8 @@
 ;; enable recentf-mode
 (require 'recentf)
 (recentf-mode t)
-(setq recentf-max-menu-items 50
-      recentf-max-saved-items 1000
+(setq recentf-max-menu-items  100
+      recentf-max-saved-items 10000
       recentf-exclude '(
                      ;; "/tmp/"
                         "/ssh:"
