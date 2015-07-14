@@ -2,10 +2,21 @@
 ;; global key-bindings
 ;;----------------------------------------------------------------------------
 
-;; Added after reading http://steve.yegge.googlepages.com/effective-emacs
-;; M-x may not be avalible everywhere, for example:
-;; In term-char-mode, or when there is no Meta key.
+;; @see http://steve.yegge.googlepages.com/effective-emacs
+;; M-x may not be avalible everywhere, e.g: In term-char-mode, or when there is no Meta key.
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
+
+(defun backward-kill-word-or-region ()
+  "do backward-kill-word or kill-region.
+Enhancement to 'Prefer backward-kill-word over Backspace'.
+
+URL `https://sites.google.com/site/steveyegge2/effective-emacs'
+"
+  (interactive)
+  (if (use-region-p)
+      (kill-region (region-beginning) (region-end))
+    (backward-kill-word 1)))
+(global-set-key (kbd "C-w") 'backward-kill-word-or-region)
 
 ;; bind pop-tag-mark
 (global-set-key (kbd "M-?") 'pop-tag-mark)
