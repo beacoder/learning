@@ -233,4 +233,32 @@ searches all buffers."
 
 (global-set-key [f8] 'search-all-buffers)
 
+;;----------------------------------------------------------------------------
+;; Copy Current Line If No Selection
+;;----------------------------------------------------------------------------
+
+(defun xah-copy-line-or-region ()
+  "Copy current line, or text selection.
+When `universal-argument' is called first, copy whole buffer (respects `narrow-to-region').
+
+URL `http://ergoemacs.org/emacs/emacs_copy_cut_current_line.html'
+Version 2015-05-06"
+  (interactive)
+  (let (p1 p2)
+    (if current-prefix-arg
+        (progn (setq p1 (point-min))
+               (setq p2 (point-max)))
+      (progn (if (use-region-p)
+                 (progn (setq p1 (region-beginning))
+                        (setq p2 (region-end)))
+               (progn (setq p1 (line-beginning-position))
+                      (setq p2 (line-end-position))))))
+    (kill-ring-save p1 p2)
+    (if current-prefix-arg
+        (message "buffer text copied")
+      (message "text copied"))))
+
+(global-set-key (kbd "M-9") 'xah-copy-line-or-region)
+(global-set-key (kbd "M-0") 'kill-whole-line)
+
 (provide 'init-productivity)
