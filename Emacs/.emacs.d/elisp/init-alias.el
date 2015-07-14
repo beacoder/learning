@@ -59,4 +59,6 @@
 (defalias 'afa 'apply-function-to-region-lines-with-args)
 (defalias 'af 'apply-function-to-region-lines-without-args)
 
+(defalias 'qrr 'query-replace-regexp)
+
 (provide 'init-alias)
