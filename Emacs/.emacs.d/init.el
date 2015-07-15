@@ -98,9 +98,18 @@
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
+
 (require 'server)
 (unless (server-running-p)
   (server-start))
+  
+;;----------------------------------------------------------------------------
+;; Kill all processes when closing emacs
+;;----------------------------------------------------------------------------
+
+(require 'cl)
+(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+  (flet ((process-list ())) ad-do-it))
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
