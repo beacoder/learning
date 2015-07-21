@@ -255,8 +255,8 @@ Version 2015-05-06"
                       (setq p2 (line-end-position))))))
     (kill-ring-save p1 p2)
     (if current-prefix-arg
-        (message "buffer text copied")
-      (message "text copied"))))
+        (message "buffer copied")
+      (message "line copied"))))
 
 (global-set-key (kbd "M-9") 'xah-copy-line-or-region)
 (global-set-key (kbd "M-0") 'kill-whole-line)
