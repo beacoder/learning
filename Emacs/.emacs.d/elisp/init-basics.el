@@ -128,7 +128,9 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
 (defun tf-toggle-show-trailing-whitespace ()
   "Toggle show-trailing-whitespace between t and nil"
   (interactive)
-  (setq show-trailing-whitespace (not show-trailing-whitespace)))
+  (setq show-trailing-whitespace (not show-trailing-whitespace))
+  (redraw-display)
+  )
 (global-set-key (kbd "C-c C-SPC") 'tf-toggle-show-trailing-whitespace)
 
 ;; remove useless whitespaces before saving a file
