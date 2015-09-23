@@ -10,10 +10,10 @@
  6 dired-details
  7 dired-details+
  8 flymake-cursor
- 9 magit
+ 9 flymake-easy
 10 google-c-style
 11 helm
 12 highline
 13 multiple-cursors
 14 undo-tree
-15 flymake-easy
+15 magit
