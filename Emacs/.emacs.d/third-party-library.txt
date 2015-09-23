@@ -16,3 +16,4 @@
 11.highline
 12.multiple-cursors
 13.undo-tree
+14.flymake-easy
