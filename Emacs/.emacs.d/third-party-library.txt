@@ -2,18 +2,18 @@
 ;; Third-party-library
 ;;----------------------------------------------------------------------------
 
-0.async
-1.auto-complete
-2.buffer-move
-3.dictionary
-4.dired+
-5.dired-details
-6.dired-details+
-7.flymake-cursor
-8.magit
-9.google-c-style
-10.helm
-11.highline
-12.multiple-cursors
-13.undo-tree
-14.flymake-easy
+ 1 async
+ 2 auto-complete
+ 3 buffer-move
+ 4 dictionary
+ 5 dired+
+ 6 dired-details
+ 7 dired-details+
+ 8 flymake-cursor
+ 9 magit
+10 google-c-style
+11 helm
+12 highline
+13 multiple-cursors
+14 undo-tree
+15 flymake-easy
