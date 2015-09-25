@@ -38,7 +38,8 @@ Key bindings:
   (require 'flymake-google-cpplint)
   (custom-set-variables
    ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
-   ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
+   ;; chmod 775 "~/.emacs.d/cpplint.py" => make cpplint.py executable
+   ;; dos2unix cpplint.py => translate script to right format
    '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py"))
   (flymake-google-cpplint-load))
 
