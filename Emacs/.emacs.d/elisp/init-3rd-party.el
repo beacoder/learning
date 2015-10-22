@@ -42,6 +42,17 @@
 (setq undo-outer-limit (* 100 (expt 1024 2)))
 
 ;;----------------------------------------------------------------------------
+;; slime setting
+;;----------------------------------------------------------------------------
+
+;; Note that SBCL version greater than 1.0.25 does not work with Slime due to a glitch with SB-BSD-SOCKETS.
+(require 'slime-autoloads)
+(setq inferior-lisp-program
+      (replace-regexp-in-string "/lib/sbcl/?$" "/bin/sbcl" (getenv "SBCL_HOME")))
+(slime-setup '(slime-fancy slime-indentation slime-asdf))
+(setq lisp-indent-function 'common-lisp-indent-function)
+
+;;----------------------------------------------------------------------------
 ;; third-party setting
 ;;----------------------------------------------------------------------------
 
