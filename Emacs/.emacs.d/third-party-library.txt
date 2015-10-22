@@ -17,3 +17,4 @@
 13 multiple-cursors
 14 undo-tree
 15 magit
+16 slime
