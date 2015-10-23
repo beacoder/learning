@@ -208,9 +208,12 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
 (require 'saveplace)
 (setq-default save-place t)
 
-;; ediff splits window horizontally and sets whitespace insensitivity 
+;; ediff splits window horizontally
 (setq ediff-split-window-function 'split-window-horizontally
-      ediff-diff-options "-w")
+      ;; ediff-diff-options (concat " -w " ediff-diff-options)
+      )
+;; skip regions that differ only in the white space and line breaks.
+(setq-default ediff-ignore-similar-regions t)
 
 ;; Overwrite flymake-display-warning so that no annoying dialog box is
 ;; used.
