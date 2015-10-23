@@ -199,6 +199,24 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
 ;; (set-face-foreground 'isearch "red")
 ;; (set-face-background 'isearch "blue")
 
+(defun ediff-face-settings ()
+  "Face settings for `ediff'."
+  (progn
+    (custom-set-faces '(ediff-current-diff-A
+                        ((((type tty)) :background "yellow" :foreground "blue")
+                         (t :background "DarkSeaGreen3" :foreground "blue violet"))))
+    (custom-set-faces '(ediff-fine-diff-A
+                        ((((type tty)) :background "blue" :foreground "white")
+                         (t :background "gold1" :foreground "red"))))
+    (custom-set-faces '(ediff-current-diff-B
+                        ((((type tty)) :background "yellow" :foreground "black")
+                         (t :background "DodgerBlue1" :foreground "gray11"))))
+    (custom-set-faces '(ediff-fine-diff-B
+                        ((((type tty)) :background "cyan" :foreground "red")
+                         (t :background "chocolate2" :foreground "dark slate blue"))))))
+(eval-after-load "ediff"
+  `(ediff-face-settings))
+
 ;; set cursor color
 (add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
 (add-hook 'after-make-frame-functions '(lambda (f) (with-selected-frame f (set-cursor-color "white"))))
