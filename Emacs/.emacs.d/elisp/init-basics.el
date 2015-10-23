@@ -199,6 +199,22 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
 ;; (set-face-foreground 'isearch "red")
 ;; (set-face-background 'isearch "blue")
 
+;; set cursor color
+(add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
+(add-hook 'after-make-frame-functions '(lambda (f) (with-selected-frame f (set-cursor-color "white"))))
+(setq cursor-type 'box)
+
+;; save place in files between sessions
+(require 'saveplace)
+(setq-default save-place t)
+
+;; ediff splits window horizontally
+(setq ediff-split-window-function 'split-window-horizontally
+      ;; ediff-diff-options (concat " -w " ediff-diff-options)
+      )
+;; skip regions that differ only in the white space and line breaks.
+(setq-default ediff-ignore-similar-regions t)
+
 (defun ediff-face-settings ()
   "Face settings for `ediff'."
   (progn
@@ -216,22 +232,6 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
                          (t :background "chocolate2" :foreground "dark slate blue"))))))
 (eval-after-load "ediff"
   `(ediff-face-settings))
-
-;; set cursor color
-(add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
-(add-hook 'after-make-frame-functions '(lambda (f) (with-selected-frame f (set-cursor-color "white"))))
-(setq cursor-type 'box)
-
-;; save place in files between sessions
-(require 'saveplace)
-(setq-default save-place t)
-
-;; ediff splits window horizontally
-(setq ediff-split-window-function 'split-window-horizontally
-      ;; ediff-diff-options (concat " -w " ediff-diff-options)
-      )
-;; skip regions that differ only in the white space and line breaks.
-(setq-default ediff-ignore-similar-regions t)
 
 ;; Overwrite flymake-display-warning so that no annoying dialog box is
 ;; used.
