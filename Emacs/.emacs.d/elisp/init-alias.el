@@ -28,6 +28,10 @@
 (defalias 'edb 'ediff-buffers)
 (defalias 'edd 'edirs)
 
+(defalias 'ed3 'ediff3)
+(defalias 'edb3 'ediff-buffers3)
+(defalias 'edd3 'edirs3)
+
 (defalias 'em 'ediff-merge)
 (defalias 'emb 'ediff-merge-buffers)
 (defalias 'emd 'edirs-merge)
