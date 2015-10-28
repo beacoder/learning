@@ -229,6 +229,12 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
                          (t :background "DodgerBlue1" :foreground "gray11"))))
     (custom-set-faces '(ediff-fine-diff-B
                         ((((type tty)) :background "cyan" :foreground "red")
+                         (t :background "chocolate2" :foreground "dark slate blue"))))
+    (custom-set-faces '(ediff-current-diff-C
+                        ((((type tty)) :background "yellow" :foreground "black")
+                         (t :background "DodgerBlue1" :foreground "gray11"))))
+    (custom-set-faces '(ediff-fine-diff-C
+                        ((((type tty)) :background "cyan" :foreground "red")
                          (t :background "chocolate2" :foreground "dark slate blue"))))))
 (eval-after-load "ediff"
   `(ediff-face-settings))
