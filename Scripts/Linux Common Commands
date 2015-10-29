@@ -33,10 +33,9 @@ kill -SIGKILL %1
 19. find ./ *.gz | xargs -i gzip -d -f {} // 解压当前目录所有压缩文件
 20. tee                                   // 读取标准输入并将内容输出到标准输出和指定(一个或多个)文件中
 21. which command                         // 显示 command 的完整路径
-22. locate                                // 在 updatedb 所建立的数据库中查找 Linux 系统中的文件，
-                                          // 速度比 find 快，但查找的数据可能不是最新的
+22. locate                                // 在 updatedb 所建立的数据库中查找 Linux 系统中的文件,速度比 find 快，但查找的数据可能不是最新的
 23. set/unset [variable]                  // 查询、设置、取消环境变量
-24. watch -d -n 5 command                 // 每隔5秒执行一次 command，并高亮显示变化的地方
+24. watch -d -n 5 command                 // 每隔5秒执行一次 command,并高亮显示变化的地方
 25. egrep "(key1|key2).+key3" file        // 扩展正则表达式匹配搜索
 26. du -sh *                              // 显示当前目录下，各个文件夹的占用空间
 27. tail -f log                           // 实时刷新显示 log 的结尾内容
