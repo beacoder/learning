@@ -1,4 +1,4 @@
-# Linux Common Command
+# Shell
 
 0. jobs                                   // list commands running in background
 1. Ctrl + z                               // pause the process
