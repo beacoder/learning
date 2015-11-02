@@ -70,7 +70,7 @@
      ))
 (add-hook 'prog-mode-hook 'enable-paredit-mode)
 
-;; "C-)" might not work as expected in putty, so we create a new keymap for paredit.
+;; "C-)" might not work as expected in putty, so we create a new prefix-key for paredit.
 (define-prefix-command 'paredit-map)
 (define-key global-map "\C-xp" paredit-map)
 (define-key paredit-map (kbd "fs") 'paredit-forward-slurp-sexp)
