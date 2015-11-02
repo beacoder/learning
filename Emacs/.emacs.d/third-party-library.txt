@@ -18,3 +18,5 @@
 14 undo-tree
 15 magit
 16 slime
+17 paredit
+18 paredit-everywhere
