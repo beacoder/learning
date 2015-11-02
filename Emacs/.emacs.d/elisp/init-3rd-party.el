@@ -55,15 +55,11 @@
 ;; paredit setting
 ;;----------------------------------------------------------------------------
 
-(require 'paredit-everywhere)
+(require 'paredit)
 
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (eval-after-load 'paredit
   '(progn
-     (dolist (binding (list (kbd "C-<left>") (kbd "C-<right>")
-                            (kbd "C-M-<left>") (kbd "C-M-<right>")))
-       (define-key paredit-mode-map binding nil))
-
      ;; Modify kill-sentence, which is easily confused with the kill-sexp
      ;; binding, but doesn't preserve sexp structure
      (define-key paredit-mode-map [remap kill-sentence] 'paredit-kill)
@@ -73,8 +69,7 @@
      (define-key paredit-mode-map (kbd "M-?") nil)
      ))
 
-(add-hook 'prog-mode-hook 'paredit-everywhere-mode)
-(add-hook 'css-mode-hook 'paredit-everywhere-mode)
+(add-hook 'prog-mode-hook 'enable-paredit-mode)
 
 ;;----------------------------------------------------------------------------
 ;; third-party setting
