@@ -55,7 +55,6 @@
 ;; paredit setting
 ;;----------------------------------------------------------------------------
 
-(require 'paredit)
 (require 'paredit-everywhere)
 
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
