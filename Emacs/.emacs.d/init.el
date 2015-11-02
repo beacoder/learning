@@ -4,7 +4,7 @@
 
 ;; init load-path and start-time
 (setq emacs-load-start-time (current-time))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/elisp"))
 (when (<= emacs-major-version 21)
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-21")))
 (require 'init-utils)
