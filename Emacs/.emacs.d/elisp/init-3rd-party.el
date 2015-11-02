@@ -73,10 +73,8 @@
 ;; "C-)" might not work as expected in putty, so we create a new prefix-key for paredit.
 (define-prefix-command 'paredit-map)
 (define-key global-map "\C-xp" paredit-map)
-(define-key paredit-map (kbd "sf") 'paredit-forward-slurp-sexp)
-(define-key paredit-map (kbd "sb") 'paredit-backward-slurp-sexp)
-(define-key paredit-map (kbd "bf") 'paredit-forward-barf-sexp)
-(define-key paredit-map (kbd "bb") 'paredit-backward-barf-sexp)
+(define-key paredit-map (kbd "s") 'paredit-forward-slurp-sexp)
+(define-key paredit-map (kbd "b") 'paredit-forward-barf-sexp)
 
 ;;----------------------------------------------------------------------------
 ;; third-party setting
