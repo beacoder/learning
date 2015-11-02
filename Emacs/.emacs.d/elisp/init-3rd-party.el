@@ -68,8 +68,15 @@
      ;; Allow my global binding of M-? to work when paredit is active
      (define-key paredit-mode-map (kbd "M-?") nil)
      ))
-
 (add-hook 'prog-mode-hook 'enable-paredit-mode)
+
+;; "C-)" might not work as expected in putty, so we create a new keymap for paredit.
+(define-prefix-command 'paredit-map)
+(define-key global-map "\C-xp" paredit-map)
+(define-key paredit-map (kbd "fs") 'paredit-forward-slurp-sexp)
+(define-key paredit-map (kbd "bs") 'paredit-backward-slurp-sexp)
+(define-key paredit-map (kbd "fb") 'paredit-forward-barf-sexp)
+(define-key paredit-map (kbd "bb") 'paredit-backward-barf-sexp)
 
 ;;----------------------------------------------------------------------------
 ;; third-party setting
