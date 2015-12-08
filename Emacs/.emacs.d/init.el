@@ -74,6 +74,8 @@
 (setq tags-case-fold-search nil)
 ;; Don't warn when TAGS files are less than 1GB
 (setq large-file-warning-threshold (expt 1024 3))
+;; if on win-32, set threshhold to 511MB
+;; (setq large-file-warning-threshold (* 511 (expt 1024 2)))
 
 ;;----------------------------------------------------------------------------
 ;; package setting
