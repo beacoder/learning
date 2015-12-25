@@ -11,4 +11,6 @@
 
 (set-register ?b '(file . "~/backup"))
 
+(set-register ?w '(file . "~/workspace"))
+
 (provide 'init-register)
