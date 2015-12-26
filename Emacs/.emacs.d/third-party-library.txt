@@ -20,3 +20,4 @@
 16 slime
 17 paredit
 18 smex
+19 switch-window
