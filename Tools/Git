@@ -10,7 +10,7 @@ git init
 3.clone a local git repo from remote git repo
 git clone https://github.com/beacoder/notes.git ./
 
-4.add file into local repo
+4.add/update file on local repo
 git add .
 git commit -m "your commit message"
 or
