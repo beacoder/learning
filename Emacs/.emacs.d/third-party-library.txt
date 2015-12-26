@@ -21,3 +21,4 @@
 17 paredit
 18 smex
 19 switch-window
+20 flymake-google-cpplint
