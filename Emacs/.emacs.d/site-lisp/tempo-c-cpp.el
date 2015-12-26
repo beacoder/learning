@@ -84,8 +84,8 @@
 
 (defun my-tempo-c-cpp-bindings ()
   ;;(local-set-key (read-kbd-macro "<f8>") 'tempo-forward-mark)
-  (local-set-key (read-kbd-macro "M-<return>")   'tempo-complete-tag)
-  ;;(local-set-key (read-kbd-macro "<f5>")   'tempo-complete-tag)
+  (local-set-key (read-kbd-macro "M-<return>") 'tempo-complete-tag)
+  (local-set-key (read-kbd-macro "M-RET") 'tempo-complete-tag)
   (tempo-use-tag-list 'c-tempo-tags)
   (tempo-use-tag-list 'c++-tempo-tags))
 
