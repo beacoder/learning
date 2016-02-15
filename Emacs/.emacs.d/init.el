@@ -128,12 +128,13 @@
 (require 'init-modeline)
 ;; could use helm instead.
 (require 'init-ido)
-(when (> emacs-major-version 21)
+(if (> emacs-major-version 21)
     (progn
       (require 'init-3rd-party)
       (require 'init-lua)
       (ido-everywhere t)
-      ))
+      )
+      (require 'missing))
 (require 'init-windows)
 (require 'init-nxml)
 (require 'init-basics)
