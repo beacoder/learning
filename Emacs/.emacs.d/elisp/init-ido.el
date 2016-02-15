@@ -5,16 +5,10 @@
 ;; use "C-f" during file selection to switch to regular find-file
 (require 'ido)
 (ido-mode t)
-(ido-everywhere t)
 (setq ido-enable-flex-matching t)
 (setq ido-use-filename-at-point nil)
 (setq ido-auto-merge-work-directories-length 0)
 (setq ido-use-virtual-buffers t)
-
-;; Use smex to handle M-x
-(require 'smex)
-(setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
-(global-set-key [remap execute-extended-command] 'smex)
 
 ;; Allow the same buffer to be open in different frames
 (setq ido-default-buffer-method 'selected-window)
