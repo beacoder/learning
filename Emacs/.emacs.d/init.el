@@ -126,17 +126,14 @@
 (require 'tempo-c-cpp)
 (require 'init-alias)
 (require 'init-modeline)
-(if (> emacs-major-version 21)
+;; could use helm instead.
+(require 'init-ido)
+(when (> emacs-major-version 21)
     (progn
       (require 'init-3rd-party)
       (require 'init-lua)
-      
-      ;; could use helm instead.
-      (require 'init-ido)
-      )
-  (progn
-    (require 'ido)
-    ))
+      (ido-everywhere t)
+      ))
 (require 'init-windows)
 (require 'init-nxml)
 (require 'init-basics)
