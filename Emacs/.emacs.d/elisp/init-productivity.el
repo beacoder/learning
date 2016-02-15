@@ -205,7 +205,7 @@ See also: `xah-copy-to-register-1', `insert-register'."
 (global-set-key (kbd "C-c h 0") 'xah-paste-from-register-1)
 
 ;;----------------------------------------------------------------------------
-;; Copy Current Line If No Selection
+;; Copy/Kill Current Line If No Selection
 ;;----------------------------------------------------------------------------
 
 (defun xah-copy-line-or-region ()
@@ -228,8 +228,19 @@ Version 2015-05-06"
     (if current-prefix-arg
         (message "buffer copied")
       (message "line copied"))))
+      
+(defun kill-line-or-region ()
+  "kill whole current line, or text selection."
+  (interactive)
+  (if (use-region-p)
+      (progn
+        (kill-region (region-beginning) (region-end))
+        (message "region killed"))
+    (progn
+      (kill-whole-line)
+      (message "whole line killed"))))
 
 (global-set-key (kbd "M-9") 'xah-copy-line-or-region)
-(global-set-key (kbd "M-0") 'kill-whole-line)
+(global-set-key (kbd "M-0") 'kill-line-or-region)
 
 (provide 'init-productivity)
