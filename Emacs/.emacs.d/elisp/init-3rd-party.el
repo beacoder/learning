@@ -77,6 +77,13 @@
 (define-key paredit-map (kbd "b") 'paredit-forward-barf-sexp)
 
 ;;----------------------------------------------------------------------------
+;; smex setting
+;;----------------------------------------------------------------------------
+(require 'smex)
+(setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
+(global-set-key [remap execute-extended-command] 'smex)
+
+;;----------------------------------------------------------------------------
 ;; third-party setting
 ;;----------------------------------------------------------------------------
 
