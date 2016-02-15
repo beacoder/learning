@@ -2890,62 +2890,103 @@ for first matching file."
 	;; else file was killed so remove name from list.
 	(setq ido-cur-list (delq (car ido-matches) ido-cur-list))))))
 
-
 ;;; VISIT CHOSEN BUFFER
+;;  copied from ido.el of emacs 24.2.1 to replace the old flawed one.
 (defun ido-visit-buffer (buffer method &optional record)
-  "Visit file named FILE according to METHOD.
-Record command in command-history if optional RECORD is non-nil."
-
+  "Switch to BUFFER according to METHOD.
+Record command in `command-history' if optional RECORD is non-nil."
+  (if (bufferp buffer)
+      (setq buffer (buffer-name buffer)))
   (let (win newframe)
     (cond
      ((eq method 'kill)
       (if record
-	  (ido-record-command 'kill-buffer buffer))
+            (ido-record-command 'kill-buffer buffer))
       (kill-buffer buffer))
 
-     ((eq method 'samewindow)
+     ((eq method 'other-window)
       (if record
-	  (ido-record-command 'switch-to-buffer buffer))
-      (switch-to-buffer buffer))
-
-     ((memq method '(always-frame maybe-frame))
-      (cond
-       ((and window-system
-	     (setq win (ido-window-buffer-p buffer))
-	     (or (eq method 'always-frame)
-		 (y-or-n-p "Jump to frame? ")))
-	(setq newframe (window-frame win))
-	(if (fboundp 'select-frame-set-input-focus)
-	    (select-frame-set-input-focus newframe)
-	  (raise-frame newframe)
-	  (select-frame newframe)
-	  (if (not ido-xemacs)
-	    (set-mouse-position (selected-frame) (1- (frame-width)) 0)))
-	(select-window win))
-       (t
-	;;  No buffer in other frames...
-	(if record
-	    (ido-record-command 'switch-to-buffer buffer))
-	(switch-to-buffer buffer)
-	)))
-
-     ((eq method 'otherwindow)
-      (if record
-	  (ido-record-command 'switch-to-buffer buffer))
+            (ido-record-command 'switch-to-buffer buffer))
       (switch-to-buffer-other-window buffer))
 
      ((eq method 'display)
       (display-buffer buffer))
 
-     ((eq method 'otherframe)
-      (progn
-	(switch-to-buffer-other-frame buffer)
-	(if (not ido-xemacs)
-	    (if (fboundp 'select-frame-set-input-focus)
-		(select-frame-set-input-focus (selected-frame))
-	      (set-mouse-position (selected-frame) (1- (frame-width)) 0)))
-	)))))
+     ((eq method 'other-frame)
+         (switch-to-buffer-other-frame buffer)
+      (select-frame-set-input-focus (selected-frame)))
 
+     ((and (memq method '(raise-frame maybe-frame))
+              window-system
+                 (setq win (ido-buffer-window-other-frame buffer))
+                    (or (eq method 'raise-frame)
+                               (y-or-n-p "Jump to frame? ")))
+      (setq newframe (window-frame win))
+      (select-frame-set-input-focus newframe)
+      (select-window win))
+
+     ;; (eq method 'selected-window)
+     (t
+      ;;  No buffer in other frames...
+      (if record
+            (ido-record-command 'switch-to-buffer buffer))
+      (switch-to-buffer buffer)
+      ))))
+
+;; original flawed ido-visit-buffer
+;; (defun ido-visit-buffer (buffer method &optional record)
+;;   "Visit file named FILE according to METHOD.
+;; Record command in command-history if optional RECORD is non-nil."
+
+;;   (let (win newframe)
+;;     (cond
+;;      ((eq method 'kill)
+;;       (if record
+;;        (ido-record-command 'kill-buffer buffer))
+;;       (kill-buffer buffer))
+
+;;      ((eq method 'samewindow)
+;;       (if record
+;;        (ido-record-command 'switch-to-buffer buffer))
+;;       (switch-to-buffer buffer))
+
+;;      ((memq method '(always-frame maybe-frame))
+;;       (cond
+;;        ((and window-system
+;;           (setq win (ido-window-buffer-p buffer))
+;;           (or (eq method 'always-frame)
+;;               (y-or-n-p "Jump to frame? ")))
+;;      (setq newframe (window-frame win))
+;;      (if (fboundp 'select-frame-set-input-focus)
+;;          (select-frame-set-input-focus newframe)
+;;        (raise-frame newframe)
+;;        (select-frame newframe)
+;;        (if (not ido-xemacs)
+;;          (set-mouse-position (selected-frame) (1- (frame-width)) 0)))
+;;      (select-window win))
+;;        (t
+;;      ;;  No buffer in other frames...
+;;      (if record
+;;          (ido-record-command 'switch-to-buffer buffer))
+;;      (switch-to-buffer buffer)
+;;      )))
+
+;;      ((eq method 'otherwindow)
+;;       (if record
+;;        (ido-record-command 'switch-to-buffer buffer))
+;;       (switch-to-buffer-other-window buffer))
+
+;;      ((eq method 'display)
+;;       (display-buffer buffer))
+
+;;      ((eq method 'otherframe)
+;;       (progn
+;;      (switch-to-buffer-other-frame buffer)
+;;      (if (not ido-xemacs)
+;;          (if (fboundp 'select-frame-set-input-focus)
+;;              (select-frame-set-input-focus (selected-frame))
+;;            (set-mouse-position (selected-frame) (1- (frame-width)) 0)))
+;;      )))))
 
 (defun ido-window-buffer-p  (buffer)
   ;; Return window pointer if BUFFER is visible in another frame.
