@@ -211,24 +211,24 @@ See also: `xah-copy-to-register-1', `insert-register'."
 (defun xah-copy-line-or-region ()
   "Copy current line, or text selection.
 When `universal-argument' is called first, copy whole buffer (respects `narrow-to-region').
-
 URL `http://ergoemacs.org/emacs/emacs_copy_cut_current_line.html'
 Version 2015-05-06"
   (interactive)
-  (let (p1 p2)
+  (let (p1 p2 msg)
     (if current-prefix-arg
         (progn (setq p1 (point-min))
-               (setq p2 (point-max)))
-      (progn (if (use-region-p)
-                 (progn (setq p1 (region-beginning))
-                        (setq p2 (region-end)))
-               (progn (setq p1 (line-beginning-position))
-                      (setq p2 (line-end-position))))))
+               (setq p2 (point-max))
+               (setq msg "buffer copied"))
+      (if (use-region-p)
+          (progn (setq p1 (region-beginning))
+                 (setq p2 (region-end))
+                 (setq msg "region copied"))
+        (progn (setq p1 (line-beginning-position))
+               (setq p2 (line-end-position))
+               (setq msg "line copied"))))
     (kill-ring-save p1 p2)
-    (if current-prefix-arg
-        (message "buffer copied")
-      (message "line copied"))))
-      
+    (message msg)))
+
 (defun kill-line-or-region ()
   "kill whole current line, or text selection."
   (interactive)
