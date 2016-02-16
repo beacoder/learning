@@ -201,8 +201,8 @@ See also: `xah-copy-to-register-1', `insert-register'."
     )
   (insert-register ?1 t))
 
-(global-set-key (kbd "C-c h 1") 'xah-copy-to-register-1)
-(global-set-key (kbd "C-c h 0") 'xah-paste-from-register-1)
+(global-set-key (kbd "C-c 9") 'xah-copy-to-register-1)
+(global-set-key (kbd "C-c 0") 'xah-paste-from-register-1)
 
 ;;----------------------------------------------------------------------------
 ;; Copy/Kill Current Line If No Selection
