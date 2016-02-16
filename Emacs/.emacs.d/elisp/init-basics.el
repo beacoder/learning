@@ -177,7 +177,7 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
         '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 ;; "DejaVu Sans Mono" is a nice open source font, good for programming
-;;(if (display-graphic-p)
+;;(when (display-graphic-p)
 ;;    (set-face-attribute 'default nil
 ;;                        :font "DejaVu Sans Mono-10:weight=normal"
 ;;                        :height 100))
