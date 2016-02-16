@@ -132,9 +132,10 @@
     (progn
       (require 'init-3rd-party)
       (require 'init-lua)
-      (ido-everywhere t)
-      )
-      (require 'missing))
+      (ido-everywhere t))
+  (progn    
+    (require 'missing)
+    (require 'syntax)))
 (require 'init-windows)
 (require 'init-nxml)
 (require 'init-basics)
