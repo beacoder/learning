@@ -26,7 +26,7 @@
 ;; (run-with-timer 0 60 'routine-task)
 
 ;; do the backup at every friday.
-(run-at-time  "18:30pm" nil
+(run-at-time  "17:30pm" nil
               (lambda ()
                 "at every friday, we will do a backup work"
                 (if (string= "5\n\n" (shell-command-to-string  "date +%w"))
