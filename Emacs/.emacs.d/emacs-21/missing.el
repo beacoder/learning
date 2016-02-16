@@ -73,6 +73,12 @@ If ARG is zero, kill current line but exclude the trailing newline."
 	   (kill-region (point) (progn (forward-visible-line 0) (point))))
 	 (kill-region (point)
 		      (progn (forward-visible-line arg) (point))))))
+		      
+(defsubst string-match-p (regexp string &optional start)
+  "\
+Same as `string-match' except this function does not change the match data."
+  (let ((inhibit-changing-match-data t))
+    (string-match regexp string start)))
 
 (provide 'missing)
 
