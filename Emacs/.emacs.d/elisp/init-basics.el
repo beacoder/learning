@@ -55,20 +55,20 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
 (icomplete-mode t)
 
 ;; incremental picking of buffers
-;; (if (fboundp 'iswitchb-mode) (iswitchb-mode t))
+;; (when (fboundp 'iswitchb-mode) (iswitchb-mode t))
 
 ;; auto-refresh all buffers when files have changed on disk.
 (global-auto-revert-mode t)
 
 ;; enable ibuffer-mode
-(if (fboundp 'ibuffer-mode) (ibuffer-mode))
+(when (fboundp 'ibuffer-mode) (ibuffer-mode))
 (setq ibuffer-filter-group-name-face 'font-lock-doc-face)
 
 ;; enable electric-pair-mode
-(if (fboundp 'electric-pair-mode) (electric-pair-mode t))
+(when (fboundp 'electric-pair-mode) (electric-pair-mode t))
 
 ;; highlight matching pairs of parentheses
-(if (fboundp 'electric-pair-mode)
+(when (fboundp 'electric-pair-mode)
     (progn
       (show-paren-mode 1)
       (setq show-paren-delay 0)))
@@ -77,13 +77,13 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
 (transient-mark-mode t)
 
 ;; hide menu bar
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;; hide toolbar
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
 ;; hide scroll bar
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; enable the delete-selection-mode
 (delete-selection-mode t)
