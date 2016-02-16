@@ -104,8 +104,7 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
 (column-number-mode t)
 
 ;; don't show line-number in left margin
-(when (> emacs-major-version 21)
-  (global-linum-mode nil))
+(when (fboundp 'global-linum-mode) (global-linum-mode -1))
 
 ;; enable flyspell in text-mode
 (dolist (hook '(text-mode-hook))
