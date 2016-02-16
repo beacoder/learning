@@ -132,7 +132,7 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
   (redraw-display)
   )
 (global-set-key (kbd "C-c C-SPC") 'tf-toggle-show-trailing-whitespace)
-;; when using putty, the key C-c C-SPC will generate the "C-c C-@"
+;; when using putty, the key sequence "Ctrl-c Ctrl-SPC" will generate "C-c C-@"
 (global-set-key (kbd "C-c C-@") 'tf-toggle-show-trailing-whitespace)
 
 ;; remove useless whitespaces before saving a file
