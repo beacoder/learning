@@ -95,9 +95,6 @@
   ;; We include the org repository for completeness, but don't normally use it.
   (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
-  (when (< emacs-major-version 24)
-    (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-
   ;; Also use Melpa for most packages
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
@@ -108,9 +105,10 @@
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
 
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+(when (is-modern-emacs)
+  (require 'server)
+  (unless (server-running-p)
+    (server-start)))
   
 ;;----------------------------------------------------------------------------
 ;; Kill all processes when closing emacs
