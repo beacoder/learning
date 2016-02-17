@@ -22,3 +22,4 @@
 18 smex
 19 switch-window
 20 flymake-google-cpplint
+21 flycheck-google-cpplint
