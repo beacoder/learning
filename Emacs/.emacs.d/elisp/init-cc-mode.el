@@ -54,7 +54,7 @@ Key bindings:
                                   '(warnings-only . c/c++-googlelint))
        ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
        (custom-set-variables
-        '(flycheck-c/c++-googlelint-executable "/usr/local/bin/cpplint.py")
+        '(flycheck-c/c++-googlelint-executable "~/.emacs.d/cpplint.py")
         '(flycheck-googlelint-verbose "3")
         '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
         '(flycheck-googlelint-root "project/src")
