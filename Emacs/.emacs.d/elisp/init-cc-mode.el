@@ -23,7 +23,8 @@ Key bindings:
 (add-hook 'c-mode-common-hook 'my-flymake-minor-mode)
     
 (when (is-modern-emacs)
-  ;; use google-c-style
+
+  ;; google-c-style
   (progn
     (require 'google-c-style)
     (add-hook 'c-mode-common-hook 'google-set-c-style)
@@ -178,8 +179,6 @@ Key bindings:
 	(while (and (not (eobp)) (forward-line))
 	  (indent-according-to-mode))
 	(beginning-of-buffer)
-	(search-forward "Description:")
-	)
-)
+	(search-forward "Description:")))
 
 (provide 'init-cc-mode)
