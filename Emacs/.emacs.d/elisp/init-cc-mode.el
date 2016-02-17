@@ -24,25 +24,21 @@ Key bindings:
 ;; Added by Hartmut 2011-07-05
 (add-hook 'c-mode-common-hook 'my-flymake-minor-mode)
 
-;; use google-c-style
-(require 'google-c-style)
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+(when (is-modern-emacs)
+  ;; use google-c-style
+  (require 'google-c-style)
+  (add-hook 'c-mode-common-hook 'google-set-c-style)
+  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
-;; some personal settings
-(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
-(add-hook 'c-mode-common-hook 'tab-indents-region)
-(add-hook 'c-mode-common-hook 'my-flymake-google-init)
-
-(defun my-flymake-google-init ()
-  (require 'flymake-google-cpplint)
-  (custom-set-variables
-   ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
-   ;; chmod +x "~/.emacs.d/cpplint.py" => make cpplint.py executable
-   ;; dos2unix cpplint.py => translate script to right format for linux
-   ;; unix2dos cpplint.py => translate script to right format for windows
-   '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py"))
-  (flymake-google-cpplint-load))
+  (defun my-flymake-google-init ()
+    (require 'flymake-google-cpplint)
+    (custom-set-variables
+     ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
+     ;; chmod +x "~/.emacs.d/cpplint.py" => make cpplint.py executable
+     ;; dos2unix cpplint.py => translate script to right format for linux
+     ;; unix2dos cpplint.py => translate script to right format for windows
+     '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py"))
+    (flymake-google-cpplint-load)))
 
 (defun my-c-mode-common-hook ()
   ;; other customizations
@@ -75,6 +71,11 @@ Key bindings:
   (if (and transient-mark-mode mark-active)
       (indent-region (region-beginning) (region-end) nil)
     (c-indent-command)))
+
+;; some personal settings
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+(add-hook 'c-mode-common-hook 'tab-indents-region)
+(add-hook 'c-mode-common-hook 'my-flymake-google-init)
 
 ;;----------------------------------------------------------------------------
 ;; generate the template c++ header and source files
