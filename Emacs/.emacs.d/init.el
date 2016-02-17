@@ -139,6 +139,7 @@
 (require 'init-windows)
 (require 'init-nxml)
 (require 'init-basics)
+(require 'init-dired)
 (require 'init-sessions)
 (require 'init-cperl-mode)
 (require 'init-productivity)
