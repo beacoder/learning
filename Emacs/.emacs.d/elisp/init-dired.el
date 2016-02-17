@@ -2,9 +2,6 @@
 ;; dired setting
 ;;----------------------------------------------------------------------------
 
-(require 'dired+)
-(require 'dired-details+)
-
 ;; In a file, how to go to its directory and place cursor on the file name
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 
