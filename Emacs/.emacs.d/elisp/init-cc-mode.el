@@ -12,9 +12,7 @@
 
 (define-minor-mode my-flymake-minor-mode
   "Simple minor mode which adds some key bindings for moving to the next and previous errors.
-
 Key bindings:
-
 \\{my-flymake-minor-mode-map}"
   nil
   nil
@@ -23,22 +21,43 @@ Key bindings:
 ;; Enable this keybinding (my-flymake-minor-mode) by default
 ;; Added by Hartmut 2011-07-05
 (add-hook 'c-mode-common-hook 'my-flymake-minor-mode)
-
+    
 (when (is-modern-emacs)
   ;; use google-c-style
-  (require 'google-c-style)
-  (add-hook 'c-mode-common-hook 'google-set-c-style)
-  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+  (progn
+    (require 'google-c-style)
+    (add-hook 'c-mode-common-hook 'google-set-c-style)
+    (add-hook 'c-mode-common-hook 'google-make-newline-indent))
 
-  (defun my-flymake-google-init ()
-    (require 'flymake-google-cpplint)
-    (custom-set-variables
-     ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
-     ;; chmod +x "~/.emacs.d/cpplint.py" => make cpplint.py executable
-     ;; dos2unix cpplint.py => translate script to right format for linux
-     ;; unix2dos cpplint.py => translate script to right format for windows
-     '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py"))
-    (flymake-google-cpplint-load)))
+  ;; flymake
+  (eval-after-load 'flymake
+    '(progn
+       (require 'flymake-google-cpplint)
+       (custom-set-variables
+        ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
+        ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
+        '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py")
+        '(flycheck-googlelint-verbose "3")
+        '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
+        '(flycheck-googlelint-root "project/src")
+        '(flycheck-googlelint-linelength "120"))
+       (add-hook 'c++-mode-hook 'flymake-google-cpplint-load)))
+
+  ;; flycheck
+  (eval-after-load 'flycheck
+    '(progn
+       (require 'flycheck-google-cpplint)
+       ;; Add Google C++ Style checker.
+       ;; In default, syntax checked by Clang and Cppcheck.
+       (flycheck-add-next-checker 'c/c++-cppcheck
+                                  '(warnings-only . c/c++-googlelint))
+       ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
+       (custom-set-variables
+        '(flycheck-c/c++-googlelint-executable "/usr/local/bin/cpplint.py")
+        '(flycheck-googlelint-verbose "3")
+        '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
+        '(flycheck-googlelint-root "project/src")
+        '(flycheck-googlelint-linelength "120")))))
 
 (defun my-c-mode-common-hook ()
   ;; other customizations
@@ -75,7 +94,6 @@ Key bindings:
 ;; some personal settings
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 (add-hook 'c-mode-common-hook 'tab-indents-region)
-(add-hook 'c-mode-common-hook 'my-flymake-google-init)
 
 ;;----------------------------------------------------------------------------
 ;; generate the template c++ header and source files
