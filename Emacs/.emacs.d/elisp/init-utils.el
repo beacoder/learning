@@ -231,4 +231,11 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
 
 (global-set-key (kbd "<escape>") 'Switch-Command-Target)
 
+(defconst *is-windows* (eq system-type 'windows-nt))
+
+(defun is-modern-emacs ()
+  "if emacs version is greater than 24.3, return true else false."
+  (if (and (>= emacs-major-version 24) (>= emacs-minor-version 3))
+      t nil))
+
 (provide 'init-utils)
