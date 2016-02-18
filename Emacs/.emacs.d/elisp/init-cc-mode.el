@@ -2,66 +2,7 @@
 ;; c/c++ programming mode setting
 ;;----------------------------------------------------------------------------
 
-;; Customizations for all modes in CC Mode.
-
-;; flymake-error-navigation
-(defvar my-flymake-minor-mode-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map "\M-p" 'flymake-goto-prev-error)
-    (define-key map "\M-n" 'flymake-goto-next-error)
-    map)
-  "Keymap for my flymake minor mode.")
-
-(define-minor-mode my-flymake-minor-mode
-  "Simple minor mode which adds some key bindings for moving to the next and previous errors.
-Key bindings:
-\\{my-flymake-minor-mode-map}"
-  nil
-  nil
-  :keymap my-flymake-minor-mode-map)
-
-;; Enable this keybinding (my-flymake-minor-mode) by default
-;; Added by Hartmut 2011-07-05
-(add-hook 'c-mode-common-hook 'my-flymake-minor-mode)
-    
-(when (is-modern-emacs)
-
-  ;; google-c-style
-  (progn
-    (require 'google-c-style)
-    (add-hook 'c-mode-common-hook 'google-set-c-style)
-    (add-hook 'c-mode-common-hook 'google-make-newline-indent))
-
-  ;; flymake
-  (eval-after-load 'flymake
-    '(progn
-       (require 'flymake-google-cpplint)
-       (custom-set-variables
-        ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
-        ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
-        '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py")
-        '(flycheck-googlelint-verbose "3")
-        '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
-        '(flycheck-googlelint-root "project/src")
-        '(flycheck-googlelint-linelength "120"))
-       (add-hook 'c++-mode-hook 'flymake-google-cpplint-load)))
-
-  ;; flycheck
-  (eval-after-load 'flycheck
-    '(progn
-       (require 'flycheck-google-cpplint)
-       ;; Add Google C++ Style checker.
-       ;; In default, syntax checked by Clang and Cppcheck.
-       (flycheck-add-next-checker 'c/c++-cppcheck
-                                  '(warnings-only . c/c++-googlelint))
-       ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
-       (custom-set-variables
-        '(flycheck-c/c++-googlelint-executable "~/.emacs.d/cpplint.py")
-        '(flycheck-googlelint-verbose "3")
-        '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
-        '(flycheck-googlelint-root "project/src")
-        '(flycheck-googlelint-linelength "120")))))
-
+;; personal settings
 (defun my-c-mode-common-hook ()
   ;; other customizations
   (setq tab-width 8)
@@ -71,8 +12,6 @@ Key bindings:
   (flyspell-prog-mode)
   ;; improve performance
   (setq flyspell-issue-message-flag nil)
-  ;; turn flymake mode on
-  (flymake-mode-on)
 
   ;; navigation between header and cpp/cc files
   (local-set-key (kbd "C-c o") 'ff-find-other-file)
@@ -85,8 +24,6 @@ Key bindings:
   (c-toggle-auto-hungry-state 1))
 
 ;; use <tab> to indent region if anything is selected
-(defun tab-indents-region () (local-set-key [(tab)] 'fledermaus-maybe-tab))
-
 ;; fledermaus came up with this
 (defun fledermaus-maybe-tab ()
   (interactive)
@@ -94,9 +31,92 @@ Key bindings:
       (indent-region (region-beginning) (region-end) nil)
     (c-indent-command)))
 
-;; some personal settings
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
-(add-hook 'c-mode-common-hook 'tab-indents-region)
+(add-hook 'c-mode-common-hook (lambda () (local-set-key [(tab)] 'fledermaus-maybe-tab)))
+
+;; google-c-style
+(when (is-modern-emacs)
+  (progn
+    (require 'google-c-style)
+    (add-hook 'c-mode-common-hook 'google-set-c-style)
+    (add-hook 'c-mode-common-hook 'google-make-newline-indent)))
+
+;; flymake
+;; (when (is-modern-emacs)
+;;   (progn
+;;     (defun my-flymake-google-init ()
+;;       "Setup flymake-google-cpplint"
+;;       (require 'flymake-google-cpplint)
+;;       (custom-set-variables
+;;        ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
+;;        ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
+;;        '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py")
+;;        '(flycheck-googlelint-verbose "3")
+;;        '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
+;;        '(flycheck-googlelint-root "project/src")
+;;        '(flycheck-googlelint-linelength "120"))
+;;       (flymake-google-cpplint-load))
+
+;;     ;; flymake-error-navigation
+;;     (defvar my-flymake-minor-mode-map
+;;       (let ((map (make-sparse-keymap)))
+;;         (define-key map "\M-p" 'flymake-goto-prev-error)
+;;         (define-key map "\M-n" 'flymake-goto-next-error)
+;;         map)
+;;       "Keymap for my flymake minor mode.")
+
+;;     (define-minor-mode my-flymake-minor-mode
+;;       "Simple minor mode which adds some key bindings for moving to the next and previous errors.
+;; Key bindings:
+;; \\{my-flymake-minor-mode-map}"
+;;       nil
+;;       nil
+;;       :keymap my-flymake-minor-mode-map)
+
+;;     ;; Enable this keybinding (my-flymake-minor-mode) by default
+;;     ;; Added by Hartmut 2011-07-05
+;;     (add-hook 'c-mode-common-hook 'my-flymake-minor-mode)
+;;     (add-hook 'c-mode-common-hook 'flymake-mode-on)
+;;     (add-hook 'c-mode-common-hook 'my-flymake-google-init)))
+
+;; flycheck
+(when (is-modern-emacs)
+  (eval-after-load 'flycheck
+    '(progn
+       (require 'flycheck-google-cpplint)
+       ;; Add Google C++ Style checker.
+       ;; In default, syntax checked by Clang and Cppcheck.
+       (flycheck-add-next-checker 'c/c++-cppcheck
+                                  'c/c++-googlelint 'append)
+       ;; disalbe clang/gcc/cppcheck checker
+       (add-hook 'c-mode-common-hook (lambda () (setq flycheck-disabled-checkers '(c/c++-clang c/c++-gcc c/c++-cppcheck))))
+       ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
+       (custom-set-variables
+        '(flycheck-c/c++-googlelint-executable "~/.emacs.d/cpplint.py")
+        '(flycheck-googlelint-verbose "3")
+        '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
+        '(flycheck-googlelint-root "project/src")
+        '(flycheck-googlelint-linelength "120"))))
+        
+  ;; flycheck-error-navigation
+  (defvar my-flycheck-minor-mode-map
+    (let ((map (make-sparse-keymap)))
+      (define-key map "\M-p" 'flycheck-previous-error)
+      (define-key map "\M-n" 'flycheck-next-error)
+      map)
+    "Keymap for my flycheck minor mode.")
+
+  (define-minor-mode my-flycheck-minor-mode
+    "Simple minor mode which adds some key bindings for moving to the next and previous errors.
+Key bindings:
+\\{my-flycheck-minor-mode-map}"
+    nil
+    nil
+    :keymap my-flycheck-minor-mode-map)
+
+  ;; Enable this keybinding (my-flycheck-minor-mode) by default
+  (add-hook 'c-mode-common-hook 'my-flycheck-minor-mode)
+  (add-hook 'c-mode-common-hook (lambda () (flycheck-mode-on-safe))))
 
 ;;----------------------------------------------------------------------------
 ;; generate the template c++ header and source files
