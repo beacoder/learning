@@ -70,10 +70,12 @@
 (setq tags-revert-without-query t)
 ;; Do case-sensitive tag searches
 (setq tags-case-fold-search nil)
-;; Don't warn when TAGS files are less than 1GB
-(setq large-file-warning-threshold (expt 1024 3))
-;; if on win-32, set threshhold to 511MB
-;; (setq large-file-warning-threshold (* 511 (expt 1024 2)))
+
+(if *is-windows*
+    ;; Don't warn unless TAGS files are bigger than 1GB
+    (setq large-file-warning-threshold (expt 1024 3))
+  ;; on win-32, set threshhold to 511MB
+  (setq large-file-warning-threshold (* 511 (expt 1024 2))))
 
 ;;----------------------------------------------------------------------------
 ;; package setting
