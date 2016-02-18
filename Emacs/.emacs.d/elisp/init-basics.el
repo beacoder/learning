@@ -242,7 +242,8 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
 ;; used.
 
 (when (display-graphic-p)
-   (require 'flymake)
+   ;; (require 'flymake)
+   (require 'flycheck)
    ;; swap the foreground and background colors of face
    (invert-face 'default))
 
