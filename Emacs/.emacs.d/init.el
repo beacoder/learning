@@ -9,11 +9,6 @@
 (when (<= emacs-major-version 21)
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-21")))
 (require 'init-utils)
-
-(defun is-modern-emacs ()
-  "if emacs version is greater than 24.3, return true else false."
-  (if (and (>= emacs-major-version 24) (>= emacs-minor-version 3))
-      t nil))
   
 ;;----------------------------------------------------------------------------
 ;; key-bindings for specific mode in emacs
@@ -55,8 +50,7 @@
   (shell-command
    ;; use Exuberant Ctags instead of emacs ctags
    (format "/usr/bin/ctags -f %s/%s -e -R %s" dir-name1 tag-file-name (directory-file-name dir-name2)))
-  (message "create-tags succeed !")
-  )
+  (message "create-tags succeed !"))
 (defalias 'ct 'create-tags)
 
 ;; set tags file lists
@@ -65,8 +59,7 @@
       '(
         "~/my_tag_files/STL_TAGS"     ;; stl(gcc) headers
         "~/my_tag_files/BOOST_TAGS"   ;; boost headers
-        )
-      )
+        ))
 
 ;; add stl and boost into ff-find-other-file's search dir
 (setq cc-search-directories '("." "/usr/include" "/usr/local/include/*" "/usr/local/include/*"
