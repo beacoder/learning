@@ -141,6 +141,7 @@
 (require 'init-sessions)
 (require 'init-cperl-mode)
 (require 'init-productivity)
+(require 'init-shell)
 
 (provide 'init)
 
