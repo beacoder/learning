@@ -262,10 +262,6 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
 ;; show elisp error backtrace
 ;; (setq debug-on-error t)
 
-;; make sure shell in emacs can see alias in ~/.bashrc
-(setq shell-file-name "/bin/bash")
-(setq shell-command-switch "-ic")
-
 ;; fix Error: No word lists can be found for the language "zh_CN"
 ;; use apsell as ispell backend
 (setq-default ispell-program-name "aspell")  
