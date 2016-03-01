@@ -21,7 +21,6 @@
               (winner-undo)
               (message "NO COMPILATION ERRORS!")
               ))))
-
   ;; other customizations
   (setq tab-width 8)
   ;; show function name in mode-line
@@ -30,14 +29,12 @@
   (flyspell-prog-mode)
   ;; improve performance
   (setq flyspell-issue-message-flag nil)
-
   ;; navigation between header and cpp/cc files
   (local-set-key (kbd "C-c o") 'ff-find-other-file)
   ;; jump to the start of the function
   (local-set-key (kbd "C-M-a") 'c-beginning-of-defun)
   ;; jump to the end of the function
   (local-set-key (kbd "C-M-e") 'c-end-of-defun)
-
   ;; we like auto-newline and hungry-delete
   (c-toggle-auto-hungry-state 1))
   
