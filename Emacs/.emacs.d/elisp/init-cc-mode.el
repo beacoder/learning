@@ -51,10 +51,10 @@
 ;;        ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
 ;;        ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
 ;;        '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py")
-;;        '(flycheck-googlelint-verbose "3")
-;;        '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
-;;        '(flycheck-googlelint-root "project/src")
-;;        '(flycheck-googlelint-linelength "120"))
+;;        '(flymake-googlelint-verbose "3")
+;;        '(flymake-googlelint-filter "-whitespace,+whitespace/braces")
+;;        '(flymake-googlelint-root "project/src")
+;;        '(flymake-googlelint-linelength "120"))
 ;;       (flymake-google-cpplint-load))
 
 ;;     ;; flymake-error-navigation
