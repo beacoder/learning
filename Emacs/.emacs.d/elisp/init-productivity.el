@@ -258,7 +258,8 @@ Version 2015-05-06"
     (message msg)))
       
 (defun kill-line-or-region ()
-  "kill whole current line, or text selection."
+  "kill whole current line, or text selection.
+When `universal-argument' is called first, kill whole buffer (respects `narrow-to-region')."
   (interactive)
   (let (p1 p2 msg)
     (if current-prefix-arg
