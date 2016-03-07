@@ -204,6 +204,34 @@ See also: `xah-copy-to-register-1', `insert-register'."
 (global-set-key (kbd "C-c 9") 'xah-copy-to-register-1)
 (global-set-key (kbd "C-c 0") 'xah-paste-from-register-1)
 
+(defun bright-point-to-register-1 ()
+  "Save current point to register 1."
+  (interactive)
+  (point-to-register ?1)
+  (message "Point saved to register 1"))
+
+(defun bright-jump-to-register-1 ()
+  "Jumped to register 1."
+  (interactive)
+  (jump-to-register ?1))
+
+(defun bright-point-to-register-3()
+  "Save current point to register 3."
+  (interactive)
+  (point-to-register ?3)
+  (message "Point saved to register 3"))
+
+(defun bright-jump-to-register-3 ()
+  "Jumped to register 3."
+  (interactive)
+  (jump-to-register ?3))
+  
+(global-set-key (kbd "M-1") 'bright-point-to-register-1)
+(global-set-key (kbd "M-2") 'bright-jump-to-register-1)
+
+(global-set-key (kbd "M-3") 'bright-point-to-register-3)
+(global-set-key (kbd "M-4") 'bright-jump-to-register-3)
+
 ;;----------------------------------------------------------------------------
 ;; Copy/Kill Current Line If No Selection
 ;;----------------------------------------------------------------------------
@@ -228,17 +256,23 @@ Version 2015-05-06"
                (setq msg "line copied"))))
     (kill-ring-save p1 p2)
     (message msg)))
-
+      
 (defun kill-line-or-region ()
   "kill whole current line, or text selection."
   (interactive)
-  (if (use-region-p)
-      (progn
-        (kill-region (region-beginning) (region-end))
-        (message "region killed"))
-    (progn
-      (kill-whole-line)
-      (message "whole line killed"))))
+  (let (p1 p2 msg)
+    (if current-prefix-arg
+        (progn (setq p1 (point-min))
+               (setq p2 (point-max))
+               (kill-region p1 p2)
+               (message "buffer killed"))
+      (if (use-region-p)
+          (progn
+            (kill-region (region-beginning) (region-end))
+            (message "region killed"))
+        (progn
+          (kill-whole-line)
+          (message "whole line killed"))))))
 
 (global-set-key (kbd "M-9") 'xah-copy-line-or-region)
 (global-set-key (kbd "M-0") 'kill-line-or-region)
