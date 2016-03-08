@@ -9,9 +9,7 @@
 (defun backward-kill-word-or-region ()
   "do backward-kill-word or kill-region.
 Enhancement to 'Prefer backward-kill-word over Backspace'.
-
-URL `https://sites.google.com/site/steveyegge2/effective-emacs'
-"
+URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
   (interactive)
   (if (use-region-p)
       (kill-region (region-beginning) (region-end))
@@ -128,8 +126,7 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'
   "Toggle show-trailing-whitespace between t and nil"
   (interactive)
   (setq show-trailing-whitespace (not show-trailing-whitespace))
-  (redraw-display)
-  )
+  (redraw-display))
 (global-set-key (kbd "C-c C-SPC") 'tf-toggle-show-trailing-whitespace)
 ;; when using putty, the key sequence "Ctrl-c Ctrl-SPC" will generate "C-c C-@"
 (global-set-key (kbd "C-c C-@") 'tf-toggle-show-trailing-whitespace)
