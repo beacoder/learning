@@ -21,7 +21,7 @@ Example usage:
   (let ((p1 (region-beginning)) (p2 (region-end)))
     (if (use-region-p)
         (vector (buffer-substring-no-properties p1 p2) p1 p2 )
-      (unit-at-cursor unit) ) ) )
+      (unit-at-cursor unit))))
 
 (defun unit-at-cursor  (unit)
   "Return the string and boundary of UNIT under cursor.
@@ -38,7 +38,7 @@ UNIT can be:
 
 Example usage:
     (setq bds (unit-at-cursor 'line))
-    (setq myText (elt bds 0) p1 (elt bds 1) p2 (elt bds 2)  )
+    (setq myText (elt bds 0) p1 (elt bds 1) p2 (elt bds 2))
 
 This function is similar to `thing-at-point' and `bounds-of-thing-at-point'.
 The main differences are:
@@ -54,23 +54,19 @@ The main differences are:
              (skip-chars-backward wordcharset)
              (setq p1 (point))
              (skip-chars-forward wordcharset)
-             (setq p2 (point)))
-           )
+             (setq p2 (point))))
 
          ( (eq unit 'glyphs)
            (progn
              (skip-chars-backward "[:graph:]")
              (setq p1 (point))
              (skip-chars-forward "[:graph:]")
-             (setq p2 (point)))
-           )
+             (setq p2 (point))))
 
          ( (eq unit 'buffer)
            (progn
              (setq p1 (point-min))
-             (setq p2 (point-max))
-             )
-           )
+             (setq p2 (point-max))))
 
          ((eq unit 'line)
           (progn
@@ -80,14 +76,13 @@ The main differences are:
           (progn
             (if (re-search-backward "\n\n" nil t)
                 (progn (forward-char 2)
-                       (setq p1 (point) ) )
-              (setq p1 (line-beginning-position) )
-              )
+                       (setq p1 (point)))
+              (setq p1 (line-beginning-position)))
 
             (if (re-search-forward "\n\n" nil t)
                 (progn (backward-char)
-                       (setq p2 (point) ))
-              (setq p2 (line-end-position) ) ) ))
+                       (setq p2 (point)))
+              (setq p2 (line-end-position)))))
 
          ((vectorp unit)
           (let (p0)
@@ -96,11 +91,9 @@ The main differences are:
              (setq p1 (point))
              (goto-char p0)
              (skip-chars-forward (elt unit 1))
-             (setq p2 (point))))
-         ) )
+             (setq p2 (point))))))
 
-    (vector (buffer-substring-no-properties p1 p2) p1 p2 )
-    ) )
+    (vector (buffer-substring-no-properties p1 p2) p1 p2)))
 
 ;; find the directory containing a given library
 (autoload 'find-library-name "find-func")
