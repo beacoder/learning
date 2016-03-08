@@ -66,8 +66,7 @@
      (define-key paredit-mode-map [remap backward-kill-sentence] nil)
 
      ;; Allow my global binding of M-? to work when paredit is active
-     (define-key paredit-mode-map (kbd "M-?") nil)
-     ))
+     (define-key paredit-mode-map (kbd "M-?") nil)))
 (add-hook 'prog-mode-hook 'enable-paredit-mode)
 
 ;; "C-)" might not work as expected in putty, so we create a new prefix-key for paredit.
