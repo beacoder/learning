@@ -23,7 +23,7 @@ This command is similar to `find-file-at-point' but without prompting for confir
           (if (file-exists-p (concat path ".el"))
               (find-file (concat path ".el"))
             (when (y-or-n-p (format "file doesn't exist: 「%s」. Create?" path) )
-              (find-file path )) ) ) ) ) ))
+              (find-file path ))))))))
 
 ;; try to follow the "action-where-object" pattern when defining key-bindings,
 ;; and use as less keys as possible.
@@ -189,16 +189,14 @@ See also: `xah-paste-from-register-1', `copy-to-register'."
          (p1 (elt bds 1) )
          (p2 (elt bds 2)))
     (copy-to-register ?1 p1 p2)
-    (message "copied to register 1: 「%s」." inputStr)
-))
+    (message "copied to register 1: 「%s」." inputStr)))
 
 (defun xah-paste-from-register-1 ()
   "Paste text from register 1.
 See also: `xah-copy-to-register-1', `insert-register'."
   (interactive)
   (when (use-region-p)
-    (delete-region (region-beginning) (region-end) )
-    )
+    (delete-region (region-beginning) (region-end)))
   (insert-register ?1 t))
 
 (global-set-key (kbd "C-c 9") 'xah-copy-to-register-1)
