@@ -19,8 +19,7 @@
               ;; @see http://emacswiki.org/emacs/ModeCompile#toc2
               (bury-buffer "*compilation*")
               (winner-undo)
-              (message "NO COMPILATION ERRORS!")
-              ))))
+              (message "NO COMPILATION ERRORS!")))))
   ;; other customizations
   (setq tab-width 8)
   ;; show function name in mode-line
