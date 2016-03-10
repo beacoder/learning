@@ -107,6 +107,18 @@
 (keyfreq-autosave-mode 1)
 
 ;;----------------------------------------------------------------------------
+;; regex-tool setting
+;;----------------------------------------------------------------------------
+
+;; "C-c C-c" => force an update
+;; "C-c C-k" => quit regex-tool
+
+(require 'regex-tool)
+;; use pcre instead of emacs
+(setq regex-tool-backend 'perl)
+(global-set-key (kbd "C-c C-r") 'regex-tool)
+
+;;----------------------------------------------------------------------------
 ;; third-party setting
 ;;----------------------------------------------------------------------------
 
