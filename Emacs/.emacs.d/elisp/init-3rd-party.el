@@ -122,7 +122,7 @@
 ;; zenburn setting
 ;;----------------------------------------------------------------------------
 
-;; need to setup putty color for zenburn first
+;; need to setup putty color which goes well with zenburn first
 (load-theme 'zenburn t)
 
 ;;----------------------------------------------------------------------------
