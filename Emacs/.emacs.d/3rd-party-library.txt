@@ -24,3 +24,4 @@
 20 flymake-google-cpplint
 21 flycheck-google-cpplint
 22 keyfreq
+23 regex-tool
