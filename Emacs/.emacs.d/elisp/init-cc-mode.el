@@ -9,7 +9,7 @@
   ;; remove the old element
   (setq c-offsets-alist (delq (assoc key c-offsets-alist) c-offsets-alist))
   ;; new value
-    (add-to-list 'c-offsets-alist '(key . val)))
+  (add-to-list 'c-offsets-alist '(key . val)))
 
 ;; personal settings
 (defun my-c-mode-common-hook ()
