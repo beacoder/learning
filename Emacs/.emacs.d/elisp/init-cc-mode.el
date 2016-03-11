@@ -2,6 +2,15 @@
 ;; c/c++ programming mode setting
 ;;----------------------------------------------------------------------------
 
+;; avoid default "gnu" style, use more popular one
+(setq c-default-style "linux")
+
+(defun fix-c-indent-offset-according-to-syntax-context (key val)
+  ;; remove the old element
+  (setq c-offsets-alist (delq (assoc key c-offsets-alist) c-offsets-alist))
+  ;; new value
+    (add-to-list 'c-offsets-alist '(key . val)))
+
 ;; personal settings
 (defun my-c-mode-common-hook ()
   (setq c-basic-offset 4)
@@ -35,7 +44,11 @@
   ;; jump to the end of the function
   (local-set-key (kbd "C-M-e") 'c-end-of-defun)
   ;; we like auto-newline and hungry-delete
-  (c-toggle-auto-hungry-state 1))
+  (c-toggle-auto-hungry-state 1)
+  ;; indent
+  (fix-c-indent-offset-according-to-syntax-context 'substatement 0)
+  (fix-c-indent-offset-according-to-syntax-context 'func-decl-cont 0))
+
   
 ;; add stl and boost into ff-find-other-file's search dir
 (setq cc-search-directories '("." "/usr/include" "/usr/local/include/*" "/usr/local/include/*"
