@@ -129,8 +129,8 @@
 ;; third-party setting
 ;;----------------------------------------------------------------------------
 
-(require 'magit)
-(require 'init-helm)
+;; (require 'magit)
+;; (require 'init-helm)
 (require 'init-dictionary)
 (require 'init-dired)
 (require 'buffer-move)
