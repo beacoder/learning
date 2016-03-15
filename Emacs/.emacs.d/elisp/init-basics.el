@@ -186,7 +186,7 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
                        :height 100))
 
 ;; set minibuffer-prompt color
-(set-face-foreground 'minibuffer-prompt "red")
+(set-face-foreground 'minibuffer-prompt "pink")
 
 ;;----------------------------------------------------------------------------
 ;; isearch setting
