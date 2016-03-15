@@ -188,12 +188,20 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;; set minibuffer-prompt color
 (set-face-foreground 'minibuffer-prompt "red")
 
+;;----------------------------------------------------------------------------
+;; isearch setting
+;;----------------------------------------------------------------------------
+
 ;; set isearch color
 (set-face-foreground 'isearch "white")
 (set-face-background 'isearch "red")
 
 ;; (set-face-foreground 'isearch "red")
 ;; (set-face-background 'isearch "blue")
+
+;; Isearch convenience, space matches anything (non-greedy)
+;; @see https://www.reddit.com/r/emacs/comments/3yxk2x/flexible_isearch_without_a_package/
+(setq search-whitespace-regexp ".*?")
 
 ;; set cursor color
 (add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
