@@ -192,16 +192,28 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;; isearch setting
 ;;----------------------------------------------------------------------------
 
-;; set isearch color
-(set-face-foreground 'isearch "white")
-(set-face-background 'isearch "red")
+;; @see https://github.com/Hawstein/my-emacs/blob/master/_emacs/isearch-face-settings.el
+(defun isearch-face-settings ()
+  "Face settings for `isearch'."
 
-;; (set-face-foreground 'isearch "red")
-;; (set-face-background 'isearch "blue")
+  ;; (set-face-foreground 'isearch "red")
+  ;; (set-face-background 'isearch "blue")
+
+  (set-face-foreground 'isearch "white")
+  (set-face-background 'isearch "red")
+  (when (is-modern-emacs)
+    ;; (set-face-foreground 'lazy-highlight "black")
+    ;; (set-face-background 'lazy-highlight "white")
+
+    (set-face-foreground 'lazy-highlight "white")
+    (set-face-background 'lazy-highlight "pink"))
+  (custom-set-faces '(isearch-fail ((((class color)) (:background "red"))))))
+(eval-after-load "isearch" `(isearch-face-settings))
 
 ;; Isearch convenience, space matches anything (non-greedy)
 ;; @see https://www.reddit.com/r/emacs/comments/3yxk2x/flexible_isearch_without_a_package/
 (setq search-whitespace-regexp ".*?")
+
 
 ;; set cursor color
 (add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
