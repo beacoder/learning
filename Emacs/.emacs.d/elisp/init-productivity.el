@@ -199,19 +199,8 @@ See also: `xah-copy-to-register-1', `insert-register'."
     (delete-region (region-beginning) (region-end)))
   (insert-register ?1 t))
 
-(global-set-key (kbd "C-c 9") 'xah-copy-to-register-1)
-(global-set-key (kbd "C-c 0") 'xah-paste-from-register-1)
-
-(defun bright-point-to-register-1 ()
-  "Save current point to register 1."
-  (interactive)
-  (point-to-register ?1)
-  (message "Point saved to register 1"))
-
-(defun bright-jump-to-register-1 ()
-  "Jumped to register 1."
-  (interactive)
-  (jump-to-register ?1))
+(global-set-key (kbd "M-1") 'xah-copy-to-register-1)
+(global-set-key (kbd "M-2") 'xah-paste-from-register-1)
 
 (defun bright-point-to-register-3()
   "Save current point to register 3."
@@ -223,12 +212,23 @@ See also: `xah-copy-to-register-1', `insert-register'."
   "Jumped to register 3."
   (interactive)
   (jump-to-register ?3))
-  
-(global-set-key (kbd "M-1") 'bright-point-to-register-1)
-(global-set-key (kbd "M-2") 'bright-jump-to-register-1)
+
+(defun bright-point-to-register-5 ()
+  "Save current point to register 5."
+  (interactive)
+  (point-to-register ?5)
+  (message "Point saved to register 5"))
+
+(defun bright-jump-to-register-5 ()
+  "Jumped to register 5."
+  (interactive)
+  (jump-to-register ?5))
 
 (global-set-key (kbd "M-3") 'bright-point-to-register-3)
 (global-set-key (kbd "M-4") 'bright-jump-to-register-3)
+
+(global-set-key (kbd "M-5") 'bright-point-to-register-5)
+(global-set-key (kbd "M-6") 'bright-jump-to-register-5)
 
 ;;----------------------------------------------------------------------------
 ;; Copy/Kill Current Line If No Selection
