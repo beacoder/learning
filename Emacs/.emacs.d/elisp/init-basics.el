@@ -19,6 +19,10 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;; bind pop-tag-mark
 (global-set-key (kbd "M-?") 'pop-tag-mark)
 
+;; Handy way of getting back to previous places.
+(global-set-key (kbd "C-x p") 'pop-to-mark-command)
+(setq set-mark-command-repeat-pop t)
+
 ;; bind goto-line command
 (global-set-key (kbd "M-g M-g") 'goto-line)
 
