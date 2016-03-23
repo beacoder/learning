@@ -37,8 +37,6 @@
 ;; "C-x u" => open the undo-tree-visualizer
 (require 'undo-tree)
 (global-undo-tree-mode)
-(setq undo-tree-visualizer-timestamps t
-      undo-tree-visualizer-diff t)
 
 ;; undo-buffer limit -> 100 MB                                                       |
 (setq undo-outer-limit (* 100 (expt 1024 2)))
