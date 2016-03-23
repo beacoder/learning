@@ -37,6 +37,8 @@
 ;; "C-x u" => open the undo-tree-visualizer
 (require 'undo-tree)
 (global-undo-tree-mode)
+(setq undo-tree-visualizer-timestamps t
+      undo-tree-visualizer-diff t)
 
 ;; undo-buffer limit -> 100 MB                                                       |
 (setq undo-outer-limit (* 100 (expt 1024 2)))
@@ -124,6 +126,15 @@
 
 ;; need to setup putty color which goes well with zenburn first
 (load-theme 'zenburn t)
+
+;;----------------------------------------------------------------------------
+;; guide-key setting
+;;----------------------------------------------------------------------------
+
+;; The guide-key package pops up keybinding reminders after a short delay.
+(require 'guide-key)
+(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-c"))
+(guide-key-mode 1)
 
 ;;----------------------------------------------------------------------------
 ;; third-party setting
