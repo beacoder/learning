@@ -19,8 +19,20 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;; bind pop-tag-mark
 (global-set-key (kbd "M-?") 'pop-tag-mark)
 
-;; Handy way of getting back to previous places.
+;; Handy way of navigating forward and backward.
+(defun unpop-to-mark-command ()
+  "Unpop off mark ring. Does nothing if mark ring is empty."
+  (interactive)
+  (when mark-ring
+    (let ((pos (marker-position (car (last mark-ring)))))
+      (if (not (= (point) pos))
+          (goto-char pos)
+        (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
+        (set-marker (mark-marker) pos)
+        (setq mark-ring (nbutlast mark-ring))
+        (goto-char (marker-position (car (last mark-ring))))))))
 (global-set-key (kbd "C-x p") 'pop-to-mark-command)
+(global-set-key (kbd "C-x n") 'unpop-to-mark-command)
 (setq set-mark-command-repeat-pop t)
 
 ;; bind goto-line command
