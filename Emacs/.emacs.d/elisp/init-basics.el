@@ -20,6 +20,7 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 (global-set-key (kbd "M-?") 'pop-tag-mark)
 
 ;; Handy way of navigating forward and backward.
+;; @see http://stackoverflow.com/questions/3393834/how-to-move-forward-and-backward-in-emacs-mark-ring
 (defun unpop-to-mark-command ()
   "Unpop off mark ring. Does nothing if mark ring is empty."
   (interactive)
