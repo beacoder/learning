@@ -26,11 +26,4 @@
 22 keyfreq
 23 regex-tool
 24 zenburn-theme
-
-;;----------------------------------------------------------------------------
-;; to-do
-;;----------------------------------------------------------------------------
-
- 1 find/write a function to preview key-bindings after we've input partial keys.
-   the behavior is a little like this: "C-x r j" => after user input this, a few minutes later, a buffer will promp to remind us.
-   e.g: after we have input the keys "C-c", a buffer will pops up and lists all the key-bindins starts with "C-c".
+25 guide-key
