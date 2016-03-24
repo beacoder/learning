@@ -54,17 +54,21 @@
 (defalias 'ct 'create-tags)
 
 ;; set tags file lists
-(setq tags-file-name nil)
-(setq tags-table-list
+(setq tags-file-name nil
+      tags-table-list
       '(
+        "~/my_tag_files/TAGS"
         "~/my_tag_files/STL_TAGS"     ;; stl(gcc) headers
         "~/my_tag_files/BOOST_TAGS"   ;; boost headers
-        ))
-
-;; Don't ask before reverting the TAGS files
-(setq tags-revert-without-query t)
-;; Do case-sensitive tag searches
-(setq tags-case-fold-search nil)
+        )
+      ;; add stl/boost/project path into ff-find-other-file's search dir
+      cc-search-directories '("." "/usr/include" "/usr/local/include/*" "/usr/local/include/*"
+                              "/usr/include/c++/4.4.7/*"
+                              "  /usr/include/boost/*")
+      ;; Don't ask before reverting the TAGS files
+      tags-revert-without-query t
+      ;; Do case-sensitive tag searches
+      tags-case-fold-search nil)
 
 (if *is-windows*
     ;; Don't warn unless TAGS files are bigger than 1GB
