@@ -18,4 +18,13 @@
       (message "ttcn3 tags has been updated !"))))
 (defalias 'ut 'update-ttcn3-tags)
 
+(eval-after-load 'ttcn3
+  '(progn
+     ;; Allow my global binding of M-? to work when paredit is active
+     (define-key ttcn3-mode-map (kbd "M-?") nil)))
+
+(define-prefix-command 'ttcn3-map)
+(define-key global-map "\C-xt" ttcn3-map)
+(define-key ttcn3-map (kbd "u") 'update-ttcn3-tags)
+
 (provide 'init-work)
