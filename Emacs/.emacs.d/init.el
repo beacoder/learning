@@ -141,6 +141,7 @@
 (require 'init-cperl-mode)
 (require 'init-productivity)
 (require 'init-shell)
+(require 'init-work)
 
 (provide 'init)
 
