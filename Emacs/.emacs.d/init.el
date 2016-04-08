@@ -84,10 +84,10 @@
   (require 'package)
 
   ;; Standard package repositories
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+  ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
   ;; We include the org repository for completeness, but don't normally use it.
-  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+  ;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
   ;; Also use Melpa for most packages
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
