@@ -153,7 +153,7 @@
 (require 'init-dired)
 (require 'buffer-move)
 (require 'flymake-cursor)
-(require 'init-highline)
+;; (require 'init-highline)
 (require 'init-async)
 
 (provide 'init-3rd-party)
