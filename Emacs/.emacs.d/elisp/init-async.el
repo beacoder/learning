@@ -4,6 +4,7 @@
 
 ;; deal with problems when updating packages
 (require 'async-bytecomp)
+(async-bytecomp-package-mode 1)
 
 ;; provide dired with asynchronous abilities
 (eval-after-load "dired-aux"
