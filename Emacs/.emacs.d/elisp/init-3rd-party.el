@@ -94,7 +94,7 @@
 ;; ttcn3 setting
 ;;----------------------------------------------------------------------------
 
-(autoload 'ttcn-3-mode "ttcn-3-mode" "Major mode for ttcn3 files" t)
+(autoload 'ttcn-3-mode "ttcn3" "Major mode for ttcn3 files" t)
 (add-to-list 'auto-mode-alist '("\\.ttcn$" . ttcn-3-mode))
 (add-to-list 'auto-mode-alist '("\\.ttcnpp$" . ttcn-3-mode))
 
