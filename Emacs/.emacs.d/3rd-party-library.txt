@@ -37,3 +37,4 @@
 33 feature-mode
 34 rspec-mode
 35 yard-mode
+36 web-mode
