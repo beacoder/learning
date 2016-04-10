@@ -71,6 +71,8 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 
 ;; auto-refresh all buffers when files have changed on disk.
 (global-auto-revert-mode t)
+;; I use this mode for log files (Emacs’s version of tail -f) to easily search through the logs.
+(add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-mode))
 
 ;; enable ibuffer-mode
 (when (fboundp 'ibuffer-mode) (ibuffer-mode))
