@@ -173,7 +173,8 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 (put 'narrow-to-region 'disabled nil)
 
 ;; disable emacs system beep
-(setq visible-bell t)
+(setq visible-bell nil)
+(setq ring-bell-function (lambda () (message "*beep*")))
 
 ;; enlarge kill-ring-max value
 (setq kill-ring-max 200)
