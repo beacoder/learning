@@ -59,6 +59,8 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;; @see http://stackoverflow.com/questions/2068697/emacs-is-slow-opening-recent-files
 (setq recentf-keep '(file-remote-p file-readable-p))
 
+(global-set-key (kbd "\C-cl") 'list-matching-lines)
+
 ;;----------------------------------------------------------------------------
 ;; mode setting
 ;;----------------------------------------------------------------------------
