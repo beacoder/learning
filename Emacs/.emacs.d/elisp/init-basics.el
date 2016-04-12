@@ -159,11 +159,9 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 
 ;; display-occurence after occur-preve/next; M-p => occur-preve, M-n => occur-next
 (defadvice occur-prev (after display-prev activate)
-  (save-excursion
-    (occur-mode-display-occurrence)))
+  (save-excursion (occur-mode-display-occurrence)))
 (defadvice occur-next (after display-next activate)
-  (save-excursion
-    (occur-mode-display-occurrence)))
+  (save-excursion (occur-mode-display-occurrence)))
 
 ;;----------------------------------------------------------------------------
 ;; setting locales
