@@ -157,6 +157,14 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
               (whitespace-cleanup)
               (delete-trailing-whitespace))))
 
+;; display-occurence after occur-preve/next; M-p => occur-preve, M-n => occur-next
+(defadvice occur-prev (after display-occurrence activate)
+  (save-excursion
+    (occur-mode-display-occurrence)))
+(defadvice occur-next (after display-occurrence activate)
+  (save-excursion
+    (occur-mode-display-occurrence)))
+
 ;;----------------------------------------------------------------------------
 ;; setting locales
 ;;----------------------------------------------------------------------------
