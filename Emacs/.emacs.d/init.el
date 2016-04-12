@@ -134,15 +134,16 @@
   (require 'init-lua)
   (ido-everywhere t)
   (require 'init-windows)
-  (require 'init-nxml))
+  (require 'init-nxml)
+  (require 'init-ruby)
+  (require 'init-work))
 (require 'init-basics)
 (require 'init-dired)
 (require 'init-sessions)
 (require 'init-cperl-mode)
-(require 'init-ruby)
 (require 'init-productivity)
 (require 'init-shell)
-(require 'init-work)
+
 
 (provide 'init)
 
