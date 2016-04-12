@@ -144,7 +144,6 @@
 (require 'init-productivity)
 (require 'init-shell)
 
-
 (provide 'init)
 
 ;; Local Variables:
