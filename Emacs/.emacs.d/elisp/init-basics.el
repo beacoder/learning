@@ -158,10 +158,10 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
               (delete-trailing-whitespace))))
 
 ;; display-occurence after occur-preve/next; M-p => occur-preve, M-n => occur-next
-(defadvice occur-prev (after display-occurrence activate)
+(defadvice occur-prev (after display-prev activate)
   (save-excursion
     (occur-mode-display-occurrence)))
-(defadvice occur-next (after display-occurrence activate)
+(defadvice occur-next (after display-next activate)
   (save-excursion
     (occur-mode-display-occurrence)))
 
