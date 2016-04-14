@@ -9,7 +9,18 @@
 (when (<= emacs-major-version 21)
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-21")))
 (require 'init-utils)
-  
+
+;;----------------------------------------------------------------------------
+;; package setting
+;;----------------------------------------------------------------------------
+
+(when (is-modern-emacs)
+   ;; Must come before elpa, as it may provide package.el
+  (require 'init-site-lisp)
+  ;; Calls (package-initialize)
+  ;; Machinery for installing required packages
+  (require 'init-elpa))
+
 ;;----------------------------------------------------------------------------
 ;; key-bindings for specific mode in emacs
 ;;----------------------------------------------------------------------------
@@ -77,25 +88,6 @@
   (setq large-file-warning-threshold (expt 1024 3)))
 
 ;;----------------------------------------------------------------------------
-;; package setting
-;;----------------------------------------------------------------------------
-
-(when (is-modern-emacs)
-  (require 'package)
-
-  ;; Standard package repositories
-  ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-
-  ;; We include the org repository for completeness, but don't normally use it.
-  ;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-
-  ;; Also use Melpa for most packages
-  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-
-  ;; fire up package.el
-  (package-initialize))
-
-;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
 
@@ -135,7 +127,9 @@
   (ido-everywhere t)
   (require 'init-windows)
   (require 'init-nxml)
+  (require 'init-html)
   (require 'init-css)
+  (require 'init-javascript)
   (require 'init-ruby)
   (require 'init-work))
 (require 'init-basics)
