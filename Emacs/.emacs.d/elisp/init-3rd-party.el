@@ -24,7 +24,7 @@
 
 
 ;;; multiple-cursors setting
-(require 'multiple-cursors)
+(require-package 'multiple-cursors)
 
 ;; apply mulitiple cursor to region lines
 (global-set-key (kbd "C-c C-c") 'mc/edit-lines)
@@ -37,6 +37,7 @@
 
 
 ;;; auto-complete setting
+(require-package 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
 ;; auto complete is CPU sensitive
@@ -51,7 +52,7 @@
 
 ;;; undo-tree setting
 ;; "C-x u" => open the undo-tree-visualizer
-(require 'undo-tree)
+(require-package 'undo-tree)
 (global-undo-tree-mode)
 ;; undo-buffer limit -> 100 MB                                                       |
 (setq undo-outer-limit (* 100 (expt 1024 2)))
@@ -67,7 +68,7 @@
 
 
 ;;; paredit setting
-;; (require 'paredit)
+;; (require-package 'paredit)
 ;; (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 ;; (eval-after-load 'paredit
 ;;   '(progn
@@ -102,7 +103,7 @@
 
 ;;; keyfreq setting
 ;; keyfreq-show could show the key-frequency
-(require 'keyfreq)
+(require-package 'keyfreq)
 (setq keyfreq-excluded-commands
       '(self-insert-command
         abort-recursive-edit
@@ -117,7 +118,7 @@
 ;;; regex-tool setting
 ;; "C-c C-c" => force an update
 ;; "C-c C-k" => quit regex-tool
-(require 'regex-tool)
+(require-package 'regex-tool)
 ;; use pcre instead of emacs
 (setq regex-tool-backend 'perl)
 (global-set-key (kbd "C-c C-r") 'regex-tool)
@@ -125,22 +126,23 @@
 
 ;;; zenburn setting
 ;; need to setup putty color which goes well with zenburn first
+(require-package 'zenburn-theme)
 (load-theme 'zenburn t)
 
 
 ;;; The guide-key package pops up keybinding reminders after a short delay.
-(require 'guide-key)
+(require-package 'guide-key)
 (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-c"))
 (guide-key-mode 1)
 
 
 ;;; other setting
-;; (require 'magit)
+;; (require-package 'magit)
 ;; (require 'init-helm)
 (require 'init-dictionary)
 (require 'init-dired)
-(require 'buffer-move)
-(require 'flymake-cursor)
+(require-package 'buffer-move)
+(require-package 'flymake-cursor)
 ;; (require 'init-highline)
 
 (provide 'init-3rd-party)
