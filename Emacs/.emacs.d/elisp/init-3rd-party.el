@@ -2,6 +2,12 @@
 ;; third-party setting
 ;;----------------------------------------------------------------------------
 
+;;; dired setting
+(require-package 'dired+)
+(require-package 'dired-details)
+(require-package 'dired-details+)
+
+
 ;;; async setting
 (require-package 'async)
 ;; deal with problems when updating packages
@@ -29,48 +35,38 @@
 ;; apply mulitiple cursor to lines like this region
 (global-set-key (kbd "C-c C-s") 'mc/mark-all-like-this)
 
-;;----------------------------------------------------------------------------
-;; auto-complete setting
-;;----------------------------------------------------------------------------
 
-;; do default config for auto-complete
+;;; auto-complete setting
 (require 'auto-complete-config)
 (ac-config-default)
-
 ;; auto complete is CPU sensitive
 (ac-set-trigger-key "<C-return>")
-
 ;; use tooltip and set delay time
 (setq ac-auto-start nil
       ac-use-quick-help t
       ac-quick-help-delay 0.5
       ac-quick-help-height 30)
-      
-;;----------------------------------------------------------------------------
-;; undo-tree setting
-;;----------------------------------------------------------------------------
 
+
+
+;;; undo-tree setting
 ;; "C-x u" => open the undo-tree-visualizer
 (require 'undo-tree)
 (global-undo-tree-mode)
-
 ;; undo-buffer limit -> 100 MB                                                       |
 (setq undo-outer-limit (* 100 (expt 1024 2)))
 
-;;----------------------------------------------------------------------------
-;; slime setting
-;;----------------------------------------------------------------------------
 
+
+;;; slime setting
 ;; (require 'slime-autoloads)
 ;; (setq inferior-lisp-program
 ;;       (replace-regexp-in-string "/lib/sbcl/?$" "/bin/sbcl" (getenv "SBCL_HOME")))
 ;; (slime-setup '(slime-fancy slime-indentation slime-asdf))
 ;; (setq lisp-indent-function 'common-lisp-indent-function)
 
-;;----------------------------------------------------------------------------
-;; paredit setting
-;;----------------------------------------------------------------------------
 
+;;; paredit setting
 ;; (require 'paredit)
 ;; (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 ;; (eval-after-load 'paredit
@@ -91,33 +87,20 @@
 ;; (define-key paredit-map (kbd "s") 'paredit-forward-slurp-sexp)
 ;; (define-key paredit-map (kbd "b") 'paredit-forward-barf-sexp)
 
-;;----------------------------------------------------------------------------
-;; smex setting
-;;----------------------------------------------------------------------------
 
-(require 'smex)
+;;; smex setting
+(require-package 'smex)
 (setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
 (global-set-key [remap execute-extended-command] 'smex)
 
-;;----------------------------------------------------------------------------
-;; dired setting
-;;----------------------------------------------------------------------------
 
-(require 'dired+)
-(require 'dired-details+)
-
-;;----------------------------------------------------------------------------
-;; ttcn3 setting
-;;----------------------------------------------------------------------------
-
+;;; ttcn3 setting
 (autoload 'ttcn-3-mode "ttcn3" "Major mode for ttcn3 files" t)
 (add-to-list 'auto-mode-alist '("\\.ttcn$" . ttcn-3-mode))
 (add-to-list 'auto-mode-alist '("\\.ttcnpp$" . ttcn-3-mode))
 
-;;----------------------------------------------------------------------------
-;; keyfreq setting
-;;----------------------------------------------------------------------------
 
+;;; keyfreq setting
 ;; keyfreq-show could show the key-frequency
 (require 'keyfreq)
 (setq keyfreq-excluded-commands
@@ -130,13 +113,10 @@
 (keyfreq-mode 1)
 (keyfreq-autosave-mode 1)
 
-;;----------------------------------------------------------------------------
-;; regex-tool setting
-;;----------------------------------------------------------------------------
 
+;;; regex-tool setting
 ;; "C-c C-c" => force an update
 ;; "C-c C-k" => quit regex-tool
-
 (require 'regex-tool)
 ;; use pcre instead of emacs
 (setq regex-tool-backend 'perl)
