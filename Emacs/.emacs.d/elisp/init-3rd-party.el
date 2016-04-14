@@ -1,7 +1,23 @@
 ;;----------------------------------------------------------------------------
-;; multiple-cursors setting
+;; third-party setting
 ;;----------------------------------------------------------------------------
 
+;;; init-async setting
+(require-package 'async)
+;; deal with problems when updating packages
+(require 'async-bytecomp)
+(async-bytecomp-package-mode 1)
+
+;; provide dired with asynchronous abilities
+(after-load "dired-aux" (require 'dired-async))
+
+;; sending emails asynchronously
+(require 'smtpmail-async)
+(setq send-mail-function 'async-smtpmail-send-it
+      message-send-mail-function 'async-smtpmail-send-it)
+
+
+;;; multiple-cursors setting
 (require 'multiple-cursors)
 
 ;; apply mulitiple cursor to region lines
@@ -142,26 +158,11 @@
 (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-c"))
 (guide-key-mode 1)
 
-;;----------------------------------------------------------------------------
-;; init-async setting
-;;----------------------------------------------------------------------------
-(require-package 'async)
-;; deal with problems when updating packages
-(require 'async-bytecomp)
-(async-bytecomp-package-mode 1)
 
-;; provide dired with asynchronous abilities
-(after-load "dired-aux" (require 'dired-async))
 
-;; sending emails asynchronously
-(require 'smtpmail-async)
-(setq send-mail-function 'async-smtpmail-send-it
-      message-send-mail-function 'async-smtpmail-send-it)
 
-;;----------------------------------------------------------------------------
-;; third-party setting
-;;----------------------------------------------------------------------------
 
+;;; other setting
 ;; (require 'magit)
 ;; (require 'init-helm)
 (require 'init-dictionary)
