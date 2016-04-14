@@ -109,7 +109,7 @@
 (when (is-modern-emacs)
   (eval-after-load 'flycheck
     '(progn
-       (require 'flycheck-google-cpplint)
+       (require-package 'flycheck-google-cpplint)
        ;; Add Google C++ Style checker.
        ;; In default, syntax checked by Clang and Cppcheck.
        (flycheck-add-next-checker 'c/c++-cppcheck
