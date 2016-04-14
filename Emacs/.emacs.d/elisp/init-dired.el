@@ -31,8 +31,6 @@
 ;;   ; was dired-up-directory
 ;;  ))
 
-(eval-after-load 'dired
-  '(progn
-     (define-key dired-mode-map (kbd "M-b") nil)))
+(after-load 'dired (define-key dired-mode-map (kbd "M-b") nil))
 
 (provide 'init-dired)
