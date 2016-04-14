@@ -128,11 +128,18 @@
 ;; display time
 (display-time-mode t)
 
+;;----------------------------------------------------------------------------
+;; auto-save settings
+;;----------------------------------------------------------------------------
+(setq auto-save-default t
+      auto-save-mode t
+      auto-save-interval 300
+      auto-save-timeout 60)
+
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
-(require 'init-routines)
 (require 'init-register)
 (require 'init-hippie-expand)
 (require 'init-cc-mode)
