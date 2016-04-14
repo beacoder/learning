@@ -135,6 +135,7 @@
   (ido-everywhere t)
   (require 'init-windows)
   (require 'init-nxml)
+  (require 'init-css)
   (require 'init-ruby)
   (require 'init-work))
 (require 'init-basics)
