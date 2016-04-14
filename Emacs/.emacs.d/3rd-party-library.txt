@@ -29,3 +29,10 @@
 25 guide-key
 26 rinari
 27 ruby-hash-syntax
+28 ac-inf-ruby
+29 ruby-compilation
+30 robe
+31 yari
+32 mmm-mode
+33 mmm-erb
+34 derived
