@@ -142,24 +142,16 @@
 (setq regex-tool-backend 'perl)
 (global-set-key (kbd "C-c C-r") 'regex-tool)
 
-;;----------------------------------------------------------------------------
-;; zenburn setting
-;;----------------------------------------------------------------------------
 
+;;; zenburn setting
 ;; need to setup putty color which goes well with zenburn first
 (load-theme 'zenburn t)
 
-;;----------------------------------------------------------------------------
-;; guide-key setting
-;;----------------------------------------------------------------------------
 
-;; The guide-key package pops up keybinding reminders after a short delay.
+;;; The guide-key package pops up keybinding reminders after a short delay.
 (require 'guide-key)
 (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-c"))
 (guide-key-mode 1)
-
-
-
 
 
 ;;; other setting
