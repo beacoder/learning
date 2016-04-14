@@ -114,7 +114,6 @@
 ;;----------------------------------------------------------------------------
 (require 'init-routines)
 (require 'init-register)
-(require 'init-macros)
 (require 'init-hippie-expand)
 (require 'init-cc-mode)
 (require 'tempo-c-cpp)
