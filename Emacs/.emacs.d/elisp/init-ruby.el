@@ -32,8 +32,8 @@
 
 
 ;;; Inferior ruby
-(require-package 'inf-ruby)
-(require-package 'ac-inf-ruby)
+(require 'inf-ruby)
+(require 'ac-inf-ruby)
 (after-load 'auto-complete
   (add-to-list 'ac-modes 'inf-ruby-mode))
 (add-hook 'inf-ruby-mode-hook 'ac-inf-ruby-enable)
@@ -42,7 +42,7 @@
 
 
 ;;; Ruby compilation
-(require-package 'ruby-compilation)
+(require 'ruby-compilation)
 
 (after-load 'ruby-mode
   (let ((m ruby-mode-map))
@@ -55,7 +55,7 @@
 
 
 ;;; Robe
-(require-package 'robe)
+(require 'robe)
 (after-load 'ruby-mode
   (add-hook 'ruby-mode-hook 'robe-mode))
 
@@ -82,20 +82,20 @@
 
 
 ;;; ri support
-(require-package 'yari)
+(require 'yari)
 (defalias 'ri 'yari)
 
 
 
 ;;; YAML
 
-(maybe-require-package 'yaml-mode)
-(add-auto-mode 'yaml-mode "\\.yml\\.erb\\'")
+;; (maybe-require-package 'yaml-mode)
+;; (add-auto-mode 'yaml-mode "\\.yml\\.erb\\'")
 
 
 
 ;;; ERB
-(require-package 'mmm-mode)
+(require 'mmm-mode)
 (defun sanityinc/ensure-mmm-erb-loaded ()
   (require 'mmm-erb))
 
