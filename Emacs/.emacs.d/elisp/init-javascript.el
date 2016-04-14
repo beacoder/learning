@@ -1,3 +1,7 @@
+;;----------------------------------------------------------------------------
+;; javascript settings
+;;----------------------------------------------------------------------------
+
 (maybe-require-package 'json-mode)
 (maybe-require-package 'js2-mode)
 (maybe-require-package 'ac-js2)
