@@ -28,13 +28,4 @@
 24 zenburn-theme
 25 guide-key
 26 rinari
-27 ruby-tools
-28 ruby-block
-29 ruby-additional
-30 ruby-hash-syntax
-31 ruby-refactor
-32 rvm
-33 feature-mode
-34 rspec-mode
-35 yard-mode
-36 web-mode
+27 ruby-hash-syntax
