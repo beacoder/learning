@@ -46,4 +46,18 @@ indentation rules."
 ;; optional key bindings, easier than hs defaults
 (define-key nxml-mode-map (kbd "C-c h") 'hs-toggle-hiding)
 
+;;----------------------------------------------------------------------------
+;; Integration with tidy for html + xml
+;;----------------------------------------------------------------------------
+(require-package 'tidy)
+(add-hook 'nxml-mode-hook (lambda () (tidy-build-menu nxml-mode-map)))
+
+(defun sanityinc/tidy-buffer-xml (beg end)
+  "Run \"tidy -xml\" on the region from BEG to END, or whole buffer."
+  (interactive "r")
+  (unless (use-region-p)
+    (setq beg (point-min)
+          end (point-max)))
+  (shell-command-on-region beg end "tidy -xml -q -i" (current-buffer) t "*tidy-errors*" t))
+
 (provide 'init-nxml)
