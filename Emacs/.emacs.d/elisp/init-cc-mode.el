@@ -62,10 +62,9 @@
 
 ;; google-c-style
 (when (is-modern-emacs)
-  (progn
-    (require-package 'google-c-style)
-    (add-hook 'c-mode-common-hook 'google-set-c-style)
-    (add-hook 'c-mode-common-hook 'google-make-newline-indent)))
+  (require-package 'google-c-style)
+  (add-hook 'c-mode-common-hook 'google-set-c-style)
+  (add-hook 'c-mode-common-hook 'google-make-newline-indent))
 
 ;; flymake
 ;; (when (is-modern-emacs)
