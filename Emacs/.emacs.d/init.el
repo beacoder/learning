@@ -138,7 +138,6 @@
 (require 'init-cc-mode)
 (require 'tempo-c-cpp)
 (require 'init-alias)
-(require 'init-modeline)
 ;; could use helm instead.
 (require 'init-ido)
 (when (= emacs-major-version 21)
