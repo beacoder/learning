@@ -236,7 +236,7 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
     (set-face-foreground 'lazy-highlight "white")
     (set-face-background 'lazy-highlight "pink"))
   (custom-set-faces '(isearch-fail ((((class color)) (:background "red"))))))
-(eval-after-load "isearch" `(isearch-face-settings))
+(after-load "isearch" (isearch-face-settings))
 
 ;; Isearch convenience, space matches anything (non-greedy)
 ;; @see https://www.reddit.com/r/emacs/comments/3yxk2x/flexible_isearch_without_a_package/
@@ -293,8 +293,7 @@ Use in `isearch-mode-end-hook'."
     (custom-set-faces '(ediff-fine-diff-C
                         ((((type tty)) :background "blue" :foreground "white")
                          (t :background "gold1" :foreground "red"))))))
-(eval-after-load "ediff"
-  `(ediff-face-settings))
+(after-load "ediff" (ediff-face-settings))
 
 ;; Overwrite flymake-display-warning so that no annoying dialog box is
 ;; used.
