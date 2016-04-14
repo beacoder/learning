@@ -71,7 +71,7 @@
 ;;   (progn
 ;;     (defun my-flymake-google-init ()
 ;;       "Setup flymake-google-cpplint"
-;;       (require 'flymake-google-cpplint)
+;;       (require-package 'flymake-google-cpplint)
 ;;       (custom-set-variables
 ;;        ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
 ;;        ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
