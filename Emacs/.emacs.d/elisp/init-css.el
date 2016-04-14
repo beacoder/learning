@@ -1,11 +1,13 @@
-;;; Colourise CSS colour literals
-;;(when (maybe-require-package 'rainbow-mode)
-;;  (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
-;;    (add-hook hook 'rainbow-mode)))
+;;----------------------------------------------------------------------------
+;; Colourise CSS colour literals
+;;----------------------------------------------------------------------------
+(when (maybe-require-package 'rainbow-mode)
+  (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
+    (add-hook hook 'rainbow-mode)))
 
-
+
 ;;; Embedding in html
-(require 'mmm-mode)
+(require-package 'mmm-mode)
 (after-load 'mmm-vars
   (mmm-add-group
    'html-css
@@ -35,16 +37,16 @@
 
 
 ;;; SASS and SCSS
-(require 'sass-mode)
-(require 'scss-mode)
+(require-package 'sass-mode)
+(require-package 'scss-mode)
 (setq-default scss-compile-at-save nil)
 
 
 
 ;;; LESS
-(require 'less-css-mode)
+(require-package 'less-css-mode)
 (when (featurep 'js2-mode)
-  (require 'skewer-less))
+  (require-package 'skewer-less))
 
 
 
@@ -55,7 +57,7 @@
 
 
 ;;; Use eldoc for syntax hints
-(require 'css-eldoc)
+(require-package 'css-eldoc)
 (autoload 'turn-on-css-eldoc "css-eldoc")
 (add-hook 'css-mode-hook 'turn-on-css-eldoc)
 
