@@ -52,7 +52,6 @@
 ;; cc-mode
 (defalias 'ca 'c-beginning-of-defun)
 (defalias 'ce 'c-end-of-defun)
-(defalias 'rw 'restore-workspace)
 (defalias 'ts 'tags-search)
 (defalias 'tq 'tags-query-replace)
 
