@@ -3,22 +3,13 @@
 ;;----------------------------------------------------------------------------
 
 (setq emacs-load-start-time (current-time))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/elisp"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
 (when (<= emacs-major-version 21)
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-21")))
 (require 'init-utils)
-
-
-;;----------------------------------------------------------------------------
-;; package setting
-;;----------------------------------------------------------------------------
-(when (is-modern-emacs)
-   ;; Must come before elpa, as it may provide package.el
-  (require 'init-site-lisp)
-  ;; Calls (package-initialize)
-  ;; Machinery for installing required packages
-  (require 'init-elpa))
+;; Machinery for installing required packages
+(when (is-modern-emacs) (require 'init-elpa))
 
 
 ;;----------------------------------------------------------------------------
