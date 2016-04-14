@@ -63,7 +63,7 @@
 ;; google-c-style
 (when (is-modern-emacs)
   (progn
-    (require 'google-c-style)
+    (require-package 'google-c-style)
     (add-hook 'c-mode-common-hook 'google-set-c-style)
     (add-hook 'c-mode-common-hook 'google-make-newline-indent)))
 
