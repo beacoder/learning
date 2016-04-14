@@ -1,7 +1,7 @@
 ;;----------------------------------------------------------------------------
 ;; init-highline setting
 ;;----------------------------------------------------------------------------
-(require 'highline)
+(require-package 'highline)
 
 (defun highline-mode-on () (highline-mode 1))
 
