@@ -36,3 +36,8 @@
 32 mmm-mode
 33 mmm-erb
 34 derived
+35 sass-mode
+36 scss-mode
+37 less-css-mode
+38 skewer-less
+39 css-eldoc
