@@ -13,13 +13,21 @@
 ;;----------------------------------------------------------------------------
 ;; package setting
 ;;----------------------------------------------------------------------------
-
 (when (is-modern-emacs)
    ;; Must come before elpa, as it may provide package.el
   (require 'init-site-lisp)
   ;; Calls (package-initialize)
   ;; Machinery for installing required packages
   (require 'init-elpa))
+
+;;----------------------------------------------------------------------------
+;; Multiple major modes
+;;----------------------------------------------------------------------------
+(when (is-modern-emacs)
+  (require-package 'mmm-mode)
+  (require 'mmm-auto)
+  (setq mmm-global-mode 'buffers-with-submode-classes
+        mmm-submode-decoration-level 2))
 
 ;;----------------------------------------------------------------------------
 ;; key-bindings for specific mode in emacs
@@ -48,7 +56,6 @@
 ;;----------------------------------------------------------------------------
 ;; create tags
 ;;----------------------------------------------------------------------------
-
 ;; create tag files in specific directory
 ;; requires 'Exuberant Ctags' installed
 (defun create-tags (dir-name1 tag-file-name dir-name2)
@@ -90,7 +97,6 @@
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
-
 (when (is-modern-emacs)
   (require 'server)
   (unless (server-running-p)
@@ -99,7 +105,6 @@
 ;;----------------------------------------------------------------------------
 ;; Kill all processes when closing emacs
 ;;----------------------------------------------------------------------------
-
 (require 'cl)
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
   (flet ((process-list ())) ad-do-it))
@@ -107,7 +112,6 @@
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
-
 (require 'init-routines)
 (require 'init-register)
 (require 'init-macros)
