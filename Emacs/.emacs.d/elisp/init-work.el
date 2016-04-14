@@ -70,16 +70,18 @@
         (insert result)
         (message "Successfully copied TTCN3 binary to lab...")))))
 
-(eval-after-load 'ttcn3
+(after-load 'ttcn3
   '(progn
      ;; Allow my global binding of M-? to work when paredit is active
      (define-key ttcn3-mode-map (kbd "M-?") nil)
-     
+     (define-key ttcn3-mode-map (kbd ",") nil)
+
      ;; key-bindings used in ttcn3-mode
-    (define-prefix-command 'ttcn3-map)
-    (define-key ttcn3-mode-map "\C-xt" ttcn3-map)
-    (define-key ttcn3-map (kbd "u") 'async-update-ttcn3-tags)
-    (define-key ttcn3-map (kbd "b") 'async-build-ttcn3-project)
-    (define-key ttcn3-map (kbd "c") 'async-copy-ttcn3-project)))
+     (define-prefix-command 'ttcn3-map)
+     (define-key ttcn3-mode-map "\C-xt" ttcn3-map)
+     (define-key ttcn3-map (kbd "u") 'async-update-ttcn3-tags)
+     (define-key ttcn3-map (kbd "b") 'async-build-ttcn3-project)
+     (define-key ttcn3-map (kbd "c") 'async-copy-ttcn3-project)))
+
 
 (provide 'init-work)
