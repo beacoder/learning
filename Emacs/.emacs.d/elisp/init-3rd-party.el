@@ -143,6 +143,5 @@
 (require 'init-dired)
 (require-package 'buffer-move)
 (require-package 'flymake-cursor)
-;; (require 'init-highline)
 
 (provide 'init-3rd-party)
