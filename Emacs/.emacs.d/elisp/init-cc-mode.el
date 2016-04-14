@@ -106,23 +106,22 @@
 
 ;; flycheck
 (when (is-modern-emacs)
-  (eval-after-load 'flycheck
-    '(progn
-       (require-package 'flycheck-google-cpplint)
-       ;; Add Google C++ Style checker.
-       ;; In default, syntax checked by Clang and Cppcheck.
-       (flycheck-add-next-checker 'c/c++-cppcheck
-                                  'c/c++-googlelint 'append)
-       ;; disalbe clang/gcc/cppcheck checker
-       (add-hook 'c-mode-common-hook (lambda () (setq flycheck-disabled-checkers '(c/c++-clang c/c++-gcc c/c++-cppcheck))))
-       ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
-       (custom-set-variables
-        '(flycheck-c/c++-googlelint-executable "~/.emacs.d/cpplint.py")
-        '(flycheck-googlelint-verbose "3")
-        '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
-        '(flycheck-googlelint-root "project/src")
-        '(flycheck-googlelint-linelength "120"))))
-        
+  (after-load 'flycheck
+    (require-package 'flycheck-google-cpplint)
+    ;; Add Google C++ Style checker.
+    ;; In default, syntax checked by Clang and Cppcheck.
+    (flycheck-add-next-checker 'c/c++-cppcheck
+                               'c/c++-googlelint 'append)
+    ;; disalbe clang/gcc/cppcheck checker
+    (add-hook 'c-mode-common-hook (lambda () (setq flycheck-disabled-checkers '(c/c++-clang c/c++-gcc c/c++-cppcheck))))
+    ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
+    (custom-set-variables
+     '(flycheck-c/c++-googlelint-executable "~/.emacs.d/cpplint.py")
+     '(flycheck-googlelint-verbose "3")
+     '(flycheck-googlelint-filter "-whitespace,+whitespace/braces")
+     '(flycheck-googlelint-root "project/src")
+     '(flycheck-googlelint-linelength "120")))
+
   ;; flycheck-error-navigation
   (defvar my-flycheck-minor-mode-map
     (let ((map (make-sparse-keymap)))
