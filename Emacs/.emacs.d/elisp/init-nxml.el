@@ -21,9 +21,9 @@ indentation rules."
       (while (search-forward-regexp "\>[ \\t]*\<" nil t)
         (backward-char) (insert "\n"))
       (indent-region begin end)))
-      
- ;; prettify the xml in the active region
- (defalias 'pt 'sanityinc/pp-xml-region)
+
+;; prettify the xml in the active region
+(defalias 'pt 'sanityinc/pp-xml-region)
 
 ;;----------------------------------------------------------------------------
 ;; add fold/unfold support for xml files
