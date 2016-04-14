@@ -2,8 +2,8 @@
 ;; ruby && rails settings
 ;;----------------------------------------------------------------------------
 
-(require 'ruby-mode)
-(require 'ruby-hash-syntax)
+(require-package 'ruby-mode)
+(require-package 'ruby-hash-syntax)
 
 (add-auto-mode 'ruby-mode
                "Rakefile\\'" "\\.rake\\'" "\\.rxml\\'"
@@ -42,7 +42,7 @@
 
 
 ;;; Ruby compilation
-(require 'ruby-compilation)
+(require-package 'ruby-compilation)
 
 (after-load 'ruby-mode
   (let ((m ruby-mode-map))
@@ -55,7 +55,7 @@
 
 
 ;;; Robe
-(require 'robe)
+(require-package 'robe)
 (after-load 'ruby-mode
   (add-hook 'ruby-mode-hook 'robe-mode))
 
@@ -82,7 +82,7 @@
 
 
 ;;; ri support
-(require 'yari)
+(require-package 'yari)
 (defalias 'ri 'yari)
 
 
@@ -95,7 +95,7 @@
 
 
 ;;; ERB
-(require 'mmm-mode)
+(require-package 'mmm-mode)
 (defun sanityinc/ensure-mmm-erb-loaded ()
   (require 'mmm-erb))
 
@@ -146,7 +146,7 @@
 ;(add-to-list 'mmm-set-file-name-for-modes 'ruby-mode)
 
 
-(require 'rinari)
+(require-package 'rinari)
 (after-load 'rinari
   (diminish 'rinari-minor-mode "Rin"))
 (global-rinari-mode)
