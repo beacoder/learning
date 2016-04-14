@@ -51,7 +51,7 @@
 
 
 ;;; Auto-complete CSS keywords
-(after 'auto-complete
+(after-load 'auto-complete
   (dolist (hook '(css-mode-hook sass-mode-hook scss-mode-hook))
     (add-hook hook 'ac-css-mode-setup)))
 
