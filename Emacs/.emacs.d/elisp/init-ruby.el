@@ -32,8 +32,8 @@
 
 
 ;;; Inferior ruby
-(require 'inf-ruby)
-(require 'ac-inf-ruby)
+(require-package 'inf-ruby)
+(require-package 'ac-inf-ruby)
 (after-load 'auto-complete
   (add-to-list 'ac-modes 'inf-ruby-mode))
 (add-hook 'inf-ruby-mode-hook 'ac-inf-ruby-enable)
