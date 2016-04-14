@@ -2,13 +2,13 @@
 ;; Entry file for emacs configuration 
 ;;----------------------------------------------------------------------------
 
-;; init load-path and start-time
 (setq emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/elisp"))
 (when (<= emacs-major-version 21)
   (add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-21")))
 (require 'init-utils)
+
 
 ;;----------------------------------------------------------------------------
 ;; package setting
@@ -20,6 +20,7 @@
   ;; Machinery for installing required packages
   (require 'init-elpa))
 
+
 ;;----------------------------------------------------------------------------
 ;; Multiple major modes
 ;;----------------------------------------------------------------------------
@@ -29,10 +30,10 @@
   (setq mmm-global-mode 'buffers-with-submode-classes
         mmm-submode-decoration-level 2))
 
+
 ;;----------------------------------------------------------------------------
 ;; key-bindings for specific mode in emacs
 ;;----------------------------------------------------------------------------
-
 ;; the key definition only happen once
 ;; (eval-after-load "coffee-mode"
 ;;     '(define-key coffee-mode-map (kbd "C-c c" 'coffee-compile-file)))
@@ -45,13 +46,10 @@
 ;;----------------------------------------------------------------------------
 ;; compilation setting
 ;;----------------------------------------------------------------------------
-
-;; do not promp
-;; (setq compilation-read-command nil)
-
-;; set compile command
-;; (setq compile-command "make clobber")
+;;  (setq compilation-read-command nil
+;;    compile-command "make clobber")
 (setq compile-command "make debug")
+
 
 ;;----------------------------------------------------------------------------
 ;; create tags
@@ -94,6 +92,7 @@
   ;; Don't warn unless TAGS files are bigger than 1GB
   (setq large-file-warning-threshold (expt 1024 3)))
 
+
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
@@ -101,13 +100,34 @@
   (require 'server)
   (unless (server-running-p)
     (server-start)))
-  
+
+
 ;;----------------------------------------------------------------------------
 ;; Kill all processes when closing emacs
 ;;----------------------------------------------------------------------------
 (require 'cl)
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
   (flet ((process-list ())) ad-do-it))
+
+
+;;----------------------------------------------------------------------------
+;; config modeline format
+;;----------------------------------------------------------------------------
+(setq display-time-format "[%A %Y/%m/%d %H:%M Time-Zone:'%Z']"
+      display-time-interval 60
+      display-time-default-load-average nil
+      display-time-mail-face 'custom-themed)
+
+;; display time
+(display-time-mode t);; config time format
+(setq display-time-format "[%A %Y/%m/%d %H:%M Time-Zone:'%Z']"
+      display-time-interval 60
+      display-time-default-load-average nil
+      display-time-mail-face 'custom-themed)
+
+;; display time
+(display-time-mode t)
+
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
