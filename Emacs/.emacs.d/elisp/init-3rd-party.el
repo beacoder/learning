@@ -143,6 +143,22 @@
 (guide-key-mode 1)
 
 ;;----------------------------------------------------------------------------
+;; init-async setting
+;;----------------------------------------------------------------------------
+(require-package 'async)
+;; deal with problems when updating packages
+(require 'async-bytecomp)
+(async-bytecomp-package-mode 1)
+
+;; provide dired with asynchronous abilities
+(after-load "dired-aux" (require 'dired-async))
+
+;; sending emails asynchronously
+(require 'smtpmail-async)
+(setq send-mail-function 'async-smtpmail-send-it
+      message-send-mail-function 'async-smtpmail-send-it)
+
+;;----------------------------------------------------------------------------
 ;; third-party setting
 ;;----------------------------------------------------------------------------
 
@@ -153,6 +169,5 @@
 (require 'buffer-move)
 (require 'flymake-cursor)
 ;; (require 'init-highline)
-(require 'init-async)
 
 (provide 'init-3rd-party)
