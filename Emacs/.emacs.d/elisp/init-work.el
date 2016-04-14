@@ -83,5 +83,4 @@
      (define-key ttcn3-map (kbd "b") 'async-build-ttcn3-project)
      (define-key ttcn3-map (kbd "c") 'async-copy-ttcn3-project)))
 
-
 (provide 'init-work)
