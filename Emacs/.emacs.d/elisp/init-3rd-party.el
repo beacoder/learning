@@ -2,7 +2,7 @@
 ;; third-party setting
 ;;----------------------------------------------------------------------------
 
-;;; init-async setting
+;;; async setting
 (require-package 'async)
 ;; deal with problems when updating packages
 (require 'async-bytecomp)
