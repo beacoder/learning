@@ -3,6 +3,7 @@
 ;; The XEmacs package has some other means to create the autoload
 ;; information.
 
+(require-package 'dictionary)
 (autoload 'dictionary-search "dictionary"
   "Ask for a word and search it in all dictionaries" t)
 (autoload 'dictionary-match-words "dictionary"
