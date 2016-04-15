@@ -10,11 +10,11 @@
 (require 'init-utils)
 ;; Machinery for installing required packages
 (when (is-modern-emacs) (require 'init-elpa))
+;; Dictionary mode
+(when (is-modern-emacs) (require-package 'dictionary))
 
 
-;;----------------------------------------------------------------------------
-;; Multiple major modes
-;;----------------------------------------------------------------------------
+;;; Multiple major modes
 (when (is-modern-emacs)
   (require-package 'mmm-mode)
   (require 'mmm-auto)
@@ -42,10 +42,7 @@
 (setq compile-command "make debug")
 
 
-;;----------------------------------------------------------------------------
-;; create tags
-;;----------------------------------------------------------------------------
-;; create tag files in specific directory
+;;; create tags
 ;; requires 'Exuberant Ctags' installed
 (defun create-tags (dir-name1 tag-file-name dir-name2)
   "Create tags file."
@@ -84,26 +81,20 @@
   (setq large-file-warning-threshold (expt 1024 3)))
 
 
-;;----------------------------------------------------------------------------
-;; Allow access from emacsclient
-;;----------------------------------------------------------------------------
+;;; Allow access from emacsclient
 (when (is-modern-emacs)
   (require 'server)
   (unless (server-running-p)
     (server-start)))
 
 
-;;----------------------------------------------------------------------------
-;; Kill all processes when closing emacs
-;;----------------------------------------------------------------------------
+;;; Kill all processes when closing emacs
 (require 'cl)
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
   (flet ((process-list ())) ad-do-it))
 
 
-;;----------------------------------------------------------------------------
-;; config modeline format
-;;----------------------------------------------------------------------------
+;;; config modeline format
 (setq display-time-format "[%A %Y/%m/%d %H:%M Time-Zone:'%Z']"
       display-time-interval 60
       display-time-default-load-average nil
@@ -119,18 +110,15 @@
 ;; display time
 (display-time-mode t)
 
-;;----------------------------------------------------------------------------
-;; auto-save settings
-;;----------------------------------------------------------------------------
+
+;;; auto-save settings
 (setq auto-save-default t
       auto-save-mode t
       auto-save-interval 300
       auto-save-timeout 60)
 
 
-;;----------------------------------------------------------------------------
-;; Load configs for specific features and modes
-;;----------------------------------------------------------------------------
+;;; Load configs for specific features and modes
 (require 'init-register)
 (require 'init-hippie-expand)
 (require 'init-cc-mode)
