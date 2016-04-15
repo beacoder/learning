@@ -10,7 +10,9 @@
 (require 'init-utils)
 ;; Machinery for installing required packages
 (when (is-modern-emacs) (require 'init-elpa))
-;; Dictionary mode
+
+
+;;; Dictionary mode
 (when (is-modern-emacs) (require-package 'dictionary))
 
 
