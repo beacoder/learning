@@ -12,10 +12,6 @@
 (when (is-modern-emacs) (require 'init-elpa))
 
 
-;;; Dictionary mode
-(when (is-modern-emacs) (require-package 'dictionary))
-
-
 ;;; Multiple major modes
 (when (is-modern-emacs)
   (require-package 'mmm-mode)
