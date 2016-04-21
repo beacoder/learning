@@ -127,6 +127,7 @@ lambda: return a lambda expression (anonymous function),
 exp:
 (progn 
   (fset 'sayHello (lambda () (message "Hello World !")))
+  (symbol-function 'symbol-function) => (lambda () (message "Hello World !"))
   (sayHello)) ⇒ "Hello World !"
 
 13.
