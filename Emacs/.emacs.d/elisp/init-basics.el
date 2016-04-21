@@ -162,6 +162,14 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
     (defadvice occur-next (after display-next activate)
       (save-excursion (occur-mode-display-occurrence)))))
 
+;; automaticly enable view-mode after entering read-only-mode
+;; view-mode: q => kill-buffer-if-not-modified
+(setq view-read-only t)
+(add-hook 'read-only-mode-hook
+          (lambda ()
+            (require 'view)
+            (and buffer-read-only (setq view-exit-action 'kill-buffer-if-not-modified))))
+
 ;;----------------------------------------------------------------------------
 ;; setting locales
 ;;----------------------------------------------------------------------------
