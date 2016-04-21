@@ -132,7 +132,7 @@
 
 ;;; The guide-key package pops up keybinding reminders after a short delay.
 (require-package 'guide-key)
-(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-c"))
+(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-c" "C-c ;"))
 (guide-key-mode 1)
 
 
