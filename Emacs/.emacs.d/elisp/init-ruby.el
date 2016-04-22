@@ -30,7 +30,7 @@
 (after-load 'page-break-lines
   (push 'ruby-mode page-break-lines-modes))
 
-
+
 ;;; Inferior ruby
 (require-package 'inf-ruby)
 (require-package 'ac-inf-ruby)
@@ -53,7 +53,6 @@
   (defalias 'rake 'ruby-compilation-rake))
 
 
-
 ;;; Robe
 (require-package 'robe)
 (after-load 'ruby-mode
@@ -62,17 +61,14 @@
 (defun sanityinc/maybe-enable-robe-ac ()
   "Enable/disable robe auto-complete source as necessary."
   (if robe-mode
-      (progn
-        (add-hook 'ac-sources 'ac-source-robe nil t)
-        (set-auto-complete-as-completion-at-point-function))
+      (add-hook 'ac-sources 'ac-source-robe nil t)
     (remove-hook 'ac-sources 'ac-source-robe)))
 
 (after-load 'robe
   (add-hook 'robe-mode-hook 'sanityinc/maybe-enable-robe-ac))
 
 
-
-;; Customise highlight-symbol to not highlight do/end/class/def etc.
+;;; Customise highlight-symbol to not highlight do/end/class/def etc.
 (defun sanityinc/suppress-ruby-mode-keyword-highlights ()
   "Suppress highlight-symbol for do/end etc."
   (set (make-local-variable 'highlight-symbol-ignore-list)
@@ -80,20 +76,17 @@
 (add-hook 'ruby-mode-hook 'sanityinc/suppress-ruby-mode-keyword-highlights)
 
 
-
 ;;; ri support
 (require-package 'yari)
 (defalias 'ri 'yari)
 
 
-
 ;;; YAML
 
 ;; (maybe-require-package 'yaml-mode)
 ;; (add-auto-mode 'yaml-mode "\\.yml\\.erb\\'")
 
 
-
 ;;; ERB
 (require-package 'mmm-mode)
 (defun sanityinc/ensure-mmm-erb-loaded ()
