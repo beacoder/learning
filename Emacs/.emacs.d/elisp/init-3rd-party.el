@@ -41,7 +41,7 @@
 (require 'auto-complete-config)
 (ac-config-default)
 ;; auto complete is CPU sensitive
-(ac-set-trigger-key "<C-return>")
+(ac-set-trigger-key "\C-c TAB")
 ;; use tooltip and set delay time
 (setq ac-auto-start nil
       ac-use-quick-help t
