@@ -130,7 +130,6 @@
 
 
 (require-package 'rinari)
-(require-package 'diminish)
 (after-load 'rinari
   (diminish 'rinari-minor-mode "Rin"))
 (global-rinari-mode)
