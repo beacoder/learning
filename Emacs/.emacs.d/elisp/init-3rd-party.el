@@ -122,6 +122,10 @@
 (guide-key-mode 1)
 
 
+;;; diminish
+(require-package 'diminish)
+
+
 ;;; other setting
 ;; (require-package 'magit)
 ;; (require 'init-helm)
