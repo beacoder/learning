@@ -36,20 +36,6 @@
 (global-set-key (kbd "C-c C-s") 'mc/mark-all-like-this)
 
 
-;;; auto-complete setting
-(require-package 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
-;; auto complete is CPU sensitive
-(ac-set-trigger-key "\C-c TAB")
-;; use tooltip and set delay time
-(setq ac-auto-start nil
-      ac-use-quick-help t
-      ac-quick-help-delay 0.5
-      ac-quick-help-height 30)
-
-
-
 ;;; undo-tree setting
 ;; "C-x u" => open the undo-tree-visualizer
 (require-package 'undo-tree)
@@ -139,6 +125,7 @@
 ;;; other setting
 ;; (require-package 'magit)
 ;; (require 'init-helm)
+(require 'init-company)
 (require 'init-dictionary)
 (require 'init-dired)
 (require-package 'buffer-move)
