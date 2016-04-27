@@ -47,7 +47,7 @@
   (defalias 'rake 'ruby-compilation-rake))
 
 
-;;; Robe
+;;; Robe -> need to add "pry" into gem file first
 (require-package 'robe)
 (after-load 'ruby-mode
   (add-hook 'ruby-mode-hook 'robe-mode))
