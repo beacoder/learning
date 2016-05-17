@@ -122,15 +122,14 @@
 (require 'init-cc-mode)
 (require 'tempo-c-cpp)
 (require 'init-alias)
-;; could use helm instead.
-(require 'init-ido)
 (when (= emacs-major-version 21)
   (require 'missing)
   (require 'syntax))
 (when (is-modern-emacs)
   (require 'init-3rd-party)
   (require 'init-lua)
-  (ido-everywhere t)
+  ;; could use helm instead.
+  (require 'init-ido)
   (require 'init-windows)
   (require 'init-nxml)
   (require 'init-html)
