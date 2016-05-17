@@ -29,7 +29,7 @@
 ;; Ignore .DS_Store files with ido mode
 (add-to-list 'ido-ignore-files "\\.DS_Store")
 
-;; copied from https://github.com/redguardtoo/emacs.d/blob/master/lisp/init-ido.el
+;; steal from https://github.com/redguardtoo/emacs.d/blob/master/lisp/init-ido.el
 (defun ido-imenu ()
   "Update the imenu index and then use ido to select a symbol to navigate to.
 Symbols matching the text at point are put first in the completion list."
