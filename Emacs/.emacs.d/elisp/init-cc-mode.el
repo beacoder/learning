@@ -74,6 +74,7 @@
 ;;       (require-package 'flymake-google-cpplint)
 ;;       (custom-set-variables
 ;;        ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
+;;        ;; dos2unix "~/.emacs.d/cpplint.py" convert from dos to unix text format
 ;;        ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
 ;;        '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py")
 ;;        '(flymake-googlelint-verbose "3")
