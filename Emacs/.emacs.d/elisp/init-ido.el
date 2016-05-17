@@ -3,7 +3,6 @@
 ;;----------------------------------------------------------------------------
 
 ;; use "C-f" during file selection to switch to regular find-file
-(require 'ido)
 (ido-mode t)
 
 (setq ido-enable-flex-matching t
