@@ -4,7 +4,7 @@
 
 ;; use "C-f" during file selection to switch to regular find-file
 (ido-mode t)
-
+(ido-everywhere t)
 (setq ido-enable-flex-matching t
       ido-use-filename-at-point nil
       ido-auto-merge-work-directories-length -1
@@ -12,6 +12,9 @@
       ido-use-virtual-buffers t
       ;; ido-separator "\n" ;; display choices vertically
       ido-default-buffer-method 'selected-window)
+
+(when (maybe-require-package 'ido-ubiquitous)
+  (ido-ubiquitous-mode t))
 
 ;; Ido buffer intuitive navigation
 (add-hook 'ido-setup-hook '(lambda ()
