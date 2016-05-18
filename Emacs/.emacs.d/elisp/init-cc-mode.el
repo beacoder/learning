@@ -47,7 +47,15 @@
   (c-toggle-auto-hungry-state 1)
   ;; indent
   (fix-c-indent-offset-according-to-syntax-context 'substatement 0)
-  (fix-c-indent-offset-according-to-syntax-context 'func-decl-cont 0))
+  (fix-c-indent-offset-according-to-syntax-context 'func-decl-cont 0)
+
+  ;; gtags (GNU global) stuff
+  (when (and (executable-find "global")
+             ;; `man global' to figure out why
+             (not (string-match-p "GTAGS not found"
+                                  (shell-command-to-string "global -p"))))
+    (setq gtags-suggested-key-mapping t)
+    (ggtags-mode 1)))
 
 ;; use <tab> to indent region if anything is selected
 ;; fledermaus came up with this
