@@ -85,7 +85,8 @@
 ;; ln -s /usr/include/boost .
 ;; gtags
 ;; add ~/my_tag_files into environment variable "GTAGSLIBPATH"
-
+(setq ggtags-enable-navigation-keys nil
+      ggtags-oversize-limit 1048576)
 
 ;;; Allow access from emacsclient
 (when (is-modern-emacs)
