@@ -2,9 +2,15 @@
 ;; shell setting
 ;;----------------------------------------------------------------------------
 
-;; make sure shell in emacs can see alias in ~/.bashrc
 (setq shell-file-name "/bin/bash")
-(setq shell-command-switch "-ic")
+
+(require-package 'exec-path-from-shell)
+(after-load 'exec-path-from-shell
+  (dolist (var '("SSH_AUTH_SOCK" "SSH_AGENT_PID" "GPG_AGENT_INFO" "LANG" "LC_CTYPE"))
+    (add-to-list 'exec-path-from-shell-variables var)))
+
+(require 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
 
 ;; kill the buffer after the ansi-term is exited
 (defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
