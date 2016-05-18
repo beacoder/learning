@@ -85,19 +85,6 @@
 ;; ln -s /usr/include/boost .
 ;; gtags
 ;; add ~/my_tag_files into environment variable "GTAGSLIBPATH"
-(defun gtags-ext-produce-tags-if-needed (dir)
-  (if (not (= 0 (call-process "global" nil nil nil " -p"))) ; tagfile doesn't exist?
-      (let ((default-directory dir))
-        (shell-command "gtags && echo 'created tagfile'"))
-    ;;  tagfile already exists; update it
-    (shell-command "global -u && echo 'updated tagfile'")))
-
-;; @see http://emacs-fu.blogspot.com.au/2008/01/navigating-through-source-code-using.html
-(defun gtags-ext-create-or-update ()
-  "create or update the gnu global tag file"
-  (interactive)
-  (gtags-ext-produce-tags-if-needed (read-directory-name
-                                     "gtags: top of source tree:" default-directory)))
 
 
 ;;; Allow access from emacsclient
