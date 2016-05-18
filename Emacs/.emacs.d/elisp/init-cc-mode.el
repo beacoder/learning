@@ -55,6 +55,7 @@
              (not (string-match-p "GTAGS not found"
                                   (shell-command-to-string "global -p"))))
     (setq gtags-suggested-key-mapping t)
+    (require-package 'ggtags)
     (ggtags-mode 1)))
 
 ;; use <tab> to indent region if anything is selected
