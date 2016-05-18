@@ -136,13 +136,13 @@
   (require 'init-css)
   (require 'init-javascript)
   (require 'init-ruby)
-  (require 'init-work))
+  (require 'init-work)
+  (require 'init-shell))
 (require 'init-basics)
 (require 'init-dired)
 (require 'init-sessions)
 (require 'init-cperl-mode)
 (require 'init-productivity)
-(require 'init-shell)
 
 (provide 'init)
 
