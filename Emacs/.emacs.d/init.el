@@ -88,6 +88,7 @@
 (setq ggtags-enable-navigation-keys nil
       ggtags-oversize-limit 1048576)
 
+
 ;;; Allow access from emacsclient
 (when (is-modern-emacs)
   (require 'server)
