@@ -126,6 +126,10 @@
 (require-package 'diminish)
 
 
+;;; ggtags
+(require-package 'ggtags)
+
+
 ;;; other setting
 ;; (require-package 'magit)
 ;; (require 'init-helm)
