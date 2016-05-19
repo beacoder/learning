@@ -86,7 +86,8 @@
 ;; gtags
 ;; add ~/my_tag_files into environment variable "GTAGSLIBPATH"
 (setq ggtags-enable-navigation-keys nil
-      ggtags-oversize-limit 1048576)
+      ggtags-oversize-limit 1048576
+      ggtags-exclude-modes '(ttcn-3-mode))
 
 
 ;;; Allow access from emacsclient
