@@ -51,9 +51,10 @@
 
   ;; gtags (GNU global) stuff
   (when (and (executable-find "global")
-             ;; `man global' to figure out why
+             ;; check existence of GTAGS
              (not (string-match-p "GTAGS not found"
-                                  (shell-command-to-string "global -p"))))
+                                  (shell-command-to-string "global -p")))
+             (member major-mode ggtags-exclude-modes))
     (setq gtags-suggested-key-mapping t)
     (ggtags-mode 1)))
 
