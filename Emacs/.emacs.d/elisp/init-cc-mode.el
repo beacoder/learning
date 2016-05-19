@@ -54,7 +54,7 @@
              ;; check existence of GTAGS
              (not (string-match-p "GTAGS not found"
                                   (shell-command-to-string "global -p")))
-             (member major-mode ggtags-exclude-modes))
+             (not (member major-mode ggtags-exclude-modes)))
     (setq gtags-suggested-key-mapping t)
     (ggtags-mode 1)))
 
