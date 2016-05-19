@@ -130,4 +130,6 @@ exp:
   (symbol-function 'sayHello) => (lambda () (message "Hello World !"))
   (sayHello)) ⇒ "Hello World !"
 
-13.
+13.member
+description: check if an element is a member of LIST.  Comparison done with `equal'
+exp:   (member major-mode  ggtags-exclude-modes)
