@@ -128,6 +128,7 @@
 
 ;;; ggtags
 (require-package 'ggtags)
+(after-load 'ggtags (define-key ggtags-mode-prefix-map "\M-r" 'ggtags-find-tag-regexp))
 
 
 ;;; other setting
