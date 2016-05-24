@@ -1,5 +1,5 @@
 ;;----------------------------------------------------------------------------
-;; define some common functions
+;; Utility functions
 ;;----------------------------------------------------------------------------
 
 ;; @see http://ergoemacs.org/emacs/elisp_get-selection-or-unit.html
@@ -118,8 +118,7 @@ The main differences are:
 (defun trim-string (string)
   "Remove white spaces in beginning and ending of STRING.
 White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
-  (replace-regexp-in-string "\\`[ \t\n]*" "" (replace-regexp-in-string "[ \t\n]*\\'" "" string))
-  )
+  (replace-regexp-in-string "\\`[ \t\n]*" "" (replace-regexp-in-string "[ \t\n]*\\'" "" string)))
 
 (defun getline ()
   "Return line contents as a string."
@@ -138,6 +137,7 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
     (forward-line (1- line-number))
     (getline)))
 
+
 (defconst *is-windows* (eq system-type 'windows-nt))
 
 (defun is-modern-emacs ()
@@ -145,9 +145,8 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
   (if (and (>= emacs-major-version 24) (>= emacs-minor-version 3))
       t nil))
 
-;;----------------------------------------------------------------------------
-;; Handier way to add modes to auto-mode-alist
-;;----------------------------------------------------------------------------
+
+;;; Handier way to add modes to auto-mode-alist
 (defun add-auto-mode (mode &rest patterns)
   "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
   (dolist (pattern patterns)
