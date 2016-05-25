@@ -60,8 +60,8 @@
       tags-table-list
       '(
         "~/my_tag_files/TAGS"
-        "~/my_tag_files/STL_TAGS"     ;; stl(gcc) headers
-        "~/my_tag_files/BOOST_TAGS"   ;; boost headers
+        ;; "~/my_tag_files/STL_TAGS"     ;; stl(gcc) headers
+        ;; "~/my_tag_files/BOOST_TAGS"   ;; boost headers
         )
       ;; add stl/boost/project path into ff-find-other-file's search dir
       cc-search-directories '("." "/usr/include" "/usr/local/include/*" "/usr/local/include/*"
