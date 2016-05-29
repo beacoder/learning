@@ -132,7 +132,7 @@
 
 
 ;;; other setting
-;; (require-package 'magit)
+(require 'init-git)
 ;; (require 'init-helm)
 (require 'init-company)
 (require 'init-dictionary)
