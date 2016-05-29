@@ -38,7 +38,7 @@
 
 ;; original multiple cursor key-bindings doesn't work in cc-mode
 (defalias 'el 'mc/edit-lines)
-(defalias 'ep 'mc/mark-all-like-this)
+(defalias 'ma 'mc/mark-all-like-this)
 
 ;; shortcut for kill-some-buffers
 (defalias 'ka 'kill-some-buffers)
@@ -55,9 +55,7 @@
 (defalias 'ts 'tags-search)
 (defalias 'tq 'tags-query-replace)
 
-;; magit-mode
-(defalias 'ms 'magit-status)
-
+;; misc
 (defalias 'afa 'apply-function-to-region-lines-with-args)
 (defalias 'af 'apply-function-to-region-lines-without-args)
 
