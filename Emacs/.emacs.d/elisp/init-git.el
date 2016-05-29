@@ -23,7 +23,18 @@
 
 (after-load 'magit
   (define-key magit-status-mode-map (kbd "C-M-<up>") 'magit-section-up)
-  (add-hook 'magit-popup-mode-hook (lambda () (setq show-trailing-whitespace nil))))
+  (add-hook 'magit-popup-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+
+  ;; change magit diff colors
+  ;; (set-face-foreground 'magit-diff-add "green3")
+  ;; (set-face-foreground 'magit-diff-del "red3")
+  ;; (when (not window-system)
+  ;;   (set-face-background 'magit-item-highlight "black"))
+
+  (custom-set-faces
+   '(magit-diff-added ((t (:background "black" :foreground "green3"))))
+   '(magit-diff-removed ((t (:background "black" :foreground "red3"))))))
+
 
 (require-package 'fullframe)
 (after-load 'magit
