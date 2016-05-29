@@ -33,7 +33,9 @@
 
   (custom-set-faces
    '(magit-diff-added ((t (:background "black" :foreground "green3"))))
-   '(magit-diff-removed ((t (:background "black" :foreground "red3"))))))
+   '(magit-diff-removed ((t (:background "black" :foreground "red3"))))
+   '(magit-diff-added-highlight ((t (:background "black" :foreground "green3"))))
+   '(magit-diff-removed-highlight ((t (:background "black" :foreground "red3"))))))
 
 
 (require-package 'fullframe)
