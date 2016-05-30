@@ -2,7 +2,7 @@
 ;; hydras setting
 ;;----------------------------------------------------------------------------
 
-(require-package 'hydras)
+(require-package 'hydra)
 
 (defhydra hydra/window-movement ()
   ("<left>" windmove-left)
@@ -58,4 +58,4 @@
   ("t" join-line)
   ("n" (join-line 1)))
   
-(provide 'init-hydras)
+(provide 'init-hydra)
