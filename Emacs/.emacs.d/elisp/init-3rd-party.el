@@ -142,6 +142,7 @@
 
 
 ;;; other setting
+(require 'init-hydras)
 (require 'init-git)
 ;; (require 'init-helm)
 (require 'init-company)
