@@ -2,6 +2,10 @@
 ;; third-party setting
 ;;----------------------------------------------------------------------------
 
+;;; whitespace setting
+(require 'init-whitespace)
+
+
 ;;; dired setting
 (require-package 'dired+)
 (require-package 'dired-details)
@@ -129,6 +133,12 @@
 ;;; ggtags
 (require-package 'ggtags)
 (after-load 'ggtags (define-key ggtags-mode-prefix-map "\M-r" 'ggtags-find-tag-regexp))
+
+
+;;; weather report
+;;  "wttrin" => Display weather; "g" => Change city; "q" => Quit
+(require-package 'wttrin)
+(setq wttrin-default-cities '("Shanghai" "Taizhou"))
 
 
 ;;; other setting
