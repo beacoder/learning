@@ -118,14 +118,6 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;; don't show line-number in left margin
 (when (fboundp 'global-linum-mode) (global-linum-mode -1))
 
-;; enable flyspell in text-mode
-(dolist (hook '(text-mode-hook))
-  (add-hook hook (lambda () (flyspell-mode 1))))
-(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
-  (add-hook hook (lambda () (flyspell-mode -1))))
-;; improve performance
-(setq flyspell-issue-message-flag nil)
-
 ;; replace tab with spaces, use "C-q [tab]" to get a real tab
 (setq-default indent-tabs-mode nil)
 
@@ -322,6 +314,14 @@ Use in `isearch-mode-end-hook'."
 
 ;; show elisp error backtrace
 ;; (setq debug-on-error t)
+
+;; enable flyspell in text-mode
+;;(dolist (hook '(text-mode-hook))
+;;  (add-hook hook (lambda () (flyspell-mode 1))))
+;;(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+;;  (add-hook hook (lambda () (flyspell-mode -1))))
+;; improve performance
+;;(setq flyspell-issue-message-flag nil)
 
 ;; fix Error: No word lists can be found for the language "zh_CN"
 ;; use apsell as ispell backend
