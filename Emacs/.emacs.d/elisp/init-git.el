@@ -23,7 +23,7 @@
 
 (after-load 'magit
   (define-key magit-status-mode-map (kbd "C-M-<up>") 'magit-section-up)
-  (add-hook 'magit-popup-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+  (add-hook 'magit-popup-mode-hook 'sanityinc/no-trailing-whitespace)
 
   ;; change magit diff colors
   ;; (set-face-foreground 'magit-diff-add "green3")
