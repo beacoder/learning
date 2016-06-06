@@ -2,6 +2,15 @@
 ;; org-mode configuration
 ;;----------------------------------------------------------------------------
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Org table
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; '|'     => starts a row
+;; '|-'    => starts a horizontal separator line
+;; '<TAB>' => Re-align the table, needed by above commands
+;; 'C-c |' => create a table, or convert region into a table.
+
 ;; some cool org tricks
 ;; @see http://emacs.stackexchange.com/questions/13820/inline-verbatim-and-code-with-quotes-in-org-mode
 
@@ -156,7 +165,7 @@
 (defun org-mode-hook-setup ()
   (setq evil-auto-indent nil)
   ;; org-mode's own flycheck will be loaded
-  (enable-flyspell-mode-conditionally)
+  ;; (enable-flyspell-mode-conditionally)
 
   ;; but I don't want to auto spell check when typing,
   ;; please comment out `(flyspell-mode -1)` if you prefer auto spell check
