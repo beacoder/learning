@@ -138,8 +138,7 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;; remove useless whitespaces before saving a file
 (add-hook 'before-save-hook
           (lambda()
-            (when (member (message "%s" major-mode)
-                          '("c-mode" "c++-mode"))
+            (when (member major-mode '(c-mode c++-mode))
               (whitespace-cleanup)
               (delete-trailing-whitespace))))
 
