@@ -136,11 +136,11 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 (global-set-key (kbd "C-c C-SPC") 'tf-toggle-show-trailing-whitespace)
 
 ;; remove useless whitespaces before saving a file
-(add-hook 'before-save-hook
-          (lambda()
-            (when (member major-mode '(c-mode c++-mode))
-              (whitespace-cleanup)
-              (delete-trailing-whitespace))))
+;; (add-hook 'before-save-hook
+;;           (lambda()
+;;             (when (member major-mode '(c-mode c++-mode))
+;;               (whitespace-cleanup)
+;;               (delete-trailing-whitespace))))
 
 ;; display-occurence after occur-preve/next; M-p => occur-preve, M-n => occur-next
 (if (is-modern-emacs)
