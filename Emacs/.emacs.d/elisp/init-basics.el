@@ -142,6 +142,10 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;;               (whitespace-cleanup)
 ;;               (delete-trailing-whitespace))))
 
+;; disable formatting in text-mode
+(add-hook 'text-mode-hook
+          (lambda() (electric-indent-mode 0)))
+
 ;; display-occurence after occur-preve/next; M-p => occur-preve, M-n => occur-next
 (if (is-modern-emacs)
     (progn
