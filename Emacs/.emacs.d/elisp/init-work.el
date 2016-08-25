@@ -74,6 +74,7 @@
   ;; Allow my global binding of M-? to work when paredit is active
   (define-key ttcn3-mode-map (kbd "M-?") nil)
   (define-key ttcn3-mode-map (kbd ",") nil)
+  (define-key ttcn3-mode-map (kbd "C-c C-c") nil)
 
   ;; key-bindings used in ttcn3-mode
   (define-prefix-command 'ttcn3-map)
