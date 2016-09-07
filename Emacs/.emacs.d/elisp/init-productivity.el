@@ -276,4 +276,16 @@ When `universal-argument' is called first, kill whole buffer (respects `narrow-t
 (global-set-key (kbd "M-9") 'xah-copy-line-or-region)
 (global-set-key (kbd "M-0") 'kill-line-or-region)
 
+;;----------------------------------------------------------------------------
+;; useful keyboard macros
+;;----------------------------------------------------------------------------
+
+;;; How to save a macro for future use
+;; name-last-kbd-macro => give macro a name
+;; insert-kbd-macro    => generate lisp code for the macro
+;;
+
+(fset 'select-whole-line "\C-a\C-@\C-e")
+(global-set-key (kbd "M-7") 'select-whole-line)
+
 (provide 'init-productivity)
