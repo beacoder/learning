@@ -34,7 +34,7 @@
   ;; show function name in mode-line
   (which-function-mode t)
   ;; enable flyspell for comments in source code
-  (flyspell-prog-mode)
+  ;; (flyspell-prog-mode)
   ;; improve performance
   (setq flyspell-issue-message-flag nil)
   ;; navigation between header and cpp/cc files
