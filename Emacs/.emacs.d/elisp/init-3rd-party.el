@@ -130,7 +130,12 @@
 (require-package 'diminish)
 
 
-;;; ggtags
+;;; ggtags setting
+;; "M-." =>  ggtags-find-tag-dwim
+;; "C-c M-r" ggtags-find-tag-regexp
+;; "M-]" =>  ggtags-find-reference
+;; "C-c M-f" ggtags-find-file
+;; "C-c M-g" ggtags-grep
 (require-package 'ggtags)
 (after-load 'ggtags (define-key ggtags-mode-prefix-map "\M-r" 'ggtags-find-tag-regexp))
 
