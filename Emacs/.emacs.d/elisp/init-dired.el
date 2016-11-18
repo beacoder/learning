@@ -17,6 +17,11 @@
 ;; @see http://ergoemacs.org/emacs/dired_sort.html
 (setq dired-listing-switches "-alc --si --time-style long-iso")
 
+;; restore positions and markers after dired-view-file exits
+(defadvice dired-view-file (around advice-dired-view-file activate)
+  (interactive)
+  (save-excursion ad-do-it))
+
 ;; Auto refresh dired, but be quiet about it
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
