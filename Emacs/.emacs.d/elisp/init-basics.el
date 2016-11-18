@@ -146,16 +146,12 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 (add-hook 'text-mode-hook
           (lambda() (electric-indent-mode 0)))
 
-;; display-occurence after occur-preve/next; M-p => occur-preve, M-n => occur-next
-(if (is-modern-emacs)
-    (progn
-      (advice-add 'occur-prev :after (lambda (&optional N) (save-excursion (occur-mode-display-occurrence))))
-      (advice-add 'occur-next :after (lambda (&optional N) (save-excursion (occur-mode-display-occurrence)))))
-  (progn
-    (defadvice occur-prev (after display-prev activate)
-      (save-excursion (occur-mode-display-occurrence)))
-    (defadvice occur-next (after display-next activate)
-      (save-excursion (occur-mode-display-occurrence)))))
+;; display-occurence after occur-preve/next;
+;; M-p => occur-preve, M-n => occur-next
+(defadvice occur-prev (after display-prev activate)
+  (save-excursion (occur-mode-display-occurrence)))
+(defadvice occur-next (after display-next activate)
+  (save-excursion (occur-mode-display-occurrence)))
 
 ;; automaticly enable view-mode after entering read-only-mode
 ;; view-mode: q => kill-buffer-if-not-modified
