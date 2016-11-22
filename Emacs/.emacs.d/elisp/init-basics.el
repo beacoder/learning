@@ -295,7 +295,7 @@ Use in `isearch-mode-end-hook'."
 
 (when (display-graphic-p)
    ;; (require 'flymake)
-   (require 'flycheck)
+   ;; (require 'flycheck)
    ;; swap the foreground and background colors of face
    (invert-face 'default))
 
