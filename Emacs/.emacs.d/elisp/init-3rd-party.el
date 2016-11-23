@@ -131,6 +131,7 @@
 
 
 ;;; ggtags setting
+;; "cd /path/to/project && gtags" => generate gtags
 ;; "M-." =>  ggtags-find-tag-dwim
 ;; "C-c M-r" ggtags-find-tag-regexp
 ;; "M-]" =>  ggtags-find-reference
