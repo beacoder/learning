@@ -139,6 +139,15 @@
 ;; "C-c M-g" ggtags-grep
 (require-package 'ggtags)
 (after-load 'ggtags (define-key ggtags-mode-prefix-map "\M-r" 'ggtags-find-tag-regexp))
+(defun use-gtags ()
+  (and (executable-find "global")
+       ;; check existence of GTAGS
+       (not (string-match-p "GTAGS not found" (shell-command-to-string "global -p")))
+       (not (member major-mode ggtags-exclude-modes))))
+(add-hook 'c-mode-common-hook
+          (lambda () (when (use-gtags)
+                       (setq gtags-suggested-key-mapping t)
+                       (ggtags-mode 1))))
 
 
 ;;; weather report
