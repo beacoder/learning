@@ -122,13 +122,13 @@
 
 ;;; key-binding reminder
 (require-package 'guide-key)
+(guide-key-mode 1)
 (setq guide-key/guide-key-sequence '("C-c"    ;; general
                                      "C-x r"  ;; register
                                      "C-x t"  ;; ttcn3
                                      "C-c M"  ;; ggtags
                                      "C-c r"  ;; rtags
                                      ))
-(guide-key-mode 1)
 
 
 ;;; diminish
