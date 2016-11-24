@@ -35,4 +35,15 @@
   (and (rtags-executable-find "rc")
        (rtags-is-indexed)))
 
+(define-key rtags-mode-map (kbd "M-n") (lambda ()
+                                         (interactive)
+                                         (save-excursion
+                                           (next-line)
+                                           (rtags-select-other-window))))
+(define-key rtags-mode-map (kbd "M-p") (lambda
+                                         (interactive)
+                                         (save-excursion
+                                           (previous-line)
+                                           (rtags-select-other-window))))
+
 (provide 'init-rtags)
