@@ -8,6 +8,13 @@
 ;; cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 /path/to/project
 ;; rc -J /path/to/project
 
+;;; useful key-bindings
+;; "C-c r ." rtags-find-symbol-at-point
+;; "C-c r ," rtags-find-references-at-point
+;; "C-c r /" rtags-find-all-references-at-point
+;; "C-c r v" rtags-find-virtuals-at-point
+;; "C-c r p" rtags-dependency-tree
+
 ;; start the rdm process unless the process is already running.
 (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
 (add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
