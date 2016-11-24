@@ -120,9 +120,14 @@
 (load-theme 'zenburn t)
 
 
-;;; The guide-key package pops up keybinding reminders after a short delay.
+;;; key-binding reminder
 (require-package 'guide-key)
-(setq guide-key/guide-key-sequence '("C-c" "C-c ;" "C-x r" "C-x t"))
+(setq guide-key/guide-key-sequence '("C-c"    ;; general
+                                     "C-x r"  ;; register
+                                     "C-x t"  ;; ttcn3
+                                     "C-c M"  ;; ggtags
+                                     "C-c r"  ;; rtags
+                                     ))
 (guide-key-mode 1)
 
 
