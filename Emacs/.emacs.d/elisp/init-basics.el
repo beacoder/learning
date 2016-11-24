@@ -202,11 +202,11 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;;                        :font "DejaVu Sans Mono-10:weight=normal"
 ;;                        :height 100))
 
-(when (display-graphic-p)
-   ;; "DejaVu Sans Mono" is a nice open source font family
-   (set-face-attribute 'default nil
-                       :font "-misc-dejavu lgc sans mono-medium-r-normal--0-0-0-0-m-0-iso8859-1"
-                       :height 100))
+;;(when (display-graphic-p)
+;;   ;; "DejaVu Sans Mono" is a nice open source font family
+;;   (set-face-attribute 'default nil
+;;                       :font "-misc-dejavu lgc sans mono-medium-r-normal--0-0-0-0-m-0-iso8859-1"
+;;                       :height 100))
 
 ;; set minibuffer-prompt color
 (set-face-foreground 'minibuffer-prompt "pink")
@@ -293,11 +293,11 @@ Use in `isearch-mode-end-hook'."
 ;; Overwrite flymake-display-warning so that no annoying dialog box is
 ;; used.
 
-(when (display-graphic-p)
-   ;; (require 'flymake)
-   ;; (require 'flycheck)
-   ;; swap the foreground and background colors of face
-   (invert-face 'default))
+;;(when (display-graphic-p)
+;;   ;; (require 'flymake)
+;;   ;; (require 'flycheck)
+;;   ;; swap the foreground and background colors of face
+;;   (invert-face 'default))
 
 ;; This version uses lwarn instead of message-box in the original version.
 ;; lwarn will open another window, and display the warning in there.
