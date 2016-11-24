@@ -10,12 +10,12 @@
 
 ;;; useful key-bindings
 ;; "C-c r ." rtags-find-symbol-at-point
-;; "C-c r ," rtags-find-references-at-point
 ;; "C-c r /" rtags-find-all-references-at-point
 ;; "C-c r v" rtags-find-virtuals-at-point
 ;; "C-c r h" rtags-print-class-hierarchy
-;; "C-c r A" rtags-find-functions-called-by-this-function
-;; "C-c r T" rtags-taglist
+;; "C-c r S" rtags-display-summary
+;; "C-c r G" rtags-guess-function-at-point
+
 
 ;; start the rdm process unless the process is already running.
 (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
