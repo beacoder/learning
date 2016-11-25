@@ -5,8 +5,8 @@
 ;; cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 /path/to/project
 ;; rc -J /path/to/project
 
-;;; warning: merely update rtags.el may not be suffcient.
-;;; we need to udpate binaries(rc/rdm/rp) as well.
+;;; warning: merely update rtags.el may not be suffcient
+;;; we need to udpate binaries(rc/rdm/rp) as well
 
 ;;; useful key-bindings
 ;; "C-c r ." rtags-find-symbol-at-point
