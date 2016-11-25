@@ -8,6 +8,10 @@
 ;; cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 /path/to/project
 ;; rc -J /path/to/project
 
+;;; list or select a project
+;; rc -w
+;; rc -w project
+
 ;;; useful key-bindings
 ;; "C-c r ." rtags-find-symbol-at-point
 ;; "C-c r /" rtags-find-all-references-at-point
