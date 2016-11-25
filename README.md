@@ -1,4 +1,4 @@
 notes
 =====
 
-learning notes
+emacs configuration and script learning notes
