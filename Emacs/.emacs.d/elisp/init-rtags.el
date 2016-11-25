@@ -1,9 +1,6 @@
 ;;----------------------------------------------------------------------------
 ;; rtags setting
 ;;----------------------------------------------------------------------------
-
-(require-package 'rtags)
-
 ;;; steps to index a project
 ;; cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 /path/to/project
 ;; rc -J /path/to/project
@@ -20,6 +17,7 @@
 ;; "C-c r S" rtags-display-summary
 ;; "C-c r G" rtags-guess-function-at-point
 
+(require-package 'rtags)
 
 ;; start the rdm process unless the process is already running.
 (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
