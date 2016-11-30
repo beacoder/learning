@@ -25,14 +25,6 @@ This command is similar to `find-file-at-point' but without prompting for confir
             (when (y-or-n-p (format "file doesn't exist: 「%s」. Create?" path) )
               (find-file path ))))))))
 
-;; @see http://stackoverflow.com/questions/6467002/how-to-kill-buffer-in-emacs-without-answering-confirmation
-(defun volatile-kill-buffer ()
-  "Kill current buffer unconditionally."
-  (interactive)
-  (let ((buffer-modified-p nil))
-    (kill-buffer (current-buffer))))
-(global-set-key (kbd "C-x k") 'volatile-kill-buffer)
-
 ;; try to follow the "action-where-object" pattern when defining key-bindings,
 ;; and use as less keys as possible.
 
