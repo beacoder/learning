@@ -8,7 +8,8 @@ key-bindings: "C-w" "M-w" "C-k" "C-y" "M-y"
 descrpition: commands operate on rectangular areas of the text
 key-bindings: 
 "C-x r k" "C-x r M-w" "C-x r d" "C-x r c"
-"C-x r y" "C-x r o" "C-x r N" "C-x r t"
+"C-x r y" "C-x r o"   "C-x r N" "C-x r t"
+"C-x SPC"
 
 3.history-ring
 descrpition: contains shell command history
