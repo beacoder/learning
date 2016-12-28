@@ -1,14 +1,25 @@
 ;;----------------------------------------------------------------------------
 ;; rtags setting
 ;;----------------------------------------------------------------------------
+
+;;; steps to install rtags
+;;----------------------------------------------------------------------------
+;; git clone --recursive https://github.com/Andersbakken/rtags.git
+;; cd rtags
+;; mkdir build
+;; cmake -DCMAKE_INSTALL_PREFIX:PATH=/home/ehumche/private/rtags
+;; make && make install
+
 ;;; steps to index a project
+;;----------------------------------------------------------------------------
 ;; cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 /path/to/project
 ;; rc -J /path/to/project
 
 ;;; warning: merely update rtags.el may not be suffcient
-;;; we need to udpate binaries(rc/rdm/rp) as well
+;;; we need to udpate rtags binaries(rc/rdm/rp) as well
 
 ;;; useful key-bindings
+;;----------------------------------------------------------------------------
 ;; "C-c r ." rtags-find-symbol-at-point
 ;; "C-c r /" rtags-find-all-references-at-point
 ;; "C-c r v" rtags-find-virtuals-at-point
