@@ -9,6 +9,7 @@
 
 ;; use "C-f" during file selection to switch to regular find-file
 (ido-mode t)
+(ido-everywhere 1)
 
 (setq ido-enable-flex-matching t
       ido-use-filename-at-point nil
