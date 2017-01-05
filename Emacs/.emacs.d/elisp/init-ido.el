@@ -2,14 +2,16 @@
 ;; ido configuration (use helm if possible)
 ;;----------------------------------------------------------------------------
 
-(require-package 'flx-ido)
-(flx-ido-mode 1)
 ;; @see https://github.com/lewang/flx
-(setq flx-ido-threshold 10000)
+(require-package 'flx-ido)
 
 ;; use "C-f" during file selection to switch to regular find-file
 (ido-mode t)
 (ido-everywhere 1)
+
+(flx-ido-mode 1)
+;; @see https://github.com/lewang/flx
+(setq flx-ido-threshold 10000)
 
 (setq ido-enable-flex-matching t
       ido-use-filename-at-point nil
