@@ -7,7 +7,7 @@
 ;; git clone --recursive https://github.com/Andersbakken/rtags.git
 ;; cd rtags
 ;; mkdir build
-;; cmake -DCMAKE_INSTALL_PREFIX:PATH=/home/ehumche/private/rtags
+;; cmake -DCMAKE_INSTALL_PREFIX:PATH=~/private/rtags
 ;; make && make install
 
 ;;; steps to index a project
