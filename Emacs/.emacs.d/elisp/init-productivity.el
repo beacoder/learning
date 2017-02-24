@@ -25,7 +25,7 @@ This command is similar to `find-file-at-point' but without prompting for confir
             (when (y-or-n-p (format "file doesn't exist: 「%s」. Create?" path) )
               (find-file path ))))))))
 
-;; @see http://stackoverflow.com/questions/202803/searching-for-marked-selected-text-in-emacs
+;; @see http://stackoverflow.com/questions/32002122
 (defun jrh-isearch-with-region ()
   "Use region as the isearch text."
   (when mark-active
