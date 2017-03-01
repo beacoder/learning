@@ -60,5 +60,6 @@
 (defalias 'af 'apply-function-to-region-lines-without-args)
 
 (defalias 'qrr 'query-replace-regexp)
+(defalias 'cc 'clone-indirect-buffer)
 
 (provide 'init-alias)
