@@ -309,15 +309,24 @@
                        "Insert get set methods"
                        'c++-tempo-tags)
 
-(tempo-define-template "c++-for-it"
+(tempo-define-template "c++-for-iterator"
                        '(> "for (" (p "type: " type) (if (y-or-n-p "const_iterator? ") "::const_iterator " "::iterator ")
-                           (p "iterator: " it) " = "
+                           (p "iterator: " iter) " = "
                            (p "container: " container) ".begin();" n
-                           > (s it) " != " (s container) ".end(); ++" (s it) ")" n
+                           > (s iter) " != " (s container) ".end(); ++" (s iter) ")" n
                            > "{" > n> r n "}" > n>
                            )
                        "cfor"
                        "Insert a C++ for loop iterating over an STL container"
+                       'c++-tempo-tags)
+
+(tempo-define-template "c++-for-range"
+                       '(> "for (" (if (y-or-n-p "const? ") "const " " ") (p "type: " type)
+                           " " (p "item: " iter) " : " (p "container: " container) ")" n>
+                           "{" > n> r n "}" > n>
+                           )
+                       "rfor"
+                       "Insert a C++ range based for loop"
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-cout"
