@@ -321,7 +321,7 @@
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-for-range"
-                       '(> "for (" (if (y-or-n-p "const? ") "const " " ") (p "type: " type)
+                       '(> "for (" (if (y-or-n-p "const? ") "const " "") (p "type: " type)
                            " " (p "item: " iter) " : " (p "container: " container) ")" n>
                            "{" > n> r n "}" > n>
                            )
