@@ -60,7 +60,7 @@
 ;;            ifelse                  if (...) { } else { }
 ;;            while                   while (...) { }
 ;;            for                     for (...) { }
-;;            ifor                    for (i=0; i < limit; ++i) { }
+;;            ifor                    for (i = 0; i < limit; ++i) { }
 ;;            switch                  switch() {...}
 ;;            case                    case: ... break;
 ;;            main                    int main() { ... }
@@ -68,7 +68,7 @@
 ;; --- C++ statements
 ;;            class                   class xxx { ... };
 ;;            getset                  accessor/mutator
-;;            ifor                    for (type::iterator it = container.begin(); it != container.end(); ++it) { }
+;;            cfor                    for (type::iterator it = container.begin(); it != container.end(); ++it) { }
 
 (require 'tempo)
 (setq tempo-interactive t)
@@ -196,7 +196,7 @@
                        'c-tempo-tags)
 
 (tempo-define-template "c-for-i"
-                       '(> "for (long " (p "variable: " var) " = 0; " (s var)
+                       '(> "for (int " (p "variable: " var) " = 0; " (s var)
                            " < "(p "upper bound: " ub)"; ++" (s var) ")" > n
                            > "{" >  n> > r n "}" > n>
                            )
@@ -309,7 +309,7 @@
                        "Insert get set methods"
                        'c++-tempo-tags)
 
-(tempo-define-template "c++-for-iterator"
+(tempo-define-template "c++-for-container"
                        '(> "for (" (p "type: " type) (if (y-or-n-p "const_iterator? ") "::const_iterator " "::iterator ")
                            (p "iterator: " iter) " = "
                            (p "container: " container) ".begin();" n
