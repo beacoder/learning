@@ -69,6 +69,7 @@
 ;;            class                   class xxx { ... };
 ;;            getset                  accessor/mutator
 ;;            cfor                    for (type::iterator it = container.begin(); it != container.end(); ++it) { }
+;;            rfor                    for (type var : range) { }
 
 (require 'tempo)
 (setq tempo-interactive t)
@@ -322,7 +323,7 @@
 
 (tempo-define-template "c++-for-range"
                        '(> "for (" (if (y-or-n-p "const? ") "const " "") (p "type: " type)
-                           " " (p "item: " iter) " : " (p "container: " container) ")" n>
+                           " " (p "item: " iter) " : " (p "range: " range) ")" n>
                            "{" > n> r n "}" > n>
                            )
                        "rfor"
