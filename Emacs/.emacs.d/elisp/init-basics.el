@@ -19,6 +19,12 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;; bind pop-tag-mark
 (global-set-key (kbd "M-?") 'pop-tag-mark)
 
+(after-load "xref"
+  (progn
+    (define-key esc-map "." #'xref-find-definitions)
+    (define-key esc-map "?" #'xref-pop-marker-stack)
+    (define-key esc-map "]" #'xref-find-references)))
+
 ;; Handy way of navigating forward and backward.
 ;; @see http://stackoverflow.com/questions/3393834/how-to-move-forward-and-backward-in-emacs-mark-ring
 (defun unpop-to-mark-command ()
