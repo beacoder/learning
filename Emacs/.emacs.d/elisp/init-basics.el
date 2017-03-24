@@ -23,7 +23,7 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
   (progn
     (define-key esc-map "." #'xref-find-definitions)
     (define-key esc-map "?" #'xref-pop-marker-stack)
-    (define-key esc-map "]" #'xref-find-references)))
+    (define-key esc-map "]" #'xref-find-apropos)))
 
 ;; Handy way of navigating forward and backward.
 ;; @see http://stackoverflow.com/questions/3393834/how-to-move-forward-and-backward-in-emacs-mark-ring
