@@ -8,6 +8,7 @@
 (when *is-a-mac*
   (setq-default locate-command "mdfind"))
 
+;; install the_silver_searcher(ag) first
 (when (executable-find "ag")
   (require-package 'ag)
   (require-package 'wgrep-ag)
