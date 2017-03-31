@@ -13,7 +13,7 @@
   (require-package 'ag)
   (require-package 'wgrep-ag)
   (setq-default ag-highlight-search t)
-  (global-set-key (kbd "C-c a") 'ag-project))
+  (global-set-key (kbd "M-s") 'ag-project))
 
 
 (provide 'init-grep)
