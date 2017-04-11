@@ -320,7 +320,7 @@
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-for-range"
-                       '(> "for (" (if (y-or-n-p "const? ") "const auto" "auto")
+                       '(> "for (" (if (y-or-n-p "const_iterator? ") "const auto" "auto")
                            " " (p "item: " it) " : " (p "range: " range) ")" n>
                            "{" > n> r n "}" > n>
                            )
