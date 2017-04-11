@@ -68,8 +68,8 @@
 ;; --- C++ statements
 ;;            class                   class xxx { ... };
 ;;            getset                  accessor/mutator
-;;            cfor                    for (type::iterator it = container.begin(); it != container.end(); ++it) { }
-;;            rfor                    for (type var : range) { }
+;;            cfor                    for (auto it = container.begin(); it != container.end(); ++it) { }
+;;            rfor                    for (auto var : range) { }
 
 (require 'tempo)
 (setq tempo-interactive t)
@@ -311,10 +311,8 @@
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-for-container"
-                       '(> "for (" (p "type: " type) (if (y-or-n-p "const_iterator? ") "::const_iterator " "::iterator ")
-                           (p "iterator: " iter) " = "
-                           (p "container: " container) ".begin();" n
-                           > (s iter) " != " (s container) ".end(); ++" (s iter) ")" n
+                       '(> "for (" (if (y-or-n-p "const_iterator? ") "const auto " "auto ")
+                           (p "iterator: " iter) " = " (p "container: " container) ".begin(); " (s iter) " != " (s container) ".end(); ++" (s iter) ")" n
                            > "{" > n> r n "}" > n>
                            )
                        "cfor"
@@ -322,8 +320,8 @@
                        'c++-tempo-tags)
 
 (tempo-define-template "c++-for-range"
-                       '(> "for (" (if (y-or-n-p "const? ") "const " "") (p "type: " type)
-                           " " (p "item: " iter) " : " (p "range: " range) ")" n>
+                       '(> "for (" (if (y-or-n-p "const? ") "const auto" "auto")
+                           " " (p "item: " it) " : " (p "range: " range) ")" n>
                            "{" > n> r n "}" > n>
                            )
                        "rfor"
