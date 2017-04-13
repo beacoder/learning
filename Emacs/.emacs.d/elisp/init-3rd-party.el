@@ -30,14 +30,21 @@
 ;;; multiple-cursors setting
 (require-package 'multiple-cursors)
 
-;; apply mulitiple cursor to region lines
-(global-set-key (kbd "C-c C-c") 'mc/edit-lines)
+(defvar my-mc-keymap nil
+  "Customize keybindings for multiple-cursors-mode.")
+(progn
+  (setq my-mc-keymap (make-sparse-keymap))
+  (define-key my-mc-keymap (kbd "C-e") 'mc/edit-lines)
+  (define-key my-mc-keymap (kbd "C-p") 'mc/mark-previous-like-this)
+  (define-key my-mc-keymap (kbd "C-n") 'mc/mark-next-like-this))
 
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-
-;; apply mulitiple cursor to lines like this region
-(global-set-key (kbd "C-c C-s") 'mc/mark-all-like-this)
+(define-minor-mode my-mc-mode
+  "minor-mode to customize keybindings for mulitiple-cursors-mode. "
+  nil nil my-mc-keymap
+  (when my-mc-mode
+    (add-hook 'multiple-cursors-mode-disabled-hook
+              (lambda () (my-mc-mode -1)))))
+(global-set-key (kbd "C-x m") 'my-mc-mode)
 
 
 ;;; undo-tree setting
