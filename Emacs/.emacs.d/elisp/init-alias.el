@@ -36,10 +36,6 @@
 (defalias 'emb 'ediff-merge-buffers)
 (defalias 'emd 'edirs-merge)
 
-;; original multiple cursor key-bindings doesn't work in cc-mode
-(defalias 'el 'mc/edit-lines)
-(defalias 'ma 'mc/mark-all-like-this)
-
 ;; shortcut for kill-some-buffers
 (defalias 'ka 'kill-some-buffers)
 
