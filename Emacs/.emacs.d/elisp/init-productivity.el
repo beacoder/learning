@@ -293,9 +293,14 @@ When `universal-argument' is called first, kill whole buffer (respects `narrow-t
 ;;; How to save a macro for future use
 ;; name-last-kbd-macro => give macro a name
 ;; insert-kbd-macro    => generate lisp code for the macro
-;;
 
 (fset 'select-whole-line "\C-a\C-@\C-e")
 (global-set-key (kbd "M-7") 'select-whole-line)
+
+(defun show-buffer-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
+(global-set-key (kbd "C-c C-f") 'show-buffer-name)
 
 (provide 'init-productivity)
