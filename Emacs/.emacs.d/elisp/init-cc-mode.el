@@ -47,7 +47,12 @@
   (c-toggle-auto-hungry-state 1)
   ;; indent
   (fix-c-indent-offset-according-to-syntax-context 'substatement 0)
-  (fix-c-indent-offset-according-to-syntax-context 'func-decl-cont 0))
+  (fix-c-indent-offset-according-to-syntax-context 'func-decl-cont 0)
+  ;; allow global binding to work when c/c++-mode is active
+  (define-key c++-mode-map (kbd "C-c C-e") nil)
+  (define-key c++-mode-map (kbd "C-c C-s") nil)
+  (define-key c-mode-map (kbd "C-c C-e") nil)
+  (define-key c-mode-map (kbd "C-c C-s") nil))
 
 ;; use <tab> to indent region if anything is selected
 ;; fledermaus came up with this
