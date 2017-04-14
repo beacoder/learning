@@ -34,10 +34,11 @@
   "Customize keybindings for multiple-cursors-mode.")
 (progn
   (setq my-mc-keymap (make-sparse-keymap))
-  (define-key my-mc-keymap (kbd "C-e") 'mc/edit-lines)
-  (define-key my-mc-keymap (kbd "C-s") 'mc/mark-all-like-this)
   (define-key my-mc-keymap (kbd "C-p") 'mc/mark-previous-like-this)
-  (define-key my-mc-keymap (kbd "C-n") 'mc/mark-next-like-this))
+  (define-key my-mc-keymap (kbd "C-n") 'mc/mark-next-like-this)
+
+  (global-set-key (kbd "C-c C-s") 'mc/mark-all-like-this)
+  (global-set-key (kbd "C-c C-e") 'mc/edit-lines))
 
 (define-minor-mode my-mc-mode
   "minor-mode to customize keybindings for mulitiple-cursors-mode. "
