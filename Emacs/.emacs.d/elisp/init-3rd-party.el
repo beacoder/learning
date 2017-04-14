@@ -56,7 +56,6 @@
 (setq undo-outer-limit (* 100 (expt 1024 2)))
 
 
-
 ;;; slime setting
 ;; (require 'slime-autoloads)
 ;; (setq inferior-lisp-program
