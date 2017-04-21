@@ -59,10 +59,5 @@
   ("q" keyboard-quit :color blue))
 (global-set-key (kbd "C-x c") 'hydra/rectangle/body)
 
-(defhydra join-lines ()
-  ("<up>" join-line)
-  ("<down>" (join-line 1))
-  ("t" join-line)
-  ("n" (join-line 1)))
   
 (provide 'init-hydra)
