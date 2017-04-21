@@ -2,11 +2,16 @@
 ;; hydra setting
 ;;----------------------------------------------------------------------------
 
-;; Major-mode usually goes with one specific file type
-;; Minor-mode usually shared among different file types
-;; Temporary-mode usually used on the fly, e.g: rectangle-mode, My-Mc-mode
-;; Hydra usually used to group a family of related commands together, e.g: work related commands
+;; Major-mode binds to one specific file type
+;; Minor-mode shared among all file types
+;; Hydra groups related commands together to act like a temporary minor mode
 (require-package 'hydra)
+
+;; Customize keybindings for multiple-cursors-mode.
+(defhydra hydra/mc-mode ()
+   ("p" mc/mark-previous-like-this)
+   ("n" mc/mark-next-like-this))
+(global-set-key (kbd "C-x m")  'hydra/mc-mode/body)
 
 (defhydra hydra/window-movement ()
   ("<left>" windmove-left)
@@ -28,8 +33,6 @@
   ("q" nil))
 (global-set-key (kbd "C-x w") 'hydra/window-movement/body)
 
-
-(global-set-key (kbd "C-x c") 'hydra/rectangle/body)
 (defhydra hydra/rectangle (:pre (rectangle-mark-mode 1)
                                 :color pink
                                 :hint nil)
@@ -54,7 +57,7 @@
            (deactivate-mark)
          (rectangle-mark-mode 1)) nil)
   ("q" keyboard-quit :color blue))
-
+(global-set-key (kbd "C-x c") 'hydra/rectangle/body)
 
 (defhydra join-lines ()
   ("<up>" join-line)
