@@ -1,7 +1,11 @@
 ;;----------------------------------------------------------------------------
-;; hydras setting
+;; hydra setting
 ;;----------------------------------------------------------------------------
 
+;; Major-mode usually goes with one specific file type
+;; Minor-mode usually shared among different file types
+;; Temporary-mode usually used on the fly, e.g: rectangle-mode, My-Mc-mode
+;; Hydra usually used to group a family of related commands together, e.g: work related commands
 (require-package 'hydra)
 
 (defhydra hydra/window-movement ()
