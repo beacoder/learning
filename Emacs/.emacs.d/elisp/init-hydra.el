@@ -28,7 +28,7 @@
   ("q" nil))
 (global-set-key (kbd "C-x m")  'multiple-cursors-hydra/body)
 
-(defhydra hydra-window ()
+(defhydra hydra-window (:hint nil)
    "
     ^Move^        ^Split^             ^Switch^          ^Other^
 -------------------------------------------------------------
