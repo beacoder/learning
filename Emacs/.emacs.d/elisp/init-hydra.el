@@ -7,7 +7,7 @@
 ;; Hydra groups related commands together to act like a temporary minor mode
 (require-package 'hydra)
 
-(defhydra multiple-cursors-hydra (:hint nil)
+(defhydra hydra-multiple-cursors (:hint nil)
   "
      ^Up^            ^Down^        ^Other^
 ----------------------------------------------
@@ -26,7 +26,7 @@
   ("M-p" mc/unmark-previous-like-this)
   ("r" mc/mark-all-in-region-regexp :exit t)
   ("q" nil))
-(global-set-key (kbd "C-x m")  'multiple-cursors-hydra/body)
+(global-set-key (kbd "C-x m")  'hydra-multiple-cursors/body)
 
 (defhydra hydra-window (:hint nil)
    "
@@ -62,32 +62,6 @@
    ("Z" winner-redo)
    ("q" nil))
 (global-set-key (kbd "C-x w") 'hydra-window/body)
-
-(defhydra hydra/rectangle (:pre (rectangle-mark-mode 1)
-                                :color pink
-                                :hint nil)
-  "
- _p_: paste   _r_: replace  _I_: insert
- _y_: copy    _o_: open     _R_: reset
- _d_: kill    _n_: number   _q_: quit
-"
-  ("h" backward-char nil)
-  ("l" forward-char nil)
-  ("k" previous-line nil)
-  ("j" next-line nil)
-  ("y" copy-rectangle-as-kill)
-  ("d" kill-rectangle nil)
-  ("x" clear-rectangle nil)
-  ("o" open-rectangle nil)
-  ("p" yank-rectangle)
-  ("r" string-rectangle)
-  ("n" rectangle-number-lines)
-  ("I" string-insert-rectangle)
-  ("R" (if (region-active-p)
-           (deactivate-mark)
-         (rectangle-mark-mode 1)) nil)
-  ("q" keyboard-quit :color blue))
-(global-set-key (kbd "C-x c") 'hydra/rectangle/body)
 
   
 (provide 'init-hydra)
