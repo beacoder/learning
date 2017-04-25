@@ -63,5 +63,17 @@
    ("q" nil))
 (global-set-key (kbd "C-x w") 'hydra-window/body)
 
-  
+(defhydra hydra-refactor (:hint nil)
+  "
+     ^Query-Replace^           ^Other^
+----------------------------------------------
+[_r_] Query-Replace         [_q_] Quit
+[_R_] Query-Replace-Regexp
+"
+  ("r" query-replace)
+  ("R" query-replace-regexp)
+  ("q" nil))
+(global-set-key (kbd "C-x q")  'hydra-refactor/body)
+
+
 (provide 'init-hydra)
