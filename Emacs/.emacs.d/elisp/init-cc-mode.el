@@ -52,8 +52,7 @@
   (define-key c++-mode-map (kbd "C-c C-e") nil)
   (define-key c++-mode-map (kbd "C-c C-s") nil)
   (define-key c-mode-map (kbd "C-c C-e") nil)
-  (define-key c-mode-map (kbd "C-c C-s") nil)
-  (setq compile-command (concat (getenv "WS_ROOT") "/tools/bin/build  -v -c Linux_x86_64")))
+  (define-key c-mode-map (kbd "C-c C-s") nil))
 
 ;; use <tab> to indent region if anything is selected
 ;; fledermaus came up with this
