@@ -82,11 +82,13 @@
   (define-key ttcn3-mode-map "\C-xt" ttcn3-map)
   (define-key ttcn3-map (kbd "u") 'async-update-ttcn3-tags)
   (define-key ttcn3-map (kbd "b") 'async-build-ttcn3-project)
-  (define-key ttcn3-map (kbd "c") 'async-copy-ttcn3-project)
+  (define-key ttcn3-map (kbd "c") 'async-copy-ttcn3-project))
 
-  ;; compile command
-  (setq compile-command (concat
-                         (getenv "TTCN3_GGSN_ROOT_PATH") "/scripts/compile_ttcn.sh build" " && "
-                         (getenv "TTCN3_GGSN_ROOT_PATH") "/scripts/copy_ttcn3.sh")))
+;; compile command
+(add-hook 'ttcn-3-mode-hook
+ (lambda ()
+   (setq compile-command
+         (concat (getenv "TTCN3_GGSN_ROOT_PATH") "/scripts/compile_ttcn.sh build" " && "
+                 (getenv "TTCN3_GGSN_ROOT_PATH") "/scripts/copy_ttcn3.sh"))))
 
 (provide 'init-work)
