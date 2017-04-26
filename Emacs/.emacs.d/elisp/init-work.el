@@ -84,11 +84,5 @@
   (define-key ttcn3-map (kbd "b") 'async-build-ttcn3-project)
   (define-key ttcn3-map (kbd "c") 'async-copy-ttcn3-project))
 
-;; compile command
-(add-hook 'ttcn-3-mode-hook
- (lambda ()
-   (setq compile-command
-         (concat (getenv "TTCN3_GGSN_ROOT_PATH") "/scripts/compile_ttcn.sh build" " && "
-                 (getenv "TTCN3_GGSN_ROOT_PATH") "/scripts/copy_ttcn3.sh"))))
 
 (provide 'init-work)
