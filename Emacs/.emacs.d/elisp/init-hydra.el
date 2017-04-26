@@ -65,13 +65,15 @@
 
 (defhydra hydra-refactor (:hint nil)
   "
-     ^Query-Replace^           ^Other^
+    ^Commands^                  ^Other^
 ----------------------------------------------
 [_r_] Query-Replace         [_q_] Quit
 [_R_] Query-Replace-Regexp
+[_c_] Compile
 "
   ("r" query-replace)
   ("R" query-replace-regexp)
+  ("c" compile :exit t)
   ("q" nil))
 (global-set-key (kbd "C-x q")  'hydra-refactor/body)
 
