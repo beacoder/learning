@@ -37,8 +37,17 @@
 ;;----------------------------------------------------------------------------
 ;;  (setq compilation-read-command nil
 ;;    compile-command "make clobber")
-(setq compile-command "make debug")
-
+(defun guess-compile-command ()
+  "Switch compile command for different modes."
+  (progn
+    (setq compile-command "make debug")
+    (when (equal major-mode 'c++-mode)
+      (setq compile-command (concat (getenv "WS_ROOT") "/tools/bin/build  -v -c Linux_x86_64")))
+    (when (equal major-mode 'ttcn-3-mode)
+      (setq compile-command
+            (concat (getenv "TTCN3_GGSN_ROOT_PATH") "/scripts/compile_ttcn.sh build" " && "
+                    (getenv "TTCN3_GGSN_ROOT_PATH") "/scripts/copy_ttcn3.sh")))))
+(add-hook 'after-change-major-mode-hook #'guess-compile-command)
 
 ;;; create tags
 ;; requires 'Exuberant Ctags' installed
