@@ -41,12 +41,14 @@
   "compile with mode specific commands."
   (interactive)
   (setq command "make debug")
-  (when (equal major-mode 'c++-mode)
-    (setq command (concat (getenv "WS_ROOT") "/tools/bin/build -v -c Linux_x86_64")))
-  (when (equal major-mode 'ttcn-3-mode)
+  (when (eq major-mode 'c++-mode)
     (setq command
-          (concat (getenv "TTCN3_GGSN_ROOT_PATH") "/scripts/compile_ttcn.sh build" " && "
-                  (getenv "TTCN3_GGSN_ROOT_PATH") "/scripts/copy_ttcn3.sh")))
+          ;; cd command will tell compile to switch compile directory first
+          (concat "cd " (getenv "WS_ROOT") " && tools/bin/build -v -c Linux_x86_64")))
+  (when (eq major-mode 'ttcn-3-mode)
+    (setq command
+          ;; cd command will tell compile to switch compile directory first
+          (concat "cd " (getenv "TTCN3_GGSN_ROOT_PATH") " && scripts/compile_ttcn.sh build && scripts/copy_ttcn3.sh")))
   (compile command))
 
 ;;; create tags
