@@ -27,7 +27,7 @@
 ;; (eval-after-load "coffee-mode"
 ;;     '(define-key coffee-mode-map (kbd "C-c c" 'coffee-compile-file)))
 ;;
-;; ;; the key definition happens every time coffee-mode is enabled
+;; the key definition happens every time coffee-mode is enabled
 ;; (add-hook 'coffee-mode-hook
 ;;     (lambda ()
 ;;         (define-key coffee-mode-map (kbd "C-c c" 'coffee-compile-file))))
@@ -35,8 +35,6 @@
 ;;----------------------------------------------------------------------------
 ;; compilation setting
 ;;----------------------------------------------------------------------------
-;;  (setq compilation-read-command nil
-;;    compile-command "make clobber")
 ;;  (setq compilation-read-command nil
 ;;    compile-command "make clobber")
 (defun mode-compile ()
