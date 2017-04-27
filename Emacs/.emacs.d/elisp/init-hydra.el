@@ -69,11 +69,15 @@
 ----------------------------------------------
 [_r_] Query-Replace         [_q_] Quit
 [_R_] Query-Replace-Regexp
-[_c_] Compile
+[_c_] Mode-Compile
+[_C_] Compile
+[_x_] Recompile
 "
   ("r" query-replace)
   ("R" query-replace-regexp)
-  ("c" compile :exit t)
+  ("c" mode-compile :exit t)
+  ("C" compile :exit t)
+  ("x" recompile :exit t)
   ("q" nil))
 (global-set-key (kbd "C-x q")  'hydra-refactor/body)
 
