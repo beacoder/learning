@@ -63,7 +63,7 @@
    ("q" nil))
 (global-set-key (kbd "C-x w") 'hydra-window/body)
 
-(defhydra hydra-refactor (:hint nil)
+(defhydra hydra-quickness (:hint nil)
   "
     ^Commands^                  ^Other^
 ----------------------------------------------
@@ -79,7 +79,7 @@
   ("C" compile :exit t)
   ("r" recompile :exit t)
   ("q" nil))
-(global-set-key (kbd "C-x q")  'hydra-refactor/body)
+(global-set-key (kbd "C-x q")  'hydra-quickness/body)
 
 
 (provide 'init-hydra)
