@@ -25,16 +25,6 @@ This command is similar to `find-file-at-point' but without prompting for confir
             (when (y-or-n-p (format "file doesn't exist: 「%s」. Create?" path) )
               (find-file path ))))))))
 
-;; @see http://stackoverflow.com/questions/32002122
-(defun jrh-isearch-with-region ()
-  "Use region as the isearch text."
-  (when mark-active
-    (let ((region (funcall region-extract-function nil)))
-      (deactivate-mark)
-      (isearch-push-state)
-      (isearch-yank-string region))))
-(add-hook 'isearch-mode-hook #'jrh-isearch-with-region)
-
 ;; try to follow the "action-where-object" pattern when defining key-bindings,
 ;; and use as less keys as possible.
 
