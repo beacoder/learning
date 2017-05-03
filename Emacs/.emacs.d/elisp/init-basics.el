@@ -256,6 +256,15 @@ Use in `isearch-mode-end-hook'."
                (not isearch-mode-end-hook-quit))
           (goto-char isearch-other-end)))
 
+;; @see http://stackoverflow.com/questions/32002122
+(defun jrh-isearch-with-region ()
+  "Use region as the isearch text."
+  (when mark-active
+    (let ((region (funcall region-extract-function nil)))
+      (deactivate-mark)
+      (isearch-push-state)
+      (isearch-yank-string region))))
+(add-hook 'isearch-mode-hook #'jrh-isearch-with-region)
 
 ;; set cursor color
 (add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
