@@ -243,10 +243,8 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;; @see https://www.reddit.com/r/emacs/comments/3yxk2x/flexible_isearch_without_a_package/
 (setq search-whitespace-regexp ".*?")
 
-;; Leave the cursor at start of match after isearch
 ;; @see http://endlessparentheses.com/leave-the-cursor-at-start-of-match-after-isearch.html
-(add-hook 'isearch-mode-end-hook
-          #'endless/goto-match-beginning)
+(add-hook 'isearch-mode-end-hook #'endless/goto-match-beginning)
 (defun endless/goto-match-beginning ()
     "Go to the start of current isearch match.
 Use in `isearch-mode-end-hook'."
@@ -257,6 +255,7 @@ Use in `isearch-mode-end-hook'."
           (goto-char isearch-other-end)))
 
 ;; @see http://stackoverflow.com/questions/32002122
+(add-hook 'isearch-mode-hook #'jrh-isearch-with-region)
 (defun jrh-isearch-with-region ()
   "Use region as the isearch text."
   (when mark-active
@@ -264,7 +263,6 @@ Use in `isearch-mode-end-hook'."
       (deactivate-mark)
       (isearch-push-state)
       (isearch-yank-string region))))
-(add-hook 'isearch-mode-hook #'jrh-isearch-with-region)
 
 ;; set cursor color
 (add-hook 'window-setup-hook '(lambda () (set-cursor-color "white")))
