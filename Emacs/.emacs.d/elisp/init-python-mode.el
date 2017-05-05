@@ -1,3 +1,7 @@
+;;----------------------------------------------------------------------------
+;; python programming mode setting
+;;----------------------------------------------------------------------------
+
 (setq auto-mode-alist
       (append '(("SConstruct\\'" . python-mode)
 		("SConscript\\'" . python-mode))
