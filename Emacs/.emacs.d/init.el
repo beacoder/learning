@@ -156,6 +156,7 @@
   (require 'init-css)
   (require 'init-javascript)
   (require 'init-ruby)
+  (require 'init-python)
   (require 'init-work)
   (require 'init-shell)
   (require 'init-grep)
