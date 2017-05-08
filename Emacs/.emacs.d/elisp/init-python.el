@@ -2,22 +2,22 @@
 ;; python programming mode setting
 ;;----------------------------------------------------------------------------
 
-;; "C-c C-p"    =>  run-python
-;; "C-c C-s"    =>  python-shell-send-string
-;; "C-c C-r"    =>  python-shell-send-region
-;; "C-c C-z"    =>  python-shell-switch-to-shell
-;; "C-c C-j"    =>  imenu
+;; "C-c C-p" =>  run-python
+;; "C-c C-s" =>  python-shell-send-string
+;; "C-c C-r" =>  python-shell-send-region
+;; "C-c C-z" =>  python-shell-switch-to-shell
+;; "C-c C-j" =>  imenu
 
-;; "C-c <"      =>  python-indent-shift-left
-;; "C-c >"      =>  python-indent-shift-right
+;; "C-c <"   =>  python-indent-shift-left
+;; "C-c >"   =>  python-indent-shift-right
 
-;; "C-c C-t c"  =>  python-skeleton-class
-;; "C-c C-t d"  =>  python-skeleton-def
-;; "C-c C-t f"  =>  python-skeleton-for
-;; "C-c C-t i"  =>  python-skeleton-if
-;; "C-c C-t m"  =>  python-skeleton-import
-;; "C-c C-t t"  =>  python-skeleton-try
-;; "C-c C-t w"  =>  python-skeleton-while
+;; "C-c  c"  =>  python-skeleton-class
+;; "C-c  d"  =>  python-skeleton-def
+;; "C-c  f"  =>  python-skeleton-for
+;; "C-c  i"  =>  python-skeleton-if
+;; "C-c  m"  =>  python-skeleton-import
+;; "C-c  t"  =>  python-skeleton-try
+;; "C-c  w"  =>  python-skeleton-while
 
 (setq auto-mode-alist
       (append '(("SConstruct\\'" . python-mode)
@@ -29,7 +29,15 @@
 (when (maybe-require-package 'anaconda-mode)
   (after-load 'python
     (add-hook 'python-mode-hook 'anaconda-mode)
-    (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
+    (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+
+    (define-key python-mode-map (kbd "C-c c") 'python-skeleton-class)
+    (define-key python-mode-map (kbd "C-c d") 'python-skeleton-def)
+    (define-key python-mode-map (kbd "C-c f") 'python-skeleton-for)
+    (define-key python-mode-map (kbd "C-c i") 'python-skeleton-if)
+    (define-key python-mode-map (kbd "C-c m") 'python-skeleton-import)
+    (define-key python-mode-map (kbd "C-c t") 'python-skeleton-try)
+    (define-key python-mode-map (kbd "C-c w") 'python-skeleton-while))
 
   (after-load 'anaconda-mode
     (define-key anaconda-mode-map (kbd "M-?") 'anaconda-mode-go-back)
