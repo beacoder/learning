@@ -128,12 +128,14 @@
 
 
 ;;; ggtags setting
-;; "cd /path/to/project && gtags" => generate gtags
-;; "M-." =>  ggtags-find-tag-dwim
-;; "C-c M-r" ggtags-find-tag-regexp
-;; "M-]" =>  ggtags-find-reference
-;; "C-c M-f" ggtags-find-file
-;; "C-c M-g" ggtags-grep
+;; "cd /path/to/project && gtags"
+;;  ^ generate gtags ^
+;;
+;; "M-."     => ggtags-find-tag-dwim
+;; "M-]"     => ggtags-find-reference
+;; "C-c M-r" => ggtags-find-tag-regexp
+;; "C-c M-f" => ggtags-find-file
+;; "C-c M-g" => ggtags-grep
 (require-package 'ggtags)
 (after-load 'ggtags (define-key ggtags-mode-prefix-map "\M-r" 'ggtags-find-tag-regexp))
 (defun use-gtags ()
@@ -148,7 +150,9 @@
 
 
 ;;; weather report
-;;  "wttrin" => Display weather; "g" => Change city; "q" => Quit
+;; "wttrin" => Display weather
+;; "g"      => Change city
+;; "q"      => Quit
 (require-package 'wttrin)
 (setq wttrin-default-cities '("Shanghai" "Taizhou"))
 
