@@ -3,10 +3,10 @@
 ;;----------------------------------------------------------------------------
 
 ;; "C-c C-p"    =>  run-python
-;; "C-c C-c"    =>  python-shell-send-buffer
-;; "C-c C-j"    =>  imenu
+;; "C-c C-s"    =>  python-shell-send-string
 ;; "C-c C-r"    =>  python-shell-send-region
 ;; "C-c C-z"    =>  python-shell-switch-to-shell
+;; "C-c C-j"    =>  imenu
 
 ;; "C-c <"      =>  python-indent-shift-left
 ;; "C-c >"      =>  python-indent-shift-right
