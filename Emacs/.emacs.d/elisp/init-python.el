@@ -11,14 +11,6 @@
 ;; "C-c <"   =>  python-indent-shift-left
 ;; "C-c >"   =>  python-indent-shift-right
 
-;; "C-c  c"  =>  python-skeleton-class
-;; "C-c  d"  =>  python-skeleton-def
-;; "C-c  f"  =>  python-skeleton-for
-;; "C-c  i"  =>  python-skeleton-if
-;; "C-c  m"  =>  python-skeleton-import
-;; "C-c  t"  =>  python-skeleton-try
-;; "C-c  w"  =>  python-skeleton-while
-
 (setq auto-mode-alist
       (append '(("SConstruct\\'" . python-mode)
 		("SConscript\\'" . python-mode))
