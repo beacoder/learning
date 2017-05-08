@@ -12,9 +12,9 @@
 ;; sh stands for shell
 (defalias 'sh 'shell)
 
-;; act stands for ansi-term, could use 'less' in it
-;; "C-x C-j" activate term-line-mode -> use emacs feature
-;; "C-c C-k" back to character-mode -> could use 'less'
+;; act stands for ansi-term
+;; "C-x C-j" => activate term-line-mode (use emacs feature)
+;; "C-c C-k" => activate character-mode (could use 'less')
 (defalias 'act 'ansi-term)
 
 ;; esh stands for eshell
@@ -46,8 +46,6 @@
 (defalias 'sm 'set-mark-command)
 
 ;; cc-mode
-(defalias 'ca 'c-beginning-of-defun)
-(defalias 'ce 'c-end-of-defun)
 (defalias 'ts 'tags-search)
 (defalias 'tq 'tags-query-replace)
 
@@ -55,7 +53,6 @@
 (defalias 'afa 'apply-function-to-region-lines-with-args)
 (defalias 'af 'apply-function-to-region-lines-without-args)
 
-(defalias 'qrr 'query-replace-regexp)
 (defalias 'cc 'clone-indirect-buffer)
 
 (provide 'init-alias)
