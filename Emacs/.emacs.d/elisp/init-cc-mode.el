@@ -37,17 +37,22 @@
   ;; (flyspell-prog-mode)
   ;; improve performance
   (setq flyspell-issue-message-flag nil)
+
   ;; navigation between header and cpp/cc files
   (local-set-key (kbd "C-c o") 'ff-find-other-file)
   ;; jump to the start of the function
   (local-set-key (kbd "C-M-a") 'c-beginning-of-defun)
   ;; jump to the end of the function
   (local-set-key (kbd "C-M-e") 'c-end-of-defun)
+  ;; imenu
+  (local-set-key (kbd "C-c C-j") 'imenu)
+
   ;; we like auto-newline and hungry-delete
   (c-toggle-auto-hungry-state 1)
   ;; indent
   (fix-c-indent-offset-according-to-syntax-context 'substatement 0)
   (fix-c-indent-offset-according-to-syntax-context 'func-decl-cont 0)
+
   ;; allow global binding to work when c/c++-mode is active
   (define-key c++-mode-map (kbd "C-c C-e") nil)
   (define-key c++-mode-map (kbd "C-c C-s") nil)
