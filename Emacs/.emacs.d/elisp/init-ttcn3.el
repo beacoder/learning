@@ -1,5 +1,5 @@
 ;;----------------------------------------------------------------------------
-;; work related settings
+;; ttcn3 mode settings
 ;;----------------------------------------------------------------------------
 
 (require 'async)
@@ -41,4 +41,4 @@
   (define-key ttcn3-map (kbd "u") 'async-update-ttcn3-tags))
 
 
-(provide 'init-work)
+(provide 'init-ttcn3)
