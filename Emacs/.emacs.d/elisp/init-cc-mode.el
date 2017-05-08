@@ -13,7 +13,6 @@
 
 ;; personal settings
 (defun my-c-mode-common-hook ()
-  (setq c-basic-offset 4)
   ;; give me NO newline automatically after electric expressions are entered
   (setq c-auto-newline nil)
   ;; @see http://xugx2007.blogspot.com.au/2007/06/benjamin-rutts-emacs-c-development-tips.html
@@ -29,7 +28,9 @@
               (bury-buffer "*compilation*")
               (winner-undo)
               (message "NO COMPILATION ERRORS!")))))
+
   ;; other customizations
+  (setq c-basic-offset 4)
   (setq tab-width 8)
   ;; show function name in mode-line
   (which-function-mode t)
@@ -40,16 +41,12 @@
 
   ;; navigation between header and cpp/cc files
   (local-set-key (kbd "C-c o") 'ff-find-other-file)
-  ;; jump to the start of the function
   (local-set-key (kbd "C-M-a") 'c-beginning-of-defun)
-  ;; jump to the end of the function
   (local-set-key (kbd "C-M-e") 'c-end-of-defun)
-  ;; imenu
   (local-set-key (kbd "C-c C-j") 'imenu)
 
   ;; we like auto-newline and hungry-delete
   (c-toggle-auto-hungry-state 1)
-  ;; indent
   (fix-c-indent-offset-according-to-syntax-context 'substatement 0)
   (fix-c-indent-offset-according-to-syntax-context 'func-decl-cont 0)
 
