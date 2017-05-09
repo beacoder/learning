@@ -5,11 +5,13 @@ for ... in ... :
   ...
 [else :]
   ...
-  
+
+Under the hood:
+
 for i in seq:
   do_something_to(i)
 
-is equivalent to:
+^ is equivalent to ^
 
 fetch = iter(seq)
 while True:
@@ -44,7 +46,9 @@ range(start, end, step)
 def func():
   pass
 
-is equivalent to: func = deco(func)
+^ is equivalent to ^
+
+func = deco(func)
 
 7.Generator
 def generator()
