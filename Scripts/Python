@@ -36,12 +36,12 @@ return max([len(x.strip()) for x in open('/etc/motd')])
 with context_expr [as var]:
   ...
   
-5.range/xrange
+5.Range/Xrange
 range(end)
 range(start, end)
 range(start, end, step)
 
-6.function decorator
+6.Function decorator
 @deco
 def func():
   pass
@@ -56,7 +56,7 @@ def generator()
   yield 2
   pass
   
-8.ways to define static function and class function
+8.Static function and Class function
 @staticmethod
 def f():
   pass
@@ -65,9 +65,16 @@ def f():
 def f(cls):
   pass
 
-9.regexp module
+9.Regexp module
 import re
 re.compile, re.match, re.search
 
 10.Iterator
 Objects with next() method.
+
+11.Most useful modules from standard library
+Common: re, datetime, time, decimal, math
+Shell:  os, sys, argparse, logging
+File:   glob, fnmatch, tempfile, shutil
+DB:     sqlite, json
+Web:    urllib2
