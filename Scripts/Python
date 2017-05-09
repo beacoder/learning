@@ -5,6 +5,19 @@ for ... in ... :
   ...
 [else :]
   ...
+  
+for i in seq:
+  do_something_to(i)
+
+is equivalent to:
+
+fetch = iter(seq)
+while True:
+  try:
+    i = fetch.next()
+  except StopIteration:
+    break
+  do_something_to(i)
          
 2.List comprehension
 [expr for ... in ...]
