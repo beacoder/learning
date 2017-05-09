@@ -30,8 +30,8 @@
 (require-package 'rtags)
 
 ;; start the rdm process unless the process is already running.
-(add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
-(add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
+;; (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+;; (add-hook 'c++-mode-common-hook 'rtags-start-process-unless-running)
 
 (require 'company)
 (require 'rtags)
