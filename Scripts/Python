@@ -1,150 +1,53 @@
 learning Python
 
-1.block
-description:  Code blocks are defined by their indentation.
-              By "code block", I mean functions, if statements, for loops, while loops, and so forth.
-              Indenting starts a block and unindenting ends it.
-              
-exp:
-              def fib(n):                   
-                  print 'n =', n            
-                  if n > 1:                 
-                     return n * fib(n - 1)
-                  else:                     
-                     print 'end of the line'
-                  return 1
-blank line =>        
-              fib(10)
+1.For loop
+for ... in ... :
+  ...
+[else :]
+  ...
+         
+2.List comprehension
+[expr for ... in ...]
+[expr for ... in ... if cond_expr]
 
-2.control structures
+3.Generator expression
+(expr for ... in ...)
+(expr for ... in ... if cond_expr)
 
-if statement: 
-              if ... :
-                  ... 
-              elif ... :
-                  ...
-              else :
-                  ...
-    
-while statement:
-              while ... :
-                     ...
-              else :
-                     ...
-                     
-for statement:
-              for ... in ... :
-                   ...
-              else :
-                   ...
-                   
-break statement:  if you break out of a for or while loop, 
-                  any corresponding loop else block is not executed.
-                  
-              for ... in ... :
-                   break
-              else :
-                   ...
+4.With statement
+with context_expr [as var]:
+  ...
+  
+5.range/xrange
+range(end)
+range(start, end)
+range(start, end, step)
 
-continue statement: used to skip the rest statements in the current loop block,
-                    and continue to the next iteration of the loop.
-                    
-              for ... in ... :
-                   ...
-                   continue
-                   ...
-              else :
-                   ...
-                   
-3.scope of variables
-Local:  variables declared inside a block (function or class) is local to the block.
-Global: varialbes defined at the top level of the program (not inside any functions or classes).
+6.function decorator
+@deco
+def func():
+  pass
 
-How to access Global Variable inside a function ?
-use 'global' to create a local reference to the global variable and operate on the reference.
+is equivalent to: func = deco(func)
 
-exp:
-              x = 50
-              def func():
-                  # 'global x' => reference the global x
-                  global x
-                  print('x is', x)
-                  x = 2
-                  print('Changed global x to', x)
-                  
-              func()
-              print('Value of x is', x)
-              
-output:
-              x is 50
-              Changed global x to 2
-              Value of x is 2
-              
-4.parameters && arguments
-Note: parameter => 形式参数, argument => 实际参数
-Keyword Arguments:  used to specify some of parameters in a function.
+7.Generator
+def generator()
+  yield 1
+  yield 2
+  pass
+  
+8.ways to define static function and class function
+@staticmethod
+def f():
+  pass
 
-exp:
-              # 'b' and 'c' have default values
-              def func(a, b=5, c=10) :
-                  print('Null')
-              
-              # 'c=24' => keyword argument
-              func(25, c=24)
-              func(25, b=100)
+@classmethod
+def f(cls):
+  pass
 
-VarArgs Parameters:  used to define any number of parameters in a function,
-                     use 'starred parameter' to represent VarArgs.
+9.regexp module
+import re
+re.compile, re.match, re.search
 
-exp:
-              # '*number' => varargs, '**keywords' => keyword argument
-              def func(init=5, *number, **keywords) :
-                  print('Null')
-                  
-              func(10, 1, 2, 3, value1=50, value2=100)
-              
-Keyword-Only Parameters:  used to specify certain keyword parameters as keyword-only arguments,
-                          declare them after a starred parameter.
-                          
-exp:
-              # value1 is declared after '*number'
-              def func(init=5, *number, value1) :
-                  print('Null')
-                  
-              func(10, 1, 2, 3, value1=50)
-                  
-              # value2 is declared after *, 
-              # note we don't use any VarArg, so we use a single star
-              def func(init=5, *, value2) :
-                  print('Null')
-                  
-              func(20, value2=50)
-              
-5.comments
-
-exp:
-              # some comment here         => comments one line
-              ''' some comment 
-                  here '''                => comments a block
-    
-6.docstrings
-description:           a string on the first logical line of a function is the docstring for thar function.
-docstring convention:  first line starts with a captical letter and ends with a dot.
-                       second line is blank followed by any detailed explanation 
-                       starting from the third line.
-
-exp:
-              def func() :
-                  '''Docstring for func.  => first line
-                                          => blank
-                  Detailed docStrings.''' => detailed explanation
-                  print('Null')
-                  
-              print(func.__doc__)
-              
-output:
-              Docstring for func.
-              
-              Detailed docStrings.
-              
-7.              
+10.Iterator
+Objects with next() method.
