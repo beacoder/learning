@@ -74,7 +74,7 @@ Objects with next() method.
 
 11.Most useful modules from standard library
 Common: re, datetime, time, decimal, math
-Shell:  os, sys, argparse, logging, threading
+Shell:  os, os.path, sys, argparse, logging, threading
 File:   glob, fnmatch, tempfile, shutil
 DB:     sqlite, json
 Web:    urllib2
