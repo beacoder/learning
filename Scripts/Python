@@ -10,6 +10,9 @@ for ... in ... :
 [expr for ... in ...]
 [expr for ... in ... if cond_expr]
 
+e.g: calculate the length of the maximum line of one file. 
+return max([len(x.strip()) for x in open('/etc/motd')])
+
 3.Generator expression
 (expr for ... in ...)
 (expr for ... in ... if cond_expr)
