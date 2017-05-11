@@ -67,9 +67,6 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
 ;; mode setting
 ;;----------------------------------------------------------------------------
 
-;; enable icomplete-mode
-(icomplete-mode t)
-
 ;; incremental picking of buffers
 ;; (when (fboundp 'iswitchb-mode) (iswitchb-mode t))
 
