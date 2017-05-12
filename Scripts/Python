@@ -77,4 +77,4 @@ Common: re, time, datetime, decimal, math
 Shell:  os, sys, argparse, logging, subprocess, threading
 File:   shutil, tempfile, glob, fnmatch
 DB:     sqlite, json
-Web:    requests
+Web:    urllib, urllib2, requests
