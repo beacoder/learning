@@ -78,3 +78,12 @@ Shell:  os, sys, argparse, logging, subprocess, threading
 File:   shutil, tempfile, glob, fnmatch
 DB:     sqlite, json
 Web:    urllib, urllib2, requests
+
+11.Why use OOP ?
+
+When project gets bigger, larger and complicated.
+OOP helps to manage the complexity.
+
+OOP includes: Encapsulation, Inheritance, Polymorphism.
+Encapsulate data/code into Class  => Reduce complexity.
+Inheritance, Polymorphism         => Reuse  code.
