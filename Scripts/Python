@@ -84,5 +84,5 @@ When project gets bigger, larger and complicated.
 OOP helps to manage the complexity.
 
 OOP includes: Encapsulation, Inheritance, Polymorphism.
-Encapsulate data/code into Class  => Reduce complexity.
-Inheritance, Polymorphism         => Reuse  code.
+Encapsulate data/code into Class  => Hide complexity.
+Inheritance, Polymorphism         => Reuse code.
