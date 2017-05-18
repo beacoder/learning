@@ -80,7 +80,6 @@ DB:     sqlite, json
 Web:    urllib, urllib2, requests
 
 12.Why use OOP ?
-
 When project gets bigger, larger and complicated.
 OOP helps to manage the complexity.
 
