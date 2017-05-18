@@ -25,12 +25,3 @@ Script:   develope efficiency is great, runtime efficiency is bad.
 Compiled: develope efficiency is bad, runtime efficiency is great.
           used to write performance critical components, such as algrithoms.
           usually used to develope large-scale complex projects.
-
-4. Why use OOP ?
-
-When project gets bigger, larger and complicated.
-OOP helps to manage the complexity.
-
-OOP includes: Encapsulate, Inheritance, Polymorphism.
-Encapsulate into Class    => Reduce complexity.
-Inheritance, Polymorphism => Reuse  code.
