@@ -128,8 +128,8 @@
 
 
 ;;; ggtags setting
+;; install "GNU Global" with "Exuberant Ctags" support
 ;; "cd /path/to/project && gtags"
-;;  ^ generate gtags ^
 ;;
 ;; "M-."     => ggtags-find-tag-dwim
 ;; "M-]"     => ggtags-find-reference
