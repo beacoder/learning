@@ -342,6 +342,12 @@ Use in `isearch-mode-end-hook'."
 ;;----------------------------------------------------------------------------
 ;; Switch ibuffer format
 ;;----------------------------------------------------------------------------
+(define-ibuffer-column filename-only
+  (:name "Filename" :inline nil)
+  (if (buffer-file-name buffer)
+      (file-name-nondirectory (buffer-file-name buffer))
+    (or dired-directory "")))
+
 (setq old-ibuffer-format '((mark modified read-only " "
                                  (name 18 18 :left :elide)
                                  " "
@@ -368,12 +374,6 @@ Use in `isearch-mode-end-hook'."
 (defvar new-format-on nil)
 (setq ibuffer-formats new-ibuffer-format
           new-format-on t)
-
-(define-ibuffer-column filename-only
-  (:name "Filename" :inline t)
-  (if (buffer-file-name buffer)
-      (file-name-nondirectory (buffer-file-name buffer))
-    (or dired-directory "")))
 
 (defun switch-ibuffer-format()
   (interactive)
