@@ -340,6 +340,53 @@ Use in `isearch-mode-end-hook'."
 (ispell-change-dictionary "american" t)
 
 ;;----------------------------------------------------------------------------
+;; Switch ibuffer format
+;;----------------------------------------------------------------------------
+(setq old-ibuffer-format '((mark modified read-only " "
+                                 (name 18 18 :left :elide)
+                                 " "
+                                 (size 9 -1 :right)
+                                 " "
+                                 (mode 16 16 :left :elide)
+                                 " " filename-and-process)
+                           (mark " "
+                                 (name 16 -1)
+                                 " " filename)))
+
+(setq new-ibuffer-format '((mark modified read-only " "
+                                 (name 18 18 :left :elide)
+                                 " "
+                                 (size 9 -1 :right)
+                                 " "
+                                 (mode 16 16 :left :elide)
+                                 " " filename-only)
+                           (mark " "
+                                 (name 16 -1)
+                                 " " filename)))
+
+;; Modify the default ibuffer-formats
+(defvar new-format-on nil)
+(setq ibuffer-formats new-ibuffer-format
+          new-format-on t)
+
+(define-ibuffer-column filename-only
+  (:name "Filename" :inline t)
+  (if (buffer-file-name buffer)
+      (file-name-nondirectory (buffer-file-name buffer))
+    (or dired-directory "")))
+
+(defun switch-ibuffer-format()
+  (interactive)
+  (if new-format-on
+      (setq ibuffer-formats old-ibuffer-format
+            new-format-on nil)
+    (setq ibuffer-formats new-ibuffer-format
+          new-format-on t))
+  (list-buffers))
+
+(after-load 'ibuffer (define-key ibuffer-mode-map (kbd "(") 'switch-ibuffer-format))
+
+;;----------------------------------------------------------------------------
 ;; Nicer naming of buffers for files with identical names
 ;;----------------------------------------------------------------------------
 (require 'uniquify)
