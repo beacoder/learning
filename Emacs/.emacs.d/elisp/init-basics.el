@@ -384,7 +384,9 @@ Use in `isearch-mode-end-hook'."
           new-format-on t))
   (list-buffers))
 
-(after-load 'ibuffer (define-key ibuffer-mode-map (kbd "(") 'switch-ibuffer-format))
+(after-load 'ibuffer 
+            (define-key ibuffer-mode-map (kbd "(") 'switch-ibuffer-format)
+            (define-key ibuffer-mode-map (kbd ")") 'switch-ibuffer-format))
 
 ;;----------------------------------------------------------------------------
 ;; Nicer naming of buffers for files with identical names
