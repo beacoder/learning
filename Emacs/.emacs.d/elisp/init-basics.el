@@ -373,7 +373,7 @@ Use in `isearch-mode-end-hook'."
 ;; Modify the default ibuffer-formats
 (defvar new-format-on nil)
 (setq ibuffer-formats new-ibuffer-format
-          new-format-on t)
+      new-format-on t)
 
 (defun switch-ibuffer-format()
   (interactive)
@@ -384,9 +384,9 @@ Use in `isearch-mode-end-hook'."
           new-format-on t))
   (list-buffers))
 
-(after-load 'ibuffer 
-            (define-key ibuffer-mode-map (kbd "(") 'switch-ibuffer-format)
-            (define-key ibuffer-mode-map (kbd ")") 'switch-ibuffer-format))
+(after-load 'ibuffer
+  (define-key ibuffer-mode-map (kbd "(") 'switch-ibuffer-format)
+  (define-key ibuffer-mode-map (kbd ")") 'switch-ibuffer-format))
 
 ;;----------------------------------------------------------------------------
 ;; Nicer naming of buffers for files with identical names
