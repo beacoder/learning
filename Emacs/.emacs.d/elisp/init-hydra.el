@@ -64,14 +64,15 @@
   "
     ^Commands^                  ^Other^
 ----------------------------------------------
-[_a_] Alternative           [_q_] Quit
-[_A_] Alternative-Regexp
+[_a_] Replace-Regexp         [_f_] flymake-mode
+[_u_] Update-GTAGS           [_q_] Quit
 [_c_] Mode-Compile
 [_C_] Compile
 [_r_] Recompile
 "
-  ("a" query-replace)
-  ("A" query-replace-regexp)
+  ("a" query-replace-regexp :exit t)
+  ("f" flymake-mode :exit t)
+  ("u" ggtags-update-tags :exit t)
   ("c" mode-compile :exit t)
   ("C" compile :exit t)
   ("r" recompile :exit t)
