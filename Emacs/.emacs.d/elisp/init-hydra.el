@@ -62,13 +62,12 @@
 
 (defhydra hydra-quickness (:hint nil)
   "
-    ^Commands^                  ^Other^
-----------------------------------------------
-[_a_] Replace-Regexp         [_f_] flymake-mode
-[_u_] Update-GTAGS           [_q_] Quit
-[_c_] Mode-Compile
-[_C_] Compile
-[_r_] Recompile
+                 ^Commands^
+-----------------------------------------
+[_a_] Replace-Regexp    [_f_] Flymake-mode
+[_u_] Update-GTAGS      [_c_] Mode-Compile
+[_C_] Compile           [_r_] Recompile
+[_q_] Quit
 "
   ("a" query-replace-regexp :exit t)
   ("f" flymake-mode :exit t)
