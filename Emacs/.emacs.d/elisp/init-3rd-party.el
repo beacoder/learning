@@ -161,7 +161,7 @@
 ;; Download plantuml.jar first, put it in ~/plantuml.jar.
 ;; wget https://netcologne.dl.sourceforge.net/project/plantuml/plantuml.jar
 ;;
-;; plantuml-preview => Show UML Diagram
+;; "C-c C-c" => plantuml-preview
 (require-package 'plantuml-mode)
 
 
