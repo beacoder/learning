@@ -7,6 +7,10 @@
 ;; Hydra groups related commands together to act like a temporary minor mode
 (require-package 'hydra)
 
+;; Don't tream 0-9 as digit-argument.
+(after-load 'hydra
+  (setq hydra-base-map (make-sparse-keymap)))
+
 (defhydra hydra-multiple-cursors (:hint nil)
   "
      ^Up^            ^Down^        ^Other^
