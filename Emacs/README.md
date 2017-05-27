@@ -6,4 +6,4 @@ To-Do List
 
 2.Customize compilation-finish-functions to run FT test.
 
-3.enhance ggtags to generate calling graph for a certain C++ function
+3.Enhance ggtags to generate calling graph for a certain C++ function
