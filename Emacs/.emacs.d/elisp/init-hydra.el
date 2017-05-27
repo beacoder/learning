@@ -7,7 +7,7 @@
 ;; Hydra groups related commands together to act like a temporary minor mode
 (require-package 'hydra)
 
-;; Don't tream 0-9 as digit-argument.
+;; Don't treat 0-9 as digit-argument.
 (after-load 'hydra
   (setq hydra-base-map (make-sparse-keymap)))
 
