@@ -51,7 +51,7 @@ def func():
 func = deco(func)
 
 7.Generator
-function which returns a generator iterator by calling yield.
+Function which returns a generator iterator by calling yield.
 
 def generator()
   yield 1
