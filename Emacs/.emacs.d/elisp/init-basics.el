@@ -23,7 +23,22 @@ URL `https://sites.google.com/site/steveyegge2/effective-emacs'"
   (progn
     (define-key esc-map "." #'xref-find-definitions)
     (define-key esc-map "?" #'xref-pop-marker-stack)
-    (define-key esc-map "]" #'xref-find-apropos)))
+    (define-key esc-map "]" #'xref-find-apropos)
+    
+    ;; don't prompt if we have candiddates at point
+    (defun xref-find-apropos (pattern)
+      "Find all meaningful symbols that match PATTERN.
+The argument has the same meaning as in `apropos'."
+      (interactive (list (smart/read-from-minibuffer "Search string")))
+      (require 'apropos)
+      (xref--find-xrefs pattern 'apropos
+                        (apropos-parse-pattern
+                         (if (string-equal (regexp-quote pattern) pattern)
+                             ;; Split into words
+                             (or (split-string pattern "[ \t]+" t)
+                                 (user-error "No word list given"))
+                           pattern))
+                        nil))))
 
 ;; Handy way of navigating forward and backward.
 ;; @see http://stackoverflow.com/questions/3393834/how-to-move-forward-and-backward-in-emacs-mark-ring
