@@ -15,5 +15,9 @@
   (setq-default ag-highlight-search t)
   (global-set-key (kbd "M-s") 'ag-project))
 
+(after-load "ag"
+  (progn
+    (defalias #'ag/read-from-minibuffer #'smart/read-from-minibuffer)))
+
 
 (provide 'init-grep)
