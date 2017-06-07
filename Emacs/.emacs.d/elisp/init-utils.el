@@ -194,7 +194,7 @@ If there's a string at point, use it instead of prompt."
          (final-prompt
           (if suggested (format "%s (default %s): " prompt suggested)
             (format "%s: " prompt))))
-    (if (or current-prefix-arg (string= "" suggested))
+    (if (or current-prefix-arg (string= "" suggested) (not suggested))
         (read-from-minibuffer final-prompt nil nil nil nil suggested)
       suggested)))
 
