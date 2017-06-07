@@ -189,7 +189,7 @@ Otherwise, get the symbol at point, as a string."
 ;;; improved version, based on ag/read-from-minibuffer
 (defun smart/read-from-minibuffer (prompt)
   "Read a value from the minibuffer with PROMPT.
-If there's a string at point, offer that as a default."
+If there's a string at point, use it instead of prompt."
   (let* ((suggested (smart/dwim-at-point))
          (final-prompt
           (if suggested (format "%s (default %s): " prompt suggested)
