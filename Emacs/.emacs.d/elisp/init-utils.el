@@ -193,15 +193,9 @@ If there's a string at point, use it instead of prompt."
   (let* ((suggested (smart/dwim-at-point))
          (final-prompt
           (if suggested (format "%s (default %s): " prompt suggested)
-            (format "%s: " prompt)))
-         (user-input
-          (if (or current-prefix-arg (= 0 (length suggested)))
-              (read-from-minibuffer final-prompt nil nil nil nil suggested)
-            "")))
-    ;; Return the input provided by the user, or use `suggested' if
-    ;; the input was empty.
-    (if (> (length user-input) 0)
-        user-input
+            (format "%s: " prompt))))
+    (if (or current-prefix-arg (string= "" suggested))
+        (read-from-minibuffer final-prompt nil nil nil nil suggested)
       suggested)))
 
 (provide 'init-utils)
