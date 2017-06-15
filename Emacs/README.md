@@ -1,7 +1,7 @@
 
 To-Do List
 =====
-0.From time to time, check new stuff from purcell/emacs.d
+0.Check out new stuff from purcell/emacs.d and redguardtoo/emacs.d from time to time.
 
 1.Smart Insert TTCN3 Header Based on TAG files.
 
