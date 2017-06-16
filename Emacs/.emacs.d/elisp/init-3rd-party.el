@@ -169,7 +169,7 @@
 (require 'init-git)
 ;; (require 'init-helm)
 (require 'init-company)
-(require 'init-rtags)
+;; (require 'init-rtags)
 (require 'init-dictionary)
 (require 'init-dired)
 (require 'init-org)
