@@ -69,5 +69,4 @@
     ))
 
 
-
 (provide 'init-ivy)
