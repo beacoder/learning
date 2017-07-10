@@ -54,7 +54,8 @@
       (counsel-ag initial-input (condition-case err
                                     (projectile-project-root)
                                   (error default-directory))))
-    (global-set-key (kbd "M-?") 'sanityinc/counsel-ag-project)))
+    ;; (global-set-key (kbd "M-?") 'sanityinc/counsel-ag-project)
+    ))
 
 
 (when (maybe-require-package 'swiper)
@@ -64,7 +65,8 @@
       (interactive (list (thing-at-point 'symbol)))
       (swiper sym))
 
-    (define-key ivy-mode-map (kbd "M-s /") 'sanityinc/swiper-at-point)))
+    ;; (define-key ivy-mode-map (kbd "M-s /") 'sanityinc/swiper-at-point)
+    ))
 
 
 
