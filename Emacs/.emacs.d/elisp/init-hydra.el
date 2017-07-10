@@ -68,12 +68,13 @@
   "
                  ^Commands^
 -----------------------------------------
-[_a_] Replace-Regexp    [_f_] Flymake-mode
-[_u_] Update-GTAGS      [_c_] Mode-Compile
-[_C_] Compile           [_r_] Recompile
-[_q_] Quit
+[_s_] Counsel-ag-project [_S_] Swiper-at-point
+[_f_] Flymake-mode       [_u_] Update-GTAGS
+[_c_] Mode-Compile       [_C_] Compile
+[_r_] Recompile          [_q_] Quit
 "
-  ("a" query-replace-regexp :exit t)
+  ("s" sanityinc/counsel-ag-project :exit t)
+  ("S" sanityinc/swiper-at-point :exit t)
   ("f" flymake-mode :exit t)
   ("u" ggtags-update-tags :exit t)
   ("c" mode-compile :exit t)
