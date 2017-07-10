@@ -1,5 +1,5 @@
 ;;----------------------------------------------------------------------------
-;; ido configuration (use helm if possible)
+;; ido configuration (use ivy if possible)
 ;;----------------------------------------------------------------------------
 
 ;; @see https://github.com/lewang/flx
