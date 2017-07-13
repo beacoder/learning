@@ -149,7 +149,6 @@
   (require 'init-3rd-party)
   (require 'init-lua)
   (require 'init-ido)
-  (require 'init-ivy)
   (require 'init-windows)
   (require 'init-nxml)
   (require 'init-html)
