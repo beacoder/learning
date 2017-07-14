@@ -46,16 +46,15 @@
     (after-load 'counsel
       (diminish 'counsel-mode)))
   (add-hook 'after-init-hook 'counsel-mode)
+  (maybe-require-package 'projectile))
 
-  (when (and (executable-find "ag") (maybe-require-package 'projectile))
-    (defun sanityinc/counsel-ag-project (initial-input)
-      "Search using `counsel-ag' from the project root for INITIAL-INPUT."
-      (interactive (list (thing-at-point 'symbol)))
-      (counsel-ag initial-input (condition-case err
-                                    (projectile-project-root)
-                                  (error default-directory))))
-    ;; (global-set-key (kbd "M-?") 'sanityinc/counsel-ag-project)
-    ))
+(defun sanityinc/counsel-ag-project (initial-input)
+  "Search using `counsel-ag' from the project root for INITIAL-INPUT."
+  (interactive (list (thing-at-point 'symbol)))
+  (counsel-ag initial-input (condition-case err
+                                (projectile-project-root)
+                              (error default-directory))))
+;; (global-set-key (kbd "M-?") 'sanityinc/counsel-ag-project)
 
 
 (when (maybe-require-package 'swiper)
