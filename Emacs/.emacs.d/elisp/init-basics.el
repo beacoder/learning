@@ -64,7 +64,7 @@ The argument has the same meaning as in `apropos'."
 (require 'recentf)
 (recentf-mode t)
 (setq recentf-max-menu-items  100
-      recentf-max-saved-items 10000
+      recentf-max-saved-items 1000
       recentf-exclude '(
                      ;; "/tmp/"
                         "/ssh:"
