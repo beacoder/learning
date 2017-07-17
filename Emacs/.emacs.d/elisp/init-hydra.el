@@ -69,13 +69,14 @@
                  ^Commands^
 -----------------------------------------
 [_s_] Swiper-at-point [_a_] Counsel-ag-project
-[_l_] Counsel-locate  [_f_] Flymake-mode
-[_u_] Update-GTAGS    [_c_] Mode-Compile
-[_C_] Compile         [_r_] Recompile
-[_q_] Quit
+[_g_] Counsel-git     [_l_] Counsel-locate
+[_f_] Flymake-mode    [_u_] Update-GTAGS
+[_c_] Mode-Compile    [_C_] Compile
+[_r_] Recompile       [_q_] Quit
 "
   ("s" sanityinc/swiper-at-point :exit t)
   ("a" sanityinc/counsel-ag-project :exit t)
+  ("g" counsel-git :exit t)
   ("l" counsel-locate :exit t)
   ("f" flymake-mode :exit t)
   ("u" ggtags-update-tags :exit t)
