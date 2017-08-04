@@ -68,7 +68,7 @@
   "
                  ^Commands^
 -----------------------------------------
-[_s_] Swiper-at-point [_a_] Counsel-git-grep
+[_a_] Swiper-at-point [_s_] Counsel-git-grep
 [_g_] Counsel-git     [_l_] Counsel-locate
 [_f_] Flymake-mode    [_u_] Update-GTAGS
 [_c_] Mode-Compile    [_C_] Compile
