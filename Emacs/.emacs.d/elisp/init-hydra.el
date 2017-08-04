@@ -74,7 +74,7 @@
 [_c_] Mode-Compile    [_C_] Compile
 [_r_] Recompile       [_q_] Quit
 "
-  ("a" sanityinc/swiper-at-point :exit t)
+  ("a" smart/swiper-at-point :exit t)
   ("s" counsel-git-grep :exit t)
   ("g" counsel-git :exit t)
   ("l" counsel-locate :exit t)
