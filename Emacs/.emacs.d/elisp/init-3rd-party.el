@@ -180,6 +180,7 @@
 (require 'init-dictionary)
 (require 'init-dired)
 (require 'init-isearch)
+(require 'init-ibuffer)
 (require 'init-org)
 (require 'init-ivy)
 (require-package 'buffer-move)
