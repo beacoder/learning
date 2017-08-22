@@ -78,6 +78,12 @@
   (global-set-key [remap execute-extended-command] 'smex))
 
 
+;;; markdown-mode
+(when (maybe-require-package 'markdown-mode)
+  (after-load 'whitespace-cleanup-mode
+    (push 'markdown-mode whitespace-cleanup-mode-ignore-modes)))
+
+
 ;;; ttcn3 setting
 (autoload 'ttcn-3-mode "ttcn3" "Major mode for ttcn3 files" t)
 (add-to-list 'auto-mode-alist '("\\.ttcn$" . ttcn-3-mode))
