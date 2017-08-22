@@ -409,4 +409,9 @@ Use in `isearch-mode-end-hook'."
 (setq uniquify-after-kill-buffer-p t)
 (setq uniquify-ignore-buffers-re "^\\*")
 
+;;----------------------------------------------------------------------------
+;; Measure startup time
+;;----------------------------------------------------------------------------
+(require 'init-benchmarking)
+
 (provide 'init-basics)
