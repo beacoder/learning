@@ -147,7 +147,6 @@
   (require 'syntax))
 (when (is-modern-emacs)
   (require 'init-3rd-party)
-  (require 'init-dired)
   (require 'init-lua)
   (require 'init-ido)
   (require 'init-windows)
