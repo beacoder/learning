@@ -6,12 +6,6 @@
 (require 'init-whitespace)
 
 
-;;; dired setting
-(require-package 'dired+)
-(require-package 'dired-details)
-(require-package 'dired-details+)
-
-
 ;;; async setting
 (require-package 'async)
 ;; deal with problems when updating packages
