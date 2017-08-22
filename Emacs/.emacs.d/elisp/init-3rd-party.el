@@ -71,10 +71,11 @@
 ;; (define-key paredit-map (kbd "b") 'paredit-forward-barf-sexp)
 
 
-;;; smex setting
-(require-package 'smex)
-(setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
-(global-set-key [remap execute-extended-command] 'smex)
+;;; smex to handle M-x
+(when (maybe-require-package 'smex)
+  ;; Change path for ~/.smex-items
+  (setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
+  (global-set-key [remap execute-extended-command] 'smex))
 
 
 ;;; ttcn3 setting
