@@ -2,6 +2,11 @@
 ;; dired setting
 ;;----------------------------------------------------------------------------
 
+(require-package 'dired-details)
+(require-package 'dired-details+)
+(require-package 'dired+)
+(require-package 'dired-sort)
+
 ;; In a file, how to go to its directory and place cursor on the file name
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 
@@ -11,11 +16,9 @@
 (setq dired-recursive-copies (quote always)
       dired-recursive-deletes (quote top))
 
-;; copy from one dired dir to the next dired dir shown in a split window
-(setq dired-dwim-target t)
-
-;; @see http://ergoemacs.org/emacs/dired_sort.html
-(setq dired-listing-switches "-alc --si --time-style long-iso")
+(setq-default diredp-hide-details-initially-flag nil
+              ;; copy from one dired dir to the next dired dir shown in a split window
+              dired-dwim-target t)
 
 ;; restore positions and markers after dired-view-file exits
 (defadvice dired-view-file (around advice-dired-view-file activate)
@@ -26,16 +29,24 @@
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
 
-;; make dired use the same buffer for viewing directory, instead of spawning many
-;; (add-hook 'dired-mode-hook
-;;  (lambda ()
-;;   (define-key dired-mode-map (kbd "<return>")
-;;     'dired-find-alternate-file) ; was dired-advertised-find-file
-;;   (define-key dired-mode-map (kbd "^")
-;;     (lambda () (interactive) (find-alternate-file "..")))
-;;   ; was dired-up-directory
-;;  ))
-
 (after-load 'dired (define-key dired-mode-map (kbd "M-b") nil))
+
+;; Prefer g-prefixed coreutils version of standard utilities when available
+(let ((gls (executable-find "gls")))
+  (when gls (setq insert-directory-program gls)))
+
+(after-load 'dired
+  (require 'dired+)
+  (require 'dired-sort)
+  (when (fboundp 'global-dired-hide-details-mode)
+    (global-dired-hide-details-mode -1))
+  (setq dired-recursive-deletes 'top)
+  (define-key dired-mode-map [mouse-2] 'dired-find-file)
+  (add-hook 'dired-mode-hook
+            (lambda () (guide-key/add-local-guide-key-sequence "%"))))
+
+(when (maybe-require-package 'diff-hl)
+  (after-load 'dired
+    (add-hook 'dired-mode-hook 'diff-hl-dired-mode)))
 
 (provide 'init-dired)
