@@ -179,6 +179,7 @@
 ;; (require 'init-rtags)
 (require 'init-dictionary)
 (require 'init-dired)
+(require 'init-isearch)
 (require 'init-org)
 (require 'init-ivy)
 (require-package 'buffer-move)
