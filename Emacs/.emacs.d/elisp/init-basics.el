@@ -205,10 +205,6 @@ The argument has the same meaning as in `apropos'."
 ;; enlarge kill-ring-max value
 (setq kill-ring-max 200)
 
-;; enlarge max length for all history lists,
-;; including minibuffer-history, extended-command-history ...
-(setq history-length 200)
-
 ;; show file's full path in title
 (setq frame-title-format
       (list (format "%s %%S: %%j " (system-name))
