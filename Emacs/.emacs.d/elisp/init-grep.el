@@ -13,7 +13,8 @@
   (require-package 'ag)
   (require-package 'wgrep-ag)
   (setq-default ag-highlight-search t)
-  (global-set-key (kbd "M-s") 'ag-project))
+  (global-set-key (kbd "M-s") 'ag-project)
+  (global-set-key (kbd "M-r") 'ag-project-regexp))
 
 (after-load "ag"
   (progn
