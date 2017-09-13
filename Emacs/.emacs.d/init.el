@@ -73,9 +73,13 @@
         ;; "~/my_tag_files/BOOST_TAGS"   ;; boost headers
         )
       ;; add stl/boost/project path into ff-find-other-file's search dir
-      cc-search-directories '("." "/usr/include" "/usr/local/include/*" "/usr/local/include/*"
+      cc-search-directories '("."
+                              "../include/*"
+                              "../src/*"
+                              "/usr/include"
+                              "/usr/local/include/*"
                               "/usr/include/c++/4.4.7/*"
-                              "  /usr/include/boost/*")
+                              "/usr/include/boost/*")
       ;; Don't ask before reverting the TAGS files
       tags-revert-without-query t
       ;; Do case-sensitive tag searches
