@@ -197,7 +197,7 @@
                        'c-tempo-tags)
 
 (tempo-define-template "c-for-i"
-                       '(> "for (int " (p "variable: " var) " = 0; " (s var)
+                       '(> "for (size_t " (p "variable: " var) " = 0; " (s var)
                            " < "(p "upper bound: " ub)"; ++" (s var) ")" > n
                            > "{" >  n> > r n "}" > n>
                            )
