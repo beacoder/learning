@@ -78,11 +78,13 @@ re.compile, re.match, re.search
 Objects with next() method.
 
 11.Most useful modules from standard library
-Common: re, time, datetime, decimal, math
-Shell:  os, sys, argparse, logging, subprocess, threading
-File:   shutil, tempfile, glob, fnmatch
-DB:     sqlite, json
-Web:    urllib, urllib2, requests
+Basic:   re, time, datetime, logging
+Math:    decimal, math, numpy, matplotlib
+Shell:   os, sys, argparse, subprocess, threading
+File:    shutil, tempfile, glob, fnmatch
+DB:      sqlite, json, sqlalchemy
+Web:     urllib, urllib2, requests
+Popular: tensorflow, pandas
 
 12.Why use OOP ?
 When project gets bigger, larger and complicated.
