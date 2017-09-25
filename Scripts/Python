@@ -78,7 +78,7 @@ re.compile, re.match, re.search
 Objects with next() method.
 
 11.Most useful modules from standard library
-Basic:   re, time, datetime, logging
+Basic:   re, time, datetime, logging, pdb
 Math:    decimal, math, numpy, matplotlib
 Shell:   os, sys, argparse, subprocess, threading
 File:    shutil, tempfile, glob, fnmatch
