@@ -86,10 +86,14 @@ DB:      sqlite, json, sqlalchemy
 Web:     urllib, urllib2, requests
 Popular: tensorflow, pandas
 
-12.Why use OOP ?
+12.Why use OOP and Design Patterns ?
 When project gets bigger, larger and complicated.
-OOP helps to manage the complexity.
+OOP and Design Pattern help to manage the complexity.
 
 OOP includes: Encapsulation, Inheritance, Polymorphism.
 Encapsulate data/code into Class  => Hide complexity.
 Inheritance, Polymorphism         => Reuse code.
+
+Design Pattern                    => Separation of concerns
+
+13.
