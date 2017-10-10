@@ -9,7 +9,8 @@
   (setq-default locate-command "mdfind"))
 
 ;; install the_silver_searcher(ag) first
-(when (executable-find "ag")
+(when (and (executable-find "ag")
+           (maybe-require-package 'ag))
   (require-package 'ag)
   (require-package 'wgrep-ag)
   (setq-default ag-highlight-search t)
@@ -19,6 +20,12 @@
 (after-load "ag"
   (progn
     (defalias #'ag/read-from-minibuffer #'smart/read-from-minibuffer)))
+
+
+;; install rg first
+(when (and (executable-find "rg")
+           (maybe-require-package 'rg))
+  (global-set-key (kbd "M-?") 'rg-project))
 
 
 (provide 'init-grep)
