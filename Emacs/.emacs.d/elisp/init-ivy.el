@@ -3,6 +3,7 @@
 ;;----------------------------------------------------------------------------
 
 (when (maybe-require-package 'ivy)
+  (add-hook 'after-init-hook 'ivy-mode)
   (after-load 'ivy
     (setq-default ivy-use-virtual-buffers t
                   ivy-virtual-abbreviate 'fullpath
