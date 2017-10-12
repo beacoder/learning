@@ -6,6 +6,7 @@
 (require-package 'dired-details+)
 (require-package 'dired+)
 (require-package 'dired-sort)
+(require-package 'dired-subtree)
 
 ;; In a file, how to go to its directory and place cursor on the file name
 (global-set-key (kbd "C-x C-j") 'dired-jump)
@@ -29,7 +30,11 @@
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
 
-(after-load 'dired (define-key dired-mode-map (kbd "M-b") nil))
+(after-load 'dired
+  (define-key dired-mode-map (kbd "M-b") nil)
+  (require 'dired-subtree)
+  (define-key dired-mode-map "l" 'dired-subtree-insert)
+  (define-key dired-mode-map "L" 'dired-subtree-remove))
 
 ;; Prefer g-prefixed coreutils version of standard utilities when available
 (let ((gls (executable-find "gls")))
