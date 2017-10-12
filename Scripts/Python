@@ -85,4 +85,4 @@ OOP includes: Encapsulation, Inheritance, Polymorphism.
 Encapsulate data/code into Class  => Hide complexity.
 Inheritance, Polymorphism         => Reuse code.
 
-Design Pattern                    => Separation of concerns
+Design Pattern                    => Separation of concerns.
