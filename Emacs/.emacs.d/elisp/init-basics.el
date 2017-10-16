@@ -185,7 +185,12 @@ The argument has the same meaning as in `apropos'."
     (defun xah-rename-eww-hook ()
       "Rename eww browser's buffer so sites open in new page."
       (rename-buffer "eww" t))
-    (add-hook 'eww-mode-hook 'xah-rename-eww-hook)))
+    (add-hook 'eww-mode-hook 'xah-rename-eww-hook)
+
+    ;; don't change background colors.
+    (defadvice shr-color-check (before unfuck compile activate)
+      "Don't let stupid shr change background colors."
+      (setq bg (face-background 'default)))))
 
 ;;----------------------------------------------------------------------------
 ;; setting locales
