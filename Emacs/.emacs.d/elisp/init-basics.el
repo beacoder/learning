@@ -179,14 +179,6 @@ The argument has the same meaning as in `apropos'."
             (require 'view)
             (and buffer-read-only (setq view-exit-action 'kill-buffer-if-not-modified))))
 
-;; eww: open new website in new buffer
-(when (fboundp 'eww)
-  (progn
-    (defun xah-rename-eww-hook ()
-      "Rename eww browser's buffer so sites open in new page."
-      (rename-buffer "eww" t))
-    (add-hook 'eww-mode-hook 'xah-rename-eww-hook)))
-
 ;;----------------------------------------------------------------------------
 ;; setting locales
 ;;----------------------------------------------------------------------------
