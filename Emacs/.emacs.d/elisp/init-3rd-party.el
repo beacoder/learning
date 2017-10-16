@@ -177,6 +177,7 @@
 (require 'init-ibuffer)
 (require 'init-org)
 (require 'init-ivy)
+(require 'init-eww)
 (require-package 'buffer-move)
 (require-package 'flymake-cursor)
 
