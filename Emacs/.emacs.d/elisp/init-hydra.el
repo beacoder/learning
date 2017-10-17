@@ -72,6 +72,8 @@
 [_g_] Counsel-git     [_l_] Counsel-locate
 [_f_] Flymake-mode    [_u_] Update-GTAGS
 [_c_] Mode-Compile    [_C_] Compile
+[_e_] Eww-Open-File   [_w_] Google-Search-Word
+[_k_] Google-Lucky
 [_r_] Recompile       [_q_] Quit
 "
   ("a" smart/swiper-at-point :exit t)
@@ -82,6 +84,9 @@
   ("u" ggtags-update-tags :exit t)
   ("c" mode-compile :exit t)
   ("C" compile :exit t)
+  ("e" modi/eww-browse-url-of-file :exit t)
+  ("w" modi/eww-search-words :exit t)
+  ("k" modi/eww-im-feeling-lucky :exit t)
   ("r" recompile :exit t)
   ("q" nil))
 (global-set-key (kbd "C-x q")  'hydra-quickness/body)
