@@ -112,11 +112,10 @@ See the `eww-search-prefix' variable for the search engine used."
 (defun modi/eww--go-to-first-search-result (search-term)
   "Navigate to the first search result in the *eww* buffer."
   ;; Keep on burying the current buffer if it turns out to be an eww buffer.
-  (while (string-match "^\\*?eww" (buffer-name))
+  (while (string-match "^eww$\\|^eww<[[:digit:]]+>$" (buffer-name))
     (bury-buffer))
   ;; Start a new eww search.
-  (let ((eww-search-prefix "https://www.google.com/search?q="))
-    (eww search-term))
+  (eww search-term)
   (let* ((max-wait 5)                 ;Seconds
          (search-repeat-interval 0.1) ;Seconds
          (max-trials (floor max-wait search-repeat-interval))
@@ -128,7 +127,8 @@ See the `eww-search-prefix' variable for the search engine used."
       (while (<= n max-trials)
         (goto-char (point-min))     ;Go to the top of the buffer
         ;; Go to the start of results
-        (re-search-forward "[[:digit:]]+ results[[:blank:]]*$" nil :noerror)
+        ;; (re-search-forward "About.*results" nil :noerror) ;; google.com
+        (re-search-forward "約有.*項結果" nil :noerror)      ;; google.com.hk
         (shr-next-link)             ;Go to the first search result
         (when (eww-links-at-point)
           (throw 'break nil))
