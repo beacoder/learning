@@ -92,7 +92,7 @@ This is regardless of whether the current buffer is an eww buffer. "
 
 
 ;; Re-write of the `eww-search-words' definition.
-(defun modi/eww-search-words ()
+(defun modi/eww-search-words (search-word)
   "Search the web for the text between BEG and END.
 If region is active (and not whitespace), search the web for
 the text in that region.
@@ -100,14 +100,8 @@ Else if the region is not active, and the point is on a symbol,
 search the web for that symbol.
 Else prompt the user for a search string.
 See the `eww-search-prefix' variable for the search engine used."
-  (interactive)
-  (let ((search-string (smart/dwim-at-point)))
-    (when (and (stringp search-string)
-               (string-match-p "\\`[[:blank:]]*\\'" search-string))
-      (setq search-string nil))
-    (if (stringp search-string)
-        (eww search-string)
-      (call-interactively #'eww))))
+  (interactive (list (smart/read-from-minibuffer "Google Search Word")))
+  (eww search-word))
 
 
 (defun modi/eww--go-to-first-search-result (search-term)
@@ -160,7 +154,7 @@ See the `eww-search-prefix' variable for the search engine used."
 
 (defun modi/eww-im-feeling-lucky (search-term)
   "Navigate to the first search result directly."
-  (interactive (list (smart/read-from-minibuffer "Search term (I'm Feeling Lucky!)")))
+  (interactive (list (smart/read-from-minibuffer "Google Search Term (I'm Feeling Lucky!)")))
   (modi/eww--go-to-first-search-result search-term)
   (eww-follow-link))
 
