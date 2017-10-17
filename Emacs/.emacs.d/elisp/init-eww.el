@@ -218,10 +218,6 @@ redirection destination if it has one."
   (let ((browse-url-browser-function 'eww-browse-url))
     (call-interactively #'browse-url-of-file)))
 
-;; bind-key
-;; https://github.com/jwiegley/use-package/blob/master/bind-key.el
-(require-package 'bind-key)
-
 ;; eww-lnum
 ;; https://github.com/m00natic/eww-lnum
 (require-package 'eww-lnum)
@@ -230,7 +226,7 @@ redirection destination if it has one."
 ;; Copy text from html page for pasting in org mode file/buffer
 ;; e.g. Copied HTML hyperlinks get converted to [[link][desc]] for org mode.
 ;; http://emacs.stackexchange.com/a/8191/115
-(require-package 'org-eww)
+;; (require-package 'org-eww)
 
 ;; Auto-refreshing eww buffer whenever the html file it's showing changes
 ;; http://emacs.stackexchange.com/a/2566/115
