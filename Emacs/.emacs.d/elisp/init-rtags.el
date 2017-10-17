@@ -20,12 +20,12 @@
 
 ;;; useful key-bindings
 ;;----------------------------------------------------------------------------
-;; "C-c r ." rtags-find-symbol-at-point
-;; "C-c r /" rtags-find-all-references-at-point
-;; "C-c r v" rtags-find-virtuals-at-point
-;; "C-c r h" rtags-print-class-hierarchy
-;; "C-c r S" rtags-display-summary
-;; "C-c r G" rtags-guess-function-at-point
+;; "C-c r ." => rtags-find-symbol-at-point
+;; "C-c r /" => rtags-find-all-references-at-point
+;; "C-c r v" => rtags-find-virtuals-at-point
+;; "C-c r h" => rtags-print-class-hierarchy
+;; "C-c r S" => rtags-display-summary
+;; "C-c r G" => rtags-guess-function-at-point
 
 (require-package 'rtags)
 
