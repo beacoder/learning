@@ -2,6 +2,13 @@
 ;; Entry file for emacs configuration 
 ;;----------------------------------------------------------------------------
 
+;; Use socks proxy for downloading packages from melpa
+;; (setq url-gateway-local-host-regexp
+;;       (concat "\\`" (regexp-opt '("localhost" "127.0.0.1")) "\\'")
+;;       url-gateway-method 'socks
+;;       socks-server '("Default server" "xx.xx.xx.xx" port 5))
+
+
 (setq emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/elisp"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp"))
