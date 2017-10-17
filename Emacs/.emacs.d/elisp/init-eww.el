@@ -20,6 +20,8 @@
 (bind-keys
  :map eww-mode-map
  (":" . eww)                        ;Go to URL
+ ("f" . eww-lnum-follow)
+ ("F" . eww-lnum-universal)
  ("h" . eww-list-histories)         ;View history
  ("s" . modi/eww-search-words)
  ("w" . modi/eww-copy-url-dwim)
