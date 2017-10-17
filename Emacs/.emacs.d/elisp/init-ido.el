@@ -5,7 +5,6 @@
 ;; @see https://github.com/lewang/flx
 (require-package 'flx-ido)
 
-;; use "C-f" during file selection to switch to regular find-file
 (ido-mode t)
 (ido-everywhere 1)
 
@@ -24,13 +23,6 @@
 
 (when (maybe-require-package 'ido-ubiquitous)
   (ido-ubiquitous-mode t))
-
-;; Ido buffer intuitive navigation
-(add-hook 'ido-setup-hook '(lambda ()
-                             (define-key ido-completion-map "\C-p" 'ido-prev-match)
-                             (define-key ido-completion-map "\C-r" 'ido-prev-match)
-                             (define-key ido-completion-map "\C-s" 'ido-next-match)
-                             (define-key ido-completion-map "\C-n" 'ido-next-match)))
 
 ;; disable auto searching for files unless called explicitly
 (setq ido-auto-merge-delay-time 99999)
