@@ -62,7 +62,6 @@
         try-expand-dabbrev-all-buffers
         try-expand-dabbrev-from-kill
         try-expand-tag
-	;; require ggtags
 	ggtags-try-complete-tag
 	try-complete-lisp-symbol-partially
 	try-complete-lisp-symbol))
