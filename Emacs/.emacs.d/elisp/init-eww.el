@@ -4,7 +4,6 @@
 
 ;; @see https://github.com/kaushalmodi/.emacs.d/blob/master/setup-files/setup-eww.el
 
-
 ;; eww-lnum
 ;; https://github.com/m00natic/eww-lnum
 (require-package 'eww-lnum)
