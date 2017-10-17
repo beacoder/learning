@@ -160,7 +160,7 @@ See the `eww-search-prefix' variable for the search engine used."
 
 (defun modi/eww-im-feeling-lucky (search-term)
   "Navigate to the first search result directly."
-  (interactive (list (smart/read-from-minibuffer "Search term (I'm Feeling Lucky!): ")))
+  (interactive (list (smart/read-from-minibuffer "Search term (I'm Feeling Lucky!)")))
   (modi/eww--go-to-first-search-result search-term)
   (eww-follow-link))
 
