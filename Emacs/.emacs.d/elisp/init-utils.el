@@ -95,6 +95,12 @@ The main differences are:
 
     (vector (buffer-substring-no-properties p1 p2) p1 p2)))
 
+;; find the directory containing a given library
+(autoload 'find-library-name "find-func")
+(defun directory-of-library (library-name)
+  "Return the directory in which the `LIBRARY-NAME' load file is found."
+  (file-name-as-directory (file-name-directory (find-library-name library-name))))
+
 ;; define line-number-at-pos
 (unless (fboundp 'line-number-at-pos)
   (defun line-number-at-pos (&optional pos)
@@ -169,12 +175,6 @@ White space here is any of: space, tab, emacs newline (line feed, ASCII 10)."
             (setq retval (cons 'exception (list ex)))))
          retval)
      ,@clean-up))
-
-;; find the directory containing a given library
-(autoload 'find-library-name "find-func")
-(defun directory-of-library (library-name)
-  "Return the directory in which the `LIBRARY-NAME' load file is found."
-  (file-name-as-directory (file-name-directory (find-library-name library-name))))
 
 
 ;;; steal from ag/dwim-at-point
