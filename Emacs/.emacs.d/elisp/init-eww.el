@@ -128,8 +128,8 @@ See the `eww-search-prefix' variable for the search engine used."
       (while (<= n max-trials)
         (goto-char (point-min))     ;Go to the top of the buffer
         ;; Go to the start of results
-        ;; (re-search-forward "About.*results" nil :noerror) ;; google.com
-        (re-search-forward "約有.*項結果" nil :noerror)      ;; google.com.hk
+        ;; (re-search-forward "About.*results.*$" nil :noerror) ;; google.com
+        (re-search-forward "約有.*項結果.*$" nil :noerror)      ;; google.com.hk
         (shr-next-link)             ;Go to the first search result
         (when (eww-links-at-point)
           (throw 'break nil))
