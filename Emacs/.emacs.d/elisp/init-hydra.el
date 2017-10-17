@@ -88,4 +88,5 @@
   ("q" nil))
 (global-set-key (kbd "C-x q")  'hydra-quickness/body)
 
+
 (provide 'init-hydra)
