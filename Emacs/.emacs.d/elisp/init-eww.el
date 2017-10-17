@@ -31,12 +31,12 @@
 (bind-keys
  :map eww-text-map                  ;For single line text fields
  ("<backtab>"  . shr-previous-link) ;S-TAB Jump to previous link on the page
- ("<C-return>" . eww-submit))       ;S-TAB Jump to previous link on the page
+ ("<C-return>" . eww-submit))       ;C-RET Subtmit form data
 
 (bind-keys
  :map eww-textarea-map              ;For multi-line text boxes
  ("<backtab>"  . shr-previous-link) ;S-TAB Jump to previous link on the page
- ("<C-return>" . eww-submit))       ;S-TAB Jump to previous link on the page
+ ("<C-return>" . eww-submit))       ;C-RET Subtmit form data
 
 (bind-keys
  :map eww-checkbox-map
