@@ -23,6 +23,7 @@
  ("f" . eww-lnum-follow)
  ("F" . eww-lnum-universal)
  ("h" . eww-list-histories)         ;View history
+ ("k" . modi/eww-im-feeling-lucky)
  ("s" . modi/eww-search-words)
  ("w" . modi/eww-copy-url-dwim)
  ("/" . highlight-regexp))
