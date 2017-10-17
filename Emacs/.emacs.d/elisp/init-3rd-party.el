@@ -2,6 +2,11 @@
 ;; third-party setting
 ;;----------------------------------------------------------------------------
 
+;; bind-key
+;; https://github.com/jwiegley/use-package/blob/master/bind-key.el
+(require-package 'bind-key)
+
+
 ;;; whitespace setting
 (require 'init-whitespace)
 
