@@ -40,14 +40,13 @@
     (after-load 'counsel
       (diminish 'counsel-mode)))
   (add-hook 'after-init-hook 'counsel-mode)
-  (maybe-require-package 'projectile))
-
-(defun smart/counsel-ag-project (initial-input)
-  "Search using `counsel-ag' from the project root for INITIAL-INPUT."
-  (interactive (list (smart/read-from-minibuffer "Search string")))
-  (counsel-ag initial-input (condition-case err
-                                (projectile-project-root)
-                              (error default-directory))))
+  (when (and (executable-find "ag") (maybe-require-package 'projectile))
+    (defun smart/counsel-ag-project (initial-input)
+      "Search using `counsel-ag' from the project root for INITIAL-INPUT."
+      (interactive (list (smart/read-from-minibuffer "Search string")))
+      (counsel-ag initial-input (condition-case err
+                                    (projectile-project-root)
+                                  (error default-directory))))))
 
 
 (when (maybe-require-package 'swiper)
