@@ -24,8 +24,8 @@
  ("F" . eww-lnum-universal)
  ("h" . eww-list-histories)         ;View history
  ("k" . modi/eww-im-feeling-lucky)
- ("s" . modi/eww-search-words)
- ("w" . modi/eww-copy-url-dwim)
+ ("w" . modi/eww-search-words)
+ ("c" . modi/eww-copy-url-dwim)
  ("/" . highlight-regexp))
 
 ;; Make the binding for `revert-buffer' do `eww-reload' in eww-mode
@@ -47,11 +47,11 @@
 
 (bind-keys
  :map shr-map
- ("w" . modi/eww-copy-url-dwim))
+ ("c" . modi/eww-copy-url-dwim))
 
 (bind-keys
  :map eww-link-keymap
- ("w" . modi/eww-copy-url-dwim))
+ ("c" . modi/eww-copy-url-dwim))
 
 
 ;; Configuration
