@@ -47,11 +47,13 @@
 
 (bind-keys
  :map shr-map
- ("c" . modi/eww-copy-url-dwim))
+ ("c" . modi/eww-copy-url-dwim)
+ ("w" . modi/eww-search-words))
 
 (bind-keys
  :map eww-link-keymap
- ("c" . modi/eww-copy-url-dwim))
+ ("c" . modi/eww-copy-url-dwim)
+ ("w" . modi/eww-search-words))
 
 
 ;; Configuration
