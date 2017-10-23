@@ -14,7 +14,8 @@
 (setq auto-mode-alist
       (append '(("SConstruct\\'" . python-mode)
 		("SConscript\\'" . python-mode))
-              auto-mode-alist))
+              auto-mode-alist)
+      python-shell-interpreter "python2.7"))
 
 (require-package 'pip-requirements)
 
