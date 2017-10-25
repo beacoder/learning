@@ -30,12 +30,6 @@
 (setq global-auto-revert-non-file-buffers t
       auto-revert-verbose nil)
 
-(after-load 'dired
-  (define-key dired-mode-map (kbd "M-b") nil)
-  (require 'dired-subtree)
-  (define-key dired-mode-map "l" 'dired-subtree-insert)
-  (define-key dired-mode-map "L" 'dired-subtree-remove))
-
 ;; Prefer g-prefixed coreutils version of standard utilities when available
 (let ((gls (executable-find "gls")))
   (when gls (setq insert-directory-program gls)))
@@ -43,12 +37,16 @@
 (after-load 'dired
   (require 'dired+)
   (require 'dired-sort)
+  (require 'dired-subtree)
   (when (fboundp 'global-dired-hide-details-mode)
     (global-dired-hide-details-mode -1))
   (setq dired-recursive-deletes 'top)
   (define-key dired-mode-map [mouse-2] 'dired-find-file)
   (add-hook 'dired-mode-hook
-            (lambda () (guide-key/add-local-guide-key-sequence "%"))))
+            (lambda () (guide-key/add-local-guide-key-sequence "%")))
+  (define-key dired-mode-map (kbd "M-b") nil)
+  (define-key dired-mode-map "l" 'dired-subtree-insert)
+  (define-key dired-mode-map "L" 'dired-subtree-remove))
 
 (when (maybe-require-package 'diff-hl)
   (after-load 'dired
