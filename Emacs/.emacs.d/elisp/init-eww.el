@@ -58,7 +58,8 @@
 
 ;; Configuration
 (setq ;; eww-search-prefix "https://duckduckgo.com/html/?q="
-      eww-search-prefix "https://www.google.com.hk/search?q="
+      ;; eww-search-prefix "https://www.google.com.hk/search?q="
+      eww-search-prefix "http://www.baidu.com/s?wd="
       eww-download-directory "~/Downloads"
       eww-form-checkbox-symbol "[ ]"
       ;; (setq eww-form-checkbox-symbol "☐") ; Unicode hex 2610
@@ -76,22 +77,6 @@
   "Rename eww browser's buffer so sites open in new page."
   (rename-buffer "eww" t))
 (add-hook 'eww-mode-hook #'xah-rename-eww-hook)
-
-
-;; If the current buffer is an eww buffer, "M-x eww" will always reuse the
-;; current buffer to load the new page. Below advice will make "C-u M-x eww"
-;; force a new eww buffer even when the current buffer is an eww buffer.
-;; The above `xah-rename-eww-hook' fix is still needed in order to create
-;; uniquely named eww buffers.
-;; http://emacs.stackexchange.com/a/24477/115
-(defun modi/force-new-eww-buffer (orig-fun &rest args)
-  "When prefix argument is used, a new eww buffer will be created.
-This is regardless of whether the current buffer is an eww buffer. "
-  (if current-prefix-arg
-      (with-temp-buffer
-        (apply orig-fun args))
-    (apply orig-fun args)))
-(advice-add 'eww :around #'modi/force-new-eww-buffer)
 
 
 ;; Re-write of the `eww-search-words' definition.
@@ -126,7 +111,8 @@ See the `eww-search-prefix' variable for the search engine used."
         (goto-char (point-min))     ;Go to the top of the buffer
         ;; Go to the start of results
         ;; (re-search-forward "About.*results.*$" nil :noerror) ;; google.com
-        (re-search-forward "約有.*項結果.*$" nil :noerror)      ;; google.com.hk
+        ;; (re-search-forward "約有.*項結果.*$" nil :noerror)      ;; google.com.hk
+        (re-search-forward "百度为您找到相关结果约.*个.*$" nil :noerror)
         (shr-next-link)             ;Go to the first search result
         (when (eww-links-at-point)
           (throw 'break nil))
@@ -136,23 +122,6 @@ See the `eww-search-prefix' variable for the search engine used."
         (setq n (1+ n))))
     (message "Search for `%s' finished in %0.2f seconds."
              search-term (float-time (time-since start-time)))))
-
-
-(defun modi/eww-get-link (search-term)
-  "Copy the link to the first search result."
-  (interactive "sSearch term: ")
-  (let ((eww-buffer-name))
-    (modi/eww--go-to-first-search-result search-term)
-    (setq eww-buffer-name (rename-buffer "*eww-temp*" t))
-    (>=e "26.0"
-         ;; http://git.savannah.gnu.org/cgit/emacs.git/commit/?id=1b4f0a92ff3505ef9a465b9b391756e3a73a6443
-         (call-interactively #'shr-probe-and-copy-url)
-         ;; Copy the actual link instead of the redirection link by calling
-         ;; `shr-copy-url' twice. This twice-calling is needed only on emacs
-         ;; versions 25.x and older.
-         (dotimes (i 2)
-           (shr-copy-url)))
-    (kill-buffer eww-buffer-name)))
 
 
 (defun modi/eww-im-feeling-lucky (search-term)
@@ -208,12 +177,13 @@ redirection destination if it has one."
     (call-interactively #'browse-url-of-file)))
 
 
+
 ;; Auto-refreshing eww buffer whenever the html file it's showing changes
+;; Doesn't work on MacOS
 ;; http://emacs.stackexchange.com/a/2566/115
 (defvar modi/eww--file-notify-descriptors-list ()
   "List to store file-notify descriptor for all files that have an
 associated auto-reloading eww buffer.")
-
 
 (defun modi/advice-eww-open-file-to-auto-reload (orig-fun &rest args)
   "When `eww-open-file' is called with \\[universal-argument], open
@@ -233,7 +203,6 @@ buffer auto-reloads when the HTML file changes."
       (bind-key "q" #'modi/eww-quit-and-update-fn-descriptors eww-mode-map))))
 (advice-add 'eww-open-file :around #'modi/advice-eww-open-file-to-auto-reload)
 
-
 (defun modi/file-notify-callback-eww-reload (event)
   "On getting triggered, switch to the eww buffer, reload and switch
 back to the working buffer. Also save the `file-notify-descriptor' of the
@@ -244,7 +213,6 @@ triggering event."
     (switch-to-buffer-other-window working-buffer))
   ;; `(car event)' will return the event descriptor
   (add-to-list 'modi/eww--file-notify-descriptors-list (car event)))
-
 
 (defun modi/eww-quit-and-update-fn-descriptors ()
   "When quitting `eww', first remove any saved file-notify descriptors
