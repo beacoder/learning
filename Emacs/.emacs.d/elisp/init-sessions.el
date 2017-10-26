@@ -5,11 +5,12 @@
 ;; desktop-save       => saves the desktop
 ;; desktop-change-dir => save current desktop and load a different one
 
-;; save a list of open files in ~/.emacs.d/.desktops/
+;; save a list of open files in ~/.emacs.d/.desktop/
 ;; save the desktop file automatically if it already exists
 ;; we need to manually execute 'desktop-save' for the first time
 (setq desktop-path (list user-emacs-directory)
       desktop-auto-save-timeout 600)
+
 (when (fboundp 'desktop-save-mode)
     (desktop-save-mode 1))
 
