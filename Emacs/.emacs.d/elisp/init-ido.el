@@ -39,6 +39,7 @@
         (run-hook-with-args 'ido-before-fallback-functions 'read-buffer)
         (setq ad-return-value (apply 'read-buffer (ad-get-args 0))))
     ad-do-it))
+
 (put 'shell 'ido 'ignore)
 (put 'ffap-alternate-file 'ido 'ignore)
 (put 'tmm-menubar 'ido 'ignore)
