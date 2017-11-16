@@ -2,6 +2,10 @@
 ;; dired setting
 ;;----------------------------------------------------------------------------
 
+;; "A"   => dired-do-find-regexp
+;; "Q"   => dired-do-find-regexp-and-replace
+;; "M-q" => dired-do-query-replace-regexp
+
 (require-package 'dired-details)
 (require-package 'dired-details+)
 (require-package 'dired+)
