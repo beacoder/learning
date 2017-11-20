@@ -86,3 +86,21 @@ Encapsulate data/code into Class  => Hide complexity.
 Inheritance, Polymorphism         => Reuse code.
 
 Design Pattern                    => Separation of concerns.
+
+12.Architecture Pattern, Design Pattern, Idioms.
+
+MVC Architecture Pattern:
+define three interfaces:             IModel, IView, IController.
+define three implementation classes: Model,  View,  Controller.
+
+Encapsulate CoreData      classes into Model.
+Encapsulate UI            classes into View.
+Encapsulate BusinessLogic classes into Controller.
+
+Design Patterns describe how to organize components/classes of Core Data, UI, BusinessLogic.
+
+Idioms describe how to implement particular aspects of components/classes.
+
+Scale: Architecture Pattern > Design Pattern > Idioms
+
+13.
