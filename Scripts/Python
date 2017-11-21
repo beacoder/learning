@@ -106,6 +106,6 @@ composite Pattern used: View
 Design Patterns describe how to organize components/classes of Core Data, UI, BusinessLogic.
 Idioms describe how to implement particular aspects of components/classes.
 
-Scale/Level: Architecture Pattern > Design Pattern > Idioms
+Scope/Level: Architecture Pattern > Design Pattern > Idioms
 
 13.
