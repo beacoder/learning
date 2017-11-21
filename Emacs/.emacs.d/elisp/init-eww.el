@@ -41,7 +41,7 @@
 
 ;; For multi-line text boxes
 ;; S-TAB Jump to previous link on the page
-;; C-RET Subtmit form data
+;; C-RET Submit form data
 (bind-keys
  :map eww-textarea-map
  ("<backtab>"  . shr-previous-link)
