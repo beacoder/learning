@@ -74,7 +74,8 @@
       ;; Improve the contract of pages like Google results
       ;; http://emacs.stackexchange.com/q/2955/115
       ;; default = 40
-      shr-color-visible-luminance-min 80)
+      shr-color-visible-luminance-min 80
+      browse-url-browser-function 'eww-browse-url)
 
 
 ;; Auto-rename new eww buffers
@@ -179,8 +180,7 @@ redirection destination if it has one."
 (defun modi/eww-browse-url-of-file ()
   "Browse the current file using `eww'."
   (interactive)
-  (let ((browse-url-browser-function 'eww-browse-url))
-    (call-interactively #'browse-url-of-file)))
+  (call-interactively #'browse-url-of-file))
 
 
 
