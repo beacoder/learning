@@ -31,15 +31,21 @@
 ;; Make the binding for `revert-buffer' do `eww-reload' in eww-mode
 (define-key eww-mode-map [remap revert-buffer] #'eww-reload)
 
+;; For single line text fields
+;; S-TAB Jump to previous link on the page
+;; C-RET Subtmit form data
 (bind-keys
- :map eww-text-map                  ;For single line text fields
- ("<backtab>"  . shr-previous-link) ;S-TAB Jump to previous link on the page
- ("<C-return>" . eww-submit))       ;C-RET Subtmit form data
+ :map eww-text-map
+ ("<backtab>"  . shr-previous-link)
+ ("<C-return>" . eww-submit))
 
+;; For multi-line text boxes
+;; S-TAB Jump to previous link on the page
+;; C-RET Subtmit form data
 (bind-keys
- :map eww-textarea-map              ;For multi-line text boxes
- ("<backtab>"  . shr-previous-link) ;S-TAB Jump to previous link on the page
- ("<C-return>" . eww-submit))       ;C-RET Subtmit form data
+ :map eww-textarea-map
+ ("<backtab>"  . shr-previous-link)
+ ("<C-return>" . eww-submit))
 
 (bind-keys
  :map eww-checkbox-map
