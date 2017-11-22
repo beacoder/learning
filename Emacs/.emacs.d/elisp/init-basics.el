@@ -178,6 +178,9 @@ The argument has the same meaning as in `apropos'."
           (lambda ()
             (require 'view)
             (and buffer-read-only (setq view-exit-action 'kill-buffer-if-not-modified))))
+(after-load 'view
+  (define-key view-mode-map (kbd "p") 'View-scroll-line-backward)
+  (define-key view-mode-map (kbd "n") 'View-scroll-line-forward))
 
 ;;----------------------------------------------------------------------------
 ;; setting locales
