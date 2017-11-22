@@ -183,4 +183,15 @@ When `universal-argument' is called first, kill whole buffer (respects `narrow-t
   (message (buffer-file-name)))
 (global-set-key (kbd "C-c C-f") 'show-buffer-name)
 
+;;----------------------------------------------------------------------------
+;; kill line/buffer depending on buffer read-only or not
+;;----------------------------------------------------------------------------
+
+(global-set-key (kbd "C-k")
+                (lambda (&optional ARG)
+                  (interactive "P")
+                  (if buffer-read-only
+                      (smart/kill-buffer-if-not-modified (current-buffer))
+                    (kill-line ARG))))
+
 (provide 'init-productivity)
