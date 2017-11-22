@@ -113,13 +113,6 @@ See the `eww-search-prefix' variable for the search engine used."
   (eww-browse-url (concat (eww-current-url) "&btnI")))
 
 
-(defun modi/eww-im-feeling-lucky (search-term)
-  "Navigate to the first search result directly."
-  (interactive (list (smart/read-from-minibuffer "Google Search Term (I'm Feeling Lucky!)")))
-  (modi/eww--go-to-first-search-result search-term)
-  (eww-follow-link))
-
-
 (defun modi/eww-copy-url-dwim (&optional option)
   "Copy the URL or image under point to the kill ring.
 If OPTION is \\[universal-argument], or if there is no link under
