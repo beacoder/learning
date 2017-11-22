@@ -199,4 +199,11 @@ If there's a string at point, use it instead of prompt."
         (read-from-minibuffer final-prompt nil nil nil nil suggested)
       suggested)))
 
+;; steal from view.el.gz
+(defun smart/kill-buffer-if-not-modified (buf)
+  "Like `kill-buffer', but does nothing if the buffer is modified."
+  (let ((buf (get-buffer buf)))
+    (and buf (not (buffer-modified-p buf))
+         (kill-buffer buf))))
+
 (provide 'init-utils)
