@@ -101,7 +101,7 @@ See the `eww-search-prefix' variable for the search engine used."
 
 ;; I'm-feeling-lucky
 (defun eww-im-feeling-lucky (search-term)
-  "Navigate to the first search result directly."
+  "Google I'm feeling lucky."
   (interactive (list (smart/read-from-minibuffer "Google Search Term (I'm Feeling Lucky!)")))
   ;; Keep on burying the current buffer if it turns out to be an eww buffer.
   (while (string-match "^eww$\\|^eww<[[:digit:]]+>$" (buffer-name))
