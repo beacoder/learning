@@ -110,7 +110,7 @@ See the `eww-search-prefix' variable for the search engine used."
   (eww search-term)
   (sleep-for 0.1)
   ;; https://stackoverflow.com/questions/16877882/how-to-access-google-search-im-feeling-lucky-functionality-using-api
-  (eww-browse-url (concat (eww-current-url) "&btnI")))
+  (eww (concat (eww-current-url) "&btnI")))
 
 
 (defun modi/eww-copy-url-dwim (&optional option)
