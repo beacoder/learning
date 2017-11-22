@@ -19,10 +19,10 @@
 (require 'eww)
 (bind-keys
  :map eww-mode-map
- (":" . eww)                        ;Go to URL
+ (":" . eww)
  ("f" . eww-lnum-follow)
  ("F" . eww-lnum-universal)
- ("h" . eww-list-histories)         ;View history
+ ("h" . eww-list-histories)
  ("k" . eww-im-feeling-lucky)
  ("w" . modi/eww-search-words)
  ("c" . modi/eww-copy-url-dwim)
@@ -33,7 +33,7 @@
 
 ;; For single line text fields
 ;; S-TAB Jump to previous link on the page
-;; C-RET Subtmit form data
+;; C-RET Submit form data
 (bind-keys
  :map eww-text-map
  ("<backtab>"  . shr-previous-link)
