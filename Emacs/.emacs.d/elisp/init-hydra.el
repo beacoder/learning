@@ -83,7 +83,7 @@
   ("C" compile :exit t)
   ("e" modi/eww-browse-url-of-file :exit t)
   ("w" modi/eww-search-words :exit t)
-  ("k" modi/eww-im-feeling-lucky :exit t)
+  ("k" eww-im-feeling-lucky :exit t)
   ("r" recompile :exit t)
   ("q" nil))
 (global-set-key (kbd "C-x q")  'hydra-quickness/body)
