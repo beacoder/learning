@@ -23,7 +23,7 @@
  ("f" . eww-lnum-follow)
  ("F" . eww-lnum-universal)
  ("h" . eww-list-histories)         ;View history
- ("k" . modi/eww-im-feeling-lucky)
+ ("k" . eww-im-feeling-lucky)
  ("w" . modi/eww-search-words)
  ("c" . modi/eww-copy-url-dwim)
  ("/" . highlight-regexp))
@@ -99,36 +99,18 @@ See the `eww-search-prefix' variable for the search engine used."
   (eww search-word))
 
 
-(defun modi/eww--go-to-first-search-result (search-term)
-  "Navigate to the first search result in the *eww* buffer."
+;; I'm-feeling-lucky
+(defun eww-im-feeling-lucky (search-term)
+  "Navigate to the first search result directly."
+  (interactive (list (smart/read-from-minibuffer "Google Search Term (I'm Feeling Lucky!)")))
   ;; Keep on burying the current buffer if it turns out to be an eww buffer.
   (while (string-match "^eww$\\|^eww<[[:digit:]]+>$" (buffer-name))
     (bury-buffer))
   ;; Start a new eww search.
   (eww search-term)
-  (let* ((max-wait 5)                 ;Seconds
-         (search-repeat-interval 0.1) ;Seconds
-         (max-trials (floor max-wait search-repeat-interval))
-         (start-time (current-time))
-         (n 1))
-    ;; The while loop will keep on repeating every `search-repeat-interval'
-    ;; seconds till the return value of `eww-links-at-point' is non-nil.
-    (catch 'break
-      (while (<= n max-trials)
-        (goto-char (point-min))     ;Go to the top of the buffer
-        ;; Go to the start of results
-        ;; (re-search-forward "About.*results.*$" nil :noerror) ;; google.com
-        ;; (re-search-forward "約有.*項結果.*$" nil :noerror)      ;; google.com.hk
-        (re-search-forward "百度为您找到相关结果约.*个.*$" nil :noerror)
-        (shr-next-link)             ;Go to the first search result
-        (when (eww-links-at-point)
-          (throw 'break nil))
-        ;; Wait for a while before trying link check again.
-        (sleep-for search-repeat-interval)
-        ;; (message "eww search result trial # %d" n)
-        (setq n (1+ n))))
-    (message "Search for `%s' finished in %0.2f seconds."
-             search-term (float-time (time-since start-time)))))
+  (sleep-for 0.1)
+  ;; https://stackoverflow.com/questions/16877882/how-to-access-google-search-im-feeling-lucky-functionality-using-api
+  (eww-browse-url (concat (eww-current-url) "&btnI")))
 
 
 (defun modi/eww-im-feeling-lucky (search-term)
