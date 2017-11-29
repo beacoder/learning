@@ -32,6 +32,11 @@
 (after-load 'ibuffer
   (require 'ibuffer-vc))
 
+;; Don't block these key-bindings
+(after-load 'ibuffer
+  (define-key ibuffer-mode-map (kbd "M-s") nil)
+  (define-key ibuffer-mode-map (kbd "M-r") nil))
+
 ;; Modify the default ibuffer-formats (toggle with `)
 (setq ibuffer-formats
       '((mark modified read-only vc-status-mini " "
