@@ -34,8 +34,10 @@
 
 ;; Don't block these key-bindings
 (after-load 'ibuffer
-  (define-key ibuffer-mode-map (kbd "M-s") nil)
-  (define-key ibuffer-mode-map (kbd "M-r") nil))
+  (bind-keys
+   :map ibuffer-mode-map
+   ("M-s" . nil)
+   ("M-r" . nil)))
 
 ;; Modify the default ibuffer-formats (toggle with `)
 (setq ibuffer-formats
