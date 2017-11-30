@@ -23,7 +23,6 @@
   (after-load 'python
     (add-hook 'python-mode-hook 'anaconda-mode)
     (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
-
     (bind-keys
      :map python-mode-map
      ("C-c c" . python-skeleton-class)
