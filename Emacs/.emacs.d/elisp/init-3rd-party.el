@@ -170,7 +170,7 @@
 (require-package 'plantuml-mode)
 
 
-;;; pyim - "Chinese Pinyin Input Method"
+;;; Pyim - "Chinese Pinyin Input Method"
 ;; "C-\" => toggle-input-method
 (require-package 'pyim)
 (require 'pyim)
