@@ -71,7 +71,7 @@
 [_a_] Swiper-at-point [_s_] Counsel-git-grep   [_g_] Counsel-git     [_l_] Counsel-locate
 [_f_] Flymake-mode    [_u_] Update-GTAGS       [_c_] Mode-Compile    [_C_] Compile
 [_e_] Eww-Open-File   [_w_] Google-Search-Word [_k_] Google-Lucky    [_r_] Recompile
-[_q_] Quit
+[_p_] Pyim            [_q_] Quit
 "
   ("a" smart/swiper-at-point :exit t)
   ("s" counsel-git-grep :exit t)
@@ -85,6 +85,7 @@
   ("w" modi/eww-search-words :exit t)
   ("k" eww-im-feeling-lucky :exit t)
   ("r" recompile :exit t)
+  ("p" hydra-pyim-start :exit t)
   ("q" nil))
 (global-set-key (kbd "C-x q")  'hydra-quickness/body)
 
