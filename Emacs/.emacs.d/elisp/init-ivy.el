@@ -35,6 +35,9 @@
   (add-hook 'after-init-hook (lambda () (ivy-historian-mode t))))
 
 (when (maybe-require-package 'counsel)
+  (after-load 'counsel
+    ;; don't override pop-to-mark-command
+    (define-key counsel-mode-map [remap pop-to-mark-command] nil))
   (setq-default counsel-mode-override-describe-bindings t)
   (when (maybe-require-package 'diminish)
     (after-load 'counsel
