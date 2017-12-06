@@ -62,7 +62,7 @@ The argument has the same meaning as in `apropos'."
 
 ;; enable recentf-mode
 (require 'recentf)
-(recentf-mode t)
+(add-hook 'after-init-hook 'recentf-mode)
 (setq recentf-max-menu-items  100
       recentf-max-saved-items 1000
       recentf-exclude '(
@@ -91,17 +91,15 @@ The argument has the same meaning as in `apropos'."
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-mode))
 
 ;; enable ibuffer-mode
-(when (fboundp 'ibuffer-mode) (ibuffer-mode))
+(when (fboundp 'ibuffer-mode)
+  (add-hook 'after-init-hook 'ibuffer-mode))
 (setq ibuffer-filter-group-name-face 'font-lock-doc-face)
 
 ;; enable electric-pair-mode
-(when (fboundp 'electric-pair-mode) (electric-pair-mode t))
-
-;; highlight matching pairs of parentheses
 (when (fboundp 'electric-pair-mode)
-    (progn
-      (show-paren-mode 1)
-      (setq show-paren-delay 0)))
+  (add-hook 'after-init-hook 'electric-pair-mode)
+  (add-hook 'after-init-hook 'show-paren-mode)
+  (setq show-paren-delay 0))
 
 ;; highlight the active region
 (add-hook 'after-init-hook 'transient-mark-mode)
@@ -116,22 +114,22 @@ The argument has the same meaning as in `apropos'."
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; enable the delete-selection-mode
-(delete-selection-mode t)
+(add-hook 'after-init-hook 'delete-selection-mode)
 
 ;; enable global high light
-(global-font-lock-mode t)
+(add-hook 'after-init-hook 'global-font-lock-mode)
 
 ;; set text-mode as default major mode
 (setq default-major-mode 'text-mode)
 
 ;; enable emacs to open image file
-(auto-image-file-mode)
+(add-hook 'after-init-hook 'auto-image-file-mode)
 
 ;; enable line-number-mode
-(line-number-mode t)
+(add-hook 'after-init-hook 'line-number-mode)
 
 ;; enable column-number-mode
-(column-number-mode t)
+(add-hook 'after-init-hook 'column-number-mode)
 
 ;; don't show line-number in left margin
 (when (fboundp 'global-linum-mode) (global-linum-mode -1))
@@ -161,8 +159,7 @@ The argument has the same meaning as in `apropos'."
 ;;               (delete-trailing-whitespace))))
 
 ;; disable formatting in text-mode
-(add-hook 'text-mode-hook
-          (lambda() (electric-indent-mode 0)))
+(add-hook 'text-mode-hook (lambda() (electric-indent-mode 0)))
 
 ;; display-occurence after occur-preve/next;
 ;; M-p => occur-preve, M-n => occur-next
