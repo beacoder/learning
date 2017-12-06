@@ -186,6 +186,13 @@
   (pyim-start "pyim"))
 
 
+;;; Beacon — Never lose your cursor again
+(when (maybe-require-package 'beacon)
+  (setq-default beacon-lighter "")
+  (setq-default beacon-size 5)
+  (add-hook 'after-init-hook 'beacon-mode))
+
+
 ;;; other setting
 (require 'init-hydra)
 (require 'init-git)
