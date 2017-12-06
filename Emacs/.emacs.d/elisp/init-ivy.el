@@ -9,6 +9,7 @@
                   ivy-virtual-abbreviate 'fullpath
                   ivy-count-format ""
                   projectile-completion-system 'ivy
+                  ivy-magic-tilde nil
                   ivy-initial-inputs-alist
                   '((man . "^")
                     (woman . "^")))
