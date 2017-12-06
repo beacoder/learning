@@ -17,8 +17,7 @@
     (diminish 'company-mode "CMP")
     ;; (define-key company-mode-map (kbd "M-/") 'company-complete)
     ;; (define-key company-active-map (kbd "M-/") 'company-select-next)
-    (setq-default company-backends '((company-capf company-dabbrev-code) company-dabbrev)
-                  company-dabbrev-other-buffers 'all
+    (setq-default company-dabbrev-other-buffers 'all
                   company-tooltip-align-annotations t))
   (global-set-key (kbd "\C-c TAB") 'company-complete)
   ;; (when (maybe-require-package 'company-quickhelp)
