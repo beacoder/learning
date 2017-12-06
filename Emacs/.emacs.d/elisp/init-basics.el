@@ -86,7 +86,7 @@ The argument has the same meaning as in `apropos'."
 ;; (when (fboundp 'iswitchb-mode) (iswitchb-mode t))
 
 ;; auto-refresh all buffers when files have changed on disk.
-(global-auto-revert-mode t)
+(add-hook 'after-init-hook 'global-auto-revert-mode)
 ;; I use this mode for log files (Emacs’s version of tail -f) to easily search through the logs.
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-mode))
 
@@ -104,7 +104,7 @@ The argument has the same meaning as in `apropos'."
       (setq show-paren-delay 0)))
 
 ;; highlight the active region
-(transient-mark-mode t)
+(add-hook 'after-init-hook 'transient-mark-mode)
 
 ;; hide menu bar
 (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
