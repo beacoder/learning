@@ -42,7 +42,8 @@
 (require 'session)
 
 ;; (setq session-save-file (expand-file-name "~/.emacs.d/.session"))
-(setq session-name-disable-regexp "\\(?:\\`'/tmp\\|\\.git/[A-Z_]+\\'\\)")
+(setq session-name-disable-regexp "\\(?:\\`'/tmp\\|\\.git/[A-Z_]+\\'\\)"
+      session-save-file-coding-system 'utf-8)
 (add-hook 'after-init-hook 'session-initialize)
 
 ;; buffers don't need to be saved.
