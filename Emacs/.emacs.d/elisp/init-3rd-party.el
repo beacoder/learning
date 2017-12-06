@@ -35,7 +35,9 @@
 ;;; undo-tree setting
 ;; "C-x u" => open the undo-tree-visualizer
 (require-package 'undo-tree)
-(global-undo-tree-mode)
+(add-hook 'after-init-hook 'global-undo-tree-mode)
+(after-load 'undo-tree
+  (diminish 'undo-tree-mode))
 ;; undo-buffer limit -> 100 MB                                                       |
 (setq undo-outer-limit (* 100 (expt 1024 2)))
 
