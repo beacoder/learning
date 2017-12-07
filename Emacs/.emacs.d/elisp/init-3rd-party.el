@@ -189,9 +189,9 @@
 ;;; Beacon — Never lose your cursor again
 (when (maybe-require-package 'beacon)
   (setq-default beacon-lighter "")
-  (setq-default beacon-size 5)
+  (setq-default beacon-size 50)
   (setq-default beacon-color "#666600")
-  (setq-default beacon-blink-duration 1)
+  (setq-default beacon-blink-duration 0.5)
   (add-hook 'after-init-hook 'beacon-mode))
 
 
