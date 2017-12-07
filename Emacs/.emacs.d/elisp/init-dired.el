@@ -46,6 +46,8 @@
   (require 'dired+)
   (require 'dired-sort)
   (require 'dired-subtree)
+  ;; the background color is awful, disable it.
+  (setq dired-subtree-use-backgrounds nil)
   (when (fboundp 'global-dired-hide-details-mode)
     (global-dired-hide-details-mode -1))
   (setq dired-recursive-deletes 'top)
