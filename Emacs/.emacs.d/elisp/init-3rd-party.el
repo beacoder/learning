@@ -190,6 +190,8 @@
 (when (maybe-require-package 'beacon)
   (setq-default beacon-lighter "")
   (setq-default beacon-size 5)
+  (setq-default beacon-color "#666600")
+  (setq-default beacon-blink-duration 1)
   (add-hook 'after-init-hook 'beacon-mode))
 
 
