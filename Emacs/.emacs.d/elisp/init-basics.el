@@ -132,8 +132,8 @@ The argument has the same meaning as in `apropos'."
 (add-hook 'after-init-hook 'column-number-mode)
 
 ;; display Lambda as λ
-(when (fboundp 'global-prettify-symbols-mode)
-  (add-hook 'after-init-hook 'global-prettify-symbols-mode))
+(when (fboundp 'prettify-symbols-mode)
+  (add-hook 'emacs-lisp-mode-hook 'prettify-symbols-mode))
 
 ;; don't show line-number in left margin
 (when (fboundp 'global-linum-mode) (global-linum-mode -1))
