@@ -195,6 +195,11 @@
   (add-hook 'after-init-hook 'beacon-mode))
 
 
+;;; Expand region
+(require-package 'expand-region)
+(global-set-key (kbd "M-8") 'er/expand-region)
+
+
 ;;; other setting
 (require 'init-hydra)
 (require 'init-git)
