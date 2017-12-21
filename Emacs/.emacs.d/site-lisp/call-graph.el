@@ -1,3 +1,9 @@
+;;; temporary place it here
+;; add function gradually
+
+;; to-do
+;; make it work first
+
 (defun get-function-caller (function-reference)
   (let* ((list (split-string function-reference ":"))
          (file (nth 0 list))
