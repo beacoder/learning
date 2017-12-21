@@ -235,4 +235,16 @@ Key bindings:
 	(beginning-of-buffer)
 	(search-forward "Description:")))
 
+
+;; @see https://stackoverflow.com/questions/7299893/getting-rid-of-buffer-has-running-process-confirmation-when-the-process-is-a-f
+;; Stop asking me all the time when killing the buffer
+(defadvice flymake-start-syntax-check-process (after
+                                               cheeso-advice-flymake-start-syntax-check-1
+                                               (cmd args dir)
+                                               activate compile)
+  ;; set flag to allow exit without query on any
+  ;;active flymake processes
+  (set-process-query-on-exit-flag ad-return-value nil))
+
+
 (provide 'init-cc-mode)
