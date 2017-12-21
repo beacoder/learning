@@ -37,6 +37,18 @@
   (goto-address-mode))
 (add-hook 'term-mode-hook 'my-term-hook)
 
+
+;; @see https://stackoverflow.com/questions/5819719/emacs-shell-command-output-not-showing-ansi-colors-but-the-code
+;; correctly handle colors in shell output
+(require 'ansi-color)
+(defadvice display-message-or-buffer (before ansi-color activate)
+  "Process ANSI color codes in shell output."
+  (let ((buf (ad-get-arg 0)))
+    (and (bufferp buf)
+         (string= (buffer-name buf) "*Shell Command Output*")
+         (with-current-buffer buf
+           (ansi-color-apply-on-region (point-min) (point-max))))))
+
 (provide 'init-shell)
 
 ;; Local Variables:
