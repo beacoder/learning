@@ -65,6 +65,8 @@ nbutlast: remove last n elements from the list and return the resultant list.
 nth:  return the nth item in the list.
 butlast:  return list without the last n elements.
 
+@see https://www.emacswiki.org/emacs/ListModification
+
 8.alist & hash table
 alist:  when a list has the form ((key1 . value1) (key2 . value2) (key3 . value3)), 
         it is called an association list, or alist for short, 
