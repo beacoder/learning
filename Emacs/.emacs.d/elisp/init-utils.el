@@ -208,7 +208,7 @@ If there's a string at point, use it instead of prompt."
 
 
 ;;; simplicistic queue implementation
-;;; @see http://ix.io/DoE
+;;; thanks to wasamasa, @see http://ix.io/DoE
 (defun list-to-queue (list)
   (cons list (if (consp list) (last list) '())))
 
