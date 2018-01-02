@@ -12,7 +12,6 @@
   (setq package-user-dir versioned-package-dir))
 
 
-
 ;;; Standard package repositories
 
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -31,7 +30,6 @@
 ;; We include the org repository for completeness, but don't normally
 ;; use it.
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-
 
 
 ;;; On-demand installation of packages
@@ -69,7 +67,6 @@ locate PACKAGE."
 
 (setq package-enable-at-startup nil)
 (package-initialize)
-
 
 
 (require-package 'fullframe)
