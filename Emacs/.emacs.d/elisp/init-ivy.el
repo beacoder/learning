@@ -9,6 +9,7 @@
                   ivy-virtual-abbreviate 'fullpath
                   ivy-count-format ""
                   projectile-completion-system 'ivy
+                  ivy-dynamic-exhibit-delay-ms 150
                   ivy-magic-tilde nil
                   ivy-initial-inputs-alist
                   '((man . "^")
