@@ -61,4 +61,8 @@
       (swiper sym))))
 
 
+(when (maybe-require-package 'ivy-xref)
+  (setq xref-show-xrefs-function 'ivy-xref-show-xrefs))
+
+
 (provide 'init-ivy)
