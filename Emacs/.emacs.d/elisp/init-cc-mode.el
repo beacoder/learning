@@ -73,6 +73,15 @@
   (add-hook 'c-mode-common-hook 'google-set-c-style)
   (add-hook 'c-mode-common-hook 'google-make-newline-indent))
 
+
+;; company-c-headers
+(when (is-modern-emacs)
+  (when (maybe-require-package 'company-c-headers)
+    (after-load 'company
+      (add-hook 'c-mode-common-hook
+                (λ () (sanityinc/local-push-company-backend 'company-c-headers))))))
+
+
 ;; flymake
 (when (is-modern-emacs)
   (progn
