@@ -52,4 +52,9 @@
 (add-hook 'css-mode-hook 'turn-on-css-eldoc)
 
 
+;;; company-css
+(after-load 'company
+  (add-hook 'nxml-mode-hook (λ () (sanityinc/local-push-company-backend 'company-css))))
+
+
 (provide 'init-css)
