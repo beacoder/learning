@@ -54,4 +54,9 @@ indentation rules."
           end (point-max)))
   (shell-command-on-region beg end "tidy -xml -q -i" (current-buffer) t "*tidy-errors*" t))
 
+
+;; company-nxml
+(after-load 'company
+  (add-hook 'nxml-mode-hook (λ () (sanityinc/local-push-company-backend 'company-nxml))))
+
 (provide 'init-nxml)
