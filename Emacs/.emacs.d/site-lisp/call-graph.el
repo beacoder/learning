@@ -37,6 +37,8 @@
     (message (get-function-caller line))
     ))
 
+;; @see https://pastebin.com/wguqsb3n
+;; use this algorithm to build the call-tree.
 
 (defun test-it()
   (interactive)
