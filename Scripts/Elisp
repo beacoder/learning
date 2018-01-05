@@ -143,6 +143,7 @@ exp:   (member major-mode  ggtags-exclude-modes)
 14.3 setf works directly with places and can be used to mutate variables.
      Macros may be used to overcome limitations of functions.
 14.4 Not that some built-in functions in CL can return places.
-     e.g. car, cdr, aref and also all object accessors. See this pages for some examples.
+     e.g. car, cdr, aref and also all object accessors.
+     See this http://www.n-a-n-o.com/lisp/cmucl-tutorials/LISP-tutorial-16.html for some examples.
      
 15.
