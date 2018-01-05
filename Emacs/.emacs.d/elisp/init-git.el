@@ -46,10 +46,6 @@
     (add-hook 'magit-mode-hook (lambda () (local-unset-key [(meta h)])))))
 
 
-;; Convenient binding for vc-git-grep
-(global-set-key (kbd "C-x v f") 'vc-git-grep)
-
-
 ;; Though see also vc-annotate's "n" & "p" bindings
 (when (maybe-require-package 'git-messenger)
   (setq git-messenger:show-detail t)
