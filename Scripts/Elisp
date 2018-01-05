@@ -135,3 +135,14 @@ exp:
 13.member, memq, memql
 description: check if an element is a member of LIST.  Comparison done with `equal', `eq', `eql' respectively.
 exp:   (member major-mode  ggtags-exclude-modes)
+
+14.pass-by-value
+
+14.1 Common Lisp, like most Lisps, allows only to pass variables to function only by value.
+14.2 Lisp has concept of places - locations in memory.
+14.3 setf works directly with places and can be used to mutate variables.
+     Macros may be used to overcome limitations of functions.
+14.4 Not that some built-in functions in CL can return places.
+     e.g. car, cdr, aref and also all object accessors. See this pages for some examples.
+     
+15.
