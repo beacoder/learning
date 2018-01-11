@@ -84,42 +84,41 @@
 
 ;; flymake
 (when (is-modern-emacs)
-  (progn
-    (defun my-flymake-google-init ()
-      "Setup flymake-google-cpplint"
-      (require-package 'flymake-google-cpplint)
-      (custom-set-variables
-       ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
-       ;; dos2unix "~/.emacs.d/cpplint.py" convert from dos to unix text format
-       ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
-       '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py")
-       '(flymake-googlelint-verbose "3")
-       '(flymake-googlelint-filter "-whitespace,+whitespace/braces")
-       '(flymake-googlelint-root "project/src")
-       '(flymake-googlelint-linelength "120"))
-      (flymake-google-cpplint-load))
+  (defun my-flymake-google-init ()
+    "Setup flymake-google-cpplint"
+    (require-package 'flymake-google-cpplint)
+    (custom-set-variables
+     ;; use cpplint.py to ensure that C++ code conforms to Google's coding style guides
+     ;; dos2unix "~/.emacs.d/cpplint.py" convert from dos to unix text format
+     ;; chmod 775 "~/.emacs.d/cpplint.py" to make cpplint.py executable
+     '(flymake-google-cpplint-command "~/.emacs.d/cpplint.py")
+     '(flymake-googlelint-verbose "3")
+     '(flymake-googlelint-filter "-whitespace,+whitespace/braces")
+     '(flymake-googlelint-root "project/src")
+     '(flymake-googlelint-linelength "120"))
+    (flymake-google-cpplint-load))
 
-    ;; flymake-error-navigation
-    (defvar my-flymake-minor-mode-map
-      (let ((map (make-sparse-keymap)))
-        (define-key map "\M-p" 'flymake-goto-prev-error)
-        (define-key map "\M-n" 'flymake-goto-next-error)
-        map)
-      "Keymap for my flymake minor mode.")
+  ;; flymake-error-navigation
+  (defvar my-flymake-minor-mode-map
+    (let ((map (make-sparse-keymap)))
+      (define-key map "\M-p" 'flymake-goto-prev-error)
+      (define-key map "\M-n" 'flymake-goto-next-error)
+      map)
+    "Keymap for my flymake minor mode.")
 
-    (define-minor-mode my-flymake-minor-mode
-      "Simple minor mode which adds some key bindings for moving to the next and previous errors.
+  (define-minor-mode my-flymake-minor-mode
+    "Simple minor mode which adds some key bindings for moving to the next and previous errors.
 Key bindings:
 \\{my-flymake-minor-mode-map}"
-      nil
-      nil
-      :keymap my-flymake-minor-mode-map)
+    nil
+    nil
+    :keymap my-flymake-minor-mode-map)
 
-    ;; Enable this keybinding (my-flymake-minor-mode) by default
-    ;; Added by Hartmut 2011-07-05
-    (add-hook 'c-mode-common-hook 'my-flymake-minor-mode)
-    (add-hook 'c-mode-common-hook 'flymake-mode-on)
-    (add-hook 'c-mode-common-hook 'my-flymake-google-init)))
+  ;; Enable this keybinding (my-flymake-minor-mode) by default
+  ;; Added by Hartmut 2011-07-05
+  (add-hook 'c-mode-common-hook 'my-flymake-minor-mode)
+  (add-hook 'c-mode-common-hook 'flymake-mode-on)
+  (add-hook 'c-mode-common-hook 'my-flymake-google-init))
 
 ;;----------------------------------------------------------------------------
 ;; generate the template c++ header and source files
