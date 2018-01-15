@@ -1,5 +1,5 @@
 ;;----------------------------------------------------------------------------
-;; third-party setting
+;; libraries with little to no configuration stay here
 ;;----------------------------------------------------------------------------
 
 ;; bind-key
@@ -198,6 +198,12 @@
 ;;; Expand region
 (require-package 'expand-region)
 (global-set-key (kbd "M-8") 'er/expand-region)
+
+
+;;; Yaml mode
+(when (maybe-require-package 'yaml-mode)
+  (add-auto-mode 'yaml-mode "\\.yml\\.erb\\'")
+  (add-hook 'yaml-mode-hook 'goto-address-prog-mode))
 
 
 ;;; other setting
