@@ -150,7 +150,7 @@
 ;;; Load configs for specific features and modes
 (require 'init-register)
 (require 'init-hippie-expand)
-(require 'init-cc-mode)
+(require 'init-cc)
 (require 'tempo-c-cpp)
 (require 'init-alias)
 (when (= emacs-major-version 21)
@@ -173,7 +173,7 @@
   (require 'init-compile))
 (require 'init-basics)
 (require 'init-sessions)
-(require 'init-cperl-mode)
+(require 'init-cperl)
 (require 'init-productivity)
 
 (provide 'init)
