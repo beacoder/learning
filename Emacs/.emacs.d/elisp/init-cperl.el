@@ -8,4 +8,4 @@
        (setcdr pair 'cperl-mode)))
  (append auto-mode-alist interpreter-mode-alist))
 
-(provide 'init-cperl-mode)
+(provide 'init-cperl)
