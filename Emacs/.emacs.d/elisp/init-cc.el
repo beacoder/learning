@@ -217,4 +217,4 @@ Key bindings:
   (set-process-query-on-exit-flag ad-return-value nil))
 
 
-(provide 'init-cc-mode)
+(provide 'init-cc)
