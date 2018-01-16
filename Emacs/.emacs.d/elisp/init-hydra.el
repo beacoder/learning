@@ -77,7 +77,7 @@
   ("s" counsel-git-grep :exit t)
   ("g" counsel-git :exit t)
   ("l" counsel-locate :exit t)
-  ("f" (λ () (interactive) (when (fboundp 'my-flymake-toggle) (my-flymake-toggle)))
+  ("f" (lambda () (interactive) (when (fboundp 'my-flymake-toggle) (my-flymake-toggle)))
        :exit t)
   ("u" ggtags-update-tags :exit t)
   ("c" mode-compile :exit t)
