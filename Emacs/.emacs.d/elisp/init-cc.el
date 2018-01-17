@@ -78,11 +78,11 @@
   (when (maybe-require-package 'company-c-headers)
     (after-load 'company
       (add-hook 'c-mode-common-hook
-                (λ () (sanityinc/local-push-company-backend 'company-c-headers)))))
+                (lambda () (sanityinc/local-push-company-backend 'company-c-headers)))))
 
   ;; flycheck
   (add-hook 'c++-mode-hook
-            (λ () (setq flycheck-gcc-include-path
+            (lambda () (setq flycheck-gcc-include-path
                         '("."
                           "../include/*"
                           "../src/*"
