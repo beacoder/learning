@@ -12,12 +12,10 @@
   (setq flycheck-display-errors-function #'flycheck-display-error-messages-unless-error-list)
 
   ;; Enable C++11 support for gcc
-  (add-hook 'c++-mode-hook (λ () (setq flycheck-gcc-language-standard "c++11")))
+  (add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++11")))
 
   ;; Disable clang check, gcc check works better
-  ;; (setq-default flycheck-disabled-checkers
-  ;;               (append flycheck-disabled-checkers
-  ;;                       '(c/c++-clang)))
+  (setq-default flycheck-disabled-checkers '(c/c++-clang))
 
   (when (maybe-require-package 'flycheck-color-mode-line)
     (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)))
