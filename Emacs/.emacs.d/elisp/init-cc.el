@@ -67,19 +67,29 @@
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 (add-hook 'c-mode-common-hook (lambda () (local-set-key [(tab)] 'fledermaus-maybe-tab)))
 
-;; google-c-style
+
 (when (is-modern-emacs)
+  ;; google-c-style
   (require-package 'google-c-style)
   (add-hook 'c-mode-common-hook 'google-set-c-style)
-  (add-hook 'c-mode-common-hook 'google-make-newline-indent))
+  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
-
-;; company-c-headers
-(when (is-modern-emacs)
+  ;; company-c-headers
   (when (maybe-require-package 'company-c-headers)
     (after-load 'company
       (add-hook 'c-mode-common-hook
-                (λ () (sanityinc/local-push-company-backend 'company-c-headers))))))
+                (λ () (sanityinc/local-push-company-backend 'company-c-headers)))))
+
+  ;; flycheck
+  (add-hook 'c++-mode-hook
+            (λ () (setq flycheck-gcc-include-path
+                        '("."
+                          "../include/*"
+                          "../src/*"
+                          "/usr/include"
+                          "/usr/local/include/*"
+                          "/usr/include/c++/4.8.5/*"
+                          "/usr/include/boost/*")))))
 
 
 ;; @see https://stackoverflow.com/questions/7299893/getting-rid-of-buffer-has-running-process-confirmation-when-the-process-is-a-f
