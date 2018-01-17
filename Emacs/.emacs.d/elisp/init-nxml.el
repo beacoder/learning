@@ -57,6 +57,6 @@ indentation rules."
 
 ;; company-nxml
 (after-load 'company
-  (add-hook 'nxml-mode-hook (λ () (sanityinc/local-push-company-backend 'company-nxml))))
+  (add-hook 'nxml-mode-hook (lambda () (sanityinc/local-push-company-backend 'company-nxml))))
 
 (provide 'init-nxml)

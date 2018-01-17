@@ -220,6 +220,5 @@
 (require 'init-ivy)
 (require 'init-eww)
 (require-package 'buffer-move)
-(require-package 'flymake-cursor)
 
 (provide 'init-3rd-party)
