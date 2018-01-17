@@ -219,6 +219,7 @@
 (require 'init-org)
 (require 'init-ivy)
 (require 'init-eww)
+(require 'init-flycheck)
 (require-package 'buffer-move)
 
 (provide 'init-3rd-party)
