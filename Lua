@@ -1,0 +1,206 @@
+learning Lua
+
+1.error pcall/xpcall
+error:  explicitly generate an error.
+pcall:  use pcall/xpcall to run function in protected mode to catch error in it.
+
+2.block
+description:  a block is a list of statements, which are executed sequentially,
+              blcok ends with an "end".
+exp:          do ... end
+
+3.control structures
+while:        while ... do ... end
+repeat:       repeat do ... end until ...
+if:           if ... then do ... end elseif ... then do ... end [else do ... end] end
+numeric for:  for variable = beg, end [, step] do ... end
+generic for:  for namelist in explist do ... end 
+
+4.scope of variables
+Local:  variables preceding with "local" is Local varibales.
+Global: variables other than local is Global variables.
+
+5.basic operators
+"..": used to concatenate string or numbers.
+exp:  print("Hello" .. " " .. "World");
+
+"...": represent multiple expressions, 
+       can only be used when directly inside a vararg function.
+exp:   function func(a, b, ...) end;      
+
+"#": used to get length of string or table.
+exp: t = {1,2,3} print(#t);  => 3
+
+6.basic function
+assert:       issues an error when the value of its argument is nil or false.
+require:      loads the given module.
+setmetatable: sets the metatable for the given table. 
+getmetatable: gets the metatable for the given table. 
+type:         returns the type of its only argument, coded as a string.
+_G:           a global table that holds the global environment(functions and tables).
+pairs/ipairs/next: used to traverse all fields of a table.
+collectgarbage:    performs a garbage-collection.
+
+7.string manipulation
+description:  the string library provides all its functions inside the table string.
+
+string.find:  looks for the first match of pattern in the string.
+string.format:  format a string.
+string.sub: returns the substring of string.
+string.gsub:  global string replacement.
+
+8.table manipulation
+description:  this library provides all its functions inside the table 'table'.
+ 
+table.concat: returns a concatenated string of all string or numbers in the table.
+table.insert: insert element into the table.
+table.remove: remove element from the table.
+table.sort:   sorts table elements in a given order.
+
+9.mathematical functions
+description:  this library provides all its functions inside the table math.
+
+math.pow, math.log, math.max, math.min ......
+
+10.input and output facilities
+description:  this library is implemented through table io.
+
+simple mode:  operates on a default file or stream.
+io.input, io.output, io.read, io.write, io.lines, io.flush, io.close
+
+io.read("*all")     => read the whole file.
+io.read("*line")    => read the next line.
+io.read("*number")  => read a number.
+io.read("<num>")    => read a string no more than <num> characters.
+
+advanced mode:  operates on a specific file.
+file = assert(io.open("fileName", "mode"));
+file:read, file:write, file:flush, file:seek, file:close
+
+note: ':' in "file:read" means pass "file" to the function "read" as the first parameter.
+
+11.operating system facilities
+description:  this library is implemented through table os.
+
+os.clock, os.date, os.execute, os.exit, os.getenv, os.setenv
+os.move, os.rename, os.tmpname, os.setlocale
+
+12.bitwise operations
+description:  this library provides all its functions inside the table bit32.
+
+bit32.band, bit32.bor, bit32.bnot, bit32.xor ......
+
+13.thread operations
+description:  contains thread related operations and come inside the table coroutine.
+
+coroutine.resume, coroutine.yield, coroutine.status 
+coroutine.wrap, coroutine.create, coroutine.running
+
+14.comments
+"--"  => comments one line
+"--[[ some comment here ]]" => comments a block
+
+15.metatable
+description:  every value in Lua can have a metatable, this metatable is an ordinary Lua table
+              that defines the behavior of the original value under certain special operations.
+              you can change several aspects of the behavior of operations 
+              over a value by setting specific fields in its metatable,
+              pretty like "overwrite function" in C++ I think.
+              
+exp:
+do
+local x = { value = 5 }
+local mt = { __add = function (left, right)  -- "add" event handler
+                     return { value = left.value + right.value }
+                     end }
+setmetatable(x, mt)  -- use "mt" as the metatable for "x"
+local y = x + x
+print(y.value) => 10
+end
+              
+common metatable field:  
+__index, __newindex, __len, __tostring, __gc, __concat, 
+__eq, __lt, __call, __mode ......
+              
+16.lua closure
+description:  even outer function goes out of scope, 
+              the inside clousre still have access to the "upvalue",
+              cause the "upvalue" is captured as a member variable of the closure.
+implementation: anonymous function which uses at least one upvalue.
+
+--[[ 
+     lua closure is pretty like "anonymous functor" returned by boost::bind() in C++ I think,
+     except lua closure support "upvalue" while boost::bind() doesn't.
+     however C++11 will support closure by providing Lambda Functions,
+     "upvalue" in lua clousre is like "variable capture" in C++11 Lambda Funtion.
+     ]]
+     
+-- script starts here
+
+function outer()
+local number = 0;
+return function ()
+         number = number + 1;
+         print("Number is " .. number);
+       end;
+end;
+
+func = outer();
+func();         =>  Number is 1
+func();         =>  Number is 2
+func();         =>  Number is 3
+
+-- script ends here
+
+17.table structure
+description:  tables are the only "container" type in Lua. 
+              they are associative arrays, 
+              which means they store a set of key/value pairs, 
+              where you can store a value under some key, 
+              and later retrieve the value using that key.
+             
+exp:
+-- empty table
+t = {}
+
+-- non-empty table
+t = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
+t = { k1=1, k2=2, k3=3 }
+t = { func = function () print ("Hello World") end }
+
+18.multiple assignments && results
+assignments:  lua allows multiple assignments.
+exp:
+-- define five tables
+t,a,b,l,e = {}, {}, {}, {}, {};
+
+results:      both function calls and vararg expressions can result in multiple values.
+exp:
+-- print out all contents in the table io.
+for k, v in pairs(io) do print(k, v) end
+              
+-- print out global environment
+for k, v in pairs(_G) do print(k, v) end
+
+19.load module
+require: used to load module.
+exp:     
+local m = require(mod)
+m.fun()
+
+20.userdata structure
+description:  userdata values are objects foreign to Lua, such as objects implemented in C.
+              you cannot do anything with a userdata value in Lua other than pass it around, 
+              it's only useful for giving to functions exposed by the same C library that made the userdata.
+              but using metamethods it's possible to make userdata work with operators and act similar to tables.
+              
+21.communication protocol between Lua and C
+protocol:     a C function receives its arguments from Lua in its stack in direct order.
+              when the function starts, lua_gettop(L) returns the number of arguments received by the function. 
+              the first argument is at index 1 and its last argument(index -1) is at index lua_gettop(L). 
+              to return values to Lua, a C function just pushes them onto the stack, in direct order 
+              (the first result is pushed first), and returns the number of results. 
+              any other value in the stack below the results will be properly discarded by Lua. 
+              like a Lua function, a C function called by Lua can also return many results.
+
+22. 
