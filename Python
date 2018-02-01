@@ -23,12 +23,12 @@ while True:
   except StopIteration:
     break
   do_something_to(i)
-         
+
 2.List comprehension
 [expr for ... in ...]
 [expr for ... in ... if cond_expr]
 
-e.g: calculate the length of the maximum line of one file. 
+e.g: calculate the length of the maximum line of one file.
 return max([len(x.strip()) for x in open('/etc/motd')])
 
 3.Generator expression
@@ -38,7 +38,7 @@ return max([len(x.strip()) for x in open('/etc/motd')])
 4.With statement
 with context_expr [as var]:
   ...
-  
+
 5.Range/Xrange
 range(end)
 range(start, end)
@@ -60,7 +60,7 @@ def generator()
   yield 1
   yield 2
   pass
-  
+
 8.Static function and Class function
 @staticmethod
 def f():

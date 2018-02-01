@@ -1,0 +1,58 @@
+learning Ruby
+
+0.Philosophy
+Ruby follows the principle of "least astonishment", and offers myriad ways to do the same thing.
+
+1.Symbol
+Symbols are simply constant names that you don’t have to predeclare and that are guaranteed to be unique.
+A symbol literal starts with a colon and is normally followed by some kind of name: walk(:north), look(:east)
+
+e.g:
+inst_section = {
+  :cello  => 'string',
+  :violin => 'string'
+}
+
+inst_section = {
+  cello:  'string',
+  violin: 'string'
+}
+
+inst_section[:cello] # => "string"
+
+2.Blocks
+Code blocks are just chunks of code between braces or between do and end.
+All you can do with a block is associate it with a call to a method.
+The method can then invoke an associated block one or more times using the Ruby yield statement.
+
+e.g:
+def who_says_what
+  yield("Dave", "hello")
+  yield("Andy", "goodbye")
+end
+who_says_what {|person, phrase| puts "#{person} says #{phrase}"}
+
+animals = %w( ant bee cat dog )      # create an array
+animals.each {|animal| puts animal } # iterate over the contents
+
+3.Object attributes
+Ruby provides a shortcut for creating these simple attribute-reading/attribute-setting methods.
+
+class BookInStock
+  attr_reader   :isbn
+  attr_writer   :price
+  attr_accessor :price # accessor => allow read and write
+
+  def initialize(isbn, price)
+    @isbn = isbn
+    @price = Float(price)
+  end
+end
+
+book = BookInStock.new("isbn1", 33.80)
+puts "ISBN  = #{book.isbn}"
+puts "Price = #{book.price}"
+book.price = book.price * 0.75 # discount price
+puts "New price = #{book.price}"
+
+4.
