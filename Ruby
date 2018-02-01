@@ -81,4 +81,77 @@ a = [ 1, 3, "cat" ]
 enum_a = a.each # create an Enumerator using an internal iterator
 enum_a.next     # => 1
 
-5.
+5.Module
+Modules define a namespace, a sandbox in which your methods and constants can play without
+having to worry about being stepped on by other methods and constants.
+
+6.Mixins
+You can include a module within a class definition, then all the module’s instance methods
+are suddenly available as methods in the class as well, they get mixed in.
+In fact, mixed-in modules effectively behave as superclasses.
+
+e.g:
+module Debug
+  def who_am_i?
+    "#{self.class.name} (id: #{self.object_id}): #{self.name}"
+  end
+end
+
+class Phonograph
+  include Debug
+  attr_reader :name
+  def initialize(name)
+    @name = name
+  end
+end
+
+ph = Phonograph.new("West End Blues")
+ph.who_am_i? # => "Phonograph (id: 70266478767560): West End Blues"
+
+7.Inheritance vs Mixins
+Inheritance represents the Is-A relationship, while Mixins represents the Has-A/Use-A relationship.
+
+e.g:
+class Person
+  include Persistable
+end
+
+instead of this:
+
+class Person < DataWrapper
+end
+
+8.Double-quoted strings
+Double-quoted strings support substitutions.
+You can substitute the value of any Ruby code into a string using the sequence #{ expr }.
+
+e.g:
+puts "now is #{ def
+                  the(a) 'the ' + a
+                end
+                the('time')
+              } for all bad coders..."
+
+# => now is the time for all bad coders...
+
+9.Regular Expressions
+The Ruby operator =~ matches a string against a pattern.
+It returns the character offset into the string at which the match occurred.
+
+e.g:
+/cat/ =~ "dog and cat" # => 8
+
+9.Exception Handling
+Guarantee that some processing is done at the end of a block of code,
+regardless of whether an exception was raised.
+
+e.g:
+f = File.open("testfile")
+begin
+  # .. process
+rescue
+  # .. handle error
+else
+  puts "Congratulations-- no errors!" ensure
+  f.close
+end
