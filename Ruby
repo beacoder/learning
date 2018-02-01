@@ -141,7 +141,7 @@ It returns the character offset into the string at which the match occurred.
 e.g:
 /cat/ =~ "dog and cat" # => 8
 
-9.Exception Handling
+10.Exception Handling
 Guarantee that some processing is done at the end of a block of code,
 regardless of whether an exception was raised.
 
