@@ -89,7 +89,7 @@ Design Pattern                    => Separation of concerns.
 
 12.Architecture Pattern, Design Pattern, Idioms.
 
-Model-View-Controller:
+Model-View-Controller(Architecture):
 define three interfaces:             IModel, IView, IController.
 define three implementation classes: Model,  View,  Controller.
 
@@ -97,7 +97,7 @@ Encapsulate CoreData      classes into Model.
 Encapsulate UI            classes into View.
 Encapsulate BusinessLogic classes into Controller.
 
-Patterns within MVC:
+Design Patterns within MVC:
 Observer  Pattern used: Model <-> Controller, Model <-> View
 Strategy  Pattern used: View  <-> Controller
 composite Pattern used: View
