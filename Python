@@ -102,7 +102,6 @@ Observer  Pattern used: Model <-> Controller, Model <-> View
 Strategy  Pattern used: View  <-> Controller
 composite Pattern used: View
 
-
 Design Patterns describe how to organize components/classes of Core Data, UI, BusinessLogic.
 Idioms describe how to implement particular aspects of components/classes.
 
