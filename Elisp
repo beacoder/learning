@@ -138,9 +138,9 @@ exp:   (member major-mode  ggtags-exclude-modes)
 
 14.pass-by-value
 
-14.1 Common Lisp, like most Lisps, allows only to pass variables to function only by value.
+14.1 Like most Lisps, allows only to pass-by-value to function.
 14.2 Lisp has concept of places - locations in memory.
-14.3 setf works directly with places and can be used to mutate variables.
+14.3 setf, incf, decf, pushnew all work directly with places and can be used to mutate variables.
      Macros may be used to overcome limitations of functions.
 14.4 Note that some built-in functions in CL can return places.
      e.g. car, cdr, aref and also all object accessors.
