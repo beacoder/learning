@@ -53,8 +53,7 @@ book.price = book.price * 0.75 # discount price
 puts "New price = #{book.price}"
 
 4.Iterator
-A Ruby iterator is simply a method that can invoke a block of code.
-Within the method, the block may be invoked using the yield statement.
+Iterators are methods that return successive elements from some kind of collection, such as an array.
 
 e.g:
 def two_times
