@@ -14,7 +14,7 @@ car:  return the first item in the list
 exp:  (car '(rose violet daisy buttercup))  ⇒  rose
 
 cdr:  return the second to last elements
-exp:  (cdr '(rose violet daisy buttercup))  ⇒  (violet daisy buttercup)  
+exp:  (cdr '(rose violet daisy buttercup))  ⇒  (violet daisy buttercup)
 
 setcar: replace the first element in the list and return the replacing element
 setcdr: replace the rest of elements in the list and return the replacing element
@@ -37,18 +37,18 @@ exp:  `(quote x)' ⇒ `x'
 4.evaluate expression
 description: means executing the expression and returning the evaluated result.
 exp:  eval-buffer eval-region eval-minibuffer.
-rules:  
+rules:
 4.1 self-evaluating:  any form that is not a list or symbol will evaluate to themselves.
 4.2 symbol: symbol is treated as a variable and will evaluate to the variable's value.
 4.3 list: if the first element of the list is
           a symbol ⇒  uses the symbol's function cell contents, then call the function.
-          a function object ⇒  evaluate the remaining elements of the list as actual argument,                       
+          a function object ⇒  evaluate the remaining elements of the list as actual argument,
                                 then call the function with this list of arguments.
           a macro object  ⇒  expand the macro to some kind of other form.
 
 5.atom
 description: return t if OBJECT is not a cons cell.
-exp:  (atom 'a) ⇒ t 
+exp:  (atom 'a) ⇒ t
 
 6.mapcar mapc
 mapcar: apply FUNCTION to each element of SEQUENCE, and make a list of the results.
@@ -68,20 +68,20 @@ butlast:  return list without the last n elements.
 @see https://www.emacswiki.org/emacs/ListModification
 
 8.alist & hash table
-alist:  when a list has the form ((key1 . value1) (key2 . value2) (key3 . value3)), 
-        it is called an association list, or alist for short, 
+alist:  when a list has the form ((key1 . value1) (key2 . value2) (key3 . value3)),
+        it is called an association list, or alist for short,
         it is used to records a mapping from keys to values.
-exp:  
+exp:
 ((red . "ff000") (green . "00ff00") (blue . "000ff"))
-((red "ff0000") (green "00ff00O") (blue "000ff")) 
+((red "ff0000") (green "00ff00O") (blue "000ff"))
 (assoc 'green '((red . "ff000") (green . "00ff00") (blue . "000ff"))) ⇒ (green . "00ff00")
 
 hash table: a very fast kind of lookup table.
 
 9.thing-at-point & bounds-of-thing-at-point
-thing-at-point: return the thing at point. 
+thing-at-point: return the thing at point.
 thing should be a symbol specifying a type of syntactic entity,
-including `symbol', `list', `sexp', `defun',`filename', `url', `email', `word', 
+including `symbol', `list', `sexp', `defun',`filename', `url', `email', `word',
 `sentence', `whitespace', `line', `number', and `page'.
 exp:  (thing-at-point 'word)
 
@@ -96,7 +96,7 @@ equal:  tests whether two objects have the same structure and contents.
 11.1 (if COND THEN ELSE...) ⇒ If COND yields non-nil, do THEN, else do ELSE...
 
 11.2 (cond CLAUSES...) ⇒ try each clause until one succeeds.
-exp:  
+exp:
 (cond ((eq 'a 'b) 'first) ((atom 'a) 'second)) ⇒ second
 
 11.3 (when COND BODY...) ⇒ If COND yields non-nil, do BODY, else return nil.
@@ -110,10 +110,10 @@ exp:
      Evaluate BODY with VAR bound to each car from LIST, in turn.
 exp:
 (dolist (x '(1 2 3)) (insert (number-to-string x))) ⇒ "123"
-     
+
 11.7 (dotimes (VAR COUNT [RESULT]) BODY...)
      Loop a certain number of times.
-     Evaluate BODY with VAR bound to successive integers running from 0, inclusive, to COUNT, exclusive. 
+     Evaluate BODY with VAR bound to successive integers running from 0, inclusive, to COUNT, exclusive.
 exp:
 (dotimes (x 3 "return value") (insert (number-to-string x))) ⇒ 012"return value"
 
@@ -122,12 +122,12 @@ exp:
      (throw TAG VALUE) ⇒ The purpose of throw is to return from a return point previously established with catch.
 exp:
 (catch 'hack (throw 'hack 'yes)) ⇒ yes
-     
+
 12.lambda expression
 lambda: return a lambda expression (anonymous function),
         pretty like "anonymous functor" returned by boost::bind() in C++ I think.
 exp:
-(progn 
+(progn
   (fset 'sayHello (lambda () (message "Hello World !")))
   (symbol-function 'sayHello) => (lambda () (message "Hello World !"))
   (sayHello)) ⇒ "Hello World !"
@@ -145,5 +145,5 @@ exp:   (member major-mode  ggtags-exclude-modes)
 14.4 Note that some built-in functions in CL can return places.
      e.g. car, cdr, aref and also all object accessors.
      @see http://www.n-a-n-o.com/lisp/cmucl-tutorials/LISP-tutorial-16.html for some examples.
-     
+
 15.

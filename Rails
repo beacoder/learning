@@ -1,0 +1,16 @@
+learning Rails
+
+rails new depot
+# create a new rails project named depot
+
+rails generate scaffold Product title:string description:text image_url:string price:decimal
+# create database schema
+
+rails db:migrate
+# create actual database tables
+
+rails server
+# starts a web server on our http://localhost:3000/
+
+rails test
+# run model and controller tests which rails generates along with the scaffolding

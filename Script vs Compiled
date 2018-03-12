@@ -6,7 +6,7 @@ script code -> pre-process -> compile -> byte-code (similar to assemble code)
 Run script  :
 use script interpreter to run(interprete) the byte-code.
 
-Note: 'interpret' means finding the right "assemble / machine" code 
+Note: 'interpret' means finding the right "assemble / machine" code
       corresponding to the byte-code and run it.
 
 2. How to run a compiled program ?
@@ -19,7 +19,7 @@ just run it.
 
 3. Pros and Cons of both script and compiled language ?
 
-Script:   develope efficiency is great, runtime efficiency is bad. 
+Script:   develope efficiency is great, runtime efficiency is bad.
           used to do quick prototyping or developing, write components which change frequently.
           usually have a big convenient 3rd-party libs: CPAN, PyPI, RubyForge.
 Compiled: develope efficiency is bad, runtime efficiency is great.
