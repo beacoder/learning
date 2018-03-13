@@ -14,3 +14,6 @@ rails server
 
 rails test
 # run model and controller tests which rails generates along with the scaffolding
+
+rails db:seed
+# populate products table with test data from db/seeds.rb
