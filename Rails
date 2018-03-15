@@ -17,3 +17,6 @@ rails test
 
 rails db:seed
 # populate products table with test data from db/seeds.rb
+
+rails generate controller Store index
+# create a controller containing a single action method, index()
