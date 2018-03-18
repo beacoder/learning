@@ -23,3 +23,6 @@ rails db:seed
 
 rails generate controller Store index
 # create a controller containing a single action method, index()
+
+rails dev:cache
+# toggle caching on and off in the development environment
