@@ -3,6 +3,9 @@ learning Rails
 rails new depot
 # create a new rails project named depot
 
+bundle install --path vendor/cache
+# install gems in Gemfile with bundle
+
 rails generate scaffold Product title:string description:text image_url:string price:decimal
 # create database schema
 
