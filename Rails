@@ -7,10 +7,10 @@ bundle install --path vendor/cache
 # install gems in Gemfile with bundle
 
 rails generate scaffold Product title:string description:text image_url:string price:decimal
-# create database schema
+# create model, view, controller and database schema for Product
 
 rails db:migrate
-# create actual database tables
+# create database table
 
 rails server
 # starts a web server on our http://localhost:3000/
@@ -22,7 +22,13 @@ rails db:seed
 # populate products table with test data from db/seeds.rb
 
 rails generate controller Store index
-# create a controller containing a single action method, index()
+# create view, controller for Store which has a single action method, index()
 
 rails dev:cache
 # toggle caching on and off in the development environment
+
+rails generate scaffold Cart && rails db:migrate
+# create model, view, controller and database table for Cart
+
+rails generate scaffold LineItem product:references cart:belongs_to && rails db:migrate
+# create model, view, controller and database table for LineItem which references product and cart
