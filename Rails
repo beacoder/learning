@@ -32,3 +32,6 @@ rails generate scaffold Cart && rails db:migrate
 
 rails generate scaffold LineItem product:references cart:belongs_to && rails db:migrate
 # create model, view, controller and database table for LineItem which references product and cart
+
+rails routes
+# show mappings between routes and controller actions
