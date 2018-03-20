@@ -1,16 +1,39 @@
 learning Rails
 
-rails new depot
-# create a new rails project named depot
+##----------------------------------------------------------------------------
+## Rails helper commands
+##----------------------------------------------------------------------------
 
 bundle install --path vendor/cache
 # install gems in Gemfile with bundle
 
-rails generate scaffold Product title:string description:text image_url:string price:decimal
-# create model, view, controller and database schema for Product
+rails routes
+# show mappings between routes and controller actions
+
+rails console
+# lets you interact with Rails application from command line
 
 rails db:migrate
-# create database table
+# apply changes to database table
+
+rails db:rollback
+# roll back previous rails migration
+
+rake db:migrate:redo VERSION=20100421175455
+# redo rails migration for schema ID 20100421175455
+
+rails db:migrate:status
+# check migrations status
+
+##----------------------------------------------------------------------------
+## Rails core commands
+##----------------------------------------------------------------------------
+
+rails new depot
+# create a new rails project named depot
+
+rails generate scaffold Product title:string description:text image_url:string price:decimal && rails db:migrate
+# create model, view, controller and database table for Product
 
 rails server
 # starts a web server on our http://localhost:3000/
@@ -33,5 +56,8 @@ rails generate scaffold Cart && rails db:migrate
 rails generate scaffold LineItem product:references cart:belongs_to && rails db:migrate
 # create model, view, controller and database table for LineItem which references product and cart
 
-rails routes
-# show mappings between routes and controller actions
+rails generate migration add_quantity_to_line_items quantity:integer && rails db:migrate
+# add column quantity to schema of table line_items and apply changes
+
+rails generate migration combine_items_in_cart && rails db:migrate
+# replace multiple items for a single product in a cart with a single item
