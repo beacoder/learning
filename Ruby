@@ -247,3 +247,26 @@ Something.bar     # => 'bar'
 Something.qux     # => NoMethodError: undefined method `qux'
 Something.new.bar # => NoMethodError: undefined method `bar'
 Something.new.qux # => 'qux'
+
+13.Monkey Patching
+Monkey Patching of Ruby is the ability to re-open any class and change it’s methods.
+
+e.g:
+
+# Reopen the String core class and added a lipsum Class Method 
+class String
+  def self.lipsum
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  end
+end
+
+String.lipsum # => "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+# Hijack the upcase method and calling the reverse method instead
+class String
+  def upcase
+    self.reverse
+  end
+end
+
+"hello".upcase # => "olleh"
