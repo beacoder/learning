@@ -252,7 +252,6 @@ Something.new.qux # => 'qux'
 Monkey Patching of Ruby is the ability to re-open any class and change it’s methods.
 
 e.g:
-
 # Reopen the String core class and added a lipsum Class Method 
 class String
   def self.lipsum
