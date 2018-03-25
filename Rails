@@ -76,3 +76,6 @@ rails generate scaffold Order name address:text email pay_type:integer
 
 rails generate migration add_order_to_line_item order:references && rails db:migrate
 # add column order to schema of table line_items and apply changes
+
+rails generate mailer Order received shipped
+# create mailer for Order with two templates
