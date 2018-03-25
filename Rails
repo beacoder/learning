@@ -25,6 +25,12 @@ rake db:migrate:redo VERSION=20100421175455
 rails db:migrate:status
 # check migrations status
 
+sqlite3 -line db/development.sqlite3
+# enter SQL mode
+
+.quit
+# quit SQL mode
+
 ##----------------------------------------------------------------------------
 ## Rails core commands
 ##----------------------------------------------------------------------------
