@@ -16,11 +16,11 @@ rails console
 rails db:migrate
 # apply changes to database table
 
-rails db:rollback
-# roll back previous rails migration
+rails db:rollback [VERSION=20100421175455]
+# roll back previous or specific migration
 
 rake db:migrate:redo VERSION=20100421175455
-# redo rails migration for schema ID 20100421175455
+# redo migration for schema ID 20100421175455
 
 rails db:migrate:status
 # check migrations status
@@ -64,3 +64,9 @@ rails generate migration combine_items_in_cart && rails db:migrate
 
 rails generate channel products
 # create channel for Product, use WebSockets to implement real-time features
+
+rails generate scaffold Order name address:text email pay_type:integer
+# create model, view, controller and database table for Order
+
+rails generate migration add_order_to_line_item order:references && rails db:migrate
+# add column order to schema of table line_items and apply changes
