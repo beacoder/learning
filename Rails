@@ -51,7 +51,7 @@ rails db:seed
 # populate products table with test data from db/seeds.rb
 
 rails generate controller Store index
-# create view, controller for Store which has a single action method, index()
+# create view, controller for Store which has a single action method: index
 
 rails dev:cache
 # toggle caching on and off in the development environment
@@ -82,3 +82,9 @@ rails generate mailer Order received shipped
 
 rails generate scaffold User name:string password:digest && rails db:migrate
 # create model, view, controller and database table for User and apply changes
+
+rails generate controller Sessions new create destroy
+# create view, controller for Sessions which has three action methods: new create destroy
+
+rails generate controller Admin index
+# create view, controller for Admin which has a single action method: index
