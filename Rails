@@ -79,3 +79,6 @@ rails generate migration add_order_to_line_item order:references && rails db:mig
 
 rails generate mailer Order received shipped
 # create mailer for Order with two templates
+
+rails generate scaffold User name:string password:digest && rails db:migrate
+# create model, view, controller and database table for User and apply changes
