@@ -109,7 +109,7 @@ def fib(n):
 Unit Test is crucial for Python, since you don't want your application break on production environment.
 
 import unittest
-...
+assertEqual, assertAlmostEqual, assertRaises, assertTrue, assertFalse...
 
 15.Why use OOP and Design Patterns ?
 When project gets bigger, larger and complicated.
