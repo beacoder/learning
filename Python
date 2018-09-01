@@ -113,7 +113,17 @@ TestCase.assertEqual, TestCase.assertRaises, TestCase.assertTrue...
 
 python -m unittest
 
-15.Why use OOP and Design Patterns ?
+15.Exceptions
+try:
+...
+except:
+...
+else:
+...
+finally:
+...
+
+16.Why use OOP and Design Patterns ?
 When project gets bigger, larger and complicated.
 OOP and Design Pattern help to manage the complexity.
 
@@ -123,7 +133,7 @@ Inheritance, Polymorphism         => Reuse code.
 
 Design Pattern                    => Separation of concerns.
 
-16.Architecture Pattern, Design Pattern, Idioms.
+17.Architecture Pattern, Design Pattern, Idioms.
 
 Model-View-Controller (Architecture):
 Define three interfaces:      IModel, IView, IController.
