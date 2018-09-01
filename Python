@@ -106,10 +106,12 @@ def fib(n):
     return fib(n-1) + fib(n-2)
 
 14.UnitTest
-Unit Test is crucial for Python, since you don't want your application break on production environment.
+Unit Test is crucial if you don't want your application break on production environment.
 
 import unittest
 TestCase.assertEqual, TestCase.assertRaises, TestCase.assertTrue...
+
+python -m unittest
 
 15.Why use OOP and Design Patterns ?
 When project gets bigger, larger and complicated.
