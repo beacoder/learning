@@ -36,6 +36,8 @@ return max([len(x.strip()) for x in open('/etc/motd')])
 (expr for ... in ... if cond_expr)
 
 4.With statement
+Similar to RAII in C++
+
 with context_expr [as var]:
   ...
 
