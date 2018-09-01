@@ -92,7 +92,17 @@ logger = logging.getLogger()
 logger.debug("This is a debug message.")
 logger.info("This is a info message.")
 
-13.Why use OOP and Design Patterns ?
+13.LRU cache (least recently used cache)
+Decorator to wrap a function with a memoizing callable that saves up to the maxsize most recent calls.
+
+from functools import lur_cache
+@lru_cache(maxsize=None)
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n-1) + fib(n-2)
+
+14.Why use OOP and Design Patterns ?
 When project gets bigger, larger and complicated.
 OOP and Design Pattern help to manage the complexity.
 
@@ -102,7 +112,7 @@ Inheritance, Polymorphism         => Reuse code.
 
 Design Pattern                    => Separation of concerns.
 
-14.Architecture Pattern, Design Pattern, Idioms.
+15.Architecture Pattern, Design Pattern, Idioms.
 
 Model-View-Controller (Architecture):
 Define three interfaces:      IModel, IView, IController.
