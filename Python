@@ -41,7 +41,7 @@ Similar to RAII in C++
 with context_expr [as var]:
   ...
 
-5.Range/Xrange
+5.Range
 range(end)
 range(start, end)
 range(start, end, step)
