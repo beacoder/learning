@@ -84,6 +84,8 @@ dir  -> List functions/variables/classes etc in current scope.
 help -> Show help information for functions/variables/classes etc.
 
 12.Logging
+import logging
+
 LOG_FORMAT = "%(asctime)s %(levelname)s - %(message)s"
 logging.basicConfig(filename = "/path/to/log",
                     level = logging.DEBUG,
@@ -95,7 +97,8 @@ logger.info("This is a info message.")
 13.LRU cache (least recently used cache)
 Decorator to wrap a function with a memoizing callable that saves up to the maxsize most recent calls.
 
-from functools import lur_cache
+from functools import lru_cache
+
 @lru_cache(maxsize=None)
 def fib(n):
     if n < 2:
