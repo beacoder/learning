@@ -81,7 +81,16 @@ Objects with next() method.
 dir  -> List functions/variables/classes etc in current scope.
 help -> Show help information for functions/variables/classes etc.
 
-12.Why use OOP and Design Patterns ?
+12.Logging
+LOG_FORMAT = "%(asctime)s %(levelname)s - %(message)s"
+logging.basicConfig(filename = "/path/to/log",
+                    level = logging.DEBUG,
+                    format = LOG_FORMAT)
+logger = logging.getLogger()
+logger.debug("This is a debug message.")
+logger.info("This is a info message.")
+
+13.Why use OOP and Design Patterns ?
 When project gets bigger, larger and complicated.
 OOP and Design Pattern help to manage the complexity.
 
@@ -91,7 +100,7 @@ Inheritance, Polymorphism         => Reuse code.
 
 Design Pattern                    => Separation of concerns.
 
-13.Architecture Pattern, Design Pattern, Idioms.
+14.Architecture Pattern, Design Pattern, Idioms.
 
 Model-View-Controller (Architecture):
 Define three interfaces:      IModel, IView, IController.
