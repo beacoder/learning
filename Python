@@ -77,7 +77,11 @@ re.compile, re.match, re.search
 10.Iterator
 Objects with next() method.
 
-11.Why use OOP and Design Patterns ?
+11.Help functions
+dir  -> List functions/variables/classes etc in current scope.
+help -> Show help information for functions/variables/classes etc.
+
+12.Why use OOP and Design Patterns ?
 When project gets bigger, larger and complicated.
 OOP and Design Pattern help to manage the complexity.
 
@@ -87,7 +91,7 @@ Inheritance, Polymorphism         => Reuse code.
 
 Design Pattern                    => Separation of concerns.
 
-12.Architecture Pattern, Design Pattern, Idioms.
+13.Architecture Pattern, Design Pattern, Idioms.
 
 Model-View-Controller (Architecture):
 Define three interfaces:      IModel, IView, IController.
@@ -106,5 +110,3 @@ Design Patterns describe RELATIONSHIPS and INTERACTIONS between components.
 Idioms describe how to implement particular aspects of components.
 
 Scope/Level: Architecture Pattern > Design Pattern > Idioms
-
-13.
