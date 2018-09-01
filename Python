@@ -105,7 +105,13 @@ def fib(n):
         return n
     return fib(n-1) + fib(n-2)
 
-14.Why use OOP and Design Patterns ?
+14.UnitTest
+Unit Test is crucial for Python, since you don't want your application break on production environment.
+
+import unittest
+...
+
+15.Why use OOP and Design Patterns ?
 When project gets bigger, larger and complicated.
 OOP and Design Pattern help to manage the complexity.
 
@@ -115,7 +121,7 @@ Inheritance, Polymorphism         => Reuse code.
 
 Design Pattern                    => Separation of concerns.
 
-15.Architecture Pattern, Design Pattern, Idioms.
+16.Architecture Pattern, Design Pattern, Idioms.
 
 Model-View-Controller (Architecture):
 Define three interfaces:      IModel, IView, IController.
