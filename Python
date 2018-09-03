@@ -123,7 +123,10 @@ else:
 finally:
 ...
 
-16.Why use OOP and Design Patterns ?
+16.Most useful modules from standard library
+os, sys, datetime, math, random, re, json, socket, struct, logging.
+
+17.Why use OOP and Design Patterns ?
 When project gets bigger, larger and complicated.
 OOP and Design Pattern help to manage the complexity.
 
@@ -133,7 +136,7 @@ Inheritance, Polymorphism         => Reuse code.
 
 Design Pattern                    => Separation of concerns.
 
-17.Architecture Pattern, Design Pattern, Idioms.
+18.Architecture Pattern, Design Pattern, Idioms.
 
 Model-View-Controller (Architecture):
 Define three interfaces:      IModel, IView, IController.
