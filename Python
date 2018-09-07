@@ -127,7 +127,7 @@ finally:
 
 16.Most useful modules from standard library
 os, sys, datetime, math, random, re, json, socket, struct, logging.
-collections, functools, selectors.
+collections, functools, socketserver.
 
 17.Why use OOP and Design Patterns ?
 When project gets bigger, larger and complicated.
