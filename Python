@@ -109,6 +109,8 @@ def fib(n):
 Unit Test is crucial if you don't want your application break on production environment.
 
 import unittest
+class Tests(unittest.TestCase):
+    pass
 TestCase.assertEqual, TestCase.assertRaises, TestCase.assertTrue...
 
 python -m unittest
@@ -125,6 +127,7 @@ finally:
 
 16.Most useful modules from standard library
 os, sys, datetime, math, random, re, json, socket, struct, logging.
+collections, functools, selectors.
 
 17.Why use OOP and Design Patterns ?
 When project gets bigger, larger and complicated.
