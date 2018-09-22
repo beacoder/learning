@@ -91,10 +91,10 @@ help -> Show help information for functions/variables/classes etc.
 13.Logging
 import logging
 
-LOG_FORMAT = "%(asctime)s %(levelname)s - %(message)s"
 logging.basicConfig(filename = "/path/to/log",
-                    level = logging.INFO,
-                    format = LOG_FORMAT)
+                    level=level,
+                    format='%(asctime)s %(levelname)-8s %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
 logger = logging.getLogger()
 logger.debug("This is a debug message.")
 logger.info("This is a info message.")
