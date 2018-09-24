@@ -95,9 +95,8 @@ logging.basicConfig(filename = "/path/to/log",
                     level=level,
                     format='%(asctime)s %(levelname)-8s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
-logger = logging.getLogger()
-logger.debug("This is a debug message.")
-logger.info("This is a info message.")
+logging.debug("This is a debug message.")
+logging.info("This is a info message.")
 
 14.LRU cache (least recently used cache)
 Decorator to wrap a function with a memoizing callable that saves up to the maxsize most recent calls.
