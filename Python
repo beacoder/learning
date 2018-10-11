@@ -3,12 +3,42 @@ learning Python
 0.Philosophy
 Python where we can, C++ where we must.
 
-1.Data structures
+1.Why use OOP and Design Patterns ?
+When project gets bigger, larger and complicated.
+OOP and Design Pattern help to manage the complexity.
+
+OOP includes: Encapsulation, Inheritance, Polymorphism.
+Encapsulate data/code into Class  => Hide complexity.
+Inheritance, Polymorphism         => Reuse code.
+
+Design Pattern                    => Separation of concerns.
+
+2.Architecture Pattern, Design Pattern, Idioms.
+
+Model-View-Controller (Architecture):
+Define three interfaces:      IModel, IView, IController.
+Define three implementations: Model,  View,  Controller.
+
+Encapsulate CoreData        into Model.
+Encapsulate UI/Input/Output into View.
+Encapsulate BusinessLogic   into Controller.
+
+Design Patterns within M-V-C:
+Observer  Pattern: Model <-> Controller, Model <-> View
+Strategy  Pattern: View  <-> Controller
+Composite Pattern: View
+
+Design Patterns describe RELATIONSHIPS and INTERACTIONS between components.
+Idioms describe how to implement particular aspects of components.
+
+Scope/Level: Architecture Pattern > Design Pattern > Idioms
+
+3.Data structures
 list,  tuple, set,   dict...
 
 [1,2], (1,2), {1,2}, {'A':1,'B':2}
 
-2.For loop
+4.For loop
 for ... in ... :
   ...
 [else :]
@@ -29,29 +59,29 @@ while True:
     break
   do_something_to(i)
 
-3.List comprehension
+5.List comprehension
 [expr for ... in ...]
 [expr for ... in ... if cond_expr]
 
 e.g: calculate the length of the maximum line of one file.
 return max([len(x.strip()) for x in open('/etc/motd')])
 
-4.Generator expression
+6.Generator expression
 (expr for ... in ...)
 (expr for ... in ... if cond_expr)
 
-5.With statement
+7.With statement
 Similar to RAII in C++
 
 with context_expr [as var]:
   ...
 
-6.Range
+8.Range
 range(end)
 range(start, end)
 range(start, end, step)
 
-7.Function decorator
+9.Function decorator
 @deco
 def func():
   pass
@@ -60,7 +90,7 @@ def func():
 
 func = deco(func)
 
-8.Generator
+10.Generator
 Function which returns a generator iterator by calling yield.
 
 def generator()
@@ -68,7 +98,7 @@ def generator()
   yield 2
   pass
 
-9.Static function and Class function
+11.Static function and Class function
 @staticmethod
 def f():
   pass
@@ -77,18 +107,18 @@ def f():
 def f(cls):
   pass
 
-10.Regexp module
+12.Regexp module
 import re
 re.compile, re.match, re.search
 
-11.Iterator
+13.Iterator
 Objects with next() method.
 
-12.Help functions
+14.Help functions
 dir  -> List functions/variables/classes etc in current scope.
 help -> Show help information for functions/variables/classes etc.
 
-13.Logging
+15.Logging
 import logging
 
 logging.basicConfig(filename = "/path/to/log",
@@ -98,7 +128,7 @@ logging.basicConfig(filename = "/path/to/log",
 logging.debug("This is a debug message.")
 logging.info("This is a info message.")
 
-14.LRU cache (least recently used cache)
+16.LRU cache (least recently used cache)
 Decorator to wrap a function with a memoizing callable that saves up to the maxsize most recent calls.
 
 from functools import lru_cache
@@ -109,7 +139,7 @@ def fib(n):
         return n
     return fib(n-1) + fib(n-2)
 
-15.UnitTest
+17.UnitTest
 Unit Test is crucial if you don't want your application break on production environment.
 
 import unittest
@@ -119,7 +149,7 @@ TestCase.assertEqual, TestCase.assertRaises, TestCase.assertTrue...
 
 python -m unittest
 
-16.Exceptions
+18.Exceptions
 try:
 ...
 except ... as err:
@@ -129,36 +159,6 @@ else:
 finally:
 ...
 
-17.Most useful modules from standard library
+19.Most useful modules from standard library
 os, sys, datetime, math, random, re, json, socket, struct, logging.
 collections, functools, selectors, threading.
-
-18.Why use OOP and Design Patterns ?
-When project gets bigger, larger and complicated.
-OOP and Design Pattern help to manage the complexity.
-
-OOP includes: Encapsulation, Inheritance, Polymorphism.
-Encapsulate data/code into Class  => Hide complexity.
-Inheritance, Polymorphism         => Reuse code.
-
-Design Pattern                    => Separation of concerns.
-
-19.Architecture Pattern, Design Pattern, Idioms.
-
-Model-View-Controller (Architecture):
-Define three interfaces:      IModel, IView, IController.
-Define three implementations: Model,  View,  Controller.
-
-Encapsulate CoreData        into Model.
-Encapsulate UI/Input/Output into View.
-Encapsulate BusinessLogic   into Controller.
-
-Design Patterns within M-V-C:
-Observer  Pattern: Model <-> Controller, Model <-> View
-Strategy  Pattern: View  <-> Controller
-Composite Pattern: View
-
-Design Patterns describe RELATIONSHIPS and INTERACTIONS between components.
-Idioms describe how to implement particular aspects of components.
-
-Scope/Level: Architecture Pattern > Design Pattern > Idioms
