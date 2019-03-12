@@ -8,10 +8,10 @@ When project gets bigger, larger and complicated.
 OOP and Design Pattern help to manage the complexity.
 
 OOP includes: Encapsulation, Inheritance, Polymorphism.
-Encapsulate data/code into Class  => Hide complexity.
-Inheritance, Polymorphism         => Reuse code.
+Encapsulate data/code into Class  -> Hide complexity
+Inheritance, Polymorphism         -> Reuse code
 
-Design Pattern                    => Separation of concerns.
+Design Pattern                    -> Separation of concerns
 
 2.Architecture Pattern, Design Pattern, Idioms.
 
