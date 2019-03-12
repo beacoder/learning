@@ -24,10 +24,10 @@ Encapsulate UI/Input/Output into View.
 Encapsulate BusinessLogic   into Controller.
 
 Design Patterns within M-V-C:
-Observer         Pattern: Model -> Controller, Model -> View
-Strategy         Pattern: View -> Controller
-Composite        Pattern: View -> Sub-Components
+Observer         Pattern: Model -> Controller, Model      -> View
+Strategy         Pattern: View  -> Controller, Controller -> Model
 Mediator         Pattern: View <-> Controller, Controller <-> Model
+Composite        Pattern: View  -> Sub-Components
 Facade           Pattern: Controller -> Sub-Components
 Abstract-Factory Pattern: Controller -> Sub-Components
 
