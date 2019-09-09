@@ -24,3 +24,12 @@ Script:   develope efficiency is great, runtime efficiency is bad.
           used to do quick prototyping/developing, write components which change frequently.
 Compiled: develope efficiency is bad, runtime efficiency is great.
           used to write performance critical components, develope large-scale complex projects.
+
+4. why should I embed a scripting language ?
+
+Non-programmers can interface with the engine.
+You do not need to recompile for minor script changes.
+Errors in the script might not crash the entire system.
+
+e.g:
+Build a log filtering engine inside a large project, making it easier to filter logs at runtime.
