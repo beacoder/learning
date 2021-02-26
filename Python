@@ -167,8 +167,8 @@ os, sys, datetime, math, random, re, json, socket, struct, logging.
 collections, functools, selectors, threading.
 
 20.Setting a breakpoint in Python
-import pdb;
-pdb.set_trace();
+import pdb
+pdb.set_trace()
 
 c continue execution
 n step to the next line within the same function
